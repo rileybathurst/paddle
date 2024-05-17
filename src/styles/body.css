@@ -1,0 +1,13 @@
+body {
+  margin: 0; /* reset */
+  font-size: 16px;
+  background-color: whitesmoke;
+  /* ! testing */
+  background-color: hotpink;
+  color: var(--black-metal);
+
+  /* @media (prefers-color-scheme: dark) { */
+  /* background-color: var(--ink-300); */
+  /* color: var(--kingly-cloud); */
+  /* } */
+}
