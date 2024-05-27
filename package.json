@@ -1,7 +1,7 @@
 {
   "name": "@rileybathurst/paddle",
   "private": false,
-  "version": "0.0.13",
+  "version": "0.0.14",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,7 +12,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "color-cards": "^1.0.13",
+    "color-cards": "^1.0.14",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
