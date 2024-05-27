@@ -1,2 +1,2 @@
-// export * from "./PaddleBookNow";
-exports.PaddleBookNow = require("./PaddleBookNow.tsx");
+// eslint-disable-next-line react-refresh/only-export-components
+export * from "./PaddleBookNow";
