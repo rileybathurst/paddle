@@ -1,11 +1,3 @@
-// import * as React from "react"
+import * as React from "react"
 
-function Test() {
-  return (
-    <div>
-      <h1>Test</h1>
-      <p>Test</p>
-    </div>
-  )
-}
-export default Test
+export const Button = () => null

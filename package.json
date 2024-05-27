@@ -1,7 +1,7 @@
 {
   "name": "@rileybathurst/paddle",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.6",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -39,8 +39,11 @@
     "vite": "^5.2.0"
   },
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "src/index.tsx",
+  "module": "src/index.tsx",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "files": [
+    "src/*"
+  ]
 }

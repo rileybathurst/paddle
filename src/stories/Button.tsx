@@ -1,49 +1,29 @@
-// import React from 'react';
-
-import './button.css';
+// this is the Name.tsx file
+import React from 'react';
 
 interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
   primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: 'small' | 'medium' | 'large';
-  /**
-   * Button contents
-   */
-  label: string;
-  /**
-   * Optional click handler
-   */
   onClick?: () => void;
 }
 
-/**
- * Primary UI component for user interaction
- */
 export const Button = ({
   primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+
   return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
+    <main
       {...props}
     >
-      {label}
-    </button>
+      {primary ? 'primary' : 'secondary'}
+      <button type='button'>Button</button>
+      <button className='button__hover' type='button'>Hover</button>
+      <button className='button__active' type='button'>Active</button>
+      <hr />
+      <button className='button__mullen' type='button'>Button Mullen</button>
+      <button className='button__mullen--hover' type='button'>Mullen Hover</button>
+      <button className='button__mullen--active' type='button'>Mullen Active</button>
+      <p>// TODO: I have some problems with this I dont like the pink</p>
+    </main>
   );
 };
