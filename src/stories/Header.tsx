@@ -2,7 +2,6 @@
 
 // import { Button } from './Button';
 import './header.css';
-import { Button } from '@rileybathurst/puddle';
 
 type User = {
   name: string;
