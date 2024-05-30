@@ -3,15 +3,7 @@ import React from 'react';
 import { Link } from 'react-aria-components';
 import { faker } from '@faker-js/faker';
 
-interface BrandListProps {
-  primary?: boolean;
-  onClick?: () => void;
-}
-
-export const BrandList = ({
-  primary = false,
-  ...props
-}: BrandListProps) => {
+export const BrandList = () => {
 
   return (
     // <ul className='brand_list'>

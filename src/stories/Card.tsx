@@ -5,15 +5,7 @@ import { Link } from 'react-aria-components';
 import { faker } from '@faker-js/faker';
 import { BookNow } from './BookNow';
 
-interface CardProps {
-  primary?: boolean;
-  onClick?: () => void;
-}
-
-export const Card = ({
-  primary = false,
-  ...props
-}: CardProps) => {
+export const Card = () => {
 
   return (
     <div className='deck'>
@@ -39,10 +31,10 @@ export const Card = ({
           </h4>
         </div>
         <hr />
-        <p>Kayaking the lake at dusk is always a magical experience. Imagine yourself gliding across the clear waters of Lake Tahoe.</p>
+        <p>{faker.lorem.lines(2)}</p>
         <hr />
         <div className="card__details">
-          <h5>$75</h5>
+          <h5>${faker.number.int(100)}</h5>
           <BookNow />
         </div>
       </Link>
