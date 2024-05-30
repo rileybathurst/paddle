@@ -1,0 +1,67 @@
+// this is the Name.tsx file
+import React from 'react';
+
+function WidthCard({ widths }) {
+  return (
+    <>
+      {widths.map((width) => (
+        <div
+          style={{
+            height: '100px',
+            width: `var(--${width})`,
+            backgroundColor: 'var(--mullen-300)',
+            marginInline: 'auto',
+            marginBlockEnd: '1rem',
+            color: 'white',
+          }}
+        >
+          {width}
+        </div>
+      ))}
+    </>
+  );
+}
+
+interface WidthsProps {
+  primary?: boolean;
+  onClick?: () => void;
+}
+
+export const Widths = ({
+  primary = false,
+  ...props
+}: WidthsProps) => {
+
+  return (
+    <>
+      <h1>Widths</h1>
+      <WidthCard widths={['swan', 'vulture', 'stork', 'condor', 'pelican', 'albatross']} />
+      <hr />
+      <h2>split</h2>
+      <p>pelican hydra</p>
+      <div
+        className='pelican hydra'
+        style={{
+          height: '100px',
+          marginBlockEnd: '1rem',
+          color: 'white',
+        }}
+      >
+        <div
+          style={{
+            backgroundColor: 'var(--mullen-300)',
+          }}
+        >
+          hydra?
+        </div>
+        <div
+          style={{
+            backgroundColor: 'var(--mullen-300)',
+          }}
+        >
+          hydra?
+        </div>
+      </div>
+    </>
+  );
+};

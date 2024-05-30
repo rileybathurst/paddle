@@ -5,6 +5,7 @@ import { Button } from './Button';
 
 const meta = {
   component: Button,
+  title: 'Atoms/Button',
   args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
 
