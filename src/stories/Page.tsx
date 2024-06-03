@@ -1,73 +1,124 @@
 import React from 'react';
-
+import { faker } from '@faker-js/faker';
+import { Link } from 'react-aria-components';
 import { Header } from './Header';
-import './page.css';
+import { Footer } from './Footer';
+import { LocationDeck } from './LocationDeck';
+import { Pricing } from './Pricing';
 
-type User = {
-  name: string;
-};
-
-export const Page: React.FC = () => {
-  const [user, setUser] = React.useState<User>();
+export const Page = () => {
 
   return (
-    <article>
-      <Header
-        user={user}
-        onLogin={() => setUser({ name: 'Jane Doe' })}
-        onLogout={() => setUser(undefined)}
-        onCreateAccount={() => setUser({ name: 'Jane Doe' })}
-      />
+    <>
+      <Header />
+      <main className="pelican wrap">
+        <section>
+          <h2 className="page-title">
+            {faker.company.catchPhrase()}
+          </h2>
+          <div className="margin-block-end-aconcagua">
+            <p>{faker.lorem.sentences(5)}</p>
+          </div>
 
-      <section className="storybook-page">
-        <h2>Pages in Storybook</h2>
-        <p>
-          We recommend building UIs with a{' '}
-          <a href="https://componentdriven.org" target="_blank" rel="noopener noreferrer">
-            <strong>component-driven</strong>
-          </a>{' '}
-          process starting with atomic components and ending with pages.
-        </p>
-        <p>
-          Render pages with mock data. This makes it easy to build and review page states without
-          needing to navigate to them in your app. Here are some handy patterns for managing page
-          data in Storybook:
-        </p>
-        <ul>
-          <li>
-            Use a higher-level connected component. Storybook helps you compose such data from the
-            "args" of child component stories
-          </li>
-          <li>
-            Assemble data in the page component from your services. You can mock these services out
-            using Storybook.
-          </li>
-        </ul>
-        <p>
-          Get a guided tutorial on component-driven development at{' '}
-          <a href="https://storybook.js.org/tutorials/" target="_blank" rel="noopener noreferrer">
-            Storybook tutorials
-          </a>
-          . Read more in the{' '}
-          <a href="https://storybook.js.org/docs" target="_blank" rel="noopener noreferrer">
-            docs
-          </a>
-          .
-        </p>
-        <div className="tip-wrapper">
-          <span className="tip">Tip</span> Adjust the width of the canvas with the{' '}
-          <svg width="10" height="10" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" fillRule="evenodd">
-              <path
-                d="M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z"
-                id="a"
-                fill="#999"
-              />
-            </g>
-          </svg>
-          Viewports addon in the toolbar
+          <LocationDeck
+            background={false}
+          />
+
+          <div className="button__double">
+            <a
+              href={faker.commerce.isbn()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="book-now"
+              title={`book rental kayaks and paddleboards with ${faker.location.city()}`}
+            >
+              RENTALS<br />
+              BOOK NOW
+            </a>
+
+            <a
+              href={faker.commerce.isbn()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="book-now"
+              title={`book rental kayaks and paddleboards with ${faker.location.city()}`}
+            >
+              TOURS<br />
+              BOOK NOW
+            </a>
+          </div>
+
+        </section>
+
+        <div>
+          {/* <div className="home__photo-grid"> */}
+          {/* <GatsbyImage
+              image={data.southlakefriends.image.localFile.childImageSharp.gatsbyImageData}
+              alt={data.southlakefriends.title}
+              className='img__wrapped hero'
+            /> */}
+          {/* // ? this seems like every time it would have that classname */}
+          {/* <WaterTexture className="texture" /> */}
+          {/* <GatsbyImage
+              image={data.goldshed.image.localFile.childImageSharp.gatsbyImageData}
+              alt={data.southlakefriends.title}
+              className='img__wrapped inset'
+            /> */}
+          {/* </div> */}
+
+          <Pricing book={true} />
+        </div>
+      </main>
+
+      <section id="tours" className="pelican water">
+        <div>
+          {/* // TODO: only one h and then p */}
+          <hgroup className="crest">
+            <h3 className="brow"><Link href="/tours">Tours</Link></h3>
+            {/* think about capitalization here */}
+            <h4 className="supra">Enjoy The Majesty Of Lake Tahoe</h4>
+          </hgroup>
+
+          <p>{faker.lorem.sentences(2)}</p>
+
+          <h4>
+            <Link href="/tours/compare">Compare Tours</Link>
+          </h4>
+        </div>
+        <div>{/* stay gold */}</div>
+      </section>
+
+      {/* <div className="deck">
+        {data.allStrapiTour.nodes.map((tour) => (
+          <div key={tour.id}>
+            <Ticket tour={tour} />
+          </div>
+        ))}
+      </div> */}
+
+      <section id="retail" className="pelican water">
+        <article>
+          {/* // TODO: only one h and then p */}
+          <hgroup className="crest">
+            <h3 className="brow">
+              <a
+                href={faker.internet.domainName()}
+                target="_blank"
+                rel='noopener noreferrer'
+              >
+                Retail Store
+              </a>
+            </h3>
+            <h4 className="supra">Kayaks and Paddleboards</h4>
+          </hgroup>
+
+          <p>{faker.lorem.sentences(2)}</p>
+        </article>
+        <div>
+          {/* stay gold */}
         </div>
       </section>
-    </article>
+      <Footer />
+    </>
   );
 };

@@ -6,6 +6,33 @@ import { faker } from '@faker-js/faker';
 import { Pricing } from './Pricing';
 import { LocationDeck } from './LocationDeck';
 
+function Deal() {
+
+  const roll = faker.number.int(10);
+
+  if (roll < 1) {
+    return (
+      <h1>double zero</h1>
+    );
+  }
+
+  const content = [];
+  for (let i = 0; i < roll; i++) {
+    content.push(
+      <li key={faker.location.city()}>
+        <a href={faker.location.city()}
+          target="_blank"
+          rel='noopener noreferrer'
+        >
+          {faker.location.city()} Kayak &amp; Paddleboard
+        </a>
+      </li>
+    );
+  }
+
+  return content;
+}
+
 interface FooterProps {
   primary?: boolean;
   onClick?: () => void;
@@ -66,16 +93,7 @@ export const Footer = ({
         <div className="footer__locations">
           <h3>Our Partner Locations</h3>
           <ul>
-            {faker.number.int(10).map((locale: LocaleTypes) => (
-              <li key={faker.location.city()}>
-                <a href={faker.location.city()}
-                  target="_blank"
-                  rel='noopener noreferrer'
-                >
-                  {faker.location.city()}
-                </a>
-              </li>
-            ))}
+            <Deal />
           </ul>
         </div>
       </section>

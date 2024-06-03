@@ -1,5 +1,7 @@
 // this is the Name.tsx file
 import React from 'react';
+import { faker } from '@faker-js/faker';
+import { Link } from 'react-aria-components';
 
 interface LinksProps {
   primary?: boolean;
@@ -15,9 +17,9 @@ export const Links = ({
     <main
       {...props}
     >
-      <a href="#">Link</a><br />
-      <a href="#" className={`link__backed ${primary ?? 'hover'}`}>Link Backed</a>
-      {primary ? 'primary' : 'secondary'}
+      <Link href={faker.location.city()}>{faker.location.city()}</Link><br />
+      <Link href={faker.location.city()} className={`link__backed ${primary ?? 'hover'}`}>{faker.location.city()} Backed</Link>
+      {/* {primary ? 'primary' : 'secondary'} */}
     </main>
   );
 };
