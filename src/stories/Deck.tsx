@@ -1,6 +1,6 @@
 // this is the Name.tsx file
 import React from 'react';
-import { Card } from './Card';
+import { Ticket } from './Ticket';
 
 interface DeckProps {
   primary?: boolean;
@@ -14,8 +14,9 @@ export const Deck = ({
 
   return (
     <div className='deck'>
-      <Card />
-      <Card />
+      {/* // TODO: deal */}
+      <Ticket />
+      <Ticket />
     </div>
   );
 };

@@ -46,7 +46,6 @@
 .wrap {
   display: flex;
   flex-flow: row wrap;
-  gap: var(--vinson);
   gap: clamp(var(--kosciuszko), 1.667vw, var(--denali));
 
   > * {

@@ -5,7 +5,7 @@ import { LocationDeck } from './LocationDeck';
 
 const meta = {
   component: LocationDeck,
-  title: 'Molecules/LocationDeck',
+  title: 'Organisms/LocationDeck',
   args: { onClick: fn() },
 } satisfies Meta<typeof LocationDeck>;
 
