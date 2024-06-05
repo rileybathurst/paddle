@@ -35,8 +35,6 @@ export const PaddleTime = ({ start, finish, duration, timeframe }: TimeTypes) =>
       startHoursInt = startHoursInt - 12;
     }
 
-    console.log(startMinsInt);
-
     const finishHours = finish.split(':')[0];
     let finishHoursInt: number = Number.parseInt(finishHours);
     const finishMins = finish.split(':')[1];
