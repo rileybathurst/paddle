@@ -1,0 +1,17 @@
+/*------------------*/
+/* #TESTIMONIALS */
+/*------------------*/
+
+.testimonials {
+  list-style: none;
+  padding-inline-start: 0; /* reset */
+
+  li:not(:last-child) {
+    border-block-end: 1px solid;
+    margin-block-end: var(--vinson);
+  }
+
+  .content::before {
+    content: "“";
+  }
+}

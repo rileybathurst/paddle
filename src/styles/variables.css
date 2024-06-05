@@ -20,7 +20,6 @@
   --sand-200: hsl(25, 37%, 87.5%);
   --sand-300: hsl(25, 37%, 75%);
 
-  /* TODO */
   --ink: hsl(210, 50%, 12.5%); /* base */
   --ink-100: hsl(210, 50%, 12.5%);
   --ink-200: hsl(210, 50%, 7.5%);
@@ -81,6 +80,7 @@
 
   --body_font: "Barlow", Arial, sans-serif;
   --heading_font: "Barlow Condensed", Arial, sans-serif;
+  --font-serif: Georgia, serif; /* TODO: add serif font that matches nicely */
 
   --baseline: 1.25rem; /* 20px */
 

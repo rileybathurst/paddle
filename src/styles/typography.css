@@ -8,12 +8,6 @@ body {
   line-height: 1.25rem; /* 20px */
 }
 
-p {
-  margin-block-start: 0;
-  margin-block-end: var(--baseline);
-  font-family: var(--body_font);
-}
-
 h1,
 h2,
 h3 {
@@ -27,6 +21,13 @@ h4,
 h5,
 h6 {
   margin-block-start: 0; /* reset */
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
 }
 
 h1 {
@@ -54,8 +55,7 @@ h2,
 }
 
 h3,
-/* TODO: this should be the font mountains */
-.h3 {
+.denali {
   font-size: 2rem; /* 32px */
   line-height: 2.5rem; /* 40px */
   margin-bottom: 1.875rem; /* 30px */
@@ -66,9 +66,9 @@ h3,
 
 h4,
 .kilimanjaro,
-.h4,
 .brow,
 .page-title,
+/* .spec h2 put this inline */
 .spec h2 {
   font-size: 1.5rem; /* 24px */
   line-height: 2rem; /* 32px */
@@ -78,7 +78,8 @@ h4,
   /* multi lines + 32px🚨 each */
 }
 
-h5 {
+h5,
+.elbrus {
   font-size: 1.25rem; /* 20px */
   line-height: 1.875rem; /* 30px */
   margin-bottom: 0.625rem; /* 10px */
@@ -100,6 +101,7 @@ h6,
 
 /* start the multi line problem here as itll be worst */
 small,
+.kosciuszko,
 .two-small-lines,
 .multiple-small-lines {
   font-size: 0.75rem; /* 12px */
@@ -119,6 +121,18 @@ address {
   font-style: normal;
 }
 
+p {
+  margin-block-start: 0;
+  margin-block-end: var(--baseline);
+  font-family: var(--body_font);
+}
+
+/*------------------*/
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
 .two-small-lines {
   margin-bottom: 0.5rem; /* 8px */
   /* two lines 40px */
@@ -131,26 +145,10 @@ address {
 /* default use on whitesmoke background */
 hr {
   border: none; /* reset */
-  border-bottom: 1px solid var(--tin-soldier);
-
-  /* default useage on hsl(var(--ink__h), 50%, 5%); */
-  @media (prefers-color-scheme: dark) {
-    border-bottom: 1px solid var(--black-out);
-  }
-}
-
-/* for use on a sand background */
-/* name is hard */
-/* its only on sand on light */
-/* its darker on light only */
-/* maybe step 2 */
-/* rename it if I get a better idea */
-/* only use the class when needed try put it on the class with the background */
-.hr-step2 {
-  border-color: var(--tin-soldier);
+  border-bottom: 1px solid;
 
   @media (prefers-color-scheme: dark) {
-    border-color: var(--raven-black);
+    border-bottom: 1px solid;
   }
 }
 
@@ -175,10 +173,6 @@ hr.no {
   font-family: var(--heading_font);
 }
 
-.mullen {
-  color: var(--navy);
-}
-
 /*------------------*/
 /* #HEADINGS */
 /*------------------*/
@@ -188,17 +182,6 @@ hgroup {
   flex-flow: row wrap;
   column-gap: 1ch;
   align-items: baseline;
-}
-
-/*------------------*/
-/* #DEL */
-/*------------------*/
-
-del {
-  color: hsl(var(--sand__base), var(--dim));
-  @media (prefers-color-scheme: dark) {
-    color: hsl(var(--sand__base), var(--dark));
-  }
 }
 
 /*------------------*/
