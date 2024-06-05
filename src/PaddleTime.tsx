@@ -1,5 +1,7 @@
 // import * as React from "react"
 
+import { en } from "@faker-js/faker";
+
 interface TimeTypes {
   start?: string | null;
   finish?: string | null;
@@ -14,8 +16,10 @@ export const PaddleTime = ({ start, finish, duration, timeframe }: TimeTypes) =>
 
   if (timeframe) {
     return {
-      key: timeframe,
-      unit: 'timeframe'
+      // key: timeframe, cant return key its a react special prop
+      // https://react.dev/warnings/special-props
+      entry: timeframe,
+      value: 'timeframe'
     }
   }
 
@@ -31,6 +35,8 @@ export const PaddleTime = ({ start, finish, duration, timeframe }: TimeTypes) =>
       startHoursInt = startHoursInt - 12;
     }
 
+    console.log(startMinsInt);
+
     const finishHours = finish.split(':')[0];
     let finishHoursInt: number = Number.parseInt(finishHours);
     const finishMins = finish.split(':')[1];
@@ -42,10 +48,10 @@ export const PaddleTime = ({ start, finish, duration, timeframe }: TimeTypes) =>
     }
 
     return {
-      key: `${startHoursInt}${startMinsInt > 0 ? `:${startMinsInt}:${hairSpace}` : ''}${hairSpace}${startAmpm}
-      - 
-      ${finishHoursInt}${finishMinsInt > 0 ? `:${finishMinsInt}${hairSpace}` : ''}${hairSpace}${finishAmpm}`,
-      unit: "time"
+      entry: startHours === '12' ? 'noon' : `${startHoursInt}${startMinsInt > 0 ? `:${startMinsInt}${hairSpace}` : ''}${startAmpm}
+      -
+      ${finishHours === '12' ? 'noon' : `${finishHoursInt}${finishMinsInt > 0 ? `:${finishMinsInt}${hairSpace}` : ''}${hairSpace}${finishAmpm}`}`,
+      value: "time"
     }
   }
 
@@ -55,19 +61,19 @@ export const PaddleTime = ({ start, finish, duration, timeframe }: TimeTypes) =>
       const mins = duration % 60;
 
       return {
-        key: `${hours}${hairSpace}hrs ${mins > 0 ? `${mins}${hairSpace}mins` : ''}`,
-        unit: "duration"
+        entry: `${hours}${hairSpace}hrs ${mins > 0 ? `${mins}${hairSpace}mins` : ''} `,
+        value: "duration"
       }
     }
 
     return {
-      key: `${duration}${hairSpace}mins`,
-      unit: "duration"
+      entry: `${duration}${hairSpace} mins`,
+      value: "duration"
     }
   }
 
   return {
-    key: null,
-    unit: null
+    entry: null,
+    value: null
   }
 }

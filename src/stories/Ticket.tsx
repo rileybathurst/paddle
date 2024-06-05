@@ -5,15 +5,7 @@ import { Link } from 'react-aria-components';
 import { faker } from '@faker-js/faker';
 import { PaddleTime } from '../PaddleTime';
 
-interface TicketProps {
-  primary?: boolean;
-  onClick?: () => void;
-}
-
-export const Ticket = ({
-  primary = false,
-  ...props
-}: TicketProps) => {
+export const Ticket = () => {
 
   const time = PaddleTime({
     timeframe: faker.datatype.boolean() ? faker.helpers.arrayElement(['sunset', 'overnight']) : null,
@@ -34,7 +26,7 @@ export const Ticket = ({
         </Link>
       </h4>
       <div className="card__specs">
-        <h4>{time.key}</h4>
+        <h4>{time.entry}</h4>
         {faker.datatype.boolean() ? <h4 className="capitalize">{faker.helpers.arrayElement(['easy', 'medium', 'hard'])} <span>Fitness</span></h4> : null}
       </div>
       <hr />
