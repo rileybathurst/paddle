@@ -11,7 +11,7 @@ interface TestimonialsTypes {
 }
 
 export const PaddleTestimonials = ({ nodes }: TestimonialsTypes) =>
-  <ul className='testimonials vulture'>
+  <ul className='testimonials condor'>
     {nodes.map((testimonial) => (
       <li key={testimonial.id}>
         <p className='elbrus'><span className='denali font-serif'>&ldquo;</span>{testimonial.testimonial}<span className='denali font-serif'>&rdquo;</span></p>

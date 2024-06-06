@@ -35,7 +35,7 @@ export const Testimonials = ({
 }: TestimonialsProps) => {
 
   return (
-    <ul className='testimonials vulture'>
+    <ul className='testimonials condor'>
       <Deal />
     </ul>
   );

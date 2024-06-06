@@ -115,12 +115,11 @@
   /* #WIDTHS */
   /* https://en.wikipedia.org/wiki/Largest_living_flying_birds_by_wingspan */
   /*------------------*/
-  --swan: 20rem;
-  --vulture: 30rem;
-  --stork: 40rem;
-  --condor: 50rem;
-  --pelican: 60rem;
-  --albatross: 80rem;
+  --vulture: 10rem;
+  --stork: 18rem;
+  --condor: 30rem;
+  --pelican: 49rem;
+  --albatross: 79rem;
 
   /*------------------*/
   /* #Z INDEX */
