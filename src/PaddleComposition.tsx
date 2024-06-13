@@ -1,4 +1,5 @@
 import * as React from "react"
+// ! this isnt finished it wont have faker when its done
 import { faker } from '@faker-js/faker';
 // import { GatsbyImage } from "gatsby-plugin-image"
 
@@ -26,6 +27,7 @@ function TopThree({ className }: TopThreeTypes) {
 // ! Testing
 return null;
 } */
+
 
 interface CompositionTypes {
   sport?: string;

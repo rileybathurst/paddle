@@ -2,6 +2,16 @@
 /* #COLOR */
 /*------------------------------------*/
 
+body {
+  background-color: whitesmoke;
+  color: var(--black-metal);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--black-metal);
+    color: var(--kingly-cloud);
+  }
+}
+
 /*------------------------------------*/
 /* #TOP-BAR */
 /*------------------------------------*/

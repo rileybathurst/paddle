@@ -5,6 +5,7 @@ import { faker } from '@faker-js/faker';
 
 import { Pricing } from './Pricing';
 import { LocationDeck } from './LocationDeck';
+import { Socials } from './Socials';
 
 function Deal() {
 
@@ -68,26 +69,7 @@ export const Footer = ({
           >
             {faker.internet.email()}
           </a>
-          <div className="social">
-            {/* {useSiteMetadata().social?.facebook ?? */}
-            <a
-              href={faker.location.city()}
-              target='_blank' rel='noopener noreferrer'
-              aria-label={`${faker.location.city()} facebook`}
-            >
-              {/* <FacebookIcon /> */}
-            </a>
-            {/* } */}
-            {/* {useSiteMetadata().social?.instagram ?? */}
-            <a href={faker.location.city()}
-              target='_blank'
-              rel='noopener noreferrer'
-              aria-label={`${faker.location.city()} instagram`}
-            >
-              {/* <InstagramIcon /> */}
-            </a>
-            {/* } */}
-          </div>
+          <Socials />
         </div>
         <hr />
         <div className="footer__locations">

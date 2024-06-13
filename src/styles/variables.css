@@ -136,4 +136,5 @@
   /*------------------*/
   --easing: cubic-bezier(0.5, 0, 0.5, 1);
   --fade: 0.2s var(--easing);
+  --slow: 0.5s var(--easing);
 }

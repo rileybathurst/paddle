@@ -1,7 +1,5 @@
 // import * as React from "react"
 
-import { en } from "@faker-js/faker";
-
 interface TimeTypes {
   start?: string | null;
   finish?: string | null;

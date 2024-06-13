@@ -2,6 +2,10 @@
 /* #LAYOUT */
 /*------------------*/
 
+body {
+  margin: 0; /* reset */
+}
+
 .vulture {
   max-width: var(--vulture);
   flex-basis: var(--vulture);
@@ -96,4 +100,14 @@ footer {
   p {
     margin-block-end: 0.25rem;
   }
+}
+
+/*------------------------------------*/
+/* #SOCIAL */
+/*------------------------------------*/
+
+.social {
+  display: flex;
+  gap: var(--kilimanjaro);
+  margin-block-end: clamp(var(--kilimanjaro), 1.667vw, var(--aconcagua));
 }

@@ -6,7 +6,7 @@
 @import "body";
 @import "layout";
 @import "media";
-/* @import "color"; */
+@import "color";
 @import "typography";
 @import "links";
 @import "buttons";

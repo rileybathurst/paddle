@@ -1,3 +1,14 @@
+/*------------------------------------*/
+/* #MEDIA */
+/*------------------------------------*/
+
+svg {
+  width: 100%;
+  height: 100%;
+  max-width: clamp(var(--kilimanjaro), 5vw, 5rem);
+  max-height: clamp(var(--kilimanjaro), 5vw, 5rem);
+}
+
 /*------------------*/
 /* #LOGO */
 /*------------------*/
@@ -36,5 +47,93 @@
   svg {
     width: 100%;
     max-height: 10rem;
+  }
+}
+
+/*------------------*/
+/* #SOCIAL */
+/*------------------*/
+.social svg {
+  transition: var(--slow);
+
+  * {
+    transition: var(--slow);
+  }
+}
+
+/*------------------------------------*/
+/* #FACEBOOK */
+/*------------------------------------*/
+/* https://about.meta.com/brand/resources/facebook/logo/ */
+
+.facebook {
+  .f {
+    fill: transparent;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .circle {
+      fill: white;
+    }
+  }
+}
+
+.facebook:hover {
+  .circle {
+    fill: #1877f2;
+  }
+  .f {
+    fill: white;
+  }
+}
+
+/*------------------------------------*/
+/* #INSTAGRAM */
+/*------------------------------------*/
+/* https://about.meta.com/brand/resources/instagram/instagram-brand/ */
+
+.instagram {
+  filter: grayscale(100%);
+  mix-blend-mode: multiply;
+
+  @media (prefers-color-scheme: dark) {
+    filter: grayscale(100%) brightness(300%);
+    mix-blend-mode: screen;
+  }
+}
+
+.instagram:hover {
+  filter: grayscale(0%);
+  fill: revert-layer;
+  mix-blend-mode: normal;
+
+  @media (prefers-color-scheme: dark) {
+    filter: grayscale(0%) brightness(100%);
+  }
+}
+
+/*------------------------------------*/
+/* #TRIPADVISOR */
+/*------------------------------------*/
+/* https://www.tripadvisor.com/pdfs/cprc/BrandGuidelinesForPartners.pdf */
+/* TODO: sizing fix */
+/* I know this is smaller without the circle but for now adding a stroke to the circle wasnt right */
+/* looks better in dark for now */
+
+.tripadvisor {
+  circle {
+    fill: transparent;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    circle {
+      fill: white;
+    }
+  }
+}
+
+.tripadvisor:hover {
+  circle {
+    fill: #34e0a1;
   }
 }
