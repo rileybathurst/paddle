@@ -93,7 +93,7 @@ svg {
 /* https://about.meta.com/brand/resources/instagram/instagram-brand/ */
 
 .instagram {
-  filter: grayscale(100%);
+  filter: grayscale(100%) brightness(0%);
   mix-blend-mode: multiply;
 
   @media (prefers-color-scheme: dark) {
@@ -103,7 +103,7 @@ svg {
 }
 
 .instagram:hover {
-  filter: grayscale(0%);
+  filter: grayscale(0%) brightness(100%);
   fill: revert-layer;
   mix-blend-mode: normal;
 

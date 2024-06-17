@@ -2,10 +2,11 @@
 /* #LINKS */
 /*------------------------------------*/
 
-a:where(:hover, :focus),
-a.hover {
+a:where(:hover, :focus) {
   text-decoration: none;
 }
+
+/*------------------------------------*/
 
 .link__subtle {
   text-decoration: none;
@@ -13,4 +14,10 @@ a.hover {
 
 .link__subtle:where(:hover, :focus) {
   text-decoration: underline;
+}
+
+/*------------------------------------*/
+
+a svg {
+  transition: var(--fade);
 }

@@ -35,12 +35,12 @@ export const Widths = ({
   return (
     <>
       <h1>Widths</h1>
-      <WidthCard widths={['swan', 'vulture', 'stork', 'condor', 'pelican', 'albatross']} />
+      <WidthCard widths={['vulture', 'stork', 'condor', 'pelican', 'albatross']} />
       <hr />
       <h2>split</h2>
-      <p>pelican hydra</p>
+      <p>pelican wrap</p>
       <div
-        className='pelican hydra'
+        className='pelican wrap'
         style={{
           height: '100px',
           marginBlockEnd: '1rem',
@@ -52,14 +52,14 @@ export const Widths = ({
             backgroundColor: 'var(--mullen-300)',
           }}
         >
-          hydra?
+          wrap
         </div>
         <div
           style={{
             backgroundColor: 'var(--mullen-300)',
           }}
         >
-          hydra?
+          wrap
         </div>
       </div>
     </>

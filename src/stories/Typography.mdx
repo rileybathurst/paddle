@@ -1,0 +1,51 @@
+// Setting in px is dumb and not getting the name
+
+import { Meta, Typeset } from "@storybook/blocks";
+
+<Meta title="Typography" />
+
+export const typography = {
+  type: {
+    primary: '"Barlow", Arial, sans-serif',
+  },
+  weight: {
+    regular: "400",
+    bold: "700",
+    extrabold: "800",
+    black: "900",
+  },
+  // Font sizes in pixels
+  size: {
+    everest: 3 * 16,
+    aconcagua: 2.5 * 16,
+    denali: 2 * 16,
+    kilimanjaro: 1.5 * 16,
+    elbrus: 1.25 * 16,
+    vinson: 16,
+    kosciuszko: 0.75 * 16,
+  },
+};
+
+export const SampleText =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+
+# Typography
+
+**Font:** Nunito Sans
+
+**Weights:** 400(regular), 700(bold), 800(extrabold), 900(black)
+
+<Typeset
+  fontSizes={[
+    Number(typography.size.kosciuszko),
+    Number(typography.size.vinson),
+    Number(typography.size.elbrus),
+    Number(typography.size.kilimanjaro),
+    Number(typography.size.denali),
+    Number(typography.size.aconcagua),
+    Number(typography.size.everest),
+  ]}
+  fontWeight={typography.weight.black}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
