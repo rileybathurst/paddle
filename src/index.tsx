@@ -13,3 +13,4 @@ export * from "./PaddleSocials";
 
 // Organisms
 export * from "./PaddleTestimonials";
+export * from "./PaddleLocationCard";
