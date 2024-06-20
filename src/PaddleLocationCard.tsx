@@ -107,7 +107,26 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
 }
 
 export function PaddleLocationCard({ svg, name, link, address, description, opening_time, closing_time, locale, background }: LocationCardTypes) {
-  // ! I was having issues pulled the other link
+  if (link.includes('http')) {
+    return (
+      <a href={link}
+        className={`location ${background}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={name}
+      >
+        <Content
+          svg={svg}
+          name={name}
+          address={address}
+          description={description}
+          opening_time={opening_time}
+          closing_time={closing_time}
+          locale={locale}
+        />
+      </a>
+    )
+  }
   return (
     <Link
       to={`/${link}`}
