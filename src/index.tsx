@@ -10,7 +10,8 @@ export * from "./PaddleTime";
 // Molecules
 export * from "./PaddleComposition";
 export * from "./PaddleSocials";
+export * from "./PaddleLocationCard";
+export * from "./PaddleTestimonials";
 
 // Organisms
-export * from "./PaddleTestimonials";
-export * from "./PaddleLocationCard";
+export * from "./PaddleLocationDeck";

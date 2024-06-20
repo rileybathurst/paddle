@@ -22,7 +22,8 @@ body {
   width: calc(100% - var(--kosciuszko) * 2);
 }
 
-.condor {
+.condor,
+.location {
   max-width: var(--condor);
   flex-basis: var(--condor);
   margin-inline: auto;
@@ -111,4 +112,35 @@ footer {
   display: flex;
   gap: var(--kilimanjaro);
   margin-block-end: clamp(var(--kilimanjaro), 1.667vw, var(--aconcagua));
+}
+
+/*------------------*/
+/* #LOCATION */
+/*------------------*/
+
+.location-deck {
+  margin-block-end: var(--kilimanjaro);
+}
+
+.location {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  gap: var(--elbrus);
+  padding: var(--elbrus);
+  border-radius: var(--card-radius);
+
+  > * {
+    flex: 7.5 1; /* guess and check to get the parking on one row in the footer */
+  }
+
+  > svg,
+  .svg {
+    flex: 1 1 max-content;
+  }
+}
+
+.location.false:not(:last-child) {
+  border-block-end: 1px solid;
+  border-radius: 0;
 }
