@@ -106,18 +106,22 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
   )
 }
 
-export const PaddleLocationCard = ({ svg, name, link, address, description, opening_time, closing_time, locale, background }: LocationCardTypes) =>
-  <Link
-    to={`/${link}`}
-    className={`location ${background}`}
-  >
-    <Content
-      svg={svg}
-      name={name}
-      address={address}
-      description={description}
-      opening_time={opening_time}
-      closing_time={closing_time}
-      locale={locale}
-    />
-  </Link>
+export function PaddleLocationCard({ svg, name, link, address, description, opening_time, closing_time, locale, background }: LocationCardTypes) {
+  // ! I was having issues pulled the other link
+  return (
+    <Link
+      to={`/${link}`}
+      className={`location ${background}`}
+    >
+      <Content
+        svg={svg}
+        name={name}
+        address={address}
+        description={description}
+        opening_time={opening_time}
+        closing_time={closing_time}
+        locale={locale}
+      />
+    </Link>
+  )
+}
