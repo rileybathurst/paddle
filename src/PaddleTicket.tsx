@@ -28,11 +28,15 @@ export function PaddleTicket({ ogimage, slug, name, start, finish, duration, tim
           {name}
         </Link>
       </h4>
-      <div className="card__specs">
-        <h4>{time.entry}</h4>
-        {/* // TODO: I'd like a spec backup here */}
-        {fitness ? <h4 className="capitalize">{fitness} <span>Fitness</span></h4> : null}
-      </div>
+
+      {/* // * heavy handed but once the backup is there we can work on this */}
+      {slug !== '2hour' && slug !== '3hour' ?
+        <div className="card__specs">
+          <h4>{time.entry}</h4>
+          {/* // TODO: I'd like a spec backup here */}
+          {fitness ? <h4 className="capitalize">{fitness} <span>Fitness</span></h4> : null}
+        </div>
+        : null}
       <hr />
       <p>{excerpt}</p>
       <hr />
