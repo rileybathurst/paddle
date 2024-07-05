@@ -20,3 +20,12 @@ export * from "./PaddleLocationDeck";
 
 // Test a function
 export * from "./PaddleTestimonials";
+
+// Templates
+
+// Pages
+
+// TODO: test
+// Types
+export * from "./types/ticket-types";
+export * from "./types/location-card-types";
