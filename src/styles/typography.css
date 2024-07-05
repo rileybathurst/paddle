@@ -173,6 +173,14 @@ hr.no {
   font-family: var(--heading_font);
 }
 
+.white-space {
+  white-space: nowrap;
+}
+
+.text-center {
+  text-align: center;
+}
+
 /*------------------*/
 /* #HEADINGS */
 /*------------------*/

@@ -13,6 +13,7 @@ export * from "./PaddleComposition";
 export * from "./PaddleSocials";
 export * from "./PaddleLocationCard";
 export * from "./PaddleTestimonials";
+export * from "./PaddleTicket";
 
 // Organisms
 export * from "./PaddleLocationDeck";

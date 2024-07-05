@@ -11,13 +11,15 @@ export const Page = () => {
   return (
     <>
       <Header />
-      <main className="pelican wrap">
+      <main className="albatross wrap">
         <section>
-          <h2 className="page-title">
-            {faker.company.catchPhrase()}
-          </h2>
-          <div className="margin-block-end-aconcagua">
-            <p>{faker.lorem.sentences(5)}</p>
+          <div className='pelican'>
+            <h2 className="page-title">
+              {faker.company.catchPhrase()}
+            </h2>
+            <div className="margin-block-end-aconcagua">
+              <p>{faker.lorem.sentences(5)}</p>
+            </div>
           </div>
 
           <LocationDeck
