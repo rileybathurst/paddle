@@ -129,7 +129,7 @@ export function PaddleLocationCard({ svg, name, link, address, description, open
   }
   return (
     <Link
-      to={`/${link}`}
+      to={link}
       className={`location ${background}`}
     >
       <Content
