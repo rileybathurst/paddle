@@ -1,0 +1,216 @@
+/*------------------*/
+/* #CARDS */
+/*------------------*/
+/* TODO: needs sub-grid */
+.card,
+.ticket {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid transparent;
+  border-radius: var(--card-radius);
+  /* needed to control nested elements */
+  text-decoration: none;
+
+  .card__placeholder {
+    max-height: 5rem;
+    border: none;
+    border-radius: 0;
+    margin-block-end: var(--kilimanjaro);
+  }
+
+  .image-link {
+    transition: var(--fade);
+    transform: scale(1);
+    z-index: var(--floor);
+  }
+
+  .image-link:where(:hover, :focus) {
+    transform: scale(1.05);
+  }
+
+  .card__image {
+    margin-block-end: var(--kilimanjaro);
+    transition: var(--fade);
+  }
+
+  .card__image:where(:hover, :focus) {
+    /* opacity: 0.8; */
+    filter: brightness(80%);
+  }
+
+  .card__title {
+    font-size: var(--denali);
+    margin-inline: var(--kosciuszko);
+    line-height: var(--aconcagua);
+  }
+
+  .card__specs {
+    width: calc(100% - var(--kilimanjaro));
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-inline: var(--kosciuszko);
+    margin-block-end: var(--elbrus);
+
+    > * {
+      margin: 0; /* reset */
+    }
+  }
+
+  .card__span {
+    font-size: var(--vinson);
+    text-transform: uppercase;
+  }
+
+  p {
+    margin-inline: var(--kosciuszko);
+  }
+
+  hr {
+    margin-inline: var(--kosciuszko);
+  }
+
+  .card__details {
+    display: flex;
+    width: calc(100% - var(--kilimanjaro));
+    margin-inline: var(--kosciuszko);
+    margin-block-end: var(--elbrus);
+    justify-content: space-between;
+
+    > * {
+      margin: 0;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: var(--denali);
+      font-size: clamp(var(--vinson), 1.667vw, var(--denali));
+      font-weight: normal;
+      line-height: var(--everest);
+    }
+
+    button {
+      line-height: var(--denali);
+    }
+  }
+
+  .badge {
+    z-index: var(--floor);
+    place-self: start;
+    padding: var(--kosciuszko);
+    margin: var(--kosciuszko);
+    border-radius: var(--card-radius);
+    opacity: 0.9;
+
+    h5 {
+      margin: 0;
+      opacity: 1;
+      font-weight: normal;
+    }
+  }
+}
+
+.card:hover {
+  p {
+    text-decoration: underline;
+  }
+}
+
+.deck:empty {
+  display: none;
+}
+
+.deck__column {
+  grid-template-columns: 1fr;
+}
+
+.deck__more {
+  max-width: var(--pelican);
+  margin-inline: auto;
+  padding-inline: var(--kosciuszko);
+
+  button {
+    margin-block-start: var(--kilimanjaro);
+    margin-inline: auto;
+  }
+}
+
+.card--split {
+  flex-direction: row !important; /* TODO can I increase the specificity */
+  > * {
+    flex: 1 1 50%;
+  }
+}
+
+/*------------------*/
+/* #RETAIL LOGO */
+/*------------------*/
+
+.brand-logo {
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--elbrus);
+  max-width: max-content;
+  /* border: 1px solid var(--tin-soldier); im not sure yet */
+  margin-block-end: var(--kilimanjaro);
+  padding-block: var(--kilimanjaro);
+  padding-inline: var(--kosciuszko);
+  align-items: center;
+  font-size: var(--denali); /* grabs any h level */
+
+  > * {
+    margin-block-end: 0;
+  }
+
+  svg {
+    width: 10rem; /* guess and check */
+    margin-block-end: var(--kosciuszko);
+  }
+}
+
+.brand__header {
+  clip-path: inset(0 -100vmax);
+
+  hr {
+    margin-block-end: var(--elbrus);
+  }
+}
+
+/*------------------*/
+/* #LOCATION DECK AND CARDS */
+/*------------------*/
+
+.home__here, /* TODO rename this to .location__multiple everywhere */
+.location__deck {
+  max-width: var(--pelican);
+  margin-inline: auto;
+  display: flex;
+  flex-flow: row wrap;
+
+  > * {
+    /* TODO: variable */
+    flex: 1 1 20rem;
+  }
+}
+
+.here__location, /* TODO rename this to .location everywhere */
+.location_card {
+  display: flex;
+  flex-flow: column;
+  gap: var(--vinson);
+  justify-content: space-between;
+  margin-block-end: var(--kilimanjaro);
+  padding-block-end: var(--kilimanjaro);
+  border-block-end: 1px solid;
+  padding: var(--kosciuszko);
+  border-radius: var(--kosciuszko);
+  font-weight: 600;
+}
+
+/* can location cards be laid out horizontally but I think they never have a background if they are so maybe they are a seperate thing thing thats not a card? */

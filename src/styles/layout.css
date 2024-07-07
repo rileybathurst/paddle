@@ -11,7 +11,10 @@ body {
 .condor,
 .pelican,
 .albatross,
-.location {
+.location,
+header,
+main,
+footer {
   margin-inline: auto;
   padding-inline: var(--kosciuszko);
   width: calc(100% - var(--kosciuszko) * 2);
@@ -22,7 +25,10 @@ body {
   flex-basis: var(--vulture);
 }
 
-.stork {
+.stork,
+header,
+main,
+footer {
   max-width: var(--stork);
   flex-basis: var(--stork);
 }
@@ -85,17 +91,34 @@ body {
 }
 
 /*------------------*/
-/* #MAIN */
+/* #DEFAULTS */
 /*------------------*/
 
 header,
 main,
 footer {
-  max-width: var(--stork);
-  margin-inline: auto;
-  /* TODO: clamp this */
-  padding-inline: var(--kosciuszko);
-  margin-block-end: var(--everest);
+  margin-block-end: clamp(var(--kosciuszko), 2.5vw, var(--denali));
+}
+
+header {
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  h2 {
+    max-width: var(--vulture);
+    margin-inline: auto;
+    font-size: 2rem;
+
+    a {
+      display: inline-block;
+    }
+  }
+
+  button:hover {
+    box-shadow: none; /* reset */
+  }
 }
 
 /*------------------*/

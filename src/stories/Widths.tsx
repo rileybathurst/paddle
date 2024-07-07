@@ -130,6 +130,7 @@ export const Widths = ({
           {/* <p className='text-center'>{faker.lorem.sentence()}</p> */}
 
           <section className='pelican'>
+            Albatross wrap with pelican inside a nested div
             Double nested with the pelican inside the next layer down also stops the problems
             <p>{faker.lorem.paragraphs()}</p>
           </section>
