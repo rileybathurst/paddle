@@ -14,7 +14,8 @@ body {
 .location,
 header,
 main,
-footer {
+footer,
+.deck {
   margin-inline: auto;
   padding-inline: var(--kosciuszko);
   width: calc(100% - var(--kosciuszko) * 2);
@@ -44,14 +45,16 @@ footer {
   flex-basis: var(--pelican);
 }
 
-.albatross {
+.albatross,
+.deck {
   max-width: var(--albatross);
   flex-basis: var(--albatross);
 }
 
 /*------------------------------------*/
 
-.wrap {
+.wrap,
+.deck {
   display: flex;
   flex-flow: row wrap;
   gap: clamp(var(--kosciuszko), 1.667vw, var(--denali));
@@ -65,7 +68,8 @@ footer {
 }
 
 .pelican.wrap > *,
-.albatross.wrap > * {
+.albatross.wrap > *,
+.deck > * {
   max-width: none;
   margin-inline: 0;
   padding-inline: 0;
@@ -75,7 +79,8 @@ footer {
   flex: 1 1 calc(var(--pelican) / 2 - 1rem);
 }
 
-.albatross.wrap > * {
+.albatross.wrap > *,
+.deck > * {
   flex: 1 1 calc(var(--albatross) / 2 - 1rem);
 }
 
@@ -84,7 +89,8 @@ footer {
 /*------------------------------------*/
 
 /* this isnt a direct nested its always down another layer */
-.albatross .pelican {
+.albatross .pelican,
+.deck * {
   /* ? margin-inline: 0; ? should this be centered */
   width: 100%; /* resets the padding */
   padding-inline: 0;
