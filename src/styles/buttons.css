@@ -2,18 +2,19 @@
 /* #BUTTONS */
 /*------------------------------------*/
 
+/* TODO: variables */
 button,
 .button,
 .book-now {
   background: none;
-  border-radius: 0.25rem;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
+  border-radius: var(--card-radius);
+  padding: var(--kosciuszko) var(--vinson);
+  font-size: var(--vinson);
   cursor: pointer;
   margin-block-end: var(--elbrus);
-  transition: 0.5s ease;
+  transition: var(--slow);
   display: block;
-  line-height: 1.5rem;
+  line-height: var(--kilimanjaro);
   text-decoration: none;
   width: max-content;
   border: 1px solid;
@@ -32,10 +33,38 @@ button:active {
   box-shadow: var(--umbra);
 }
 
+.book-now {
+  margin-block-start: var(--kosciuszko);
+  text-align: center;
+  display: inline-block; /* same as a button */
+}
+
 /*------------------*/
 /* #MENU */
 /*------------------*/
 
 menu button {
   margin: 0;
+}
+
+/*------------------------------------*/
+
+.button__double {
+  display: flex;
+  align-items: center;
+  gap: var(--denali);
+}
+
+.buttonGroup {
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--vinson);
+  margin-block-end: var(--baseline);
+}
+
+/*------------------------------------*/
+
+footer .book-now {
+  margin-block-start: 0;
+  margin-block-end: var(--baseline);
 }

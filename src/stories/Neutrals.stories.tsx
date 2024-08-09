@@ -1,19 +1,19 @@
 // this is the Name.stories.tsx file
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Location } from './Location';
+import { Neutrals } from './Neutrals';
 
 const meta = {
-  component: Location,
-  title: 'Molecules/Location',
+  component: Neutrals,
+  title: 'Atoms/Neutrals',
   args: { onClick: fn() },
-} satisfies Meta<typeof Location>;
+} satisfies Meta<typeof Neutrals>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    backed: true,
+    primary: true,
   },
 };

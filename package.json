@@ -1,7 +1,7 @@
 {
   "name": "@rileybathurst/paddle",
   "private": false,
-  "version": "0.0.42",
+  "version": "0.0.44",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,11 +9,11 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "start": "storybook dev -p 6006",
-    "run storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "color-cards": "^1.0.14",
+    "color-cards": "^1.0.15",
     "gatsby": "^5.13.6",
     "gatsby-plugin-image": "^3.13.1",
     "react": "^18.2.0",

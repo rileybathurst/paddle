@@ -1,5 +1,6 @@
 /*------------------------------------*\
-  #Typography
+  #TYPOGRAPHY
+  /* TODO: Im not happy with this */
 /*------------------------------------*/
 
 body {
@@ -30,7 +31,8 @@ h6 {
   font-weight: 400;
 }
 
-h1 {
+h1,
+.everest {
   margin-top: 0; /* browser reset */
   font-size: 3rem; /* 48px */
   line-height: 3.75rem; /* 60px */
@@ -134,8 +136,7 @@ p {
 }
 
 .two-small-lines {
-  margin-bottom: 0.5rem; /* 8px */
-  /* two lines 40px */
+  margin-bottom: 0.5rem; /* TODO: */
 }
 
 /*------------------*/
@@ -188,7 +189,7 @@ hr.no {
 hgroup {
   display: flex;
   flex-flow: row wrap;
-  column-gap: 1ch;
+  column-gap: 1ch; /* TODO: */
   align-items: baseline;
 }
 
@@ -205,7 +206,7 @@ hgroup {
 
 .brow {
   order: 1;
-  margin-block-end: 1rem;
+  margin-block-end: var(--vinson);
 }
 
 .supra {
@@ -222,8 +223,25 @@ hgroup {
 }
 
 select {
-  font-size: 1rem;
+  font-size: var(--vinson);
   font-family: var(--body_font);
   margin-block-end: var(--elbrus);
   margin-block-end: 0;
+  /* A reset of styles, including removing the default dropdown arrow */
+  appearance: none;
+  /* Additional resets for further consistency */
+  background-color: transparent;
+  border: none;
+  padding: 0 var(--vinson) 0 0;
+  margin: 0;
+  width: 100%;
+  cursor: inherit;
+  line-height: inherit;
+}
+
+/*------------------*/
+
+/* fixes a bug with new lines */
+.react-markdown {
+  white-space: pre-wrap;
 }

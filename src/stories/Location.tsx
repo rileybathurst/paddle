@@ -4,18 +4,18 @@ import React from 'react';
 import { faker } from '@faker-js/faker';
 
 interface LocationProps {
-  primary?: boolean;
+  backed?: boolean;
   onClick?: () => void;
 }
 
 export const Location = ({
-  primary = false,
+  backed = true,
   ...props
 }: LocationProps) => {
 
   return (
     <a
-      className={`location ${primary ?? 'backed'}`}
+      className={`location ${backed ?? 'backed'}`}
       href="https://goo.gl/maps/atoK4oyJRbV3EKuK9"
       rel="noopener noreferrer"
     >

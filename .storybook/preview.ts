@@ -1,6 +1,7 @@
 import type { Preview } from "@storybook/react";
 
 import "../src/styles/app.css";
+import "color-cards/src/styles/app.css";
 
 const preview: Preview = {
   parameters: {

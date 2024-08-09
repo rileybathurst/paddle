@@ -1,6 +1,11 @@
 /*------------------*/
 /* #CARDS */
 /*------------------*/
+
+.deck {
+  margin-block-end: var(--aconcagua);
+}
+
 /* TODO: needs sub-grid */
 .card,
 .ticket {
@@ -36,7 +41,6 @@
   }
 
   .card__image:where(:hover, :focus) {
-    /* opacity: 0.8; */
     filter: brightness(80%);
   }
 
@@ -141,13 +145,6 @@
   }
 }
 
-.card--split {
-  flex-direction: row !important; /* TODO can I increase the specificity */
-  > * {
-    flex: 1 1 50%;
-  }
-}
-
 /*------------------*/
 /* #RETAIL LOGO */
 /*------------------*/
@@ -169,48 +166,7 @@
   }
 
   svg {
-    width: 10rem; /* guess and check */
+    width: var(--vulture); /* guess and check */
     margin-block-end: var(--kosciuszko);
   }
 }
-
-.brand__header {
-  clip-path: inset(0 -100vmax);
-
-  hr {
-    margin-block-end: var(--elbrus);
-  }
-}
-
-/*------------------*/
-/* #LOCATION DECK AND CARDS */
-/*------------------*/
-
-.home__here, /* TODO rename this to .location__multiple everywhere */
-.location__deck {
-  max-width: var(--pelican);
-  margin-inline: auto;
-  display: flex;
-  flex-flow: row wrap;
-
-  > * {
-    /* TODO: variable */
-    flex: 1 1 20rem;
-  }
-}
-
-.here__location, /* TODO rename this to .location everywhere */
-.location_card {
-  display: flex;
-  flex-flow: column;
-  gap: var(--vinson);
-  justify-content: space-between;
-  margin-block-end: var(--kilimanjaro);
-  padding-block-end: var(--kilimanjaro);
-  border-block-end: 1px solid;
-  padding: var(--kosciuszko);
-  border-radius: var(--kosciuszko);
-  font-weight: 600;
-}
-
-/* can location cards be laid out horizontally but I think they never have a background if they are so maybe they are a seperate thing thing thats not a card? */

@@ -12,4 +12,6 @@
 @import "links";
 @import "buttons";
 @import "lists";
+@import "tables";
+@import "visibility";
 @import "a11y";

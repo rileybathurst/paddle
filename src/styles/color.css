@@ -19,3 +19,11 @@ body {
 .top-bar {
   clip-path: inset(0 -100vmax);
 }
+
+/*------------------------------------*/
+/* #LOCATION */
+/*------------------------------------*/
+
+.location.true {
+  background-color: antiquewhite;
+}

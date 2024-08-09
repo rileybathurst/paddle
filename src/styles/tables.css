@@ -1,0 +1,124 @@
+/*------------------*/
+/* #PRICING CHART */
+/*------------------*/
+
+.pricing-chart {
+  display: flex;
+  text-align: center;
+
+  /* columns */
+  > * {
+    display: flex;
+    flex: 1 1 10rem;
+    flex-direction: column;
+
+    /* rows */
+    > * {
+      > * {
+        margin: 0;
+      }
+    }
+
+    /* first row */
+    > *:first-child {
+      margin: 0;
+      border-top: none;
+    }
+  }
+
+  h2,
+  h4,
+  p {
+    font-size: clamp(0.75rem, 1.25vw, 1.5rem);
+    line-height: clamp(1rem, 1.5vw, 2rem);
+    padding: clamp(0.5rem, 1vw, 1rem);
+  }
+
+  h4 {
+    margin: 0.25px;
+  }
+
+  p {
+    font-size: 0.75rem;
+    margin: 0.25px;
+  }
+
+  h4 span {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+  }
+
+  p span {
+    white-space: nowrap;
+  }
+
+  *:last-child > * {
+    border-right: none;
+  }
+}
+
+.charts {
+  .pricing-chart:not(:last-child) {
+    margin-block-end: 0;
+  }
+
+  .pricing-chart:last-child {
+    margin-block-end: 1.5rem;
+
+    p {
+      border-block-end: none;
+    }
+
+    p:last-child {
+      border-inline-end: none;
+    }
+  }
+}
+
+/*------------------*/
+/* #RENTAL CHART */
+/*------------------*/
+
+.rental-chart {
+  display: grid;
+  text-align: center;
+  margin-block-end: 1.5rem;
+
+  .row {
+    display: grid;
+    gap: 0;
+    margin: 0;
+    grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+
+    /* box */
+    > * {
+      padding: clamp(0.5rem, 1vw, 1rem);
+    }
+
+    > *:last-child {
+      border-inline-end: none;
+    }
+  }
+
+  .row:last-child {
+    > * {
+      border-block-end: none;
+    }
+  }
+
+  .row-header {
+    font-weight: bold;
+  }
+
+  h4 {
+    margin: 0.25px;
+    font-size: clamp(0.75rem, 1.25vw, 1.5rem);
+    line-height: clamp(1rem, 1.5vw, 2rem);
+  }
+
+  p {
+    font-size: 0.75rem;
+    margin: 0.25px;
+  }
+}
