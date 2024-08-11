@@ -79,12 +79,14 @@
 
   .card__details {
     display: flex;
+    gap: var(--vinson);
     width: calc(100% - var(--kilimanjaro));
     margin-inline: var(--kosciuszko);
     margin-block-end: var(--elbrus);
     justify-content: space-between;
 
     > * {
+      flex: 1 1;
       margin: 0;
     }
 
@@ -93,7 +95,6 @@
     h4,
     h5,
     h6 {
-      font-size: var(--denali);
       font-size: clamp(var(--vinson), 1.667vw, var(--denali));
       font-weight: normal;
       line-height: var(--everest);

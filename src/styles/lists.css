@@ -74,16 +74,16 @@ ol {
 .react-aria-Breadcrumbs {
   max-width: var(--pelican);
   margin-inline: auto; /* overwrite nav */
-  padding-inline: 0.75rem; /* overwrite nav */
-  list-style: none;
   display: flex;
   flex-flow: row wrap;
-  margin-inline: auto;
-  padding-block-start: 1.5rem;
+  list-style: none; /* reset */
   margin-block-end: 0;
+  padding-inline: var(--kosciuszko); /* overwrite nav */
+  padding-block: var(--kilimanjaro);
   text-transform: capitalize;
 
   li {
+    /* ? is this needed its a flex */
     display: inline;
 
     li:not(:last-child)::after {

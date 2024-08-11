@@ -76,12 +76,12 @@ footer {
 }
 
 .pelican.wrap > * {
-  flex: 1 1 calc(var(--pelican) / 2 - 1rem);
+  flex: 1 1 calc(var(--pelican) / 2 - var(--vinson));
 }
 
 .albatross.wrap > *,
 .deck > * {
-  flex: 1 1 calc(var(--albatross) / 2 - 1rem);
+  flex: 1 1 calc(var(--albatross) / 2 - var(--vinson));
 }
 
 /*------------------------------------*/
@@ -90,8 +90,10 @@ footer {
 
 /* this isnt a direct nested its always down another layer */
 .albatross .pelican,
-.deck * {
+/* ! deck * needs to be removed its maybe only the image that needs it */
+.deck *:not(p, hr) {
   /* ? margin-inline: 0; ? should this be centered */
+  /* TODO: this needs a :not for a few things */
   width: 100%; /* resets the padding */
   padding-inline: 0;
 }
@@ -153,8 +155,8 @@ header {
 
 .social {
   display: flex;
-  gap: var(--kilimanjaro);
-  margin-block-end: clamp(var(--kilimanjaro), 1.667vw, var(--aconcagua));
+  gap: clamp(var(--kilimanjaro), 1.667vw, var(--aconcagua));
+  margin-block: clamp(var(--kilimanjaro), 1.667vw, var(--aconcagua));
 }
 
 /*------------------*/
