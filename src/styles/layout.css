@@ -36,7 +36,7 @@ footer {
 
 .condor,
 .location {
-  max-width: var(--condor), calc(100vw - var(--denali));
+  max-width: min(var(--condor), calc(100vw - var(--denali)));
   flex-basis: var(--condor);
 }
 
