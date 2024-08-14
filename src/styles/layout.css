@@ -22,7 +22,7 @@ footer,
 }
 
 .vulture {
-  max-width: var(--vulture);
+  max-width: min(var(--vulture), calc(100vw - var(--denali)));
   flex-basis: var(--vulture);
 }
 
@@ -30,24 +30,27 @@ footer,
 header,
 main,
 footer {
-  max-width: var(--stork);
+  max-width: min(var(--stork), calc(100vw - var(--denali)));
   flex-basis: var(--stork);
 }
 
 .condor,
-.location {
+.location,
+.react-aria-Breadcrumbs.condor {
   max-width: min(var(--condor), calc(100vw - var(--denali)));
   flex-basis: var(--condor);
 }
 
-.pelican {
-  max-width: var(--pelican);
+.pelican,
+.react-aria-Breadcrumbs {
+  max-width: min(var(--pelican), calc(100vw - var(--denali)));
   flex-basis: var(--pelican);
 }
 
 .albatross,
-.deck {
-  max-width: var(--albatross);
+.deck,
+.react-aria-Breadcrumbs.albatross {
+  max-width: min(var(--albatross), calc(100vw - var(--denali)));
   flex-basis: var(--albatross);
 }
 
@@ -127,6 +130,39 @@ header {
   button:hover {
     box-shadow: none; /* reset */
   }
+}
+
+/*------------------------------------*/
+/* #BLOCK END */
+/* this seems like something you could do more interesting in a programatic way */
+/*------------------------------------*/
+
+.everest-block-end {
+  margin-block-end: var(--everest);
+}
+
+.aconcagua-block-end {
+  margin-block-end: var(--aconcagua);
+}
+
+.denali-block-end {
+  margin-block-end: var(--denali);
+}
+
+.kilimanjaro-block-end {
+  margin-block-end: var(--kilimanjaro);
+}
+
+.elbrus-block-end {
+  margin-block-end: var(--elbrus);
+}
+
+.vinson-block-end {
+  margin-block-end: var(--vinson);
+}
+
+.kosciuszko-block-end {
+  margin-block-end: var(--kosciuszko);
 }
 
 /*------------------*/

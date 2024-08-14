@@ -5,6 +5,7 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { LocationDeck } from './LocationDeck';
 import { Pricing } from './Pricing';
+import { Breadcrumbs } from './Breadcrumbs';
 
 export const Page = () => {
 
@@ -120,6 +121,8 @@ export const Page = () => {
           {/* stay gold */}
         </div>
       </section>
+
+      <Breadcrumbs />
       <Footer />
     </>
   );

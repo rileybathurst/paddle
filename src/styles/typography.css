@@ -244,4 +244,5 @@ select {
 /* fixes a bug with new lines */
 .react-markdown {
   white-space: pre-wrap;
+  line-height: 1.5;
 }
