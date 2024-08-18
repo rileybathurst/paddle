@@ -147,6 +147,7 @@ p {
 hr {
   border: none; /* reset */
   border-bottom: 1px solid;
+  margin-block-end: var(--kosciuszko);
 
   @media (prefers-color-scheme: dark) {
     border-bottom: 1px solid;

@@ -1,13 +1,13 @@
 // this is the Name.stories.tsx file
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Breadcrumbs } from './Breadcrumbs';
+import { Hero } from './Hero';
 
 const meta = {
-  component: Breadcrumbs,
-  title: 'Molecules/Breadcrumbs',
+  component: Hero,
+  title: 'Organisms/Hero',
   args: { onClick: fn() },
-} satisfies Meta<typeof Breadcrumbs>;
+} satisfies Meta<typeof Hero>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

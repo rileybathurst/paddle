@@ -2,15 +2,15 @@
 import React from 'react';
 import { faker } from '@faker-js/faker';
 
-interface BreadcrumbProps {
+interface PaddleBreadcrumbProps {
   primary?: boolean;
   onClick?: () => void;
 }
 
-export const Breadcrumb = ({
+export const PaddleBreadcrumb = ({
   primary = false,
   ...props
-}: BreadcrumbProps) => {
+}: PaddleBreadcrumbProps) => {
 
   return (
     <li className="react-aria-Breadcrumb">

@@ -25,6 +25,9 @@ export * from "./PaddleTestimonials";
 
 // Pages
 
+// 
+export * from "./PaddleSEO";
+
 // TODO: test
 // Types
 export * from "./types/ticket-types";

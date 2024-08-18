@@ -1,0 +1,160 @@
+import React from "react";
+import { Script } from "gatsby";
+
+interface BreadcrumbsTypes {
+  url?: string;
+  [key: number]: {
+    name?: string;
+    item?: string;
+  };
+}[]
+// I could probably pass it two arguments instead but for now
+function Breadcrumbs(breadcrumbs: BreadcrumbsTypes) {
+  if (!Object.entries(breadcrumbs).length) return null;
+
+  // remove the breadcrumbs.url from the Object.entries
+  // console.log(breadcrumbs.url);
+  const { url, ...rest } = breadcrumbs;
+
+  // console.log(rest);
+
+  return (
+    <Script type="application/ld+json">
+      {`
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            ${Object.entries(rest).map(([key, breadcrumb]) => {
+        return `{
+          "@type": "ListItem",
+          "position": ${Number.parseInt(key) + 1},
+          "name": "${breadcrumb.name}",
+          "item": "${breadcrumbs.url}/${breadcrumb.item}"
+        }`
+      })}
+          ]
+        }
+      `}
+    </Script>
+  );
+}
+
+type SEOtypes = {
+  title?: string;
+  description?: string;
+  url: string;
+  ogImage?: string;
+  ogImagedescription?: string;
+  breadcrumbs?: BreadcrumbsTypes;
+  // children: React.ReactNode;
+
+  strapiLocale: {
+    name: string;
+    topbar: {
+      topbar: string;
+    };
+    url: string;
+    themeColor: string;
+    latitude: string;
+    longitude: string;
+    geoRadius: string;
+    phone: string;
+    ogImage: string;
+    ogImagedescription: string;
+  };
+
+  allStrapiLocation: {
+    nodes: {
+      streetAddress: string;
+      addressLocality: string;
+      addressRegion: string;
+      postalCode: string;
+      paymentAccepted: string;
+      phone: string;
+      opening_time: string;
+      closing_time: string;
+    }[];
+  };
+}
+
+export const PaddleSEO = ({ title, description, ogImage, ogImagedescription, breadcrumbs, strapiLocale, allStrapiLocation }: SEOtypes) => {
+
+  const businessName = `${strapiLocale.name} Kayak & Paddleboard rentals and tours`;
+
+  const PaddleTitle = title ? `${title} | ${businessName}` : `${businessName} | ${strapiLocale.topbar.topbar} `;
+  // TODO: tagline would be a better fallback description
+  const PaddleDescription = description || businessName;
+  // url: `${strapiLocale.url}${SE0.url}` || strapiLocale.url,
+  const PaddleImage = ogImage || strapiLocale.ogImage;
+  const PaddleImageAlt = ogImagedescription || strapiLocale.ogImagedescription;
+
+  // const query = '- cash\n - credit card';
+  // const formatted = query.split('\n').map((item) => item.trim().replace('- ', '')).join(', ');
+  // console.log(formatted);
+
+  // TODO: this is now allStrapiLocation.nodes
+  // TODO: I think this will be a keylocation piece
+  // console.log(strapiLocation.paymentAccepted);
+  // const paymentAcceptedQuery = strapiLocation.paymentAccepted ? strapiLocation.paymentAccepted : '';
+  // const paymentAcceptedFormatted = paymentAcceptedQuery.split('\n').map((payment: string) => payment.trim().replace('- ', '')).join(', ');
+  // console.log(paymentAcceptedFormatted);
+
+  return (
+    <>
+      <title>{PaddleTitle}</title>
+      <meta name="description" content={PaddleDescription} />
+
+      <meta property="og:type" content="website" />
+      {/* <meta property="og:url" content={url} /> */}
+      <meta property="og:title" content={PaddleTitle} />
+      <meta property="og:description" content={PaddleDescription} />
+      <meta property="og:image" content={PaddleImage} />
+      <meta property="og:image:alt" content={PaddleImageAlt} />
+      <meta name="theme-color" content={strapiLocale.themeColor} />
+
+      <Script type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org/",
+            "@type": "LocalBusiness",
+            "name": "${businessName}",
+            "url": "${strapiLocale.url}",
+            "description": "${strapiLocale.name}",
+            "image": "${PaddleImage}",
+            
+            ${allStrapiLocation.nodes.map((location) => {
+          return `{
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "${location.streetAddress}",
+                  "addressLocality": "${location.addressLocality}",
+                  "addressRegion": "${location.addressRegion}",
+                  "postalCode": "${location.postalCode}"
+                },
+              }`
+        })},
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "${strapiLocale.latitude}",
+              "longitude": "${strapiLocale.longitude}"
+            },
+            "areaServed": {
+              "@type": "GeoCircle",
+              "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "${strapiLocale.latitude}",
+                "longitude": "${strapiLocale.longitude}"
+              },
+              "geoRadius": "${strapiLocale.geoRadius}"
+            },
+            "telephone": "${strapiLocale.phone}",
+          }
+        `}
+      </Script>
+
+      <Breadcrumbs {...breadcrumbs} />
+      {/* {SE0.children} */}
+    </>
+  );
+};
