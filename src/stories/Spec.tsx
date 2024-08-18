@@ -8,11 +8,11 @@ interface Spec3Types {
     data: number;
     unit: string;
   };
-  test: {
+  test?: {
     data: string;
     unit: string;
   };
-  length: {
+  length?: {
     data: number;
     unit: string;
   };
@@ -41,7 +41,7 @@ function Spec3({ crew, capacity, test, length }: Spec3Types) {
         if (key === 'length' && typeof value.data === 'number') {
           return (
             <section key={key}>
-              <h3>{key} - <Remainder inches={value.data} /></h3>
+              {/* <h3>{key} - <Remainder inches={value.data} /></h3> */}
             </section>
           )
         }
@@ -60,7 +60,7 @@ function Spec3({ crew, capacity, test, length }: Spec3Types) {
 
         return (
           <section key={key}>
-            <h3>{key} - {value}</h3>
+            {/* <h3>{key} - {value}</h3> */}
           </section>
         )
       }
@@ -74,22 +74,10 @@ function Spec3({ crew, capacity, test, length }: Spec3Types) {
   );
 }
 
-
-
-interface SpecProps {
-  primary?: boolean;
-  onClick?: () => void;
-}
-
-export const Spec = ({
-  primary = false,
-  ...props
-}: SpecProps) => {
+export const Spec = () => {
 
   return (
-    <main
-      {...props}
-    >
+    <main>
       <Spec3
         crew={faker.helpers.arrayElement(['single', 'double'])}
         capacity={{ data: faker.number.int(100), unit: "lbs" }}

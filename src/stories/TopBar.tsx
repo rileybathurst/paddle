@@ -1,15 +1,7 @@
 // this is the Name.tsx file
 import React from 'react';
 
-interface TopBarProps {
-  primary?: boolean;
-  onClick?: () => void;
-}
-
-export const TopBar = ({
-  primary = false,
-  ...props
-}: TopBarProps) => {
+export const TopBar = () => {
 
   return (
     <div className="top-bar" >

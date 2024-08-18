@@ -2,15 +2,7 @@
 import React from 'react';
 import { faker } from '@faker-js/faker';
 
-interface TestimonialProps {
-  primary?: boolean;
-  onClick?: () => void;
-}
-
-export const Testimonial = ({
-  primary = false,
-  ...props
-}: TestimonialProps) => {
+export const Testimonial = () => {
 
   return (
     <li

@@ -5,15 +5,7 @@ import FacebookIcon from '../assets/facebook-icon';
 import InstagramIcon from '../assets/instagram-icon';
 import TripadvisorIcon from '../assets/tripadvisor-icon';
 
-interface SocialsProps {
-  primary?: boolean;
-  onClick?: () => void;
-}
-
-export const Socials = ({
-  primary = false,
-  ...props
-}: SocialsProps) => {
+export const Socials = () => {
 
   return (
     <main className="social">

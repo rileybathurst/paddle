@@ -3,40 +3,13 @@ import React from 'react';
 import { faker } from '@faker-js/faker';
 import { Testimonial } from './Testimonial';
 
-function Deal() {
-
-  const hand = faker.number.int(10);
-  console.log(hand);
-
-  if (hand < 1) {
-    return (
-      <h1>There are no cards available</h1>
-    );
-  }
-
-  const content = [];
-  for (let i = 0; i < hand; i++) {
-    content.push(
-      <Testimonial />
-    );
-  }
-
-  return (<>{content}</>);
-}
-
-interface TestimonialsProps {
-  primary?: boolean;
-  onClick?: () => void;
-}
-
-export const Testimonials = ({
-  primary = false,
-  ...props
-}: TestimonialsProps) => {
+export const Testimonials = () => {
 
   return (
     <ul className='testimonials condor'>
-      <Deal />
+      {Array.from({ length: faker.number.int({ min: 1, max: 10 }) }).map(() => (
+        <Testimonial key={faker.number.int()} />
+      ))}
     </ul>
   );
 };

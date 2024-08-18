@@ -5,9 +5,9 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { LocationDeck } from './LocationDeck';
 import { Pricing } from './Pricing';
-import { Breadcrumbs } from './PaddleBreadcrumbs';
+import { PaddleBreadcrumbs } from './PaddleBreadcrumbs';
 
-export const Page = () => {
+export const Home = () => {
 
   return (
     <>
@@ -122,7 +122,7 @@ export const Page = () => {
         </div>
       </section>
 
-      <Breadcrumbs />
+      <PaddleBreadcrumbs />
       <Footer />
     </>
   );

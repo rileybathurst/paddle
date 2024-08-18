@@ -10,7 +10,6 @@ interface LocationProps {
 
 export const Location = ({
   backed = true,
-  ...props
 }: LocationProps) => {
 
   return (

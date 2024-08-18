@@ -7,42 +7,7 @@ import { Pricing } from './Pricing';
 import { LocationDeck } from './LocationDeck';
 import { Socials } from './Socials';
 
-function Deal() {
-
-  const roll = faker.number.int(10);
-
-  if (roll < 1) {
-    return (
-      <h1>double zero</h1>
-    );
-  }
-
-  const content = [];
-  for (let i = 0; i < roll; i++) {
-    content.push(
-      <li key={faker.location.city()}>
-        <a href={faker.location.city()}
-          target="_blank"
-          rel='noopener noreferrer'
-        >
-          {faker.location.city()} Kayak &amp; Paddleboard
-        </a>
-      </li>
-    );
-  }
-
-  return content;
-}
-
-interface FooterProps {
-  primary?: boolean;
-  onClick?: () => void;
-}
-
-export const Footer = ({
-  primary = false,
-  ...props
-}: FooterProps) => {
+export const Footer = () => {
 
   return (
     <footer>
@@ -75,7 +40,16 @@ export const Footer = ({
         <div className="footer__locations">
           <h3>Our Partner Locations</h3>
           <ul>
-            <Deal />
+            {Array.from({ length: faker.number.int({ min: 1, max: 10 }) }).map(() => (
+              <li key={faker.location.city()}>
+                <a href={faker.location.city()}
+                  target="_blank"
+                  rel='noopener noreferrer'
+                >
+                  {faker.location.city()} Kayak &amp; Paddleboard
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </section>
@@ -84,7 +58,6 @@ export const Footer = ({
         <hr />
 
         <LocationDeck
-          // locations={data.allStrapiLocation}
           background={false}
         />
       </section>

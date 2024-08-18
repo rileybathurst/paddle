@@ -45,7 +45,7 @@ type SEOtypes = {
   description?: string;
   url: string;
   ogImage?: string;
-  ogImagedescription?: string;
+  ogImageDescription?: string;
   breadcrumbs?: BreadcrumbsTypes;
   // children: React.ReactNode;
 
@@ -60,8 +60,13 @@ type SEOtypes = {
     longitude: string;
     geoRadius: string;
     phone: string;
+    email: string;
     ogImage: string;
-    ogImagedescription: string;
+    ogImageDescription: string;
+    paymentAccepted: string;
+    numberOfEmployees: string;
+    priceRange: string;
+    slogan: string;
   };
 
   allStrapiLocation: {
@@ -78,16 +83,16 @@ type SEOtypes = {
   };
 }
 
-export const PaddleSEO = ({ title, description, ogImage, ogImagedescription, breadcrumbs, strapiLocale, allStrapiLocation }: SEOtypes) => {
+export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, breadcrumbs, strapiLocale, allStrapiLocation }: SEOtypes) => {
 
   const businessName = `${strapiLocale.name} Kayak & Paddleboard rentals and tours`;
 
   const PaddleTitle = title ? `${title} | ${businessName}` : `${businessName} | ${strapiLocale.topbar.topbar} `;
   // TODO: tagline would be a better fallback description
-  const PaddleDescription = description || businessName;
+  const PaddleDescription = description || strapiLocale.slogan;
   // url: `${strapiLocale.url}${SE0.url}` || strapiLocale.url,
   const PaddleImage = ogImage || strapiLocale.ogImage;
-  const PaddleImageAlt = ogImagedescription || strapiLocale.ogImagedescription;
+  const PaddleImageAlt = ogImageDescription || strapiLocale.ogImageDescription;
 
   // const query = '- cash\n - credit card';
   // const formatted = query.split('\n').map((item) => item.trim().replace('- ', '')).join(', ');
@@ -95,10 +100,10 @@ export const PaddleSEO = ({ title, description, ogImage, ogImagedescription, bre
 
   // TODO: this is now allStrapiLocation.nodes
   // TODO: I think this will be a keylocation piece
-  // console.log(strapiLocation.paymentAccepted);
-  // const paymentAcceptedQuery = strapiLocation.paymentAccepted ? strapiLocation.paymentAccepted : '';
-  // const paymentAcceptedFormatted = paymentAcceptedQuery.split('\n').map((payment: string) => payment.trim().replace('- ', '')).join(', ');
-  // console.log(paymentAcceptedFormatted);
+  console.log(strapiLocale.paymentAccepted);
+  const paymentAcceptedQuery = strapiLocale.paymentAccepted ? strapiLocale.paymentAccepted : '';
+  const paymentAcceptedFormatted = paymentAcceptedQuery.split('\n').map((payment: string) => payment.trim().replace('- ', '')).join(', ');
+  console.log(paymentAcceptedFormatted);
 
   return (
     <>
@@ -149,12 +154,42 @@ export const PaddleSEO = ({ title, description, ogImage, ogImagedescription, bre
               "geoRadius": "${strapiLocale.geoRadius}"
             },
             "telephone": "${strapiLocale.phone}",
+            "email": "${strapiLocale.email}",
+
+            "numberOfEmployees" : "${strapiLocale.numberOfEmployees}",
+            "priceRange": "${strapiLocale.priceRange}",
+            "slogan": "${strapiLocale.slogan}",
+            "paymentAccepted": "${paymentAcceptedFormatted}",
           }
         `}
       </Script>
 
-      <Breadcrumbs {...breadcrumbs} />
+      <Breadcrumbs
+        url={strapiLocale.url}
+        {...breadcrumbs}
+      />
       {/* {SE0.children} */}
     </>
   );
 };
+
+// TODO: image alt in rich data
+
+/* "openingHoursSpecification": [
+  ${allStrapiLocation.nodes.map((location) => {
+return `{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "${location.opening_time}",
+    "closes": "${location.closing_time}"
+  }`
+  })}
+], */

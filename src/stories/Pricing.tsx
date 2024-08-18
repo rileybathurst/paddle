@@ -2,15 +2,10 @@
 import React from 'react';
 import { BookNow } from './BookNow';
 
-interface PricingProps {
-  primary?: boolean;
-  onClick?: () => void;
-}
-
-export const Pricing = ({
-  primary = false,
-  ...props
-}: PricingProps) => {
+type PricingTypes = {
+  book: boolean;
+};
+export const Pricing = ({ book }: PricingTypes) => {
 
   return (
     <>
@@ -68,7 +63,8 @@ export const Pricing = ({
         </div>
       </section>
 
-      <BookNow />
+      {/* // TODO: this could be a storybook control */}
+      {book ? <BookNow /> : null}
     </>
   );
 };

@@ -3,40 +3,15 @@ import React from 'react';
 import { Location } from './Location';
 import { faker } from '@faker-js/faker';
 
-function Deal() {
-
-  const roll = faker.number.int(10);
-
-  if (roll < 1) {
-    return (
-      <h1>double zero</h1>
-    );
-  }
-
-  const content = [];
-  for (let i = 0; i < roll; i++) {
-    content.push(
-      <Location key={i} />
-    );
-  }
-
-  return content;
-}
-
-
-interface LocationDeckProps {
-  primary?: boolean;
-  onClick?: () => void;
-}
-
-export const LocationDeck = ({
-  primary = false,
-  ...props
-}: LocationDeckProps) => {
-
+type LocationDeckTypes = {
+  background: boolean;
+};
+export const LocationDeck = ({ background }: LocationDeckTypes) => {
   return (
-    <div className='location-deck'>
-      <Deal />
+    <div className={`location-deck ${background}`}>
+      {Array.from({ length: faker.number.int({ min: 1, max: 10 }) }).map(() => (
+        <Location key={faker.number.int()} />
+      ))}
     </div>
   );
 };

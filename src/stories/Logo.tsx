@@ -2,15 +2,7 @@
 import React from 'react';
 import { faker } from '@faker-js/faker';
 
-interface LogoProps {
-  primary?: boolean;
-  onClick?: () => void;
-}
-
-export const Logo = ({
-  primary = false,
-  ...props
-}: LogoProps) => {
+export const Logo = () => {
 
   return (
     <svg

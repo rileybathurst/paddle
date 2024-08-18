@@ -2,15 +2,7 @@
 import React from 'react';
 import { Eyebrow } from './Eyebrow';
 
-interface TypographyProps {
-  primary?: boolean;
-  onClick?: () => void;
-}
-
-export const Typography = ({
-  primary = false,
-  ...props
-}: TypographyProps) => {
+export const Typography = () => {
 
   return (
     <>

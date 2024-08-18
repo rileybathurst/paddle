@@ -1,15 +1,7 @@
 // this is the Name.tsx file
 import React from 'react';
 
-interface EyebrowProps {
-  primary?: boolean;
-  onClick?: () => void;
-}
-
-export const Eyebrow = ({
-  primary = false,
-  ...props
-}: EyebrowProps) => {
+export const Eyebrow = () => {
 
   return (
     <hgroup className='eyebrow crest'>

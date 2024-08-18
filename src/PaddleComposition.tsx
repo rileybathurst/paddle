@@ -1,32 +1,6 @@
 import * as React from "react"
 // ! this isnt finished it wont have faker when its done
 import { faker } from '@faker-js/faker';
-// import { GatsbyImage } from "gatsby-plugin-image"
-
-// import WaterTexture from "../images/watertexture";
-// import Kayaker from "../images/kayaker";
-// import Supper from "../images/supper";
-// import { useStrapiTextures } from "../hooks/use-strapi-textures"
-
-/* // TODO: rename
-interface TopThreeTypes {
-  className: string;
-}
-function TopThree({ className }: TopThreeTypes) {
-
-  // const { query } = useStrapiTextures()
-  // console.log(query.baseone);
-
-  return <GatsbyImage
-      image={useStrapiTextures().topthree.image.localFile.childImageSharp.gatsbyImageData}
-      alt="deepwater texture"
-      className={`texture-slice crops ${props.className}`}
-      objectFit="contain"
-    />
-
-// ! Testing
-return null;
-} */
 
 
 interface CompositionTypes {
@@ -35,6 +9,7 @@ interface CompositionTypes {
 const PaddleComposition = ({ sport }: CompositionTypes) => {
   return (
     <div className="composition">
+      {sport}
       {/* <WaterTexture className="texture-1" /> */}
       <img
         src={faker.image.urlPlaceholder()}

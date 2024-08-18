@@ -1,22 +1,15 @@
 // this is the Name.tsx file
 import React from 'react';
 import { Ticket } from './Ticket';
+import { faker } from '@faker-js/faker';
 
-interface DeckProps {
-  primary?: boolean;
-  onClick?: () => void;
-}
-
-export const Deck = ({
-  primary = false,
-  ...props
-}: DeckProps) => {
+export const Deck = () => {
 
   return (
     <div className='deck'>
-      {/* // TODO: deal */}
-      <Ticket />
-      <Ticket />
+      {Array.from({ length: faker.number.int({ min: 1, max: 10 }) }).map(() => (
+        <Ticket key={faker.number.int()} />
+      ))}
     </div>
   );
 };

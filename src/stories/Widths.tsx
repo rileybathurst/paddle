@@ -2,11 +2,15 @@
 import { faker } from '@faker-js/faker';
 import React from 'react';
 
-function WidthCard({ widths }) {
+type WidthCardTypes = {
+  widths: string[];
+};
+function WidthCard({ widths }: WidthCardTypes) {
   return (
     <>
       {widths.map((width) => (
         <div
+          key={width}
           className={width}
           style={{
             minHeight: '8rem',
@@ -41,7 +45,10 @@ function WidthCard({ widths }) {
   );
 }
 
-function WarpCards({ widths }) {
+type WarpCardsTypes = {
+  widths: string[];
+};
+function WarpCards({ widths }: WarpCardsTypes) {
   return (
     <>
       {widths.map((width) => (
@@ -93,15 +100,7 @@ function WarpCards({ widths }) {
   )
 }
 
-interface WidthsProps {
-  primary?: boolean;
-  onClick?: () => void;
-}
-
-export const Widths = ({
-  primary = false,
-  ...props
-}: WidthsProps) => {
+export const Widths = () => {
 
   return (
     <>
