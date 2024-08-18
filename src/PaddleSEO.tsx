@@ -83,7 +83,7 @@ type SEOtypes = {
   };
 }
 
-export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, breadcrumbs, strapiLocale, allStrapiLocation }: SEOtypes) => {
+export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, breadcrumbs, strapiLocale, allStrapiLocation, children }: SEOtypes) => {
 
   const businessName = `${strapiLocale.name} Kayak & Paddleboard rentals and tours`;
 
@@ -103,7 +103,7 @@ export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, bre
   console.log(strapiLocale.paymentAccepted);
   const paymentAcceptedQuery = strapiLocale.paymentAccepted ? strapiLocale.paymentAccepted : '';
   const paymentAcceptedFormatted = paymentAcceptedQuery.split('\n').map((payment: string) => payment.trim().replace('- ', '')).join(', ');
-  console.log(paymentAcceptedFormatted);
+  // console.log(paymentAcceptedFormatted);
 
   return (
     <>
@@ -168,7 +168,7 @@ export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, bre
         url={strapiLocale.url}
         {...breadcrumbs}
       />
-      {/* {SE0.children} */}
+      {children}
     </>
   );
 };
