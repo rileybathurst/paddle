@@ -15,18 +15,10 @@ function Breadcrumbs(breadcrumbs: BreadcrumbsTypes) {
   // console.log(breadcrumbs.url);
   const { url, ...rest } = breadcrumbs;
 
-  console.log(breadcrumbs);
-  console.log(rest);
-
-  // TODO: testing
   if (Object.keys(rest).length === 0) {
-    console.error('🦖');
     return null;
   }
 
-  console.log('🦊');
-
-  // console.log(rest);
 
   return (
     <Script type="application/ld+json">
@@ -79,6 +71,13 @@ type SEOtypes = {
     slogan: string;
   };
 
+  strapiLocation: {
+    streetAddress: string;
+    addressLocality: string;
+    addressRegion: string;
+    postalCode: string;
+  };
+
   allStrapiLocation: {
     nodes: {
       name: string;
@@ -97,7 +96,7 @@ type SEOtypes = {
   children: React.ReactNode;
 }
 
-export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, breadcrumbs, strapiLocale, allStrapiLocation, children }: SEOtypes) => {
+export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, breadcrumbs, strapiLocale, strapiLocation, allStrapiLocation, children }: SEOtypes) => {
 
   const businessName = `${strapiLocale.name} Kayak & Paddleboard rentals and tours`;
 
@@ -143,6 +142,14 @@ export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, bre
             "url": "${strapiLocale.url}",
             "description": "${strapiLocale.name}",
             "image": "${PaddleImage}",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "${strapiLocation.streetAddress}",
+              "addressLocality": "${strapiLocation.addressLocality}",
+              "addressRegion": "${strapiLocation.addressRegion}",
+              "postalCode": "${strapiLocation.postalCode}",
+              "addressCountry": "US"
+            }
             
             "department": [
             ${allStrapiLocation.nodes.map((location) => {
@@ -154,7 +161,8 @@ export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, bre
                     "streetAddress": "${location.streetAddress}",
                     "addressLocality": "${location.addressLocality}",
                     "addressRegion": "${location.addressRegion}",
-                    "postalCode": "${location.postalCode}"
+                    "postalCode": "${location.postalCode}",
+                    "addressCountry": "US"
                   }
                 }`
         })}
