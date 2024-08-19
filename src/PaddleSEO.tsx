@@ -12,7 +12,12 @@ interface BreadcrumbsTypes {
 function Breadcrumbs(breadcrumbs: BreadcrumbsTypes) {
 
   // TODO: testing
-  if (!breadcrumbs) return null;
+  if (!breadcrumbs) {
+    console.error('🦖');
+    return null;
+  }
+
+  console.log('🦊');
 
   // remove the breadcrumbs.url from the Object.entries
   // console.log(breadcrumbs.url);
