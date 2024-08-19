@@ -106,12 +106,12 @@ export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, bre
 
   // TODO: this is now allStrapiLocation.nodes
   // TODO: I think this will be a keylocation piece
-  console.log(strapiLocale.paymentAccepted);
+  // console.log(strapiLocale.paymentAccepted);
   const paymentAcceptedQuery = strapiLocale.paymentAccepted ? strapiLocale.paymentAccepted : '';
   const paymentAcceptedFormatted = paymentAcceptedQuery.split('\n').map((payment: string) => payment.trim().replace('- ', '')).join(', ');
   // console.log(paymentAcceptedFormatted);
 
-  console.log(children);
+  console.log(breadcrumbs);
 
   return (
     <>
