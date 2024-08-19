@@ -11,17 +11,20 @@ interface BreadcrumbsTypes {
 // I could probably pass it two arguments instead but for now
 function Breadcrumbs(breadcrumbs: BreadcrumbsTypes) {
 
+  // remove the breadcrumbs.url from the Object.entries
+  // console.log(breadcrumbs.url);
+  const { url, ...rest } = breadcrumbs;
+
+  console.log(breadcrumbs);
+  console.log(rest);
+
   // TODO: testing
-  if (!breadcrumbs) {
+  if (!rest) {
     console.error('🦖');
     return null;
   }
 
   console.log('🦊');
-
-  // remove the breadcrumbs.url from the Object.entries
-  // console.log(breadcrumbs.url);
-  const { url, ...rest } = breadcrumbs;
 
   // console.log(rest);
 
