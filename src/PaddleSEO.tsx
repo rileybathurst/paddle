@@ -71,6 +71,8 @@ type SEOtypes = {
 
   allStrapiLocation: {
     nodes: {
+      name: string;
+      schemaType: string;
       streetAddress: string;
       addressLocality: string;
       addressRegion: string;
@@ -81,6 +83,8 @@ type SEOtypes = {
       closing_time: string;
     }[];
   };
+
+  children: React.ReactNode;
 }
 
 export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, breadcrumbs, strapiLocale, allStrapiLocation, children }: SEOtypes) => {
@@ -105,6 +109,8 @@ export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, bre
   const paymentAcceptedFormatted = paymentAcceptedQuery.split('\n').map((payment: string) => payment.trim().replace('- ', '')).join(', ');
   // console.log(paymentAcceptedFormatted);
 
+  console.log(children);
+
   return (
     <>
       <title>{PaddleTitle}</title>
@@ -128,17 +134,21 @@ export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, bre
             "description": "${strapiLocale.name}",
             "image": "${PaddleImage}",
             
+            "department": [
             ${allStrapiLocation.nodes.map((location) => {
           return `{
-                "address": {
-                  "@type": "PostalAddress",
-                  "streetAddress": "${location.streetAddress}",
-                  "addressLocality": "${location.addressLocality}",
-                  "addressRegion": "${location.addressRegion}",
-                  "postalCode": "${location.postalCode}"
-                },
-              }`
-        })},
+                  "name": "${location.name}",
+                  "@type": "${location.schemaType}",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "${location.streetAddress}",
+                    "addressLocality": "${location.addressLocality}",
+                    "addressRegion": "${location.addressRegion}",
+                    "postalCode": "${location.postalCode}"
+                  }
+                }`
+        })}
+            ],
             "geo": {
               "@type": "GeoCoordinates",
               "latitude": "${strapiLocale.latitude}",
@@ -159,7 +169,7 @@ export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, bre
             "numberOfEmployees" : "${strapiLocale.numberOfEmployees}",
             "priceRange": "${strapiLocale.priceRange}",
             "slogan": "${strapiLocale.slogan}",
-            "paymentAccepted": "${paymentAcceptedFormatted}",
+            "paymentAccepted": "${paymentAcceptedFormatted}"
           }
         `}
       </Script>
