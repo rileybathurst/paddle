@@ -10,7 +10,9 @@ interface BreadcrumbsTypes {
 }[]
 // I could probably pass it two arguments instead but for now
 function Breadcrumbs(breadcrumbs: BreadcrumbsTypes) {
-  if (!Object.entries(breadcrumbs).length) return null;
+
+  // TODO: this was pushing on index with !
+  if (Object.entries(breadcrumbs).length === 0) return null;
 
   // remove the breadcrumbs.url from the Object.entries
   // console.log(breadcrumbs.url);
