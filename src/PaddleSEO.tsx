@@ -19,7 +19,7 @@ function Breadcrumbs(breadcrumbs: BreadcrumbsTypes) {
   console.log(rest);
 
   // TODO: testing
-  if (!rest) {
+  if (Object.keys(rest).length === 0) {
     console.error('🦖');
     return null;
   }
