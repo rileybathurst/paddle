@@ -32,7 +32,7 @@ function Breadcrumbs(breadcrumbs: BreadcrumbsTypes) {
           "@type": "ListItem",
           "position": ${Number.parseInt(key) + 1},
           "name": "${breadcrumb.name}",
-          "item": "${breadcrumbs.url}/${breadcrumb.item}"
+          "item": "${url}/${breadcrumb.item}"
         }`
       })}
           ]
@@ -118,7 +118,7 @@ export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, bre
   const paymentAcceptedFormatted = paymentAcceptedQuery.split('\n').map((payment: string) => payment.trim().replace('- ', '')).join(', ');
   // console.log(paymentAcceptedFormatted);
 
-  console.log(breadcrumbs);
+  // console.log(breadcrumbs);
 
   return (
     <>
@@ -166,11 +166,6 @@ export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, bre
                 }`
         })}
             ],
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "${strapiLocale.latitude}",
-              "longitude": "${strapiLocale.longitude}"
-            },
             "areaServed": {
               "@type": "GeoCircle",
               "geoMidpoint": {
@@ -182,7 +177,6 @@ export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, bre
             },
             "telephone": "${strapiLocale.phone}",
             "email": "${strapiLocale.email}",
-
             "numberOfEmployees" : "${strapiLocale.numberOfEmployees}",
             "priceRange": "${strapiLocale.priceRange}",
             "slogan": "${strapiLocale.slogan}",
