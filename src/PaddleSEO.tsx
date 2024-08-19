@@ -149,8 +149,7 @@ export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, bre
               "addressRegion": "${strapiLocation.addressRegion}",
               "postalCode": "${strapiLocation.postalCode}",
               "addressCountry": "US"
-            }
-            
+            },
             "department": [
             ${allStrapiLocation.nodes.map((location) => {
           return `{
