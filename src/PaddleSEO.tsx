@@ -150,6 +150,7 @@ export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, bre
               "postalCode": "${strapiLocation.postalCode}",
               "addressCountry": "US"
             },
+            ${allStrapiLocation.nodes.length > 1 ? `
             "department": [
             ${allStrapiLocation.nodes.map((location) => {
           return `{
@@ -166,6 +167,7 @@ export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, bre
                 }`
         })}
             ],
+            ` : ''}
             "areaServed": {
               "@type": "GeoCircle",
               "geoMidpoint": {

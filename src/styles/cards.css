@@ -121,9 +121,15 @@
   }
 }
 
-.card:hover {
+.card:hover,
+.ticket:hover {
   p {
     text-decoration: underline;
+  }
+
+  /* TODO: this could use more */
+  img {
+    filter: brightness(80%);
   }
 }
 
