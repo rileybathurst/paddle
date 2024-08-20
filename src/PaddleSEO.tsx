@@ -78,7 +78,7 @@ type SEOtypes = {
     postalCode: string;
   };
 
-  allStrapiLocation: {
+  allStrapiLocation?: {
     nodes: {
       name: string;
       schemaType: string;
@@ -150,7 +150,7 @@ export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, bre
               "postalCode": "${strapiLocation.postalCode}",
               "addressCountry": "US"
             },
-            ${allStrapiLocation.nodes.length > 1 ? `
+            ${allStrapiLocation ? `
             "department": [
             ${allStrapiLocation.nodes.map((location) => {
           return `{
