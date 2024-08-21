@@ -182,11 +182,8 @@ header {
 /* #TOP BAR */
 /*------------------*/
 
-/* this flashes in on every load which is bad but its currently out of use */
 .top-bar {
   transition: var(--slow);
-  height: 0;
-  opacity: 0;
   display: flex;
   justify-content: center;
   padding-block-start: 0.25rem;
@@ -196,6 +193,11 @@ header {
   p {
     margin-block-end: 0.25rem;
   }
+}
+
+.top-bar.hidden {
+  height: 0;
+  opacity: 0;
 }
 
 /*------------------------------------*/
