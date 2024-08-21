@@ -5,10 +5,36 @@ interface TimeTypes {
   finish?: string | null;
   duration?: number | null;
   timeframe?: string | null;
+  slug?: string | null;
+
+  allStrapiSunsetTourTime: {
+    nodes: {
+      startDate: string;
+      endDate: string;
+      startTime: string;
+      endTime: string;
+    }[];
+  };
 }
-export const PaddleTime = ({ start, finish, duration, timeframe }: TimeTypes) => {
+export const PaddleTime = ({ start, finish, duration, timeframe, slug, allStrapiSunsetTourTime }: TimeTypes) => {
 
   // TODO: sunset is a whole thing
+  const currentDate = new Date();
+  let sunsetStartTime = '';
+  let sunsetEndTime = '';
+
+  if (slug === 'sunset') {
+    allStrapiSunsetTourTime.nodes.map((time) => {
+      const startDate = new Date(time.startDate);
+      const endDate = new Date(time.endDate);
+
+
+      if (startDate <= currentDate && currentDate <= endDate) {
+        sunsetStartTime = time.startTime;
+        sunsetEndTime = time.endTime;
+      }
+    })
+  }
 
   const hairSpace = String.fromCharCode(0x200A);
 
@@ -21,9 +47,9 @@ export const PaddleTime = ({ start, finish, duration, timeframe }: TimeTypes) =>
     }
   }
 
-  if (start && finish) {
 
-    const startHours = start.split(':')[0];
+  if (start && finish) {
+    const startHours = sunsetStartTime ? sunsetStartTime.split(':')[0] : start.split(':')[0];
     let startHoursInt: number = Number.parseInt(startHours);
     const startMins = start.split(':')[1];
     const startMinsInt: number = Number.parseInt(startMins);
@@ -33,7 +59,7 @@ export const PaddleTime = ({ start, finish, duration, timeframe }: TimeTypes) =>
       startHoursInt = startHoursInt - 12;
     }
 
-    const finishHours = finish.split(':')[0];
+    const finishHours = sunsetEndTime ? sunsetEndTime.split(':')[0] : finish.split(':')[0];
     let finishHoursInt: number = Number.parseInt(finishHours);
     const finishMins = finish.split(':')[1];
     const finishMinsInt: number = Number.parseInt(finishMins);
