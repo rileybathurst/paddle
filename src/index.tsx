@@ -15,6 +15,7 @@ export * from "./PaddleLocationCard";
 export * from "./PaddleTestimonials";
 export * from "./PaddleTicket";
 export * from "./PaddleSunsetTourTimes";
+export * from "./PaddleTopBar";
 
 // Organisms
 export * from "./PaddleLocationDeck";
