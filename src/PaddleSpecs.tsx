@@ -20,8 +20,8 @@ export const PaddleSpecs = (specs: SpecsTypes) =>
     if (key === 'time' && typeof value === 'object') {
       return (
         <div key={key} className="spec">
-          <h2>{value.entry}</h2>
-          <h3>{value.value}</h3>
+          <h2>{value.value}</h2>
+          <h3>{value.entry}</h3>
         </div>
       );
       // }
