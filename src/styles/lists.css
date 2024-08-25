@@ -203,3 +203,30 @@ ol {
     }
   }
 }
+
+/*------------------------------------*/
+/* #PADDLE SUNSET TOUR TIMES */
+/*------------------------------------*/
+
+.paddle-sunset-tour-times div {
+  border-block-start: 1px solid;
+  padding-block-start: var(--vinson);
+}
+
+.date-time {
+  display: flex;
+  flex-flow: column;
+  gap: 0.5rem;
+  justify-items: center;
+  text-align: center;
+
+  .date {
+    width: max-content;
+  }
+
+  .time {
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    width: max-content;
+  }
+}

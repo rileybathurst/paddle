@@ -10,20 +10,18 @@ export const Card = () => {
   return (
     <div className='deck'>
       <Link href="#" className="card">
-        {/*         <img
-          src='https://tahoe-city-kayak.s3.us-west-1.amazonaws.com/textures/jason-leung-Oc81QL8Crtg-unsplash-hd.webp'
+        <img
+          src={faker.image.url()}
           alt=""
           className='card__placeholder'
-        /> */}
+        />
         <h4 className="card__title">
           {faker.location.city()}
         </h4>
 
         <div className="card__specs">
           <h4>
-            {/*             <time>
-              18:30 - 20:30
-            </time> */}
+            18:30 - 20:30
           </h4>
           <h4>
             {/* // ? does this need capitalization */}

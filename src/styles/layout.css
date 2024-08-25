@@ -103,7 +103,7 @@ footer > * {
 /* this isnt a direct nested its always down another layer */
 .albatross .pelican,
 /* ! deck * needs to be removed its maybe only the image that needs it */
-.deck *:not(p, hr) {
+.deck > *:not(h4, p, hr) {
   /* ? margin-inline: 0; ? should this be centered */
   /* TODO: this needs a :not for a few things */
   width: 100%; /* resets the padding */
