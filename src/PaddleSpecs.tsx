@@ -17,12 +17,18 @@ export const PaddleSpecs = (specs: SpecsTypes) =>
       return null;
     }
 
-    /* I didnt know you could call yourself like this */
-    /* I guess its not a infinite loop as its not calling an object */
-    if (key === 'weight' && typeof value === 'object') {
+    if (key === 'time' && typeof value === 'object') {
+      // if value.timevalue === time then return time entry
+      // if (value.timevalue === 'time' || value.timevalue === 'duration') {
+      // ? can I just do anything with time
       return (
-        <PaddleSpecs {...value} />
+        <div key={key} className="spec">
+          <h2>Time</h2>
+          <h3>{value.timeentry}</h3>
+        </div>
       );
+      // }
+      // * I cant remeber others yet
     }
 
     if (key === 'cost' && typeof value === 'object' && value.discount) {
@@ -49,6 +55,8 @@ export const PaddleSpecs = (specs: SpecsTypes) =>
       );
     }
 
+    /* I didnt know you could call yourself like this */
+    /* I guess its not a infinite loop as its not calling an object */
     if (typeof value === 'object') {
       return (
         <PaddleSpecs {...value} />
