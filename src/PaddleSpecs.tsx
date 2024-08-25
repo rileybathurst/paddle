@@ -18,13 +18,10 @@ export const PaddleSpecs = (specs: SpecsTypes) =>
     }
 
     if (key === 'time' && typeof value === 'object') {
-      // if value.timevalue === time then return time entry
-      // if (value.timevalue === 'time' || value.timevalue === 'duration') {
-      // ? can I just do anything with time
       return (
         <div key={key} className="spec">
-          <h2>Time</h2>
-          <h3>{value.timeentry}</h3>
+          <h2>{value.entry}</h2>
+          <h3>{value.value}</h3>
         </div>
       );
       // }
