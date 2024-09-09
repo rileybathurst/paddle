@@ -15,6 +15,7 @@ export function PaddleTicket({ ogimage, slug, name, start, finish, duration, tim
     duration: duration,
     timeframe: timeframe,
     allStrapiSunsetTourTime: allStrapiSunsetTourTime,
+    slug: slug
   });
 
 
