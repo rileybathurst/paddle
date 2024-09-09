@@ -8,15 +8,24 @@ export interface PaddleTicketTypes {
   };
   slug: string;
   name: string;
-  start?: string | null;
-  finish?: string | null;
-  duration?: number | null;
-  timeframe?: string | null;
-  fitness?: string | null;
+  start?: string;
+  finish?: string;
+  duration?: number;
+  timeframe?: string;
+  fitness?: string;
   excerpt: string;
   price: string;
   peek: string;
 
   peek_tours_fall_back: string;
   tour_page: string;
+
+  allStrapiSunsetTourTime: {
+    nodes: {
+      startDate: string;
+      endDate: string;
+      startTime: string;
+      endTime: string;
+    }[];
+  };
 }

@@ -1,11 +1,11 @@
 // import * as React from "react"
 
 interface TimeTypes {
-  start?: string | null;
-  finish?: string | null;
-  duration?: number | null;
-  timeframe?: string | null;
-  slug?: string | null;
+  start?: string;
+  finish?: string;
+  duration?: number;
+  timeframe?: string;
+  slug?: string;
 
   allStrapiSunsetTourTime: {
     nodes: {
@@ -15,8 +15,21 @@ interface TimeTypes {
       endTime: string;
     }[];
   };
+
+  allStrapiMoonlightTourDateTime: {
+    nodes: {
+      id: React.Key;
+      date: string;
+      start: string;
+      finish: string;
+    }[];
+  };
+
 }
 export const PaddleTime = ({ start, finish, duration, timeframe, slug, allStrapiSunsetTourTime }: TimeTypes) => {
+
+  console.log('time 🦄');
+  console.log('allStrapiSunsetTourTime', allStrapiSunsetTourTime);
 
   // TODO: sunset is a whole thing
   const currentDate = new Date();

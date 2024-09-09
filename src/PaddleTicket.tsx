@@ -11,8 +11,11 @@ export function PaddleTicket({ ogimage, slug, name, start, finish, duration, tim
     finish: finish,
     duration: duration,
     timeframe: timeframe,
-    allStrapiSunsetTourTime: allStrapiSunsetTourTime, // Replace null with the appropriate value
+    allStrapiSunsetTourTime: allStrapiSunsetTourTime,
   });
+
+  console.log(allStrapiSunsetTourTime);
+  console.log('time', time);
 
   return (
     <section className="ticket">
