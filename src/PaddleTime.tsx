@@ -28,9 +28,6 @@ interface TimeTypes {
 }
 export const PaddleTime = ({ start, finish, duration, timeframe, slug, allStrapiSunsetTourTime }: TimeTypes) => {
 
-  console.log('time below');
-  console.log(allStrapiSunsetTourTime);
-
   // TODO: sunset is a whole thing
   const currentDate = new Date();
   let sunsetStartTime = '';

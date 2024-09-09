@@ -19,7 +19,7 @@ export const Deal = () => {
     );
   }
 
-  console.log(content);
+  // console.log(content);
 
   return (
     <>

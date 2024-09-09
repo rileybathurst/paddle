@@ -19,8 +19,8 @@ interface Spec3Types {
 }
 function Spec3({ crew, capacity, test, length }: Spec3Types) {
 
-  console.log(crew);
-  console.log(capacity);
+  // console.log(crew);
+  // console.log(capacity);
 
   return (
     Object.entries({ crew, capacity, test, length }).map(([key, value]) => {

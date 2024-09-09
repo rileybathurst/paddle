@@ -29,14 +29,14 @@ export const PaddleTopBar = ({ strapiLocale, allStrapiWeatherDay }: PaddleTopBar
   let currentWeather = '';
   let currentStatus = false;
   const currentDate = new Date().toISOString().split('T')[0];
-  console.log('currentDate', currentDate);
+  // console.log('currentDate', currentDate);
 
   allStrapiWeatherDay.nodes.map((date) => {
     if (date.startDate === currentDate || currentDate >= date.startDate && currentDate <= date.endDate) {
       currentWeather = date.condition.excerpt;
       currentStatus = date.closed;
 
-      console.log('inside the if', date.startDate);
+      // console.log('inside the if', date.startDate);
     }
   });
 

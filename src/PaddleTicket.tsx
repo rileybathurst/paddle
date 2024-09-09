@@ -6,9 +6,6 @@ import { PaddleTime } from "./PaddleTime"
 
 export function PaddleTicket({ ogimage, slug, name, start, finish, duration, timeframe, fitness, excerpt, price, peek, peek_tours_fall_back, tour_page, allStrapiSunsetTourTime }: PaddleTicketTypes) {
 
-  console.log("PaddleTicket below"); // this does seem like it was hitting
-  console.log(allStrapiSunsetTourTime);
-
   const time = PaddleTime({
     start: start,
     finish: finish,
