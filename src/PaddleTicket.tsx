@@ -4,13 +4,14 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import type { PaddleTicketTypes } from "./types/ticket-types"
 import { PaddleTime } from "./PaddleTime"
 
-export function PaddleTicket({ ogimage, slug, name, start, finish, duration, timeframe, fitness, excerpt, price, peek, peek_tours_fall_back, tour_page }: PaddleTicketTypes) {
+export function PaddleTicket({ ogimage, slug, name, start, finish, duration, timeframe, fitness, excerpt, price, peek, peek_tours_fall_back, tour_page, allStrapiSunsetTourTime }: PaddleTicketTypes) {
 
   const time = PaddleTime({
     start: start,
     finish: finish,
     duration: duration,
     timeframe: timeframe,
+    allStrapiSunsetTourTime: allStrapiSunsetTourTime, // Replace null with the appropriate value
   });
 
   return (

@@ -52,6 +52,9 @@ footer,
 .deck,
 .react-aria-Breadcrumbs {
   max-width: min(var(--albatross), calc(100vw - var(--denali)));
+  /* max-width: var(--albatross); */
+  /* ! theres an issue here thjings are not wrapping when they should */
+  /* max-width: 82rem; */
   flex-basis: var(--albatross);
 }
 

@@ -16,7 +16,9 @@ export const Ticket = () => {
   });
 
   return (
-    <section className="ticket">
+    <section className="ticket"
+      style={{ backgroundColor: faker.helpers.arrayElement(['#3A3A3A', '#2E2E2E', '#1E1E1E']) }}
+    >
       <Link href={`/tours/${faker.location.city()}`}>
         <img src={faker.image.url()} alt={faker.lorem.words(2)} />
       </Link>
