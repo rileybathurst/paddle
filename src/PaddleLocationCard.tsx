@@ -74,7 +74,7 @@ interface ContentTypes {
   season_end?: string;
 
 }
-function Content({ svg, name, address, description, opening_time, closing_time, streetAddress, addressLocality, addressRegion, postalCode, commonName, season_start, season_end, phone }: ContentTypes) {
+function Content({ svg, name, address, description, opening_time, closing_time, streetAddress, addressLocality, addressRegion, postalCode, commonName, season_start, season_end }: ContentTypes) {
   return (
     <>
       <div
@@ -94,8 +94,6 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
               {addressRegion ? <span>{addressRegion} </span> : null}
               {postalCode ? <span>{postalCode}<br /></span> : null}
             </address>
-
-            {name === "On Water Rental" ? <Phone phone={phone} /> : null}
           </>
         ) :
 
@@ -123,7 +121,6 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
             {description.data.description}
           </Markdown>
         )}
-        {/* // TODO: add phone but dont break the link on link rule {name === "On Water Rental" ? <Phone /> : null} */}
       </div>
     </>
   )
@@ -133,11 +130,41 @@ export function PaddleLocationCard({ svg, name, link, address, description, open
 
   if (link.includes('http')) {
     return (
-      <a href={link}
+      <>
+        <a href={link}
+          className={`location ${background}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={name}
+        >
+          <Content
+            svg={svg}
+            name={name}
+            address={address}
+            description={description}
+            opening_time={opening_time}
+            closing_time={closing_time}
+
+            streetAddress={streetAddress}
+            addressLocality={addressLocality}
+            addressRegion={addressRegion}
+            postalCode={postalCode}
+            commonName={commonName}
+
+            season_start={season_start}
+            season_end={season_end}
+
+          />
+        </a>
+        {name === "On Water Rental" ? <Phone phone={phone} /> : null}
+      </>
+    )
+  }
+  return (
+    <>
+      <Link
+        to={link}
         className={`location ${background}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        title={name}
       >
         <Content
           svg={svg}
@@ -155,36 +182,9 @@ export function PaddleLocationCard({ svg, name, link, address, description, open
 
           season_start={season_start}
           season_end={season_end}
-          phone={phone}
-
         />
-      </a>
-    )
-  }
-  return (
-    <Link
-      to={link}
-      className={`location ${background}`}
-    >
-      <Content
-        svg={svg}
-        name={name}
-        address={address}
-        description={description}
-        opening_time={opening_time}
-        closing_time={closing_time}
-
-        streetAddress={streetAddress}
-        addressLocality={addressLocality}
-        addressRegion={addressRegion}
-        postalCode={postalCode}
-        commonName={commonName}
-
-        season_start={season_start}
-        season_end={season_end}
-        phone={phone}
-
-      />
-    </Link>
+      </Link>
+      {name === "On Water Rental" ? <Phone phone={phone} /> : null}
+    </>
   )
 }
