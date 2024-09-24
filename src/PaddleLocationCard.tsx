@@ -130,7 +130,7 @@ export function PaddleLocationCard({ svg, name, link, address, description, open
 
   if (link.includes('http')) {
     return (
-      <>
+      <div className="location-wrapper">
         <a href={link}
           className={`location ${background}`}
           target="_blank"
@@ -156,12 +156,12 @@ export function PaddleLocationCard({ svg, name, link, address, description, open
 
           />
         </a>
-        {name === "On Water Rental" ? <Phone phone={phone} /> : null}
-      </>
+        {name === "On Water Rental" && phone ? <Phone phone={phone} /> : null}
+      </div>
     )
   }
   return (
-    <>
+    <div className="location-wrapper">
       <Link
         to={link}
         className={`location ${background}`}
@@ -184,7 +184,7 @@ export function PaddleLocationCard({ svg, name, link, address, description, open
           season_end={season_end}
         />
       </Link>
-      {name === "On Water Rental" ? <Phone phone={phone} /> : null}
-    </>
+      {name === "On Water Rental" && phone ? <Phone phone={phone} /> : null}
+    </div>
   )
 }

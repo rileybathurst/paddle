@@ -221,8 +221,11 @@ header {
   margin-block-end: var(--kilimanjaro);
 }
 
-.location {
+.location-wrapper {
   max-width: var(--condor);
+}
+
+.location {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -251,7 +254,7 @@ header {
   }
 }
 
-.location.false:not(:last-child) {
+.location-wrapper.false:not(:last-child) {
   border-block-end: 1px solid;
   border-radius: 0;
 }
