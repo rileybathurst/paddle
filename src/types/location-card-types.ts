@@ -21,4 +21,13 @@ export interface LocationCardTypes {
     season_end: string;
   };
   background?: string;
+
+  streetAddress?: string;
+  addressLocality?: string;
+  addressRegion?: string;
+  postalCode?: string;
+  commonName?: string;
+
+  season_start?: string;
+  season_end?: string;
 }
