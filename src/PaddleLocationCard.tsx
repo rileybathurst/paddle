@@ -72,7 +72,7 @@ interface ContentTypes {
   commonName?: string;
 
 }
-function Content({ svg, name, address, description, opening_time, closing_time, streetAddress, addressLocality, addressRegion, postalCode, commonName }: ContentTypes) {
+function Content({ svg, name, address, description, opening_time, closing_time, streetAddress, addressLocality, addressRegion, postalCode, commonName, season_start, season_end }: ContentTypes) {
   return (
     <>
       <div
@@ -103,8 +103,8 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
 
       <div>
         <Season
-          season_start={locale.season_start}
-          season_end={locale.season_end}
+          season_start={season_start}
+          season_end={season_end}
           opening_time={opening_time}
           closing_time={closing_time}
           name={name}
