@@ -127,6 +127,11 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
 
 export function PaddleLocationCard({ svg, name, link, address, description, opening_time, closing_time, background, streetAddress, addressLocality, addressRegion, postalCode, commonName, season_start, season_end }: LocationCardTypes) {
 
+  Object.entries({ svg, name, link, address, description, opening_time, closing_time, background, streetAddress, addressLocality, addressRegion, postalCode, commonName, season_start, season_end }).map(([key, value]) => {
+    console.log(key, value);
+  }
+  );
+
   console.log(`PaddleLocationCard season_start ${season_start}`);
 
   if (link.includes('http')) {
