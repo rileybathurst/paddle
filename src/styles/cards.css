@@ -4,6 +4,9 @@
 
 .deck {
   margin-block-end: var(--aconcagua);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--condor), 1fr));
 }
 
 /* TODO: needs sub-grid */
@@ -75,6 +78,10 @@
 
   hr {
     margin-inline: var(--kosciuszko);
+  }
+
+  img {
+    max-width: 100%;
   }
 
   .card__details {

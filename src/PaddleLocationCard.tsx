@@ -5,6 +5,7 @@ import { Link } from 'gatsby';
 import Markdown from "react-markdown";
 import type { LocationCardTypes } from "./types/location-card-types";
 import HourMin from "./hour-min";
+import Phone from "./phone";
 
 interface SeasonTypes {
   season_start?: string;
@@ -23,11 +24,8 @@ function Season({ name, season_start, season_end, opening_time, closing_time }: 
 
   if (season_start && season_end) {
     const currentDay = new Date();
-    console.log(`currentDay ${currentDay}`);
     const seasonStartDate = new Date(season_start);
-    console.log(`season_start ${season_start}`);
     const seasonEndDate = new Date(season_end);
-    console.log(`season_end ${season_end}`);
 
     if (currentDay > seasonStartDate || currentDay < seasonEndDate) {
       return (
@@ -89,13 +87,18 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
       <div>
 
         {streetAddress || addressLocality || addressRegion || postalCode || commonName ? (
-          <address>
-            {commonName ? <span>{commonName}<br /></span> : null}
-            {streetAddress ? <span>{streetAddress}<br /></span> : null}
-            {addressLocality ? <span>{addressLocality}, </span> : null}
-            {addressRegion ? <span>{addressRegion} </span> : null}
-            {postalCode ? <span>{postalCode}<br /></span> : null}
-          </address>
+          <>
+            <h3 className="elbrus">{name}</h3>
+            <address>
+              {commonName ? <span>{commonName}<br /></span> : null}
+              {streetAddress ? <span>{streetAddress}<br /></span> : null}
+              {addressLocality ? <span>{addressLocality}, </span> : null}
+              {addressRegion ? <span>{addressRegion} </span> : null}
+              {postalCode ? <span>{postalCode}<br /></span> : null}
+            </address>
+
+            {name === "On Water Rental" ? <Phone /> : null}
+          </>
         ) :
 
           (<>
@@ -129,13 +132,6 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
 }
 
 export function PaddleLocationCard({ svg, name, link, address, description, opening_time, closing_time, background, streetAddress, addressLocality, addressRegion, postalCode, commonName, season_start, season_end }: LocationCardTypes) {
-
-  Object.entries({ svg, name, link, address, description, opening_time, closing_time, background, streetAddress, addressLocality, addressRegion, postalCode, commonName, season_start, season_end }).map(([key, value]) => {
-    console.log(key, value);
-  }
-  );
-
-  console.log(`PaddleLocationCard season_start ${season_start}`);
 
   if (link.includes('http')) {
     return (
