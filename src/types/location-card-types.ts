@@ -30,4 +30,5 @@ export interface LocationCardTypes {
 
   season_start?: string;
   season_end?: string;
+  phone?: string;
 }

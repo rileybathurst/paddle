@@ -1,5 +1,3 @@
-// TODO: Season is super broken
-
 import * as React from "react"
 import { Link } from 'gatsby';
 import Markdown from "react-markdown";
@@ -76,7 +74,7 @@ interface ContentTypes {
   season_end?: string;
 
 }
-function Content({ svg, name, address, description, opening_time, closing_time, streetAddress, addressLocality, addressRegion, postalCode, commonName, season_start, season_end }: ContentTypes) {
+function Content({ svg, name, address, description, opening_time, closing_time, streetAddress, addressLocality, addressRegion, postalCode, commonName, season_start, season_end, phone }: ContentTypes) {
   return (
     <>
       <div
@@ -97,7 +95,7 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
               {postalCode ? <span>{postalCode}<br /></span> : null}
             </address>
 
-            {name === "On Water Rental" ? <Phone /> : null}
+            {name === "On Water Rental" ? <Phone phone={phone} /> : null}
           </>
         ) :
 
@@ -131,7 +129,7 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
   )
 }
 
-export function PaddleLocationCard({ svg, name, link, address, description, opening_time, closing_time, background, streetAddress, addressLocality, addressRegion, postalCode, commonName, season_start, season_end }: LocationCardTypes) {
+export function PaddleLocationCard({ svg, name, link, address, description, opening_time, closing_time, background, streetAddress, addressLocality, addressRegion, postalCode, commonName, season_start, season_end, phone }: LocationCardTypes) {
 
   if (link.includes('http')) {
     return (
@@ -157,6 +155,7 @@ export function PaddleLocationCard({ svg, name, link, address, description, open
 
           season_start={season_start}
           season_end={season_end}
+          phone={phone}
 
         />
       </a>
@@ -183,6 +182,8 @@ export function PaddleLocationCard({ svg, name, link, address, description, open
 
         season_start={season_start}
         season_end={season_end}
+        phone={phone}
+
       />
     </Link>
   )

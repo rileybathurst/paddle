@@ -6,9 +6,10 @@ interface LocationDeckTypes {
   background?: string;
   season_start?: string;
   season_end?: string;
+  phone?: string;
   nodes: LocationCardTypes[];
 }
-export function PaddleLocationDeck({ nodes, season_start, season_end, background }: LocationDeckTypes) {
+export function PaddleLocationDeck({ nodes, season_start, season_end, phone, background }: LocationDeckTypes) {
 
   return (
     <section className="location-deck">
@@ -19,6 +20,7 @@ export function PaddleLocationDeck({ nodes, season_start, season_end, background
           background={background}
           season_start={season_start}
           season_end={season_end}
+          phone={phone}
         />
       ))}
     </section>
