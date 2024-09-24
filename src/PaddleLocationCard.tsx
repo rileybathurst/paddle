@@ -29,14 +29,14 @@ function Season({ name, season_start, season_end, opening_time, closing_time }: 
     const seasonEndDate = new Date(season_end);
     console.log(`season_end ${season_end}`);
 
-
     if (currentDay > seasonStartDate || currentDay < seasonEndDate) {
       return (
         <p>
-          {opening_time ? "Open Daily: " : null}
-          <HourMin time={opening_time} />
-          {opening_time ? " - : " : null}
-          <HourMin time={closing_time} />
+          {opening_time ? "Open Daily: " : null}<br />
+          {opening_time && closing_time ? (
+            <span><HourMin time={opening_time} /> - <HourMin time={closing_time} /></span>
+          )
+            : null}
         </p>
       )
     }
@@ -108,17 +108,20 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
       </div>
 
       <div>
-        <Season
-          season_start={season_start}
-          season_end={season_end}
-          opening_time={opening_time}
-          closing_time={closing_time}
-          name={name}
-        />
-        <br />
-        <Markdown className="react-markdown" >
-          {description.data.description}
-        </Markdown>
+
+        {opening_time && closing_time ? (
+          <Season
+            season_start={season_start}
+            season_end={season_end}
+            opening_time={opening_time}
+            closing_time={closing_time}
+            name={name}
+          />
+        ) : (
+          <Markdown className="react-markdown" >
+            {description.data.description}
+          </Markdown>
+        )}
         {/* // TODO: add phone but dont break the link on link rule {name === "On Water Rental" ? <Phone /> : null} */}
       </div>
     </>

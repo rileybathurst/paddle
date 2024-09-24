@@ -10,10 +10,6 @@ interface LocationDeckTypes {
 }
 export function PaddleLocationDeck({ nodes, season_start, season_end, background }: LocationDeckTypes) {
 
-
-  console.log('🦄');
-  console.log(season_start);
-
   return (
     <section className="location-deck">
       {nodes.map((location: LocationCardTypes) => (
