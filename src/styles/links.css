@@ -6,6 +6,14 @@ a:where(:hover, :focus) {
   text-decoration: none;
 }
 
+.tahoe-city a {
+  color: var(--mullen-100);
+}
+
+.south-tahoe a {
+  color: var(--navy-100);
+}
+
 /*------------------------------------*/
 
 .link__subtle {

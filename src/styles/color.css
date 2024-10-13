@@ -12,12 +12,45 @@ body {
   }
 }
 
+/* ! testing */
+/* storybook but also maybe I just add them to the site it could be less confusing */
+main {
+  clip-path: inset(0 -100vmax);
+  background-color: whitesmoke;
+  box-shadow: 0 0 0 100vmax whitesmoke;
+
+  color: var(--black-metal);
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--kingly-cloud);
+  }
+}
+
+main.tahoe-city {
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--navy-200);
+    box-shadow: 0 0 0 100vmax var(--navy-200);
+  }
+}
+
+main.south-tahoe {
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--navy-200);
+    box-shadow: 0 0 0 100vmax var(--navy-200);
+  }
+}
+
 /*------------------------------------*/
 /* #TOP-BAR */
 /*------------------------------------*/
 
 .top-bar {
   clip-path: inset(0 -100vmax);
+}
+
+.south-tahoe .top-bar {
+  background-color: var(--navy-200);
+  box-shadow: 0 0 0 100vmax var(--navy-200);
 }
 
 /*------------------------------------*/

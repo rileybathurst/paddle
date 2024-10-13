@@ -7,10 +7,15 @@ import { LocationDeck } from './LocationDeck';
 import { Pricing } from './Pricing';
 import { PaddleBreadcrumbs } from './PaddleBreadcrumbs';
 
-export const Home = () => {
+type HomeTypes = {
+  location?: 'tahoe-city' | 'south-tahoe';
+};
+
+export const Home = ({ location }: HomeTypes) => {
 
   return (
-    <>
+    <div className={location}>
+      {/* // ! this doubles up sometimes maybe I need to move it down to only where needed? I dont know if thats possible */}
       <Header />
       <main className="albatross wrap">
         <section>
@@ -124,6 +129,6 @@ export const Home = () => {
 
       <PaddleBreadcrumbs />
       <Footer />
-    </>
+    </div>
   );
 };

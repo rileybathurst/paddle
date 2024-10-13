@@ -9,6 +9,7 @@
 
   /* TAHOE CITY KAYAK */
 
+  /* ? would ruby be a better name */
   --mullen: hsl(0, 50%, 50%); /* #bf4040 */
   --mullen-100: hsl(0, 50%, 50%); /* base */
   --mullen-200: hsl(0, 50%, 37.5%);
@@ -19,11 +20,6 @@
   --sand-150: hsl(25, 37%, 92.5%);
   --sand-200: hsl(25, 37%, 87.5%);
   --sand-300: hsl(25, 37%, 75%);
-
-  --ink: hsl(210, 50%, 12.5%); /* base */
-  --ink-100: hsl(210, 50%, 12.5%);
-  --ink-200: hsl(210, 50%, 7.5%);
-  --ink-300: hsl(210, 50%, 5%);
 
   /*------------------------------------*/
   /* #SOUTH TAHOE KAYAK */
