@@ -11,7 +11,7 @@ export const Neutrals = () => {
     <main>
       <h1>Neutrals</h1>
       {/*       <ColorCards
-        color='mullen'
+        color='ruby'
         variables={['100', '200']}
       />
       <ColorCards

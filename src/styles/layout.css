@@ -331,3 +331,19 @@ header {
     }
   }
 }
+
+/*------------------------------------*/
+/* #STORYBOOK */
+/*------------------------------------*/
+
+/* some of this is coming from the npm piece which us a little bit of a mess */
+#storybook-root .color-deck {
+  margin-block-end: var(--kilimanjaro);
+
+  .color-card {
+    min-width: 10rem;
+    min-height: 10rem;
+    width: auto;
+    height: auto;
+  }
+}

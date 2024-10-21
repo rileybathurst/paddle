@@ -9,6 +9,8 @@ svg {
   min-height: var(--everest); /* safari needs default mins */
   max-width: clamp(var(--kilimanjaro), 5vw, 5rem);
   max-height: clamp(var(--kilimanjaro), 5vw, 5rem);
+
+  fill: currentColor;
 }
 
 /*------------------*/
@@ -48,7 +50,8 @@ svg {
 
   svg {
     width: 100%;
-    max-height: 10rem;
+    max-height: var(--vulture);
+    max-width: fit-content;
   }
 }
 

@@ -43,7 +43,7 @@ export const PaddleSpecs = (specs: SpecsTypes) =>
               </del>
             </h3>
           </div>
-          <div className="spec mullen">
+          <div className="spec ruby">
             <h2>Sale Price</h2>
             {value.discount}% off
             <h3>${amount}</h3>

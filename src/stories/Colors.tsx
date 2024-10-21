@@ -15,8 +15,9 @@ export const Colors = ({
   return (
     <main
       {...props}
+      className='pelican'
     >
-      <ColorCards color="mullen" variables={['100', '200', '300']} />
+      <ColorCards color="ruby" variables={['100', '200', '300']} />
       <ColorCards color="sand" variables={['100', '150', '200', '300']} />
       <ColorCards color="navy" variables={['100', '200', '300']} />
       {/* // TODO: I dont know how to do whitesmoke */}

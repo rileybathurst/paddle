@@ -4,8 +4,12 @@ import { Link } from 'react-aria-components';
 import { TopBar } from './TopBar';
 import { Logo } from './Logo';
 
-export const Header = () => (
-  <header>
+type HeaderTypes = {
+  location?: 'tahoe-city' | 'south-tahoe';
+};
+
+export const Header = ({ location }: HeaderTypes) => (
+  <header className={location}>
     <TopBar />
     <div className="logo-container" >
       <Link

@@ -7,24 +7,15 @@
   /* #COLOR */
   /*------------------------------------*/
 
-  /* TAHOE CITY KAYAK */
+  /* ? does this need some more saturation */
+  --ruby-100: hsl(0, 50%, 50%); /* base */
+  --ruby-200: hsl(0, 50%, 37.5%);
+  --ruby-300: hsl(0, 50%, 25%);
 
-  /* ? would ruby be a better name */
-  --mullen: hsl(0, 50%, 50%); /* #bf4040 */
-  --mullen-100: hsl(0, 50%, 50%); /* base */
-  --mullen-200: hsl(0, 50%, 37.5%);
-  --mullen-300: hsl(0, 50%, 25%);
-
-  --sand: hsl(25, 37%, 95%);
-  --sand-100: hsl(25, 37%, 95%); /* base */
+  --sand-100: hsl(25, 37%, 95%);
   --sand-150: hsl(25, 37%, 92.5%);
   --sand-200: hsl(25, 37%, 87.5%);
   --sand-300: hsl(25, 37%, 75%);
-
-  /*------------------------------------*/
-  /* #SOUTH TAHOE KAYAK */
-  /*------------------------------------*/
-  /* needed for storybook */
 
   --navy-100: oklch(50% 0.09 230); /* base */
   --navy-200: oklch(37.5% 0.07 230);

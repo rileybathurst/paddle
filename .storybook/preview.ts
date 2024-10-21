@@ -1,6 +1,8 @@
 import type { Preview } from "@storybook/react";
 
 import "../src/styles/app.css";
+
+// * this is kinda a mess and maybe causing issues
 import "color-cards/src/styles/app.css";
 
 const preview: Preview = {

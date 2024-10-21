@@ -3,7 +3,23 @@
 /*------------------------------------*/
 
 body {
-  background-color: whitesmoke;
+  background-color: var(--brilliance);
+  color: var(--black-metal);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--navy-300);
+    color: var(--brilliance);
+  }
+}
+
+/* ! testing */
+/* storybook but also maybe I just add them to the site it could be less confusing */
+/* I wonder if I can do something with :has so only top layer does the color */
+/* body {
+  clip-path: inset(0 -100vmax);
+  background-color: var(--brilliance);
+  box-shadow: 0 0 0 100vmax var(--brilliance);
+
   color: var(--black-metal);
 
   @media (prefers-color-scheme: dark) {
@@ -12,21 +28,9 @@ body {
   }
 }
 
-/* ! testing */
-/* storybook but also maybe I just add them to the site it could be less confusing */
-main {
-  clip-path: inset(0 -100vmax);
-  background-color: whitesmoke;
-  box-shadow: 0 0 0 100vmax whitesmoke;
-
-  color: var(--black-metal);
-
-  @media (prefers-color-scheme: dark) {
-    color: var(--kingly-cloud);
-  }
-}
-
 main.tahoe-city {
+  background-color: var(--kingly-cloud);
+
   @media (prefers-color-scheme: dark) {
     background-color: var(--navy-200);
     box-shadow: 0 0 0 100vmax var(--navy-200);
@@ -38,6 +42,20 @@ main.south-tahoe {
     background-color: var(--navy-200);
     box-shadow: 0 0 0 100vmax var(--navy-200);
   }
+} */
+
+body:has(#storybook-root) {
+  #storybook-root {
+    min-height: 100vh;
+  }
+
+  #storybook-root:has(.tahoe-city) {
+    background-color: var(--brilliance);
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--navy-300);
+    }
+  }
 }
 
 /*------------------------------------*/
@@ -46,17 +64,67 @@ main.south-tahoe {
 
 .top-bar {
   clip-path: inset(0 -100vmax);
-}
+  background-color: var(--sand-100);
+  box-shadow: 0 0 0 100vmax var(--sand-100);
 
-.south-tahoe .top-bar {
-  background-color: var(--navy-200);
-  box-shadow: 0 0 0 100vmax var(--navy-200);
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--navy-200);
+    box-shadow: 0 0 0 100vmax var(--navy-200);
+  }
 }
 
 /*------------------------------------*/
 /* #LOCATION */
 /*------------------------------------*/
 
-.location.true {
-  background-color: antiquewhite;
+/* TODO: tahoe city and south lake */
+.location-wrapper.true {
+  background-color: var(--sand-100);
+  border-radius: var(--card-radius);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--navy-200);
+  }
+}
+
+/*------------------------------------*/
+
+#storybook-root {
+  .forest.tahoe-city {
+    .floor {
+      /* background-color: var(--sand-100); */
+      /* background-color: whitesmoke; */
+      background-color: var(--brilliance);
+    }
+
+    .understory {
+      background-color: var(--sand);
+    }
+
+    .canopy {
+      background-color: var(--sand-200);
+    }
+
+    .emergent {
+      background-color: var(--sand-300);
+    }
+  }
+
+  .forest.south-tahoe {
+    .floor {
+      /* background-color: var(--sand-100); */
+    }
+
+    .understrory {
+      /* background-color: var(--sand-200); */
+    }
+
+    .canopy {
+      /* background-color: var(--sand-300); */
+    }
+
+    .emergent {
+      /* background-color: var(--ruby-100); */
+    }
+  }
 }

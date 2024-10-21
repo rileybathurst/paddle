@@ -5,17 +5,19 @@ import { faker } from '@faker-js/faker';
 
 interface LocationProps {
   backed?: boolean;
+  location?: 'tahoe-city' | 'south-tahoe';
   onClick?: () => void;
 }
 
 export const Location = ({
   backed = true,
+  location,
 }: LocationProps) => {
 
   return (
-    <div className='location-wrapper'>
+    <div className={`location-wrapper ${backed} ${location}`}>
       <a
-        className={`location ${faker.datatype.boolean() ? true : false}`}
+        className="location"
         href="https://goo.gl/maps/atoK4oyJRbV3EKuK9"
         rel="noopener noreferrer"
       >

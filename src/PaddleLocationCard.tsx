@@ -32,7 +32,8 @@ function Season({ name, season_start, season_end, opening_time, closing_time }: 
           {opening_time && closing_time ? (
             <span><HourMin time={opening_time} /> - <HourMin time={closing_time} /></span>
           )
-            : null}
+            : null}<br />
+          Weather Permitting
         </p>
       )
     }
