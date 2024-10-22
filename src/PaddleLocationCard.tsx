@@ -25,7 +25,7 @@ function Season({ name, season_start, season_end, opening_time, closing_time }: 
     const seasonStartDate = new Date(season_start);
     const seasonEndDate = new Date(season_end);
 
-    if (currentDay > seasonStartDate || currentDay < seasonEndDate) {
+    if (currentDay >= seasonStartDate && currentDay <= seasonEndDate) {
       return (
         <p>
           {opening_time ? "Open Daily: " : null}<br />
@@ -42,9 +42,9 @@ function Season({ name, season_start, season_end, opening_time, closing_time }: 
   return (
     <p>
       We&apos;re closed for the season:<br />
-      We will reopen<br />
-      {season_start} - {season_end}<br />
-      Weather Permitting
+      {/* We will reopen<br /> */}
+      {/* {season_start} - {season_end}<br /> */}
+      {/* Weather Permitting */}
     </p>
   )
 }
