@@ -40,11 +40,6 @@ function Season({ name, season_start, season_end, opening_time, closing_time, of
         </p>
       )
     }
-  }
-
-  if (season_start) {
-    const currentDay = new Date();
-    const seasonStartDate = new Date(season_start);
 
     return (
       <div>
@@ -61,8 +56,7 @@ function Season({ name, season_start, season_end, opening_time, closing_time, of
                 <br />
                 {offSeasonDetails}
               </>
-            )
-              : null}
+            ) : null}
 
           </p>
         ) : null}
@@ -77,8 +71,7 @@ function Season({ name, season_start, season_end, opening_time, closing_time, of
       </p>
       {offSeasonDetails ? (
         <p>{offSeasonDetails}</p>
-      )
-        : null}
+      ) : null}
     </div>
   )
 
