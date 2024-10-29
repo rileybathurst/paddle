@@ -47,11 +47,11 @@ function Season({ name, season_start, season_end, opening_time, closing_time, of
     const seasonStartDate = new Date(season_start);
 
     return (
-      <p>
-        We&apos;re closed for the season<br />
+      <div>
+        <p>We&apos;re closed for the season</p>
 
         {currentDay < seasonStartDate ? (
-          <>
+          <p>
             We will reopen<br />
             {season_start}<br />
             Weather Permitting
@@ -59,30 +59,27 @@ function Season({ name, season_start, season_end, opening_time, closing_time, of
             {offSeasonDetails ? (
               <>
                 <br />
-                <p>offSeasonDetails</p>
+                {offSeasonDetails}
               </>
             )
               : null}
 
-          </>
+          </p>
         ) : null}
-      </p>
+      </div>
     )
   }
 
   return (
-    <>
+    <div>
       <p>
         We&apos;re closed for the season
       </p>
       {offSeasonDetails ? (
-        <>
-          <br />
-          <p>offSeasonDetails</p>
-        </>
+        <p>{offSeasonDetails}</p>
       )
         : null}
-    </>
+    </div>
   )
 
 }
