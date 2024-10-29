@@ -12,8 +12,9 @@ interface SeasonTypes {
   opening_time: string;
   closing_time: string;
   name: string;
+  offSeasonDetails?: string;
 }
-function Season({ name, season_start, season_end, opening_time, closing_time }: SeasonTypes) {
+function Season({ name, season_start, season_end, opening_time, closing_time, offSeasonDetails }: SeasonTypes) {
 
   // TODO: these need a query but thats not the most important first step
   if (name === "Free Parking Lot" || name === "Parking" || name === "Delivery") {
@@ -39,14 +40,49 @@ function Season({ name, season_start, season_end, opening_time, closing_time }: 
     }
   }
 
+  if (season_start) {
+    const currentDay = new Date();
+    const seasonStartDate = new Date(season_start);
+
+    return (
+      <p>
+        We&apos;re closed for the season<br />
+
+        {currentDay < seasonStartDate ? (
+          <>
+            We will reopen<br />
+            {season_start}<br />
+            Weather Permitting
+
+            {offSeasonDetails ? (
+              <>
+                <br />
+                <p>offSeasonDetails</p>
+              </>
+            )
+              : null}
+
+          </>
+        ) : null}
+      </p>
+    )
+  }
+
   return (
-    <p>
-      We&apos;re closed for the season:<br />
-      {/* We will reopen<br /> */}
-      {/* {season_start} - {season_end}<br /> */}
-      {/* Weather Permitting */}
-    </p>
+    <>
+      <p>
+        We&apos;re closed for the season
+      </p>
+      {offSeasonDetails ? (
+        <>
+          <br />
+          <p>offSeasonDetails</p>
+        </>
+      )
+        : null}
+    </>
   )
+
 }
 
 interface ContentTypes {
@@ -74,8 +110,10 @@ interface ContentTypes {
   season_start?: string;
   season_end?: string;
 
+  offSeasonDetails?: string;
+
 }
-function Content({ svg, name, address, description, opening_time, closing_time, streetAddress, addressLocality, addressRegion, postalCode, commonName, season_start, season_end }: ContentTypes) {
+function Content({ svg, name, address, description, opening_time, closing_time, streetAddress, addressLocality, addressRegion, postalCode, commonName, season_start, season_end, offSeasonDetails }: ContentTypes) {
   return (
     <>
       <div
@@ -116,6 +154,7 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
             opening_time={opening_time}
             closing_time={closing_time}
             name={name}
+            offSeasonDetails={offSeasonDetails}
           />
         ) : (
           <Markdown className="react-markdown" >
@@ -127,7 +166,7 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
   )
 }
 
-export function PaddleLocationCard({ svg, name, link, address, description, opening_time, closing_time, background, streetAddress, addressLocality, addressRegion, postalCode, commonName, season_start, season_end, phone }: LocationCardTypes) {
+export function PaddleLocationCard({ svg, name, link, address, description, opening_time, closing_time, background, streetAddress, addressLocality, addressRegion, postalCode, commonName, season_start, season_end, phone, offSeasonDetails }: LocationCardTypes) {
 
   if (link.includes('http')) {
     return (
@@ -154,6 +193,8 @@ export function PaddleLocationCard({ svg, name, link, address, description, open
 
             season_start={season_start}
             season_end={season_end}
+
+            offSeasonDetails={offSeasonDetails}
 
           />
         </a>
@@ -183,6 +224,9 @@ export function PaddleLocationCard({ svg, name, link, address, description, open
 
           season_start={season_start}
           season_end={season_end}
+
+          offSeasonDetails={offSeasonDetails}
+
         />
       </Link>
       {name === "On Water Rental" && phone ? <Phone phone={phone} /> : null}
