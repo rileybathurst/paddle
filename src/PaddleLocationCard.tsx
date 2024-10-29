@@ -50,14 +50,12 @@ function Season({ name, season_start, season_end, opening_time, closing_time, of
             We will reopen<br />
             {season_start}<br />
             Weather Permitting
+          </p>
+        ) : null}
 
-            {offSeasonDetails ? (
-              <>
-                <br />
-                {offSeasonDetails}
-              </>
-            ) : null}
-
+        {offSeasonDetails ? (
+          <p>
+            {offSeasonDetails}
           </p>
         ) : null}
       </div>
