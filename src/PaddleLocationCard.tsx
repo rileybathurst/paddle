@@ -16,6 +16,8 @@ interface SeasonTypes {
 }
 function Season({ name, season_start, season_end, opening_time, closing_time, offSeasonDetails }: SeasonTypes) {
 
+  console.log(offSeasonDetails);
+
   // TODO: these need a query but thats not the most important first step
   if (name === "Free Parking Lot" || name === "Parking" || name === "Delivery") {
     return null;
