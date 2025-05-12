@@ -10,42 +10,48 @@ type PaddleTopBarTypes = {
         topbar: string;
       }
     }
-  };
-  allStrapiWeatherDay: {
-    nodes: {
-      startDate: string;
-      startTime: string;
-      endDate: string;
-      endTime: string;
-      closed: boolean;
-      condition: {
-        excerpt: string;
-      }
-    }[];
+    RainCheck: string;
+    RainCheckDate: Date;
+    RainCheckReason: string;
   };
 }
-export const PaddleTopBar = ({ strapiLocale, allStrapiWeatherDay }: PaddleTopBarTypes) => {
+export const PaddleTopBar = ({ strapiLocale }: PaddleTopBarTypes) => {
 
-  let currentWeather = '';
-  let currentStatus = false;
-  const currentDate = new Date().toISOString().split('T')[0];
-  // console.log('currentDate', currentDate);
-
-  allStrapiWeatherDay.nodes.map((date) => {
-    if (date.startDate === currentDate || currentDate >= date.startDate && currentDate <= date.endDate) {
-      currentWeather = date.condition.excerpt;
-      currentStatus = date.closed;
-
-      // console.log('inside the if', date.startDate);
-    }
-  });
+  const RainCheckDate = new Date(strapiLocale.RainCheck);
+  const currently = new Date();
 
   return (
-    <div className={`top-bar ${currentStatus ? 'closed' : 'open'}`} >
-      {currentWeather ? <p>{currentWeather}</p> :
-        <Markdown>
-          {strapiLocale.topbar.data.topbar}
-        </Markdown>
+    <div className={`${location} top-bar`}>
+      {RainCheckDate > currently ? (
+        <p className="rain-check">
+          <span className="rain-check-date">
+            {RainCheckDate.toLocaleDateString('en-US', {
+              month: '2-digit',
+              day: '2-digit',
+              year: '2-digit',
+            })}
+          </span>
+          &nbsp;We will be closing at&nbsp;
+          <span className="rain-check-time">
+            {RainCheckDate.toLocaleTimeString('en-US', {
+              hour: '2-digit',
+              minute: '2-digit',
+              hour12: true,
+            })} due to an incoming</span>
+          &nbsp;{strapiLocale.RainCheckReason}
+        </p>
+      ) : RainCheckDate.toDateString() === currently.toDateString() ? (
+        <p className="rain-check">
+          <span className="rain-check-date">{RainCheckDate.toLocaleDateString('en-US', {
+            month: '2-digit',
+            day: '2-digit',
+            year: '2-digit',
+          })}</span>&nbsp;
+          <span className="rain-check-reason">We're closed today due to {strapiLocale.RainCheckReason}</span>
+        </p>
+      ) : (
+        <p>We&apos;re Open for the 2024 Summer</p>
+      )
       }
     </div>
   )

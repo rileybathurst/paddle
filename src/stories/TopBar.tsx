@@ -3,15 +3,54 @@ import React from 'react';
 
 type TopBarTypes = {
   location?: 'tahoe-city' | 'south-tahoe';
+  RainCheck?: string;
+  RainCheckDate?: Date;
+  RainCheckReason?: string;
 };
 
 export const TopBar = ({
   location = 'tahoe-city',
+  RainCheck = '2025-05-13T02:14:37Z',
+  RainCheckReason = 'Snow Storm',
 }: TopBarTypes) => {
+
+  const RainCheckDate = new Date(RainCheck);
+  const currently = new Date();
 
   return (
     <div className={`${location} top-bar`}>
-      <p>We&apos;re Open for the 2024 Summer</p>
-    </div >
+
+      {RainCheckDate > currently ? (
+        <p className="rain-check">
+          <span className="rain-check-date">
+            {RainCheckDate.toLocaleDateString('en-US', {
+              month: '2-digit',
+              day: '2-digit',
+              year: '2-digit',
+            })}
+          </span>
+          &nbsp;We will be closing at&nbsp;
+          <span className="rain-check-time">
+            {RainCheckDate.toLocaleTimeString('en-US', {
+              hour: '2-digit',
+              minute: '2-digit',
+              hour12: true,
+            })} due to an incoming</span>
+          &nbsp;{RainCheckReason}
+        </p>
+      ) : RainCheckDate.toDateString() === currently.toDateString() ? (
+        <p className="rain-check">
+          <span className="rain-check-date">{RainCheckDate.toLocaleDateString('en-US', {
+            month: '2-digit',
+            day: '2-digit',
+            year: '2-digit',
+          })}</span>&nbsp;
+          <span className="rain-check-reason">We're closed today due to {RainCheckReason}</span>
+        </p>
+      ) : (
+        <p>We&apos;re Open for the 2024 Summer</p>
+      )
+      }
+    </div>
   );
 };
