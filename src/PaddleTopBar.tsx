@@ -1,5 +1,4 @@
 import * as React from "react";
-import Markdown from 'react-markdown';
 
 // TODO this would be nice to be able to close but I dont have it right yet
 
@@ -21,7 +20,7 @@ export const PaddleTopBar = ({ strapiLocale }: PaddleTopBarTypes) => {
   const currently = new Date();
 
   return (
-    <div className={`${location} top-bar`}>
+    <div className='top-bar'>
       {RainCheckDate > currently ? (
         <p className="rain-check">
           <span className="rain-check-date">
