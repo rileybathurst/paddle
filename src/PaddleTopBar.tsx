@@ -49,7 +49,7 @@ export const PaddleTopBar = ({ strapiLocale }: PaddleTopBarTypes) => {
           <span className="rain-check-reason">We're closed today due to {strapiLocale.RainCheckReason}</span>
         </p>
       ) : (
-        <p>We&apos;re Open for the 2024 Summer</p>
+        <p>{strapiLocale.topbar.data.topbar}</p>
       )
       }
     </div>
