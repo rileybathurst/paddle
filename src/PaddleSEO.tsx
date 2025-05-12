@@ -100,7 +100,7 @@ export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, bre
 
   const businessName = `${strapiLocale.name} Kayak & Paddleboard rentals and tours`;
 
-  const PaddleTitle = title ? `${title} | ${businessName}` : `${businessName} | ${strapiLocale.topbar.topbar} `;
+  const PaddleTitle = title ? `${title} | ${businessName}` : `${businessName} | ${strapiLocale.topbar.data.topbar} `;
   // TODO: tagline would be a better fallback description
   const PaddleDescription = description || strapiLocale.slogan;
   // url: `${strapiLocale.url}${SE0.url}` || strapiLocale.url,

@@ -32,9 +32,6 @@ function Spec3({ crew, capacity, test, length }: Spec3Types) {
       // so you create a string here from the object
 
       if (typeof value !== 'string' && key && value) {
-
-        // console.log('🦖');
-
         // * works but cant be type safe
         // ? i guess you could wrap it in a typeof check
         // so this is getting kinda ugly
@@ -55,8 +52,6 @@ function Spec3({ crew, capacity, test, length }: Spec3Types) {
       }
 
       if (key && value) {
-
-        // console.log('🦄');
 
         return (
           <section key={key}>
