@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link } from 'gatsby';
-import Markdown from "react-markdown";
+// import Markdown from "react-markdown";
 import type { LocationCardTypes } from "./types/location-card-types";
 import HourMin from "./hour-min";
 import Phone from "./phone";
@@ -126,9 +126,9 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
 
           (<>
             <h3 className="elbrus">{name}</h3>
-            <Markdown className="react-markdown">
+            {/* <Markdown className="react-markdown">
               {address.data.address}
-            </Markdown>
+            </Markdown> */}
           </>)}
 
       </div>
@@ -145,9 +145,11 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
             offSeasonDetails={offSeasonDetails}
           />
         ) : (
-          <Markdown className="react-markdown" >
+          <>
+            {/* <Markdown className="react-markdown" >
             {description.data.description}
-          </Markdown>
+            </Markdown> */}
+          </>
         )}
       </div>
     </>
