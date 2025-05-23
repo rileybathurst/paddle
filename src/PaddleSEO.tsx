@@ -144,10 +144,10 @@ export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, bre
             "image": "${PaddleImage}",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "${strapiLocation.streetAddress}",
-              "addressLocality": "${strapiLocation.addressLocality}",
-              "addressRegion": "${strapiLocation.addressRegion}",
-              "postalCode": "${strapiLocation.postalCode}",
+              "streetAddress": "${strapiLocation?.streetAddress}",
+              "addressLocality": "${strapiLocation?.addressLocality}",
+              "addressRegion": "${strapiLocation?.addressRegion}",
+              "postalCode": "${strapiLocation?.postalCode}",
               "addressCountry": "US"
             },
             ${allStrapiLocation ? `
