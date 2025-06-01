@@ -126,7 +126,8 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
 
           (<>
             <h3 className="elbrus">{name}</h3>
-            <Markdown className="react-markdown">
+            <Markdown>
+              {/* // ! removed for testing className="react-markdown" */}
               {address.data.address}
             </Markdown>
           </>)}
@@ -145,7 +146,8 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
             offSeasonDetails={offSeasonDetails}
           />
         ) : (
-          <Markdown className="react-markdown" >
+          <Markdown>
+            {/* // ! removed for testing className="react-markdown" */}
             {description.data.description}
           </Markdown>
         )}
@@ -155,6 +157,8 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
 }
 
 export function PaddleLocationCard({ svg, name, link, address, description, opening_time, closing_time, background, streetAddress, addressLocality, addressRegion, postalCode, commonName, season_start, season_end, phone, offSeasonDetails }: LocationCardTypes) {
+
+  const phoneNumber = Number(phone);
 
   if (link.includes('http')) {
     return (
@@ -186,7 +190,7 @@ export function PaddleLocationCard({ svg, name, link, address, description, open
 
           />
         </a>
-        {name === "On Water Rental" && phone ? <Phone phone={phone} /> : null}
+        {name === "On Water Rental" && phone ? <Phone phone={phoneNumber} /> : null}
       </div>
     )
   }
@@ -217,7 +221,7 @@ export function PaddleLocationCard({ svg, name, link, address, description, open
 
         />
       </Link>
-      {name === "On Water Rental" && phone ? <Phone phone={phone} /> : null}
+      {name === "On Water Rental" && phone ? <Phone phone={phoneNumber} /> : null}
     </div>
   )
 }

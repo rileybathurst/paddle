@@ -4,7 +4,8 @@ interface FormatPhoneNumberTypes {
   phoneNumberString: number;
 }
 function FormatPhoneNumber({ phoneNumberString }: FormatPhoneNumberTypes) {
-  const cleaned = `${phoneNumberString}`.replace(/\D/g, '');
+  const phoneNumber = String(phoneNumberString);
+  const cleaned = `${phoneNumber}`.replace(/\D/g, '');
   const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
   if (match) {
     return `(${match[1]}) ${match[2]}-${match[3]}`;

@@ -8,11 +8,13 @@ import { PaddleTime } from '../PaddleTime';
 export const Ticket = () => {
 
   const time = PaddleTime({
-    timeframe: faker.datatype.boolean() ? faker.helpers.arrayElement(['sunset', 'overnight']) : null,
+    timeframe: faker.datatype.boolean() ? faker.helpers.arrayElement(['sunset', 'overnight']) : undefined,
     // ? faker boolean covering both start and finish
-    start: faker.datatype.boolean() ? `${faker.number.int({ min: 1, max: 24 })}:${faker.number.int(60)}:00.000` : null,
-    finish: faker.datatype.boolean() ? `${faker.number.int({ min: 1, max: 24 })}:${faker.number.int(60)}:00.000` : null,
-    duration: faker.datatype.boolean() ? faker.number.int(200) : null
+    start: faker.datatype.boolean() ? `${faker.number.int({ min: 1, max: 24 })}:${faker.number.int(60)}:00.000` : undefined,
+    finish: faker.datatype.boolean() ? `${faker.number.int({ min: 1, max: 24 })}:${faker.number.int(60)}:00.000` : undefined,
+    duration: faker.datatype.boolean() ? faker.number.int(200) : undefined,
+    allStrapiSunsetTourTime: { nodes: [] },
+    allStrapiMoonlightTourDateTime: { nodes: [] }
   });
 
   return (

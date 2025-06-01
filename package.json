@@ -1,7 +1,7 @@
 {
   "name": "@rileybathurst/paddle",
   "private": false,
-  "version": "0.0.125",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,32 +13,32 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "color-cards": "^1.0.15",
-    "gatsby": "^5.13.6",
-    "gatsby-plugin-image": "^3.13.1",
+    "color-cards": "^1.0.18",
+    "gatsby": "^5.14.3",
+    "gatsby-plugin-image": "^3.14.0",
     "react": "^18.2.0",
-    "react-aria-components": "^1.2.1",
+    "react-aria-components": "^1.9.0",
     "react-dom": "^18.2.0",
-    "react-markdown": "^9.0.1"
+    "react-markdown": "^10.1.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.0.0",
-    "@faker-js/faker": "^8.4.1",
+    "@faker-js/faker": "^9.8.0",
     "@storybook/addon-docs": "^9.0.3",
     "@storybook/addon-links": "^9.0.3",
     "@storybook/react-vite": "^9.0.3",
-    "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.22",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
-    "@vitejs/plugin-react": "^4.2.1",
-    "eslint": "^8.57.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.5",
+    "@typescript-eslint/eslint-plugin": "^8.33.0",
+    "@typescript-eslint/parser": "^8.33.0",
+    "@vitejs/plugin-react": "^4.5.0",
+    "eslint": "^9.28.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "eslint-plugin-storybook": "^9.0.3",
     "storybook": "^9.0.3",
-    "typescript": "^5.2.2",
-    "vite": "^5.2.0"
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
   },
   "description": "building blocks",
   "main": "src/index.tsx",
@@ -48,8 +48,5 @@
   "files": [
     "src/*",
     "!src/stories"
-  ],
-  "overrides": {
-    "storybook": "$storybook"
-  }
+  ]
 }

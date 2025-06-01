@@ -54,7 +54,9 @@ type SEOtypes = {
   strapiLocale: {
     name: string;
     topbar: {
-      topbar: string;
+      data: {
+        topbar: string;
+      };
     };
     url: string;
     themeColor: string;

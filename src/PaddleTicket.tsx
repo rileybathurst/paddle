@@ -12,6 +12,7 @@ export function PaddleTicket({ ogimage, slug, name, start, finish, duration, tim
     duration: duration,
     timeframe: timeframe,
     allStrapiSunsetTourTime: allStrapiSunsetTourTime,
+    allStrapiMoonlightTourDateTime: { nodes: [] }, // Provide an empty nodes array or the correct data as needed
     slug: slug
   });
 
