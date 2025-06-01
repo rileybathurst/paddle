@@ -1,5 +1,5 @@
 // this is the Name.stories.tsx file
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { TopBar } from './TopBar';
 
 const meta = {

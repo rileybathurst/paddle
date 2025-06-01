@@ -57,7 +57,24 @@ export const PaddleTime = ({ start, finish, duration, timeframe, slug, allStrapi
     }
   }
 
+  if (duration) {
+    if (duration > 90) {
+      const hours = Math.floor(duration / 60);
+      const mins = duration % 60;
 
+      return {
+        entry: `${hours}${hairSpace}hrs ${mins > 0 ? `${mins}${hairSpace}mins` : ''} `,
+        value: "duration"
+      }
+    }
+
+    return {
+      entry: `${duration}${hairSpace} mins`,
+      value: "duration"
+    }
+  }
+
+  // this must be last as it has no way to be removed in strapi
   if (start && finish) {
     const startHours = sunsetStartTime ? sunsetStartTime.split(':')[0] : start.split(':')[0];
     let startHoursInt: number = Number.parseInt(startHours);
@@ -84,23 +101,6 @@ export const PaddleTime = ({ start, finish, duration, timeframe, slug, allStrapi
       -
       ${finishHours === '12' ? 'noon' : `${finishHoursInt}${finishMinsInt > 0 ? `:${finishMinsInt}${hairSpace}` : ''}${hairSpace}${finishAmpm}`}`,
       value: "time"
-    }
-  }
-
-  if (duration) {
-    if (duration > 90) {
-      const hours = Math.floor(duration / 60);
-      const mins = duration % 60;
-
-      return {
-        entry: `${hours}${hairSpace}hrs ${mins > 0 ? `${mins}${hairSpace}mins` : ''} `,
-        value: "duration"
-      }
-    }
-
-    return {
-      entry: `${duration}${hairSpace} mins`,
-      value: "duration"
     }
   }
 
