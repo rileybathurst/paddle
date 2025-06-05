@@ -1,3 +1,4 @@
+// TODO: file is kinda a mess and needs to be cleaned up
 // this is the Name.tsx file
 import React from 'react';
 import { faker } from '@faker-js/faker';

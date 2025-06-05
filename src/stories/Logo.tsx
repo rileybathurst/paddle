@@ -1,4 +1,4 @@
-// this is the Name.tsx file
+// * slightly more complex to do the switch as its not a css rule
 import React from 'react';
 import { faker } from '@faker-js/faker';
 

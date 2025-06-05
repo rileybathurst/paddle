@@ -1,4 +1,4 @@
-// this is the Name.tsx file
+// * complex file to storybook but very useful
 import { faker } from '@faker-js/faker';
 import React from 'react';
 

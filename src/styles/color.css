@@ -12,38 +12,6 @@ body {
   }
 }
 
-/* ! testing */
-/* storybook but also maybe I just add them to the site it could be less confusing */
-/* I wonder if I can do something with :has so only top layer does the color */
-/* body {
-  clip-path: inset(0 -100vmax);
-  background-color: var(--brilliance);
-  box-shadow: 0 0 0 100vmax var(--brilliance);
-
-  color: var(--black-metal);
-
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--black-metal);
-    color: var(--kingly-cloud);
-  }
-}
-
-main.tahoe-city {
-  background-color: var(--kingly-cloud);
-
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--lake-200);
-    box-shadow: 0 0 0 100vmax var(--lake-200);
-  }
-}
-
-main.south-tahoe {
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--lake-200);
-    box-shadow: 0 0 0 100vmax var(--lake-200);
-  }
-} */
-
 body:has(#storybook-root) {
   #storybook-root {
     min-height: 100vh;
@@ -64,12 +32,21 @@ body:has(#storybook-root) {
 
 .top-bar {
   clip-path: inset(0 -100vmax);
-  background-color: var(--sand-100);
-  box-shadow: 0 0 0 100vmax var(--sand-100);
+  background-color: var(--brilliance);
+  box-shadow: 0 0 0 100vmax var(--brilliance);
+  text-align: center;
+}
 
-  /* TODO: this cant be right its merging tahoe-city and south-tahoe */
-  /*   @media (prefers-color-scheme: dark) {
-    background-color: var(--lake-200);
-    box-shadow: 0 0 0 100vmax var(--lake-200);
-  } */
+.south-tahoe {
+  .top-bar {
+    background-color: var(--lake-100);
+    box-shadow: 0 0 0 100vmax var(--lake-100);
+    color: var(--lake-600);
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--lake-800);
+      box-shadow: 0 0 0 100vmax var(--lake-800);
+      color: var(--lake-600);
+    }
+  }
 }

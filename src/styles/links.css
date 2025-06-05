@@ -33,7 +33,7 @@ a svg {
 /*------------------------------------*/
 
 /* TODO: a lot of this is smaller than the variables test it all */
-.link__backed {
+.menu-list a {
   padding: 0.25rem;
   border-radius: 0.25rem;
   display: inline-block;

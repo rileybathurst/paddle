@@ -12,18 +12,6 @@ export const Typography = () => {
       <h5>elbrus</h5>
       <h6>vinson</h6>
       <p>kosciuszko</p>
-
-      <hr />
-
-      {/* // TODO: fix this naming */}
-      <p className="typography__secondary">typography__secondary</p>
-
-      <hr />
-
-      <p>
-        These can be any version of h to be a well styled html doc as long as
-        they have the hgroup wrapper with a class of crest
-      </p>
     </ >
   );
 };
