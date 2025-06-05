@@ -27,9 +27,28 @@
     --navy-300: #092531;
   }
 
-  /*------------------------------------*/
+  --lake-100: oklch(99% 0.001 230);
+  --lake-100: oklch(95% 0.03 230);
+  --lake-200: oklch(93% 0.04 230);
+  --lake-300: oklch(90% 0.055 230);
+  --lake-400: oklch(83% 0.08 230);
+  --lake-500: oklch(45% 0.085 230);
+  --lake-600: oklch(35% 0.065 230);
+  --lake-700: oklch(25% 0.05 230);
+  --lake-800: oklch(20% 0.035 230);
 
-  --card-radius: 0.25rem;
+  /* taken straight from sketch */
+  /* TODO: do something to show these without duplicating the variables? */
+  @supports not (99% 0.001 230) {
+    --lake-100: #f5fcff;
+    --lake-200: #ddf4fe;
+    --lake-300: #b8e7f9;
+    --lake-400: #8fd4ef;
+    --lake-500: #125e7d;
+    --lake-600: #073f55;
+    --lake-700: #022736;
+    --lake-800: #00151d;
+  }
 
   /*------------------*/
   /* #NEUTRALS */
@@ -44,7 +63,7 @@
   --glow: 62.5%;
   --light: 75%;
   --bright: 87.5%;
-  --brilliant: 97.5%;
+  --brilliance: 97.5%;
 
   /* louie neutrals */
   --black-metal: hsl(210, 25%, 2.5%);
@@ -57,6 +76,19 @@
   --kingly-cloud: hsl(210, 18.75%, 87.5%);
   --brilliance: hsl(210, 25%, 97.5%);
 
+  --neutral-100: #f9f9f9;
+  --neutral-200: #ebebeb;
+  --neutral-300: #d9d9d9;
+  --neutral-400: #bfbfbf;
+  --neutral-500: #404040;
+  --neutral-600: #262626;
+  --neutral-700: #121212;
+  --neutral-800: #050505;
+
+  /*------------------------------------*/
+
+  --card-radius: 0.25rem;
+
   /*------------------*/
   /* #TYPOGRAPHY */
   /*------------------*/
@@ -66,6 +98,7 @@
   --font-serif: Georgia, serif; /* TODO: add serif font that matches nicely */
 
   /* 🏔 7 Summits */
+  /* linear scale */
   --everest: 3rem; /* 29,035ft Asia */
   --aconcagua: 2.5rem; /* 22,840ft South America */
   --denali: 2rem; /* 20,320ft North America */

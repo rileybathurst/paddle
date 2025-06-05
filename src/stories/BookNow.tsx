@@ -4,11 +4,13 @@ import { faker } from '@faker-js/faker';
 
 interface BookNowProps {
   primary?: boolean;
+
   onClick?: () => void;
 }
 
 export const BookNow = ({
   primary = false,
+
   ...props
 }: BookNowProps) => {
 
@@ -19,7 +21,7 @@ export const BookNow = ({
       <a
         href={faker.location.city()}
         rel="noopener noreferrer"
-        className="book-now"
+        className='button book-now'
         title={`Book now with ${faker.location.city()} kayak and paddleboard`}
       >
         BOOK NOW

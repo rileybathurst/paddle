@@ -8,13 +8,13 @@ import { Pricing } from './Pricing';
 import { PaddleBreadcrumbs } from './PaddleBreadcrumbs';
 
 type HomeTypes = {
-  location?: 'tahoe-city' | 'south-tahoe';
+
 };
 
 export const Home = ({ location }: HomeTypes) => {
 
   return (
-    <div className={location}>
+    <div >
       {/* // ! this doubles up sometimes maybe I need to move it down to only where needed? I dont know if thats possible */}
       <Header />
       <main className="albatross wrap">

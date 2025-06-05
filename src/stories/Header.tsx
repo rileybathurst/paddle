@@ -5,11 +5,11 @@ import { TopBar } from './TopBar';
 import { Logo } from './Logo';
 
 type HeaderTypes = {
-  location?: 'tahoe-city' | 'south-tahoe';
+
 };
 
 export const Header = ({ location }: HeaderTypes) => (
-  <header className={location}>
+  <header >
     <TopBar />
     <div className="logo-container" >
       <Link

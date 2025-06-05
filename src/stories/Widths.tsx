@@ -26,7 +26,7 @@ function WidthCard({ widths }: WidthCardTypes) {
           <p
             className='white-space'
             style={{
-              color: 'var(--navy-400)'
+              color: 'var(--lake-400)'
             }}>
             {faker.string.fromCharacters('abcdefghijklmnopqrstuvwxyz', { min: 45, max: 45 })}
           </p>
@@ -68,7 +68,7 @@ function WarpCards({ widths }: WarpCardsTypes) {
             style={{
               paddingBlock: 'var(--vinson)',
               backgroundColor: 'var(--tin-soldier)',
-              color: 'var(--navy-400)'
+              color: 'var(--lake-400)'
             }}
           >
             {width} wrap

@@ -39,6 +39,38 @@ button:active {
   display: inline-block; /* same as a button */
 }
 
+/*------------------------------------*/
+/* #SOUTH TAHOE */
+/*------------------------------------*/
+
+.south-tahoe {
+  button,
+  .button,
+  .book-now {
+    background-color: var(--lake-200);
+    border-color: var(--lake-300);
+    color: var(--lake-600);
+  }
+
+  .button__active {
+    background-color: var(--lake-400);
+    border-color: var(
+      --lake-500
+    ); /* this goes passed the 400 / 500 dark light split Im not sure if I want to change it */
+    /* maybe it needs a very occasional 450 */
+    color: var(--lake-800);
+  }
+
+  button:hover.south-tahoe,
+.button__hover.south-tahoe,
+/* .button__hover + .south-tahoe, */
+.button:hover.south-tahoe {
+    background-color: var(--lake-300);
+    border-color: var(--lake-400);
+    color: var(--lake-700);
+  }
+}
+
 /*------------------*/
 /* #MENU */
 /*------------------*/

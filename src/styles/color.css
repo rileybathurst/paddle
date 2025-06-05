@@ -7,7 +7,7 @@ body {
   color: var(--black-metal);
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--navy-300);
+    background-color: var(--lake-300);
     color: var(--brilliance);
   }
 }
@@ -32,15 +32,15 @@ main.tahoe-city {
   background-color: var(--kingly-cloud);
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--navy-200);
-    box-shadow: 0 0 0 100vmax var(--navy-200);
+    background-color: var(--lake-200);
+    box-shadow: 0 0 0 100vmax var(--lake-200);
   }
 }
 
 main.south-tahoe {
   @media (prefers-color-scheme: dark) {
-    background-color: var(--navy-200);
-    box-shadow: 0 0 0 100vmax var(--navy-200);
+    background-color: var(--lake-200);
+    box-shadow: 0 0 0 100vmax var(--lake-200);
   }
 } */
 
@@ -53,7 +53,7 @@ body:has(#storybook-root) {
     background-color: var(--brilliance);
 
     @media (prefers-color-scheme: dark) {
-      background-color: var(--navy-300);
+      background-color: var(--lake-300);
     }
   }
 }
@@ -67,64 +67,9 @@ body:has(#storybook-root) {
   background-color: var(--sand-100);
   box-shadow: 0 0 0 100vmax var(--sand-100);
 
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--navy-200);
-    box-shadow: 0 0 0 100vmax var(--navy-200);
-  }
-}
-
-/*------------------------------------*/
-/* #LOCATION */
-/*------------------------------------*/
-
-/* TODO: tahoe city and south lake */
-.location-wrapper.true {
-  background-color: var(--sand-100);
-  border-radius: var(--card-radius);
-
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--navy-200);
-  }
-}
-
-/*------------------------------------*/
-
-#storybook-root {
-  .forest.tahoe-city {
-    .floor {
-      /* background-color: var(--sand-100); */
-      /* background-color: whitesmoke; */
-      background-color: var(--brilliance);
-    }
-
-    .understory {
-      background-color: var(--sand);
-    }
-
-    .canopy {
-      background-color: var(--sand-200);
-    }
-
-    .emergent {
-      background-color: var(--sand-300);
-    }
-  }
-
-  .forest.south-tahoe {
-    .floor {
-      /* background-color: var(--sand-100); */
-    }
-
-    .understrory {
-      /* background-color: var(--sand-200); */
-    }
-
-    .canopy {
-      /* background-color: var(--sand-300); */
-    }
-
-    .emergent {
-      /* background-color: var(--ruby-100); */
-    }
-  }
+  /* TODO: this cant be right its merging tahoe-city and south-tahoe */
+  /*   @media (prefers-color-scheme: dark) {
+    background-color: var(--lake-200);
+    box-shadow: 0 0 0 100vmax var(--lake-200);
+  } */
 }

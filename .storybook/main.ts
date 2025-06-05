@@ -6,12 +6,13 @@ const config: StorybookConfig = {
   addons: [
     "@storybook/addon-links",
     "@chromatic-com/storybook",
-    "@storybook/addon-docs"
+    "@storybook/addon-docs",
+    "@storybook/addon-themes",
   ],
 
   framework: {
     name: "@storybook/react-vite",
     options: {},
-  }
+  },
 };
 export default config;

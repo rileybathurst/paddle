@@ -4,7 +4,7 @@
 
 @import "variables";
 @import "body";
-@import "layout";
+/* @import "layout"; */ /* ! something seems wrong here im getting wierd errors */
 @import "cards";
 @import "media";
 @import "color";
@@ -15,3 +15,5 @@
 @import "tables";
 @import "visibility";
 @import "a11y";
+
+/* ! safari is showing some unuised css results lets stay away from that for a minute and try a little chrome maybe theres a bug */

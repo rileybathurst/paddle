@@ -7,11 +7,11 @@ a:where(:hover, :focus) {
 }
 
 .tahoe-city a {
-  color: var(--brilliance);
+  color: var(--ruby-100);
 }
 
 .south-tahoe a {
-  color: var(--navy-100);
+  color: var(--lake-500);
 }
 
 /*------------------------------------*/

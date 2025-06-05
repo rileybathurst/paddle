@@ -2,14 +2,14 @@
 import React from 'react';
 
 type TopBarTypes = {
-  location?: 'tahoe-city' | 'south-tahoe';
+
   RainCheck?: string;
   RainCheckDate?: Date;
   RainCheckReason?: string;
 };
 
 export const TopBar = ({
-  location = 'tahoe-city',
+
   RainCheck = '2025-05-13T02:14:37Z',
   RainCheckReason = 'Snow Storm',
 }: TopBarTypes) => {
@@ -18,7 +18,7 @@ export const TopBar = ({
   const currently = new Date();
 
   return (
-    <div className={`${location} top-bar`}>
+    <div className='top-bar'>
 
       {RainCheckDate > currently ? (
         <p className="rain-check">
