@@ -1,6 +1,5 @@
 // this is the Name.tsx file
 import React from 'react';
-import { Eyebrow } from './Eyebrow';
 
 export const Typography = () => {
 
@@ -21,7 +20,6 @@ export const Typography = () => {
 
       <hr />
 
-      <Eyebrow />
       <p>
         These can be any version of h to be a well styled html doc as long as
         they have the hgroup wrapper with a class of crest
