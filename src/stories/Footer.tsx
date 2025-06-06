@@ -7,7 +7,6 @@ import { Pricing } from './Pricing';
 import { LocationDeck } from './LocationDeck';
 import { Socials } from './Socials';
 import { Logo } from './Logo';
-import Phone from './Phone';
 import { Menu } from './Menu';
 
 export const Footer = () => {
