@@ -15,7 +15,7 @@ export const BookNow = ({
 }: BookNowProps) => {
 
   return (
-    <main
+    <div
       {...props}
     >
       <a
@@ -26,6 +26,6 @@ export const BookNow = ({
       >
         BOOK NOW
       </a>
-    </main>
+    </div>
   );
 };

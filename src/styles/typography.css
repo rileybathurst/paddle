@@ -68,8 +68,6 @@ h3,
 
 h4,
 .kilimanjaro,
-.brow,
-.page-title,
 /* .spec h2 put this inline */
 .spec h2 {
   font-size: 1.5rem; /* 24px */
@@ -192,27 +190,6 @@ hgroup {
   flex-flow: row wrap;
   column-gap: 1ch; /* TODO: */
   align-items: baseline;
-}
-
-/*------------------*/
-/* #CREST */
-/*------------------*/
-
-/* .crest, .brow, .supra all work as a set */
-.crest {
-  display: flex;
-  flex-direction: column;
-  gap: 0; /* resets the default hgroup */
-}
-
-.brow {
-  order: 1;
-  margin-block-end: var(--vinson);
-}
-
-.supra {
-  font-family: var(--heading_font);
-  order: 2;
 }
 
 /*------------------*/

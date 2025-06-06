@@ -4,11 +4,7 @@ import { Link } from 'react-aria-components';
 import { TopBar } from './TopBar';
 import { Logo } from './Logo';
 
-type HeaderTypes = {
-
-};
-
-export const Header = ({ location }: HeaderTypes) => (
+export const Header = () => (
   <header >
     <TopBar />
     <div className="logo-container" >
@@ -27,6 +23,6 @@ export const Header = ({ location }: HeaderTypes) => (
         </Link>
       </h1>
     </div>
-    {/* // TODO: <p>small nav is going to be a pain to build here I bet</p> */}
+    {/* // TODO: small nav */}
   </header>
 );

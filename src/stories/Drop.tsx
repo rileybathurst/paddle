@@ -14,7 +14,7 @@ export const Drop = ({
 }: DropProps) => {
 
   return (
-    <main
+    <div
       {...props}
     >
       {primary ? 'primary' : 'secondary'}
@@ -51,6 +51,6 @@ export const Drop = ({
 } */}
 
 
-    </main>
+    </div>
   );
 };

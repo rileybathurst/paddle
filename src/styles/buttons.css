@@ -47,9 +47,9 @@ button:active {
   button,
   .button,
   .book-now {
-    background-color: var(--lake-200);
-    border-color: var(--lake-300);
-    color: var(--lake-600);
+    background-color: var(--cloud-background-color);
+    border-color: var(--cloud-border-color);
+    color: var(--cloud-color);
   }
 
   .button__active {

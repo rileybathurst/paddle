@@ -1,7 +1,6 @@
+// TODO: this isnt finished
 import * as React from "react"
-// ! this isnt finished it wont have faker when its done
 import { faker } from '@faker-js/faker';
-
 
 interface CompositionTypes {
   sport?: string;

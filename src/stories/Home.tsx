@@ -6,54 +6,39 @@ import { Footer } from './Footer';
 import { LocationDeck } from './LocationDeck';
 import { Pricing } from './Pricing';
 import { PaddleBreadcrumbs } from './PaddleBreadcrumbs';
+import { Menu } from './Menu';
+import { BookNow } from './BookNow';
+import { Flight } from './Flight';
+import { Testimonial } from './Testimonial';
 
-type HomeTypes = {
-
-};
-
-export const Home = ({ location }: HomeTypes) => {
+export const Home = () => {
 
   return (
     <div >
-      {/* // ! this doubles up sometimes maybe I need to move it down to only where needed? I dont know if thats possible */}
       <Header />
+      <Menu />
       <main className="albatross wrap">
         <section>
+
+          <LocationDeck />
+
+          {/* // TODO: move to components */}
+          <div className="button__double">
+            {Array.from({ length: faker.number.int({ min: 1, max: 5 }) }).map(() => (
+              // TODO: needs additional props
+              <BookNow />
+            ))}
+          </div>
+
           <div className='pelican'>
-            <h2 className="page-title">
-              {faker.company.catchPhrase()}
+            <h2 className="kilimanjaro">
+              <a href={faker.internet.domainName()}>
+                {faker.company.catchPhrase()}
+              </a>
             </h2>
             <div className="margin-block-end-aconcagua">
               <p>{faker.lorem.sentences(5)}</p>
             </div>
-          </div>
-
-          <LocationDeck
-            background={false}
-          />
-
-          <div className="button__double">
-            <a
-              href={faker.commerce.isbn()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="book-now"
-              title={`book rental kayaks and paddleboards with ${faker.location.city()}`}
-            >
-              RENTALS<br />
-              BOOK NOW
-            </a>
-
-            <a
-              href={faker.commerce.isbn()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="book-now"
-              title={`book rental kayaks and paddleboards with ${faker.location.city()}`}
-            >
-              TOURS<br />
-              BOOK NOW
-            </a>
           </div>
 
         </section>
@@ -78,57 +63,50 @@ export const Home = ({ location }: HomeTypes) => {
         </div>
       </main>
 
-      <section id="tours" className="pelican water">
-        <div>
-          {/* // TODO: only one h and then p */}
-          <hgroup className="crest">
-            <h3 className="brow"><Link href="/tours">Tours</Link></h3>
-            {/* think about capitalization here */}
-            <h4 className="supra">Enjoy The Majesty Of Lake Tahoe</h4>
-          </hgroup>
+      <section id="tours" className="cloud">
+        <div className='condor'>
 
+          <h3 className="">
+            <Link href={faker.internet.domainName()}>
+              Tours
+            </Link>
+          </h3>
           <p>{faker.lorem.sentences(2)}</p>
-
-          <h4>
-            <Link href="/tours/compare">Compare Tours</Link>
-          </h4>
         </div>
-        <div>{/* stay gold */}</div>
-      </section>
 
-      {/* <div className="deck">
-        {data.allStrapiTour.nodes.map((tour) => (
-          <div key={tour.id}>
-            <Ticket tour={tour} />
-          </div>
-        ))}
-      </div> */}
+        <Flight />
+
+        <h4 className='condor'>
+          <Link href={faker.internet.domainName()}>
+            Compare Tours
+          </Link>
+        </h4>
+      </section>
 
       <section id="retail" className="pelican water">
         <article>
-          {/* // TODO: only one h and then p */}
-          <hgroup className="crest">
-            <h3 className="brow">
-              <a
-                href={faker.internet.domainName()}
-                target="_blank"
-                rel='noopener noreferrer'
-              >
-                Retail Store
-              </a>
-            </h3>
-            <h4 className="supra">Kayaks and Paddleboards</h4>
-          </hgroup>
+          <h3>
+            <a
+              href={faker.internet.domainName()}
+              target="_blank"
+              rel='noopener noreferrer'
+            >
+              Retail Store
+            </a>
+          </h3>
 
           <p>{faker.lorem.sentences(2)}</p>
         </article>
         <div>
-          {/* stay gold */}
+          {/* // TODO: this is where the brand logos are going */}
         </div>
+        <hr />
       </section>
+
+      <Testimonial />
 
       <PaddleBreadcrumbs />
       <Footer />
-    </div>
+    </div >
   );
 };

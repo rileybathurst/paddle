@@ -4,11 +4,13 @@
 
 @import "variables";
 @import "body";
-/* @import "layout"; */ /* ! something seems wrong here im getting wierd errors */
+@import "typography";
+@import "nav";
+@import "layout";
 @import "cards";
 @import "media";
 @import "color";
-@import "typography";
+@import "panels";
 @import "links";
 @import "buttons";
 @import "lists";

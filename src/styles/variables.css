@@ -152,3 +152,42 @@
   --fade: 0.2s var(--easing);
   --slow: 0.5s var(--easing);
 }
+
+/* * this is specifically outside of :root */
+/*------------------------------------*/
+/* #PANELS */
+/*------------------------------------*/
+
+/* .panel-horizon
+.panel-surface
+.panel-breeze
+.panel-cloud
+.panel-storm
+.panel-summit
+.panel-aurora
+.panel-cosmos */
+
+.south-tahoe {
+  /* Panels are used to group content and provide visual separation */
+  /* * I'm not sure this is quite right but working on ideas */
+  /* .horizon { base level } */
+  /* Panels are used to group content and provide visual separation */
+  /* * I'm not sure this is quite right but working on ideas */
+  /* .horizon { base level } */
+
+  /* .cloud { floating, elevated content } */
+  --cloud-background-color: var(--lake-100);
+  --cloud-color: var(--lake-600);
+  --cloud-border-color: var(--lake-300);
+
+  --cloud-dark-background-color: var(--lake-800);
+  --cloud-dark-color: var(--lake-200);
+
+  /* .aurora { special, highlighted areas } */
+  --aurora-background-color: var(--neutral-100);
+  --aurora-background-color: white;
+  --aurora-color: var(--neutral-600);
+
+  --aurora-dark-background-color: var(--neutral-800);
+  --aurora-dark-color: var(--neutral-200);
+}

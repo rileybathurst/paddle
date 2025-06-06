@@ -30,7 +30,9 @@ a svg {
   transition: var(--fade);
 }
 
-/*------------------------------------*/
+/*------------------*/
+/* #MENU LIST */
+/*------------------*/
 
 /* TODO: a lot of this is smaller than the variables test it all */
 .menu-list a {
@@ -44,5 +46,35 @@ a svg {
   @media (min-width: 40rem) {
     padding: 0.5rem;
     border-radius: 0.5rem;
+  }
+}
+
+.south-tahoe {
+  .menu-list .active {
+    /* TODO: fix the colors */
+    background-color: var(--sand);
+    box-shadow: var(--penumbra);
+    border: 1px solid var(--neutral-100);
+  }
+
+  /* ? is *:not expensive? */
+  /* ? I guess this is brands and logo seems I could do this a smarter way */
+  *:not(.social) > a {
+    svg {
+      fill: var(--lake-600);
+      transition: 0.2s ease;
+
+      @media (prefers-color-scheme: dark) {
+        fill: var(--lake-200);
+      }
+    }
+
+    a svg:where(:hover, :focus) {
+      fill: var(--lake-300);
+    }
+
+    a.hover svg {
+      fill: var(--lake-300);
+    }
   }
 }

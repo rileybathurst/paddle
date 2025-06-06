@@ -10,8 +10,8 @@
 }
 
 /* TODO: needs sub-grid */
-.card,
-.ticket {
+/* card is becoming purchase and splitting more */
+.card {
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -72,16 +72,12 @@
     text-transform: uppercase;
   }
 
-  p {
-    margin-inline: var(--kosciuszko);
-  }
-
   hr {
     margin-inline: var(--kosciuszko);
   }
 
   img {
-    max-width: 100%;
+    width: 100%;
   }
 
   .card__details {
@@ -159,6 +155,23 @@
   }
 }
 
+.ticket img {
+  aspect-ratio: 16 / 9;
+}
+
+.south-tahoe .ticket {
+  background-color: var(--lake-200);
+  border: 1px solid var(--lake-300);
+  box-shadow: var(--penumbra);
+  color: var(--lake-600);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--lake-800);
+    box-shadow: var(--penumbra--dark);
+    color: var(--lake-600);
+  }
+}
+
 /*------------------*/
 /* #RETAIL LOGO */
 /*------------------*/
@@ -183,4 +196,48 @@
     width: var(--vulture); /* guess and check */
     margin-block-end: var(--kosciuszko);
   }
+}
+
+/*------------------------------------*/
+/* #TICKET */
+/*------------------------------------*/
+
+.flight {
+  margin-block-end: var(--aconcagua);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--condor), 1fr));
+}
+
+.flight:empty {
+  display: none;
+}
+
+.ticket {
+  /* ? Im not sure if there should be max width or its always inside a grid */
+  img {
+    width: 100%;
+  }
+
+  p {
+    margin-inline: var(--vinson);
+  }
+
+  .ticket__header,
+  .ticket__money,
+  .ticket__specs {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--vinson);
+  }
+
+  .ticket__header,
+  .ticket__specs {
+    padding-inline: var(--vinson);
+  }
+}
+
+.south-tahoe .ticket {
 }

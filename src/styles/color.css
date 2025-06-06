@@ -1,14 +1,13 @@
 /*------------------------------------*/
 /* #COLOR */
 /*------------------------------------*/
-
 body {
-  background-color: var(--brilliance);
-  color: var(--black-metal);
+  background-color: var(--neutral-100);
+  color: var(--neutral-800);
 
   @media (prefers-color-scheme: dark) {
     background-color: var(--lake-300);
-    color: var(--brilliance);
+    color: var(--neutral-100);
   }
 }
 
@@ -18,7 +17,7 @@ body:has(#storybook-root) {
   }
 
   #storybook-root:has(.tahoe-city) {
-    background-color: var(--brilliance);
+    background-color: var(--neutral-100);
 
     @media (prefers-color-scheme: dark) {
       background-color: var(--lake-300);
@@ -32,8 +31,8 @@ body:has(#storybook-root) {
 
 .top-bar {
   clip-path: inset(0 -100vmax);
-  background-color: var(--brilliance);
-  box-shadow: 0 0 0 100vmax var(--brilliance);
+  background-color: var(--neutral-100);
+  box-shadow: 0 0 0 100vmax var(--neutral-100);
   text-align: center;
 }
 

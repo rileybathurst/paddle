@@ -1,0 +1,36 @@
+/*------------------------------------*/
+/* #PANELS */
+/*------------------------------------*/
+
+/* Panels are used to group content and provide visual separation */
+/* .horizon { base level } */
+/* .cloud { floating, elevated content } */
+/* .aurora { special, highlighted areas } */
+
+.south-tahoe {
+  .cloud {
+    background-color: var(--cloud-background-color);
+    box-shadow: 0 0 0 100vmax var(--cloud-background-color);
+    clip-path: inset(0 -100vmax);
+    color: var(--cloud-color);
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--cloud-dark-background-color);
+      box-shadow: 0 0 0 100vmax var(--cloud-dark-background-color);
+      color: var(--cloud-dark-color);
+    }
+  }
+
+  .aurora {
+    background-color: var(--aurora-background-color);
+    box-shadow: 0 0 0 100vmax var(--aurora-background-color);
+    clip-path: inset(0 -100vmax);
+    color: var(--aurora-color);
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--aurora-dark-background-color);
+      box-shadow: 0 0 0 100vmax var(--aurora-dark-background-color);
+      color: var(--aurora-dark-color);
+    }
+  }
+}
