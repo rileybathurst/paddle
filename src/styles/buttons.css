@@ -12,12 +12,20 @@ button,
   cursor: pointer;
   margin-block-end: var(--elbrus);
   transition: var(--slow);
-  display: block;
+  display: inline-block;
   line-height: var(--kilimanjaro);
   text-decoration: none;
   width: max-content;
   border: 1px solid var(--neutral-100);
   box-shadow: var(--penumbra);
+  text-align: center;
+
+  @media (prefers-color-scheme: dark) {
+    /* background-color: var(--neutral-600); not enough*/
+    background-color: var(--neutral-600);
+    border-color: var(--neutral-500);
+    color: var(--neutral-100);
+  }
 }
 
 button:hover,
@@ -25,17 +33,122 @@ button:hover,
 /* below is for the storyboard showcase */
 .button__hover {
   box-shadow: var(--antumbra);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--neutral-500);
+    border-color: var(--neutral-500);
+    color: var(--neutral-200);
+  }
 }
 
 .button__active,
+.button:active,
 button:active {
   box-shadow: var(--umbra);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--neutral-400);
+    border-color: var(--neutral-200);
+    color: var(--neutral-500);
+  }
 }
 
 .book-now {
-  margin-block-start: var(--kosciuszko);
-  text-align: center;
-  display: inline-block; /* same as a button */
+  margin-block-start: var(
+    --kosciuszko
+  ); /* why is this different than a regular button */
+  background-color: var(--neutral-800);
+  border-color: var(--neutral-700);
+  color: var(--neutral-300);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--neutral-200);
+    border-color: var(--neutral-100);
+    color: var(--neutral-800);
+  }
+}
+
+.book-now:hover,
+.book-now__hover {
+  background-color: var(--neutral-500);
+  border-color: var(--neutral-600);
+  color: var(--neutral-200);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--neutral-300);
+    border-color: var(--neutral-200);
+    color: var(--neutral-700);
+  }
+}
+
+.book-now:active,
+.book-now__active {
+  background-color: var(--neutral-400);
+  border-color: var(--neutral-400);
+  color: var(--neutral-100);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--neutral-300);
+    border-color: var(--neutral-300);
+    color: var(--neutral-600);
+  }
+}
+
+/*------------------------------------*/
+/* #TAHOE CITY */
+/*------------------------------------*/
+
+.tahoe-city {
+  button,
+  .button {
+    background-color: var(--sand-200);
+    border-color: var(--sand-100);
+    color: var(--neutral-600);
+  }
+
+  @media (prefers-color-scheme: dark) {
+  }
+
+  button:hover,
+  .button:hover,
+  .button__hover {
+    background-color: var(--sand-300);
+    border-color: var(--sand-200);
+    color: var(--neutral-700);
+  }
+
+  button:active,
+  .button:active,
+  .button__active {
+    background-color: var(--sand-400);
+    border-color: var(--sand-300);
+    color: var(--neutral-800);
+  }
+
+  /* BOOK NOW */
+  .book-now {
+    background-color: var(--tanager-100);
+    border-color: var(--tanager-200);
+    color: var(--neutral-100);
+  }
+
+  @media (prefers-color-scheme: dark) {
+  }
+
+  .book-now:hover,
+  .book-now {
+    background-color: var(--tanager-200);
+    border-color: var(--tanager-300);
+    color: var(--neutral-200);
+  }
+
+  .book-now:active,
+  .book-now__active,
+  button:active {
+    background-color: var(--tanager-300);
+    border-color: var(--tanager-400);
+    color: var(--neutral-300);
+  }
 }
 
 /*------------------------------------*/
@@ -44,39 +157,55 @@ button:active {
 
 .south-tahoe {
   button,
-  .button,
-  .book-now {
-    background-color: var(--cloud-background-color);
-    border-color: var(--cloud-border-color);
+  .button {
+    background-color: var(--lake-200);
+    border-color: var(--lake-100);
     color: var(--cloud-color);
-  }
-
-  .button__active {
-    background-color: var(--lake-400);
-    border-color: var(
-      --lake-500
-    ); /* this goes passed the 400 / 500 dark light split Im not sure if I want to change it */
-    /* maybe it needs a very occasional 450 */
-    color: var(--lake-800);
-  }
-
-  button:hover.south-tahoe,
-  .button__hover.south-tahoe,
-  /* .button__hover + .south-tahoe, */
-  .button:hover.south-tahoe {
-    background-color: var(--lake-300);
-    border-color: var(--lake-400);
-    color: var(--lake-700);
   }
 
   @media (prefers-color-scheme: dark) {
     button,
-    .button,
-    .book-now {
+    .button {
       background-color: var(--lake-600);
       border-color: var(--lake-700);
       color: var(--lake-100);
     }
+  }
+
+  button:hover,
+  .button__hover,
+  .button:hover {
+    background-color: var(--lake-400);
+    border-color: var(--lake-400);
+    color: var(--lake-700);
+  }
+
+  .button__active {
+    background-color: var(--lake-400);
+    border-color: var(--lake-500);
+    /* this goes passed the 400 / 500 dark light split Im not sure if I want to change it */
+    /* maybe it needs a very occasional 450 */
+    color: var(--lake-800);
+  }
+
+  .book-now {
+    background-color: var(--lake-200);
+    border-color: var(--lake-100);
+    color: var(--lake-600);
+  }
+
+  .book-now:hover,
+  .book-now__hover {
+    background-color: var(--lake-300);
+    border-color: var(--lake-200);
+    color: var(--lake-700);
+  }
+
+  .book-now:active,
+  .book-now__active {
+    background-color: var(--lake-400);
+    border-color: var(--lake-300);
+    color: var(--lake-800);
   }
 }
 
@@ -90,7 +219,6 @@ menu button {
 
 /*------------------------------------*/
 
-/* TODO: name change this can be more than 2 */
 .multi_button {
   display: flex;
   align-items: center;

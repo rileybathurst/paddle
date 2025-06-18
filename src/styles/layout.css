@@ -65,7 +65,7 @@ footer,
 
 /*------------------------------------*/
 
-/* TODO: media queries for the nested wraps */
+/* TODO: v1.2 media queries for the nested wraps */
 
 .wrap,
 .deck,
@@ -112,9 +112,7 @@ footer > * {
 
 /* this isnt a direct nested its always down another layer */
 .albatross .pelican,
-.deck > *:not(h4, p, hr) {
-  /* ? margin-inline: 0; ? should this be centered */
-  /* TODO: this needs a :not for a few things */
+.deck > *:not(h4):not(p):not(hr) {
   width: 100%; /* resets the padding */
   padding-inline: 0;
 }
@@ -375,11 +373,6 @@ header {
   grid-template-columns: 5% 10% 70% 10% 5%;
   grid-template-rows: 5% 90% 5%;
   margin-block-end: var(--vinson);
-
-  /* these dont obey the max height at all */
-  /* max-height: var(--stork); ? */
-  /* max-height: 23rem; TODO: guess and check can I use a variable */
-  /* overflow: hidden; */
 
   .gatsby-image-wrapper,
   .storybook-gatsby-image {

@@ -37,7 +37,6 @@ export const Ticket = () => {
 
       <div className="ticket__specs">
         <h4>{time.entry}</h4>
-        fitness
         {faker.datatype.boolean() ? <h4 className="capitalize">{faker.helpers.arrayElement(['easy', 'medium', 'hard'])} <span>Fitness</span></h4> : null}
       </div>
       <p>{faker.lorem.sentences(2)}</p>

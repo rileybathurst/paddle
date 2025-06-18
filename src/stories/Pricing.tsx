@@ -1,6 +1,7 @@
 // this is the Name.tsx file
 import React from 'react';
 import { BookNow } from './BookNow';
+import { faker } from '@faker-js/faker';
 
 type PricingTypes = {
   book: boolean;
@@ -63,8 +64,7 @@ export const Pricing = ({ book }: PricingTypes) => {
         </div>
       </section>
 
-      {/* // TODO: this could be a storybook control */}
-      {book ? <BookNow /> : null}
+      {faker.datatype.boolean() ? <BookNow /> : null}
     </>
   );
 };

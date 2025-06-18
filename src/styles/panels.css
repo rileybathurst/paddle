@@ -12,10 +12,19 @@
   box-shadow: 0 0 0 100vmax var(--neutral-200);
   clip-path: inset(0 -100vmax);
 
-  button,
-  .button {
-    background-color: var(--neutral-100);
-    border-color: white;
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--neutral-700);
+    box-shadow: 0 0 0 100vmax var(--neutral-700);
+    color: var(--neutral-200);
+  }
+
+  /* * additional safety step */
+  @media (prefers-color-scheme: light) {
+    button,
+    .button {
+      background-color: var(--neutral-100);
+      border-color: white;
+    }
   }
 }
 
@@ -24,7 +33,10 @@
   box-shadow: 0 0 0 100vmax white;
   clip-path: inset(0 -100vmax);
 
-  /* TODO: dark */
+  @media (prefers-color-scheme: dark) {
+    background-color: black;
+    box-shadow: 0 0 0 100vmax black;
+  }
 }
 
 .south-tahoe {
@@ -40,7 +52,7 @@
       color: var(--cloud-dark-color);
     }
 
-    a {
+    a:not(button):not(.button):not(.book-now) {
       @media (prefers-color-scheme: dark) {
         color: var(--lake-400);
       }

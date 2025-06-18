@@ -16,7 +16,9 @@ export const Button = ({
       {...props}
     >
       <button type='button'>Button</button>
+      <br />
       <button className='button__hover' type='button'>Hover</button>
+      <br />
       <button className='button__active' type='button'>Active</button>
     </main >
   );

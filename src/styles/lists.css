@@ -104,7 +104,7 @@ ol {
 /*------------------------------------*/
 /* #FAQ */
 /*------------------------------------*/
-/* TODO: a lot of this is repeated with other typography */
+/* TODO: v1.2 a lot of this is repeated with other typography */
 
 .faq {
   padding-inline-start: 0; /* reset */
@@ -139,48 +139,34 @@ ol {
 /* #BRANDS */
 /*------------------*/
 
+/* * grid because we always want them the same size */
+/* ? or flex the same size as we want them to fill the spaces? */
 .brand_list {
   list-style: none;
   padding: 0;
-  padding-inline: 0.75rem;
-  display: grid;
-
-  /* grid-template-columns: 1fr 1fr; */
-  /* this doesnt work on the home page as its wider so it can fill its won space */
-  /* grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr)); guess and check */
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(8rem, 1fr)
-  ); /* guess and check */
-  gap: 1rem;
-
-  @media (min-width: 30rem) {
-    /* grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); */
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(12rem, 1fr)
-    ); /* guess and check this seems best on front page */
-  }
+  padding-inline: var(--kosciuszko);
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--vinson);
+  justify-content: space-between; /* i like space between on 1 row but after it drops it worse */
 
   > li {
-    flex: 1 1 10rem;
-    border-radius: 0.25rem;
-    margin-block-end: 0;
+    border-radius: var(--card-radius);
+    margin: 0; /* reset */
 
     > a {
+      margin: 0;
       display: flex;
       flex-direction: column;
       place-items: stretch;
       transition: var(--fade);
       text-align: center;
-      width: 100%;
-      height: 100%; /* this goes waaaay to big .. but it needs something */
-      align-self: end;
       text-decoration: none;
       text-transform: uppercase;
       font-family: var(--heading_font);
       font-weight: 400;
       display: grid;
+      gap: var(--kosciuszko);
 
       /* I know it breaks the inception rule its very short */
       > p {

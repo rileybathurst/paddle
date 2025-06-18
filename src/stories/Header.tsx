@@ -23,6 +23,6 @@ export const Header = () => (
         </Link>
       </h1>
     </div>
-    {/* // TODO: small nav */}
+    {/* // TODO: small nav v1.1 */}
   </header>
 );

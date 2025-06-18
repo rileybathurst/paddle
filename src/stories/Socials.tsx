@@ -9,34 +9,33 @@ export const Socials = () => {
 
   return (
     <main className="social">
-      {/* // TODO: boolean check on socials */}
-      {/* {useSiteMetadata().social?.facebook ?? */}
-      <a
-        href={faker.location.city()}
-        target='_blank' rel='noopener noreferrer'
-        aria-label={`${faker.location.city()} facebook`}
-      >
-        <FacebookIcon />
-      </a>
-      {/* } */}
-      {/* {useSiteMetadata().social?.instagram ?? */}
-      <a href={faker.location.city()}
-        target='_blank'
-        rel='noopener noreferrer'
-        aria-label={`${faker.location.city()} instagram`}
-      >
-        <InstagramIcon />
-      </a>
-      {/* } */}
-      {/* {useSiteMetadata().social?.instagram ?? */}
-      <a href={faker.location.city()}
-        target='_blank'
-        rel='noopener noreferrer'
-        aria-label={`${faker.location.city()} tripadvisor`}
-      >
-        <TripadvisorIcon />
-      </a>
-      {/* } */}
+      {faker.datatype.boolean() && (
+        <a
+          href={faker.location.city()}
+          target='_blank' rel='noopener noreferrer'
+          aria-label={`${faker.location.city()} facebook`}
+        >
+          <FacebookIcon />
+        </a>
+      )}
+      {faker.datatype.boolean() && (
+        <a href={faker.location.city()}
+          target='_blank'
+          rel='noopener noreferrer'
+          aria-label={`${faker.location.city()} instagram`}
+        >
+          <InstagramIcon />
+        </a>
+      )}
+      {faker.datatype.boolean() && (
+        <a href={faker.location.city()}
+          target='_blank'
+          rel='noopener noreferrer'
+          aria-label={`${faker.location.city()} tripadvisor`}
+        >
+          <TripadvisorIcon />
+        </a>
+      )}
     </main>
   );
 };

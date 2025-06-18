@@ -119,7 +119,7 @@ export const Widths = () => {
           backgroundColor: 'var(--kingly-cloud)',
         }}
       >
-        {/* // TODO: doesnt work yet still controlled by the star, might just be ordering */}
+        {/* // TODO: v1.2 doesnt work yet still controlled by the star, might just be ordering */}
         <div
           style={{
             backgroundColor: 'var(--tin-soldier)',

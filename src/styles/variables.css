@@ -7,7 +7,7 @@
   /* #COLOR */
   /*------------------------------------*/
 
-  /* ? does this need some more saturation */
+  /* TODO: v1.2 swap to tanager and remove */
   --ruby-100: hsl(0, 50%, 50%); /* base */
   --ruby-200: hsl(0, 50%, 37.5%);
   --ruby-300: hsl(0, 50%, 25%);
@@ -27,6 +27,44 @@
     --navy-300: #092531;
   }
 
+  /* Colors v.1 */
+
+  /* Tahoe City */
+
+  /* tanger and sand are in colobration with each other */
+  /* the light pinks dont work and the dark tans dont so it becomes a combination */
+
+  /* https://en.wikipedia.org/wiki/Western_tanager */
+  --tanager-100: oklch(0.55 0.2 25); /* this starts where 400 normally would */
+  --tanager-200: oklch(0.45 0.18 25);
+  --tanager-300: oklch(0.35 0.12 25);
+  --tanager-400: oklch(0.25 0.1 25);
+
+  @supports not (color: oklch(0.55 0.2 25)) {
+    --tanager-100: #cc272e;
+    --tanager-200: #a20519;
+    --tanager-300: #6c1517;
+    --tanager-400: #460105;
+  }
+
+  /* Sand */
+
+  --sand-100: oklch(0.97 0.01 50);
+  --sand-200: oklch(0.95 0.02 50);
+  --sand-300: oklch(0.92 0.03 50);
+  --sand-400: oklch(0.88 0.04 50);
+  /* this finishes where 500 normally would go dark */
+
+  @supports not (color: oklch(0.55 0.2 25)) {
+    --sand-100: #fbf3ef;
+    --sand-200: #faebe3;
+    --sand-300: #f6dfd3;
+    --sand-400: #eed1c1;
+  }
+
+  /* South Tahoe */
+  /* Lake */
+
   --lake-100: oklch(99% 0.001 230);
   --lake-100: oklch(95% 0.03 230);
   --lake-200: oklch(93% 0.04 230);
@@ -38,8 +76,8 @@
   --lake-800: oklch(20% 0.035 230);
 
   /* taken straight from sketch */
-  /* TODO: do something to show these without duplicating the variables? */
-  @supports not (99% 0.001 230) {
+  /* TODO: v1.2 do something to show these without duplicating the variables? */
+  @supports not (color: oklch(99% 0.001 230)) {
     --lake-100: #f5fcff;
     --lake-200: #ddf4fe;
     --lake-300: #b8e7f9;
@@ -95,7 +133,8 @@
 
   --body_font: "Barlow", Arial, sans-serif;
   --heading_font: "Barlow Condensed", Arial, sans-serif;
-  --font-serif: Georgia, serif; /* TODO: add serif font that matches nicely */
+  --font-serif: Georgia, serif; /* TODO: v.1.2 add serif font that matches nicely */
+  /* only used in testimonials its not a big deal for now */
 
   /* 🏔 7 Summits */
   /* linear scale */

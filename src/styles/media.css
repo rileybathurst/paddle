@@ -131,10 +131,6 @@ svg {
 /* #TRIPADVISOR */
 /*------------------------------------*/
 /* https://www.tripadvisor.com/pdfs/cprc/BrandGuidelinesForPartners.pdf */
-/* TODO: sizing fix */
-/* I know this is smaller without the circle but for now adding a stroke to the circle wasnt right */
-/* looks better in dark for now */
-
 .tripadvisor {
   circle {
     fill: transparent;
@@ -143,6 +139,9 @@ svg {
   @media (prefers-color-scheme: dark) {
     circle {
       fill: white;
+    }
+    path {
+      fill: var(--neutral-700);
     }
   }
 }

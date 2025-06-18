@@ -12,7 +12,7 @@ a:where(:hover, :focus) {
   text-decoration: none;
 }
 
-.tahoe-city a {
+.tahoe-city a:not(.social a) {
   color: var(--ruby-100);
 }
 
@@ -44,7 +44,7 @@ a svg {
 /* #MENU LIST */
 /*------------------*/
 
-/* TODO: a lot of this is smaller than the variables test it all */
+/* TODO: v1.2 a lot of this is smaller than the variables test it all */
 .menu-list a:not(.button) {
   padding: 0.25rem;
   border-radius: 0.25rem;
@@ -60,13 +60,6 @@ a svg {
 }
 
 .south-tahoe {
-  .menu-list .active {
-    /* TODO: fix the colors */
-    background-color: var(--sand);
-    box-shadow: var(--penumbra);
-    border: 1px solid var(--neutral-100);
-  }
-
   /* ? is *:not expensive? */
   /* ? I guess this is brands and logo seems I could do this a smarter way */
   *:not(.social) > a {
@@ -75,7 +68,7 @@ a svg {
       transition: 0.2s ease;
 
       @media (prefers-color-scheme: dark) {
-        fill: var(--lake-500);
+        fill: var(--lake-400);
       }
     }
 

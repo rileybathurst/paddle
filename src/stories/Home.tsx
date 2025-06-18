@@ -11,6 +11,7 @@ import { BookNow } from './BookNow';
 import { Flight } from './Flight';
 import { Testimonial } from './Testimonial';
 import { Composition } from './Composition';
+import { BrandList } from './BrandList';
 
 export const Home = () => {
 
@@ -23,11 +24,9 @@ export const Home = () => {
 
           <LocationDeck />
 
-          {/* // TODO: move to components */}
           <div className="multi_button">
             {Array.from({ length: faker.number.int({ min: 1, max: 3 }) }).map(() => (
-              // TODO: needs additional props
-              <BookNow />
+              <BookNow additional={faker.datatype.boolean() ? `${faker.music.album().toUpperCase()} ` : undefined} />
             ))}
           </div>
 
@@ -52,7 +51,6 @@ export const Home = () => {
       </main>
 
       <section id="tours" className="cloud aconcagua-padding-block-end">
-        {/* TODO: there needs to be a drop here */}
         <div className='condor aconcagua-padding-block-start aconcagua-padding-block-end'>
 
           <h3 className="">
@@ -86,13 +84,7 @@ export const Home = () => {
 
           <p>{faker.lorem.sentences(2)}</p>
         </article>
-        <div className='multi_button'>
-          {Array.from({ length: faker.number.int({ min: 1, max: 5 }) }).map(() => (
-            <a href={faker.internet.domainName()} className="button">
-              {faker.food.adjective()}
-            </a>
-          ))}
-        </div>
+        <BrandList />
         <hr className='aconcagua-margin-block-start aconcagua-margin-block-end' />
       </section>
 

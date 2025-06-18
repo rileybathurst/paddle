@@ -3,24 +3,8 @@
 /*------------------------------------*/
 
 header {
-  z-index: 1; /* TODO: variable */
+  z-index: var(--floor);
   position: relative;
-}
-
-.button-styles {
-  margin-block-end: 0;
-  transform: translate3D(0, 0, 0); /* I need this to hide things */
-  line-height: 1.5;
-  height: 2rem;
-  overflow: hidden;
-  z-index: 1; /* TODO: variable */
-  position: relative;
-  /* width: calc(100% - 1rem); */
-  width: 100%;
-  margin-inline: auto;
-  background-color: var(--navy-100);
-  color: whitesmoke;
-  box-shadow: var(--penumbra);
 }
 
 .span-styles {
@@ -75,10 +59,10 @@ nav {
 
   ul {
     flex-direction: column;
-    gap: 1rem;
-    z-index: 1; /* TODO: variable */
+    gap: var(--vinson);
+    z-index: var(--floor);
     position: relative;
-    background-color: var(--sand); /* TODO: variable */
+    background-color: var(--sand-100);
     background-color: hsl(25, 37%, 87.5%); /* ? why is this custom */
     box-shadow: 0 0 0 100vmax hsl(25, 37%, 87.5%); /* ? why is this custom */
     clip-path: inset(0 -100vmax);

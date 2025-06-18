@@ -26,7 +26,7 @@ export * from "./PaddleTestimonials";
 // SEO
 export * from "./PaddleSEO";
 
-// TODO: test
+// TODO: test v.1.1
 // Types
 export * from "./types/ticket-types";
 export * from "./types/location-card-types";

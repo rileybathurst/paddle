@@ -9,8 +9,7 @@
   grid-template-columns: repeat(auto-fill, minmax(var(--condor), 1fr));
 }
 
-/* TODO: needs sub-grid */
-/* card is becoming purchase and splitting more */
+/* TODO: v1.2 I think this may have already be removed by check it properly before deleteing it card is becoming purchase and splitting more */
 .card {
   padding: 0;
   display: flex;
@@ -130,7 +129,7 @@
     text-decoration: underline;
   }
 
-  /* TODO: this could use more */
+  /* TODO: v1.2 this could use more */
   img {
     filter: brightness(80%);
   }
@@ -171,7 +170,7 @@
     /* box-shadow: var(--penumbra--dark); */
     color: var(--lake-200);
 
-    a {
+    a:not(.book-now) {
       color: var(--lake-200);
     }
   }
@@ -231,6 +230,11 @@
   background-color: var(--neutral-100);
   border: 1px solid white;
 
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--neutral-800);
+    border-color: var(--neutral-600);
+  }
+
   img {
     width: 100%;
   }
@@ -259,5 +263,6 @@
   }
 }
 
-.south-tahoe .ticket {
+/* .south-tahoe .ticket {
 }
+ */

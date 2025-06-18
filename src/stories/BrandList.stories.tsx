@@ -5,7 +5,7 @@ import { BrandList } from './BrandList';
 
 const meta = {
   component: BrandList,
-  title: 'Molecules/BrandList',
+  title: 'Organisms/BrandList',
   args: { onClick: fn() },
 } satisfies Meta<typeof BrandList>;
 

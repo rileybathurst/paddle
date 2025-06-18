@@ -10,7 +10,6 @@ export const Breadcrumbs = () => {
       {Array.from({ length: faker.number.int({ min: 2, max: 4 }) }).map((_,) => (
         <Breadcrumb key={faker.number.int()} linked={true} />
       ))}
-      {/* // TODO: not linked */}
       <Breadcrumb key={faker.number.int()} linked={false} />
     </ol>
   );

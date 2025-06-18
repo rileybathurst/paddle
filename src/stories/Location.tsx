@@ -29,20 +29,56 @@ export const Location = ({
         </svg>
       </a>
 
-      <div>
+      {/* // * phone boolean has to be high in the stack */}
+      {faker.datatype.boolean() ? (
+        <div>
+          <div className='multi_button'>
+            <a
+              href="https://goo.gl/maps/atoK4oyJRbV3EKuK9"
+              rel="noopener noreferrer"
+            >
+              <h3>{faker.helpers.arrayElement(['On Water Rental', 'Retail Location', 'Parking', 'Free Parking Lot', 'Delivery'])}</h3>
+            </a>
+            <a
+              href={`tel:${faker.phone.number()}`}
+              className='button'
+            >
+              {faker.phone.number()}
+            </a>
+          </div>
+
+          <a href="https://goo.gl/maps/atoK4oyJRbV3EKuK9"
+            rel="noopener noreferrer">
+            <p>{faker.location.secondaryAddress()} {faker.location.streetAddress()}, {faker.location.city()}, {faker.location.zipCode()}</p>
+          </a>
+
+          {/* // TODO: v1.2 deeper boolean */}
+          {faker.datatype.boolean() ? (
+            <p>Open Daily 9:30am &ndash; 5:30pm Weather Permitting</p>
+          ) : (
+            <p>Closed for the Season</p>
+          )}
+        </div>
+
+      ) : (
         <a
           href="https://goo.gl/maps/atoK4oyJRbV3EKuK9"
           rel="noopener noreferrer"
         >
           <h3>{faker.helpers.arrayElement(['On Water Rental', 'Retail Location', 'Parking', 'Free Parking Lot', 'Delivery'])}</h3>
-          {/* // TODO: faker boolean for telephone */}
 
           <p>{faker.location.secondaryAddress()} {faker.location.streetAddress()}, {faker.location.city()}, {faker.location.zipCode()}</p>
+          {/* // TODO: v1.2 deeper boolean */}
+          {faker.datatype.boolean() ? (
+            <p>Open Daily 9:30am &ndash; 5:30pm Weather Permitting</p>
+          ) : (
+            <p>Closed for the Season</p>
+          )}
         </a>
+      )
+      }
 
-        {/* // TODO: faker boolean for closed for the season */}
-        <p>Open Daily 9:30am &ndash; 5:30pm Weather Permitting</p>
-      </div>
-    </div>
+
+    </div >
   );
 };
