@@ -40,10 +40,6 @@ nav {
   @media (min-width: 40rem) {
     max-width: var(--pelican);
     margin: 0 auto;
-
-    @supports not (margin-inline: auto) {
-      margin-inline: auto;
-    }
   }
 
   ul {
@@ -82,13 +78,13 @@ nav {
     gap: 1rem;
     z-index: 1; /* TODO: variable */
     position: relative;
-    background-color: var(--sand);
+    background-color: var(--sand); /* TODO: variable */
     background-color: hsl(25, 37%, 87.5%); /* ? why is this custom */
     box-shadow: 0 0 0 100vmax hsl(25, 37%, 87.5%); /* ? why is this custom */
     clip-path: inset(0 -100vmax);
     /* border-block-end: 2px solid var(--industrial-revolution); this isnt full width */
 
-    /* ! dark */
+    /* TODO: dark */
 
     li a {
       padding-inline: calc(var(--elbrus) / 2);

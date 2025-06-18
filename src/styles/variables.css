@@ -184,7 +184,7 @@
   --cloud-dark-color: var(--lake-200);
 
   /* .aurora { special, highlighted areas } */
-  --aurora-background-color: var(--neutral-100);
+  /* --aurora-background-color: var(--neutral-100); */
   --aurora-background-color: white;
   --aurora-color: var(--neutral-600);
 

@@ -19,6 +19,15 @@
       box-shadow: 0 0 0 100vmax var(--cloud-dark-background-color);
       color: var(--cloud-dark-color);
     }
+
+    button,
+    .button {
+      background-color: var(--aurora-background-color);
+
+      @media (prefers-color-scheme: dark) {
+        background-color: var(--aurora-dark-background-color);
+      }
+    }
   }
 
   .aurora {

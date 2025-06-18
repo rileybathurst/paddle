@@ -28,10 +28,6 @@ svg {
   max-width: calc(100% - 2rem); /* guess and check */
   padding-block: var(--elbrus);
 
-  @supports not (margin-inline: auto) {
-    margin-inline: auto;
-  }
-
   a {
     width: max-content;
     display: flex;
@@ -52,6 +48,20 @@ svg {
     width: 100%;
     max-height: var(--vulture);
     max-width: fit-content;
+  }
+}
+
+.logo-container_footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  a {
+    margin-inline: auto;
+
+    svg {
+      max-height: 5rem;
+    }
   }
 }
 

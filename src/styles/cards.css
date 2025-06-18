@@ -206,7 +206,17 @@
   margin-block-end: var(--aconcagua);
 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--condor), 1fr));
+
+  /* * iPhone size breaks without this */
+  grid-template-columns: 1fr;
+
+    /* * guess and check */
+  @media (min-width: 29rem) {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(var(--condor), 1fr)
+    );
+  }
 }
 
 .flight:empty {
@@ -214,9 +224,15 @@
 }
 
 .ticket {
-  /* ? Im not sure if there should be max width or its always inside a grid */
+  /* display: flex; */
+  width: 100%;
+
   img {
     width: 100%;
+  }
+
+  > a {
+    display: block;
   }
 
   p {

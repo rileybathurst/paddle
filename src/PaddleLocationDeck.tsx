@@ -4,7 +4,7 @@ import type { LocationCardTypes } from "./types/location-card-types";
 
 interface LocationDeckTypes {
   background?: string;
-  season_start?: string;
+  season_start?: string; // ? should this be optional? it created a problem with tours
   season_end?: string;
   phone?: string;
   nodes: LocationCardTypes[];

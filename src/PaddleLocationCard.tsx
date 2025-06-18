@@ -39,6 +39,7 @@ function Season({ name, season_start, season_end, opening_time, closing_time, of
       )
     }
 
+    // outside of season
     return (
       <div>
         <p>We&apos;re closed for the season</p>
@@ -52,19 +53,17 @@ function Season({ name, season_start, season_end, opening_time, closing_time, of
         ) : null}
 
         {offSeasonDetails ? (
-          <p>
-            {offSeasonDetails}
-          </p>
+          <p>{offSeasonDetails}</p>
         ) : null}
       </div>
     )
   }
 
+  // no season defaults to off season
+  // TODO: add some enum error messages here for if this is allowed to not have a season
   return (
     <div>
-      <p>
-        We&apos;re closed for the season
-      </p>
+      <p>We&apos;re closed for the season</p>
       {offSeasonDetails ? (
         <p>{offSeasonDetails}</p>
       ) : null}
@@ -126,8 +125,16 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
 
           (<>
             <h3 className="elbrus">{name}</h3>
-            <Markdown>
-              {/* // ! removed for testing className="react-markdown" */}
+            
+            <Markdown 
+              components={{
+                div: ({ children, ...props }) => (
+                  <div className="react-markdown" {...props}>
+                    {children}
+                  </div>
+                )
+              }}
+            >
               {address.data.address}
             </Markdown>
           </>)}
@@ -135,7 +142,6 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
       </div>
 
       <div>
-
         {opening_time && closing_time ? (
           <Season
             season_start={season_start}
@@ -146,10 +152,11 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
             offSeasonDetails={offSeasonDetails}
           />
         ) : (
+          <div className="react-markdown">
           <Markdown>
-            {/* // ! removed for testing className="react-markdown" */}
             {description.data.description}
           </Markdown>
+          </div>
         )}
       </div>
     </>

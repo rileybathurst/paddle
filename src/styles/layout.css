@@ -1,5 +1,3 @@
-/* ! I wonder if something is left open in this file or adjusting * it shouldn't */
-
 /*------------------*/
 /* #LAYOUT */
 /*------------------*/
@@ -8,24 +6,27 @@ body {
   margin: 0; /* reset */
 }
 
+/* * these do not have padding as they often have grid gap to do that */
 .vulture,
 .stork,
 .condor,
 .pelican,
 .albatross,
-.location,
 header,
 main,
 footer,
+.react-aria-Breadcrumbs,
 .deck,
-.flight,
-.react-aria-Breadcrumbs {
+.flight {
   margin-inline: auto;
   padding-inline: var(--kosciuszko);
-  width: calc(100% - var(--kosciuszko) * 2);
+  /* width: calc(100% - var(--kosciuszko) * 2); */
+  max-width: 100%;
 }
 
 .vulture {
+  margin-inline: auto;
+  max-width: 100%;
   max-width: min(var(--vulture), calc(100vw - var(--denali)));
   flex-basis: var(--vulture);
 }
@@ -57,7 +58,7 @@ footer,
 .react-aria-Breadcrumbs {
   max-width: min(var(--albatross), calc(100vw - var(--denali)));
   /* max-width: var(--albatross); */
-  /* ! theres an issue here thjings are not wrapping when they should */
+  /* * theres an issue here things are not wrapping when they should */
   /* max-width: 82rem; */
   flex-basis: var(--albatross);
 }
@@ -68,8 +69,7 @@ footer,
 
 .wrap,
 .deck,
-.flight,
-footer {
+.flight {
   display: flex;
   flex-flow: row wrap;
   gap: clamp(var(--kosciuszko), 1.667vw, var(--denali));
@@ -112,9 +112,7 @@ footer > * {
 
 /* this isnt a direct nested its always down another layer */
 .albatross .pelican,
-/* ! deck * needs to be removed its maybe only the image that needs it */
-.deck > *:not(h4, p, hr),
-.flight > *:not(h4, p, hr) {
+.deck > *:not(h4, p, hr) {
   /* ? margin-inline: 0; ? should this be centered */
   /* TODO: this needs a :not for a few things */
   width: 100%; /* resets the padding */
@@ -153,40 +151,151 @@ header {
 }
 
 /*------------------------------------*/
+/* #BLOCK Start */
+/* this seems like something you could do more interesting in a programatic way */
+/*------------------------------------*/
+
+.everest-margin-block-start {
+  margin-block-start: var(--everest);
+}
+
+.aconcagua-margin-block-start {
+  margin-block-start: var(--aconcagua);
+}
+
+.denali-margin-block-start {
+  margin-block-start: var(--denali);
+}
+
+.kilimanjaro-margin-block-start {
+  margin-block-start: var(--kilimanjaro);
+}
+
+.elbrus-margin-block-start {
+  margin-block-start: var(--elbrus);
+}
+
+.vinson-margin-block-start {
+  margin-block-start: var(--vinson);
+}
+
+.kosciuszko-margin-block-start {
+  margin-block-start: var(--kosciuszko);
+}
+
+.zero-margin-block-start {
+  margin-block-start: 0;
+}
+
+/*------------------------------------*/
 /* #BLOCK END */
 /* this seems like something you could do more interesting in a programatic way */
 /*------------------------------------*/
 
-.everest-block-end {
+.everest-margin-block-end {
   margin-block-end: var(--everest);
 }
 
-.aconcagua-block-end {
+.aconcagua-margin-block-end {
   margin-block-end: var(--aconcagua);
 }
 
-.denali-block-end {
+.denali-margin-block-end {
   margin-block-end: var(--denali);
 }
 
-.kilimanjaro-block-end {
+.kilimanjaro-margin-block-end {
   margin-block-end: var(--kilimanjaro);
 }
 
-.elbrus-block-end {
+.elbrus-margin-block-end {
   margin-block-end: var(--elbrus);
 }
 
-.vinson-block-end {
+.vinson-margin-block-end {
   margin-block-end: var(--vinson);
 }
 
-.kosciuszko-block-end {
+.kosciuszko-margin-block-end {
   margin-block-end: var(--kosciuszko);
 }
 
-.zero-block-end {
+.zero-margin-block-end {
   margin-block-end: 0;
+}
+
+/*------------------------------------*/
+/* #BLOCK Start */
+/* this seems like something you could do more interesting in a programatic way */
+/*------------------------------------*/
+
+.everest-padding-block-start {
+  padding-block-start: var(--everest);
+}
+
+.aconcagua-padding-block-start {
+  padding-block-start: var(--aconcagua);
+}
+
+.denali-padding-block-start {
+  padding-block-start: var(--denali);
+}
+
+.kilimanjaro-padding-block-start {
+  padding-block-start: var(--kilimanjaro);
+}
+
+.elbrus-padding-block-start {
+  padding-block-start: var(--elbrus);
+}
+
+.vinson-padding-block-start {
+  padding-block-start: var(--vinson);
+}
+
+.kosciuszko-padding-block-start {
+  padding-block-start: var(--kosciuszko);
+}
+
+.zero-padding-block-start {
+  padding-block-start: 0;
+}
+
+/*------------------------------------*/
+/* #BLOCK END */
+/* this seems like something you could do more interesting in a programatic way */
+/*------------------------------------*/
+
+.everest-padding-block-end {
+  padding-block-end: var(--everest);
+}
+
+.aconcagua-padding-block-end {
+  padding-block-end: var(--aconcagua);
+}
+
+.denali-padding-block-end {
+  padding-block-end: var(--denali);
+}
+
+.kilimanjaro-padding-block-end {
+  padding-block-end: var(--kilimanjaro);
+}
+
+.elbrus-padding-block-end {
+  padding-block-end: var(--elbrus);
+}
+
+.vinson-padding-block-end {
+  padding-block-end: var(--vinson);
+}
+
+.kosciuszko-padding-block-end {
+  padding-block-end: var(--kosciuszko);
+}
+
+.zero-padding-block-end {
+  padding-block-end: 0;
 }
 
 /*------------------*/
@@ -198,11 +307,13 @@ header {
   display: flex;
   justify-content: center;
   padding-block-start: 0.25rem;
+  padding-block-start: clamp(0.25rem, 1.667vw, var(--kilimanjaro));
   z-index: var(--emergent); /* over the small menu when it slides up */
   position: relative;
 
   p {
     margin-block-end: 0.25rem;
+    margin-block-end: clamp(0.25rem, 1.667vw, var(--kilimanjaro));
   }
 }
 
@@ -234,7 +345,6 @@ header {
   flex-flow: row wrap;
   align-items: center;
   gap: clamp(var(--kosciuszko), 1.67vw, var(--elbrus));
-  padding: clamp(var(--kosciuszko), 1.67vw, var(--elbrus));
   border-radius: var(--card-radius);
   /* guess and check to get the parking on one row in the footer */
   flex: 1 4;
