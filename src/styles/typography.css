@@ -148,7 +148,7 @@ hr {
   margin-block-end: var(--kosciuszko);
 
   @media (prefers-color-scheme: dark) {
-    border-bottom: 1px solid;
+    border-bottom: 1px solid var(--neutral-500);
   }
 }
 

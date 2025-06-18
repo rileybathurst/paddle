@@ -1,6 +1,12 @@
 /*------------------------------------*/
 /* #LINKS */
 /*------------------------------------*/
+a {
+  color: var(--neutral-600);
+  @media (prefers-color-scheme: dark) {
+    color: var(--neutral-300);
+  }
+}
 
 a:where(:hover, :focus) {
   text-decoration: none;
@@ -12,6 +18,10 @@ a:where(:hover, :focus) {
 
 .south-tahoe a {
   color: var(--lake-500);
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--lake-300);
+  }
 }
 
 /*------------------------------------*/
@@ -35,7 +45,7 @@ a svg {
 /*------------------*/
 
 /* TODO: a lot of this is smaller than the variables test it all */
-.menu-list a {
+.menu-list a:not(.button) {
   padding: 0.25rem;
   border-radius: 0.25rem;
   display: inline-block;
@@ -65,7 +75,7 @@ a svg {
       transition: 0.2s ease;
 
       @media (prefers-color-scheme: dark) {
-        fill: var(--lake-200);
+        fill: var(--lake-500);
       }
     }
 

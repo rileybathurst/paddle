@@ -5,7 +5,7 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { LocationDeck } from './LocationDeck';
 import { Pricing } from './Pricing';
-import { PaddleBreadcrumbs } from './PaddleBreadcrumbs';
+import { Breadcrumbs } from './Breadcrumbs';
 import { Menu } from './Menu';
 import { BookNow } from './BookNow';
 import { Flight } from './Flight';
@@ -24,7 +24,7 @@ export const Home = () => {
           <LocationDeck />
 
           {/* // TODO: move to components */}
-          <div className="button__double">
+          <div className="multi_button">
             {Array.from({ length: faker.number.int({ min: 1, max: 3 }) }).map(() => (
               // TODO: needs additional props
               <BookNow />
@@ -86,7 +86,7 @@ export const Home = () => {
 
           <p>{faker.lorem.sentences(2)}</p>
         </article>
-        <div className='button__double'>
+        <div className='multi_button'>
           {Array.from({ length: faker.number.int({ min: 1, max: 5 }) }).map(() => (
             <a href={faker.internet.domainName()} className="button">
               {faker.food.adjective()}
@@ -101,7 +101,7 @@ export const Home = () => {
         <Testimonial />
       </ul>
 
-      <PaddleBreadcrumbs />
+      <Breadcrumbs />
       <Footer />
     </div >
   );

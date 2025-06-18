@@ -2,7 +2,7 @@ import React from 'react';
 import { faker } from '@faker-js/faker';
 import { Header } from './Header';
 import { Footer } from './Footer';
-import { PaddleBreadcrumbs } from './PaddleBreadcrumbs';
+import { Breadcrumbs } from './Breadcrumbs';
 import { Composition } from './Composition';
 
 export const Page = () => {
@@ -20,7 +20,7 @@ export const Page = () => {
         <Composition />
       </div>
 
-      <PaddleBreadcrumbs />
+      <Breadcrumbs />
       <Footer />
     </>
   );

@@ -188,6 +188,6 @@
   --aurora-background-color: white;
   --aurora-color: var(--neutral-600);
 
-  --aurora-dark-background-color: var(--neutral-800);
+  --aurora-dark-background-color: black;
   --aurora-dark-color: var(--neutral-200);
 }

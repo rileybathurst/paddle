@@ -14,7 +14,7 @@ export const Footer = () => {
   return (
     <>
       <footer className='cloud aconcagua-padding-block-start'>
-        <div className='pelican button__double'>
+        <div className='pelican multi_button multi_button-center'>
           <button>{faker.phone.number()}</button>
           <a
             href={`mailto:${faker.internet.email()}`}

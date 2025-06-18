@@ -1,13 +1,13 @@
 // this is the Name.stories.tsx file
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
-import { PaddleBreadcrumb } from './PaddleBreadcrumb';
+import { Breadcrumb } from './Breadcrumb';
 
 const meta = {
-  component: PaddleBreadcrumb,
-  title: 'Atoms/PaddleBreadcrumb',
+  component: Breadcrumb,
+  title: 'Atoms/Breadcrumb',
   args: { onClick: fn() },
-} satisfies Meta<typeof PaddleBreadcrumb>;
+} satisfies Meta<typeof Breadcrumb>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

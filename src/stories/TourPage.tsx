@@ -3,7 +3,7 @@ import React from 'react';
 import { faker } from '@faker-js/faker';
 import { Header } from './Header';
 import { Footer } from './Footer';
-import { PaddleBreadcrumbs } from './PaddleBreadcrumbs';
+import { Breadcrumbs } from './Breadcrumbs';
 import { Composition } from './Composition';
 import { SunsetTourTimes } from './SunsetTourTimes';
 
@@ -29,7 +29,7 @@ export const TourPage = () => {
       </div>
 
 
-      <PaddleBreadcrumbs />
+      <Breadcrumbs />
       <Footer />
     </>
   );

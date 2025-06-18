@@ -1,4 +1,4 @@
-// TODO: this isnt finished
+// TODO: this isnt finished but hasnt been implemented yet
 import * as React from "react"
 import { faker } from '@faker-js/faker';
 

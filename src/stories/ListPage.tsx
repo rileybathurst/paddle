@@ -2,7 +2,7 @@
 import React from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';
-import { PaddleBreadcrumbs } from './PaddleBreadcrumbs';
+import { Breadcrumbs } from './Breadcrumbs';
 import { faker } from '@faker-js/faker';
 
 export const ListPage = () => {
@@ -25,7 +25,7 @@ export const ListPage = () => {
         </ul>
 
       </main>
-      <PaddleBreadcrumbs />
+      <Breadcrumbs />
       <Footer />
     </>
   );

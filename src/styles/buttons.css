@@ -2,11 +2,10 @@
 /* #BUTTONS */
 /*------------------------------------*/
 
-/* TODO: variables */
 button,
 .button,
 .book-now {
-  background: none;
+  background-color: var(--neutral-200);
   border-radius: var(--card-radius);
   padding: var(--kosciuszko) var(--vinson);
   font-size: var(--vinson);
@@ -17,7 +16,7 @@ button,
   line-height: var(--kilimanjaro);
   text-decoration: none;
   width: max-content;
-  border: 1px solid;
+  border: 1px solid var(--neutral-100);
   box-shadow: var(--penumbra);
 }
 
@@ -62,12 +61,22 @@ button:active {
   }
 
   button:hover.south-tahoe,
-.button__hover.south-tahoe,
-/* .button__hover + .south-tahoe, */
-.button:hover.south-tahoe {
+  .button__hover.south-tahoe,
+  /* .button__hover + .south-tahoe, */
+  .button:hover.south-tahoe {
     background-color: var(--lake-300);
     border-color: var(--lake-400);
     color: var(--lake-700);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    button,
+    .button,
+    .book-now {
+      background-color: var(--lake-600);
+      border-color: var(--lake-700);
+      color: var(--lake-100);
+    }
   }
 }
 
@@ -81,17 +90,15 @@ menu button {
 
 /*------------------------------------*/
 
-.button__double {
+/* TODO: name change this can be more than 2 */
+.multi_button {
   display: flex;
   align-items: center;
   gap: var(--denali);
 }
 
-.buttonGroup {
-  display: flex;
-  flex-flow: row wrap;
-  gap: var(--vinson);
-  margin-block-end: var(--baseline);
+.multi_button-center {
+  justify-content: center;
 }
 
 /*------------------------------------*/

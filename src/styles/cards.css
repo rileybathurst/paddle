@@ -166,9 +166,14 @@
   color: var(--lake-600);
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--lake-800);
-    box-shadow: var(--penumbra--dark);
-    color: var(--lake-600);
+    background-color: var(--lake-700);
+    border-color: var(--lake-600);
+    /* box-shadow: var(--penumbra--dark); */
+    color: var(--lake-200);
+
+    a {
+      color: var(--lake-200);
+    }
   }
 }
 
@@ -210,12 +215,9 @@
   /* * iPhone size breaks without this */
   grid-template-columns: 1fr;
 
-    /* * guess and check */
+  /* * guess and check */
   @media (min-width: 29rem) {
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(var(--condor), 1fr)
-    );
+    grid-template-columns: repeat(auto-fill, minmax(var(--condor), 1fr));
   }
 }
 
@@ -226,6 +228,8 @@
 .ticket {
   /* display: flex; */
   width: 100%;
+  background-color: var(--neutral-100);
+  border: 1px solid white;
 
   img {
     width: 100%;
