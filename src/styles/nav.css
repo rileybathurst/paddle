@@ -2,6 +2,8 @@
 /* #NAV */
 /*------------------------------------*/
 
+/* TODO: variables */
+
 header {
   z-index: var(--floor);
   position: relative;

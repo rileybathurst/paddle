@@ -12,12 +12,12 @@ export * from "./PaddleTicket";
 export * from "./PaddleSunsetTourTimes";
 export * from "./PaddleTopBar";
 export * from "./PaddleSpecs";
+export * from "./PaddleTestimonial";
 
 // Organisms
 export * from "./PaddleLocationDeck";
-
-// Test a function
 export * from "./PaddleTestimonials";
+export * from "./PaddleBrandList";
 
 // Templates
 
@@ -26,7 +26,6 @@ export * from "./PaddleTestimonials";
 // SEO
 export * from "./PaddleSEO";
 
-// TODO: test v.1.1
 // Types
 export * from "./types/ticket-types";
 export * from "./types/location-card-types";

@@ -1,4 +1,4 @@
-export interface LocationCardTypes {
+export interface PaddleLocationCardTypes {
   id: React.Key;
   svg: string;
   name: string;

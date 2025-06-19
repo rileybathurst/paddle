@@ -1,23 +1,15 @@
 import * as React from "react"
+import { PaddleTestimonial } from "./PaddleTestimonial"
+import { type TestimonialTypes } from "./types/testimonial-types"
 
 interface TestimonialsTypes {
-  nodes: {
-    id: string;
-    testimonial: string;
-    sign: string;
-    customer: string;
-    location: string;
-  }[];
+  nodes: TestimonialTypes[];
 }
 export function PaddleTestimonials({ nodes }: TestimonialsTypes) {
   return (
     <ul className='testimonials condor'>
       {nodes.map((testimonial) => (
-        <li key={testimonial.id}>
-          <p className='elbrus'><span className='denali font-serif'>&ldquo;</span>{testimonial.testimonial}<span className='denali font-serif'>&rdquo;</span></p>
-          <p>{testimonial.sign} {testimonial.customer}</p>
-          <p className='kosciuszko'>{testimonial.location}</p>
-        </li>
+        <PaddleTestimonial key={testimonial.id} {...testimonial} />
       ))}
     </ul>
   )

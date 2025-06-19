@@ -34,7 +34,7 @@ export const Ticket = () => {
         </div>
       </div>
 
-
+{/* // TODO: paddleticket shows I do some specific work around the types */}
       <div className="ticket__specs">
         <h4>{time.entry}</h4>
         {faker.datatype.boolean() ? <h4 className="capitalize">{faker.helpers.arrayElement(['easy', 'medium', 'hard'])} <span>Fitness</span></h4> : null}

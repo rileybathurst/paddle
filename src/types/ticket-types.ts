@@ -28,4 +28,6 @@ export interface PaddleTicketTypes {
       endTime: string;
     }[];
   };
+
+  strapiLocaleName: string;
 }
