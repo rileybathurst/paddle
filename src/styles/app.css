@@ -19,3 +19,5 @@
 @import "a11y";
 
 /* TODO: v1.2 safari is showing some unuised css results lets stay away from that for a minute and try a little chrome maybe theres a bug */
+
+@import "astro";

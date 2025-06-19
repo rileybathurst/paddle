@@ -1,0 +1,30 @@
+/* straight pull for menu so its going to take a bunch of work but this keeps everything sperate */
+
+.menu-button {
+  background-color: hotpink !important;
+
+  /* ? I might do this in js as well as a secondary so I can use  */
+  @media (min-width: 20rem) {
+    background-color: blue !important;
+    display: none;
+  }
+}
+
+#menu-content {
+  /* background-color: hotpink; */
+  @media (min-width: 20rem) {
+    background-color: lime;
+  }
+
+  .nav-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    /* @media (min-width: 20rem) {
+      flex-direction: row;
+    } */
+  }
+}

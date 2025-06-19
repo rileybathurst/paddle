@@ -148,7 +148,7 @@ ol {
   display: flex;
   flex-flow: row wrap;
   gap: var(--vinson);
-  justify-content: space-between; /* i like space between on 1 row but after it drops it worse */
+  justify-content: space-around;
 
   > li {
     border-radius: var(--card-radius);

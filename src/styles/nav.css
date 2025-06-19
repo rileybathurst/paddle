@@ -7,7 +7,30 @@ header {
   position: relative;
 }
 
-.span-styles {
+.menu__small-button {
+  margin-block-end: 0;
+  transform: translate3D(0, 0, 0); /* I need this to hide things */
+  line-height: 1.5;
+  height: 2rem;
+  overflow: hidden;
+  z-index: 1; /* TODO: variable */
+  position: relative;
+  /* width: calc(100% - 1rem); */
+  width: 100%;
+  margin-inline: auto;
+  box-shadow: var(--penumbra);
+  border: none;
+  /* Book now colors */
+  background-color: var(--neutral-800);
+  color: var(--neutral-300);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--neutral-300);
+    color: var(--neutral-800);
+  }
+}
+
+.spinning-button {
   position: fixed; /* I never like these things but it's needed here */
   height: 1rem;
   line-height: 2rem;
@@ -62,13 +85,17 @@ nav {
     gap: var(--vinson);
     z-index: var(--floor);
     position: relative;
-    background-color: var(--sand-100);
-    background-color: hsl(25, 37%, 87.5%); /* ? why is this custom */
-    box-shadow: 0 0 0 100vmax hsl(25, 37%, 87.5%); /* ? why is this custom */
+    /* v1.2 keep this untill i know why I used a custom */
+    /* background-color: hsl(25, 37%, 87.5%); ? why is this custom */
+    /* box-shadow: 0 0 0 100vmax hsl(25, 37%, 87.5%); ? why is this custom */
+    background-color: var(--neutral-300);
+    box-shadow: 0 0 0 100vmax var(--neutral-300);
     clip-path: inset(0 -100vmax);
-    /* border-block-end: 2px solid var(--industrial-revolution); this isnt full width */
 
-    /* TODO: dark */
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--neutral-700);
+      box-shadow: 0 0 0 100vmax var(--neutral-700);
+    }
 
     li a {
       padding-inline: calc(var(--elbrus) / 2);
@@ -89,5 +116,14 @@ nav {
     .book-now {
       margin: 0;
     }
+  }
+}
+
+.tahoe-city .menu__small ul {
+  /* * reverts to clean dark scheme */
+  @media (prefers-color-scheme: light) {
+    background-color: var(--sand-100);
+    box-shadow: 0 0 0 100vmax var(--sand-100);
+    clip-path: inset(0 -100vmax);
   }
 }

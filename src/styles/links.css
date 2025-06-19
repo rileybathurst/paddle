@@ -12,7 +12,8 @@ a:where(:hover, :focus) {
   text-decoration: none;
 }
 
-.tahoe-city a:not(.social a) {
+/* this is getting too big and complex try go the other way for what it is */
+.tahoe-city a:not(.social a):not(button):not(.button):not(.book-now) {
   color: var(--ruby-100);
 }
 

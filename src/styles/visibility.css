@@ -48,3 +48,7 @@
     display: none;
   }
 }
+
+.storybook-show {
+  display: revert !important;
+}

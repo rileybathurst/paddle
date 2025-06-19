@@ -3,6 +3,7 @@ import { faker } from '@faker-js/faker';
 import { Link } from 'react-aria-components';
 import { TopBar } from './TopBar';
 import { Logo } from './Logo';
+import { SmallMenu } from './SmallMenu';
 
 export const Header = () => (
   <header >
@@ -24,5 +25,6 @@ export const Header = () => (
       </h1>
     </div>
     {/* // TODO: small nav v1.1 */}
+    <SmallMenu />
   </header>
 );
