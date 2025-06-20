@@ -1,9 +1,46 @@
-import * as React from "react";
+import React from "react"
 import { Link } from "gatsby";
 import Markdown from "react-markdown";
-import type { PaddleLocationCardTypes } from "./types/location-card-types";
+
 import HourMin from "./hour-min";
 import Phone from "./phone";
+import type { PaddleLocationCardTypes } from "./types/location-card-types";
+
+// merged types are possible to dry this up but its also a lot
+// type UpdatedUser = Merge<User, Updates>;
+type PlaceTypes = {
+  commonName?: string;
+  streetAddress?: string;
+  addressLocality?: string;
+  addressRegion?: string;
+  postalCode?: string;
+};
+const Place = ({ commonName, streetAddress, addressLocality, addressRegion, postalCode }: PlaceTypes) => {
+  return (
+    <address>
+      {commonName ? (
+        <span>
+          {commonName}
+          <br />
+        </span>
+      ) : null}
+      {streetAddress ? (
+        <span>
+          {streetAddress}
+          <br />
+        </span>
+      ) : null}
+      {addressLocality ? <span>{addressLocality}, </span> : null}
+      {addressRegion ? <span>{addressRegion} </span> : null}
+      {postalCode ? (
+        <span>
+          {postalCode}
+          <br />
+        </span>
+      ) : null}
+    </address>
+  )
+}
 
 interface SeasonTypes {
   season_start?: string;
@@ -52,7 +89,7 @@ const Season = ({
       );
     }
 
-    // outside of season
+    // * outside of season
     return (
       <div>
         <p>We&apos;re closed for the season</p>
@@ -72,8 +109,8 @@ const Season = ({
     );
   }
 
-  // no season defaults to off season
-  // TODO: add some enum error messages here for if this is allowed to not have a season
+  // * no season defaults to off season
+  // TODO: v1.3 add some enum error messages here for if this is allowed to not have a season
   return (
     <div>
       <p>We&apos;re closed for the season</p>
@@ -83,13 +120,16 @@ const Season = ({
 };
 
 interface ContentTypes {
+  link?: string;
   svg: string;
   name: string;
+
   address: {
     data: {
       address: string;
     };
   };
+
   description: {
     data: {
       description: string;
@@ -98,17 +138,126 @@ interface ContentTypes {
   opening_time: string;
   closing_time: string;
 
+  season_start?: string;
+  season_end?: string;
+
+  offSeasonDetails?: string;
+  phone?: number;
+
   streetAddress?: string;
   addressLocality?: string;
   addressRegion?: string;
   postalCode?: string;
   commonName?: string;
-
-  season_start?: string;
-  season_end?: string;
-
-  offSeasonDetails?: string;
 }
+const PhoneContent = ({
+  link,
+  svg,
+  name,
+  address,
+  description,
+  opening_time,
+  closing_time,
+  streetAddress,
+  addressLocality,
+  addressRegion,
+  postalCode,
+  commonName,
+  season_start,
+  season_end,
+  offSeasonDetails,
+  phone,
+}: ContentTypes) => {
+  return (
+    <>
+      {link?.includes("http") ? (
+        <a
+          href={link}
+          className="location"
+          target="_blank"
+          rel="noopener noreferrer"
+          title={name}
+        >
+          <div className="svg" dangerouslySetInnerHTML={{ __html: svg }} />
+        </a>
+      ) : (
+        <Link to={link} className="location">
+          <div className="svg" dangerouslySetInnerHTML={{ __html: svg }} />
+        </Link>
+      )}
+
+      <div>
+        <div className="multi_button">
+          {link?.includes("http") ? (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={name}
+            >
+              <h3>{name}</h3>
+            </a>
+          ) : (
+            <Link to={link} title={name}>
+              <h3>{name}</h3>
+            </Link>
+          )}
+          <Phone phone={phone} />
+        </div>
+
+        {streetAddress ||
+          addressLocality ||
+          addressRegion ||
+          postalCode ||
+          commonName ? (
+
+          link?.includes("http") ? (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={name}
+            >
+              <Place
+                commonName={commonName}
+                streetAddress={streetAddress}
+                addressLocality={addressLocality}
+                addressRegion={addressRegion}
+                postalCode={postalCode}
+              />
+            </a>
+          ) : (
+            <Link to={link} title={name}>
+              <Place
+                commonName={commonName}
+                streetAddress={streetAddress}
+                addressLocality={addressLocality}
+                addressRegion={addressRegion}
+                postalCode={postalCode}
+              />
+            </Link>
+          )
+        ) : null}
+
+        {opening_time && closing_time ? (
+          <Season
+            season_start={season_start}
+            season_end={season_end}
+            opening_time={opening_time}
+            closing_time={closing_time}
+            name={name}
+            offSeasonDetails={offSeasonDetails}
+          />
+        ) : (
+          <div className="react-markdown">
+            <Markdown>{description.data.description}</Markdown>
+          </div>
+        )}
+      </div>
+    </>
+  );
+};
+
 const Content = ({
   svg,
   name,
@@ -129,57 +278,22 @@ const Content = ({
     <>
       <div className="svg" dangerouslySetInnerHTML={{ __html: svg }} />
 
+      <h3 className="elbrus">{name}</h3>
       <div>
         {streetAddress ||
-        addressLocality ||
-        addressRegion ||
-        postalCode ||
-        commonName ? (
-          <>
-            <h3 className="elbrus">{name}</h3>
-            <address>
-              {commonName ? (
-                <span>
-                  {commonName}
-                  <br />
-                </span>
-              ) : null}
-              {streetAddress ? (
-                <span>
-                  {streetAddress}
-                  <br />
-                </span>
-              ) : null}
-              {addressLocality ? <span>{addressLocality}, </span> : null}
-              {addressRegion ? <span>{addressRegion} </span> : null}
-              {postalCode ? (
-                <span>
-                  {postalCode}
-                  <br />
-                </span>
-              ) : null}
-            </address>
-          </>
-        ) : (
-          <>
-            <h3 className="elbrus">{name}</h3>
+          addressLocality ||
+          addressRegion ||
+          postalCode ||
+          commonName ? (
+          <Place
+            commonName={commonName}
+            streetAddress={streetAddress}
+            addressLocality={addressLocality}
+            addressRegion={addressRegion}
+            postalCode={postalCode}
+          />
+        ) : null}
 
-            <Markdown
-              components={{
-                div: ({ children, ...props }) => (
-                  <div className="react-markdown" {...props}>
-                    {children}
-                  </div>
-                ),
-              }}
-            >
-              {address.data.address}
-            </Markdown>
-          </>
-        )}
-      </div>
-
-      <div>
         {opening_time && closing_time ? (
           <Season
             season_start={season_start}
@@ -207,7 +321,6 @@ export const PaddleLocationCard = ({
   description,
   opening_time,
   closing_time,
-  background,
   streetAddress,
   addressLocality,
   addressRegion,
@@ -220,12 +333,36 @@ export const PaddleLocationCard = ({
 }: PaddleLocationCardTypes) => {
   const phoneNumber = Number(phone);
 
-  // * external link or internal link
+  if (phone) {
+    return (
+      <div className="location">
+        <PhoneContent
+          link={link}
+          svg={svg}
+          name={name}
+          address={address}
+          description={description}
+          opening_time={opening_time}
+          closing_time={closing_time}
+          streetAddress={streetAddress}
+          addressLocality={addressLocality}
+          addressRegion={addressRegion}
+          postalCode={postalCode}
+          commonName={commonName}
+          season_start={season_start}
+          season_end={season_end}
+          offSeasonDetails={offSeasonDetails}
+          phone={phoneNumber}
+        />
+      </div>
+    );
+  }
+
   if (link.includes("http")) {
     return (
       <a
         href={link}
-        className={`location ${background}`}
+        className="location"
         target="_blank"
         rel="noopener noreferrer"
         title={name}
@@ -245,13 +382,12 @@ export const PaddleLocationCard = ({
           season_start={season_start}
           season_end={season_end}
           offSeasonDetails={offSeasonDetails}
-          phone={phoneNumber}
         />
       </a>
     );
   }
   return (
-    <Link to={link} className={`location ${background}`}>
+    <Link to={link} className="location">
       <Content
         svg={svg}
         name={name}
@@ -267,7 +403,6 @@ export const PaddleLocationCard = ({
         season_start={season_start}
         season_end={season_end}
         offSeasonDetails={offSeasonDetails}
-        phone={phoneNumber}
       />
     </Link>
   );

@@ -46,16 +46,18 @@ const PhoneSwitcher = () => {
               </a>
             </div>
 
-            <a
-              href={faker.location.cardinalDirection()}
-              rel="noopener noreferrer"
-            >
-              <p>
-                {faker.location.secondaryAddress()}{" "}
-                {faker.location.streetAddress()}, {faker.location.city()},{" "}
-                {faker.location.zipCode()}
-              </p>
-            </a>
+            {faker.datatype.boolean() ? (
+              <a
+                href={faker.location.cardinalDirection()}
+                rel="noopener noreferrer"
+              >
+                <p>
+                  {faker.location.secondaryAddress()}{" "}
+                  {faker.location.streetAddress()}, {faker.location.city()},{" "}
+                  {faker.location.zipCode()}
+                </p>
+              </a>
+            ) : null}
 
             {/* // TODO: v1.2 deeper boolean */}
             {faker.datatype.boolean() ? (
@@ -89,11 +91,13 @@ const PhoneSwitcher = () => {
               </h3>
             </div>
 
-            <p>
-              {faker.location.secondaryAddress()}{" "}
-              {faker.location.streetAddress()}, {faker.location.city()},{" "}
-              {faker.location.zipCode()}
-            </p>
+            {faker.datatype.boolean() ? (
+              <p>
+                {faker.location.secondaryAddress()}{" "}
+                {faker.location.streetAddress()}, {faker.location.city()},{" "}
+                {faker.location.zipCode()}
+              </p>
+            ) : null}
 
             {/* // TODO: v1.2 deeper boolean */}
             {faker.datatype.boolean() ? (
