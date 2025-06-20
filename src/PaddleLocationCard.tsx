@@ -1,7 +1,7 @@
-import * as React from "react"
-import { Link } from 'gatsby';
+import * as React from "react";
+import { Link } from "gatsby";
 import Markdown from "react-markdown";
-import type { LocationCardTypes } from "./types/location-card-types";
+import type { PaddleLocationCardTypes } from "./types/location-card-types";
 import HourMin from "./hour-min";
 import Phone from "./phone";
 
@@ -14,10 +14,20 @@ interface SeasonTypes {
   name: string;
   offSeasonDetails?: string;
 }
-function Season({ name, season_start, season_end, opening_time, closing_time, offSeasonDetails }: SeasonTypes) {
-
+const Season = ({
+  name,
+  season_start,
+  season_end,
+  opening_time,
+  closing_time,
+  offSeasonDetails,
+}: SeasonTypes) => {
   // TODO: these need a query but thats not the most important first step
-  if (name === "Free Parking Lot" || name === "Parking" || name === "Delivery") {
+  if (
+    name === "Free Parking Lot" ||
+    name === "Parking" ||
+    name === "Delivery"
+  ) {
     return null;
   }
 
@@ -29,14 +39,17 @@ function Season({ name, season_start, season_end, opening_time, closing_time, of
     if (currentDay >= seasonStartDate && currentDay <= seasonEndDate) {
       return (
         <p>
-          {opening_time ? "Open Daily: " : null}<br />
+          {opening_time ? "Open Daily: " : null}
+          <br />
           {opening_time && closing_time ? (
-            <span><HourMin time={opening_time} /> - <HourMin time={closing_time} /></span>
-          )
-            : null}<br />
+            <span>
+              <HourMin time={opening_time} /> - <HourMin time={closing_time} />
+            </span>
+          ) : null}
+          <br />
           Weather Permitting
         </p>
-      )
+      );
     }
 
     // outside of season
@@ -46,17 +59,17 @@ function Season({ name, season_start, season_end, opening_time, closing_time, of
 
         {currentDay < seasonStartDate ? (
           <p>
-            We will reopen<br />
-            {season_start}<br />
+            We will reopen
+            <br />
+            {season_start}
+            <br />
             Weather Permitting
           </p>
         ) : null}
 
-        {offSeasonDetails ? (
-          <p>{offSeasonDetails}</p>
-        ) : null}
+        {offSeasonDetails ? <p>{offSeasonDetails}</p> : null}
       </div>
-    )
+    );
   }
 
   // no season defaults to off season
@@ -64,13 +77,10 @@ function Season({ name, season_start, season_end, opening_time, closing_time, of
   return (
     <div>
       <p>We&apos;re closed for the season</p>
-      {offSeasonDetails ? (
-        <p>{offSeasonDetails}</p>
-      ) : null}
+      {offSeasonDetails ? <p>{offSeasonDetails}</p> : null}
     </div>
-  )
-
-}
+  );
+};
 
 interface ContentTypes {
   svg: string;
@@ -78,12 +88,12 @@ interface ContentTypes {
   address: {
     data: {
       address: string;
-    }
+    };
   };
   description: {
     data: {
       description: string;
-    }
+    };
   };
   opening_time: string;
   closing_time: string;
@@ -98,47 +108,75 @@ interface ContentTypes {
   season_end?: string;
 
   offSeasonDetails?: string;
-
 }
-function Content({ svg, name, address, description, opening_time, closing_time, streetAddress, addressLocality, addressRegion, postalCode, commonName, season_start, season_end, offSeasonDetails }: ContentTypes) {
+const Content = ({
+  svg,
+  name,
+  address,
+  description,
+  opening_time,
+  closing_time,
+  streetAddress,
+  addressLocality,
+  addressRegion,
+  postalCode,
+  commonName,
+  season_start,
+  season_end,
+  offSeasonDetails,
+}: ContentTypes) => {
   return (
     <>
-      <div
-        className="svg"
-        dangerouslySetInnerHTML={{ __html: svg }}
-      />
+      <div className="svg" dangerouslySetInnerHTML={{ __html: svg }} />
 
       <div>
-
-        {streetAddress || addressLocality || addressRegion || postalCode || commonName ? (
+        {streetAddress ||
+        addressLocality ||
+        addressRegion ||
+        postalCode ||
+        commonName ? (
           <>
             <h3 className="elbrus">{name}</h3>
             <address>
-              {commonName ? <span>{commonName}<br /></span> : null}
-              {streetAddress ? <span>{streetAddress}<br /></span> : null}
+              {commonName ? (
+                <span>
+                  {commonName}
+                  <br />
+                </span>
+              ) : null}
+              {streetAddress ? (
+                <span>
+                  {streetAddress}
+                  <br />
+                </span>
+              ) : null}
               {addressLocality ? <span>{addressLocality}, </span> : null}
               {addressRegion ? <span>{addressRegion} </span> : null}
-              {postalCode ? <span>{postalCode}<br /></span> : null}
+              {postalCode ? (
+                <span>
+                  {postalCode}
+                  <br />
+                </span>
+              ) : null}
             </address>
           </>
-        ) :
-
-          (<>
+        ) : (
+          <>
             <h3 className="elbrus">{name}</h3>
-            
-            <Markdown 
+
+            <Markdown
               components={{
                 div: ({ children, ...props }) => (
                   <div className="react-markdown" {...props}>
                     {children}
                   </div>
-                )
+                ),
               }}
             >
               {address.data.address}
             </Markdown>
-          </>)}
-
+          </>
+        )}
       </div>
 
       <div>
@@ -153,59 +191,44 @@ function Content({ svg, name, address, description, opening_time, closing_time, 
           />
         ) : (
           <div className="react-markdown">
-          <Markdown>
-            {description.data.description}
-          </Markdown>
+            <Markdown>{description.data.description}</Markdown>
           </div>
         )}
       </div>
     </>
-  )
-}
+  );
+};
 
-export function PaddleLocationCard({ svg, name, link, address, description, opening_time, closing_time, background, streetAddress, addressLocality, addressRegion, postalCode, commonName, season_start, season_end, phone, offSeasonDetails }: LocationCardTypes) {
-
+export const PaddleLocationCard = ({
+  svg,
+  name,
+  link,
+  address,
+  description,
+  opening_time,
+  closing_time,
+  background,
+  streetAddress,
+  addressLocality,
+  addressRegion,
+  postalCode,
+  commonName,
+  season_start,
+  season_end,
+  phone,
+  offSeasonDetails,
+}: PaddleLocationCardTypes) => {
   const phoneNumber = Number(phone);
 
-  if (link.includes('http')) {
+  // * external link or internal link
+  if (link.includes("http")) {
     return (
-      <div className="location-wrapper">
-        <a href={link}
-          className={`location ${background}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          title={name}
-        >
-          <Content
-            svg={svg}
-            name={name}
-            address={address}
-            description={description}
-            opening_time={opening_time}
-            closing_time={closing_time}
-
-            streetAddress={streetAddress}
-            addressLocality={addressLocality}
-            addressRegion={addressRegion}
-            postalCode={postalCode}
-            commonName={commonName}
-
-            season_start={season_start}
-            season_end={season_end}
-
-            offSeasonDetails={offSeasonDetails}
-
-          />
-        </a>
-        {name === "On Water Rental" && phone ? <Phone phone={phoneNumber} /> : null}
-      </div>
-    )
-  }
-  return (
-    <div className="location-wrapper">
-      <Link
-        to={link}
+      <a
+        href={link}
         className={`location ${background}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={name}
       >
         <Content
           svg={svg}
@@ -214,21 +237,38 @@ export function PaddleLocationCard({ svg, name, link, address, description, open
           description={description}
           opening_time={opening_time}
           closing_time={closing_time}
-
           streetAddress={streetAddress}
           addressLocality={addressLocality}
           addressRegion={addressRegion}
           postalCode={postalCode}
           commonName={commonName}
-
           season_start={season_start}
           season_end={season_end}
-
           offSeasonDetails={offSeasonDetails}
-
+          phone={phoneNumber}
         />
-      </Link>
-      {name === "On Water Rental" && phone ? <Phone phone={phoneNumber} /> : null}
-    </div>
-  )
-}
+      </a>
+    );
+  }
+  return (
+    <Link to={link} className={`location ${background}`}>
+      <Content
+        svg={svg}
+        name={name}
+        address={address}
+        description={description}
+        opening_time={opening_time}
+        closing_time={closing_time}
+        streetAddress={streetAddress}
+        addressLocality={addressLocality}
+        addressRegion={addressRegion}
+        postalCode={postalCode}
+        commonName={commonName}
+        season_start={season_start}
+        season_end={season_end}
+        offSeasonDetails={offSeasonDetails}
+        phone={phoneNumber}
+      />
+    </Link>
+  );
+};

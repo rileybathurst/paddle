@@ -7,10 +7,10 @@ interface BreadcrumbsTypes {
     name?: string;
     item?: string;
   };
-}[]
+}
+[];
 // I could probably pass it two arguments instead but for now
-function Breadcrumbs(breadcrumbs: BreadcrumbsTypes) {
-
+const Breadcrumbs = (breadcrumbs: BreadcrumbsTypes) => {
   // remove the breadcrumbs.url from the Object.entries
   // console.log(breadcrumbs.url);
   const { url, ...rest } = breadcrumbs;
@@ -18,7 +18,6 @@ function Breadcrumbs(breadcrumbs: BreadcrumbsTypes) {
   if (Object.keys(rest).length === 0) {
     return null;
   }
-
 
   return (
     <Script type="application/ld+json">
@@ -28,19 +27,19 @@ function Breadcrumbs(breadcrumbs: BreadcrumbsTypes) {
           "@type": "BreadcrumbList",
           "itemListElement": [
             ${Object.entries(rest).map(([key, breadcrumb]) => {
-        return `{
+              return `{
           "@type": "ListItem",
           "position": ${Number.parseInt(key) + 1},
           "name": "${breadcrumb.name}",
           "item": "${url}/${breadcrumb.item}"
-        }`
-      })}
+        }`;
+            })}
           ]
         }
       `}
     </Script>
   );
-}
+};
 
 type SEOtypes = {
   title?: string;
@@ -96,13 +95,24 @@ type SEOtypes = {
   };
 
   children: React.ReactNode;
-}
+};
 
-export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, breadcrumbs, strapiLocale, strapiLocation, allStrapiLocation, children }: SEOtypes) => {
-
+export const PaddleSEO = ({
+  title,
+  description,
+  ogImage,
+  ogImageDescription,
+  breadcrumbs,
+  strapiLocale,
+  strapiLocation,
+  allStrapiLocation,
+  children,
+}: SEOtypes) => {
   const businessName = `${strapiLocale.name} Kayak & Paddleboard rentals and tours`;
 
-  const PaddleTitle = title ? `${title} | ${businessName}` : `${businessName} | ${strapiLocale.topbar.data.topbar} `;
+  const PaddleTitle = title
+    ? `${title} | ${businessName}`
+    : `${businessName} | ${strapiLocale.topbar.data.topbar} `;
   // TODO: tagline would be a better fallback description
   const PaddleDescription = description || strapiLocale.slogan;
   // url: `${strapiLocale.url}${SE0.url}` || strapiLocale.url,
@@ -116,8 +126,13 @@ export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, bre
   // TODO: this is now allStrapiLocation.nodes
   // TODO: I think this will be a keylocation piece
   // console.log(strapiLocale.paymentAccepted);
-  const paymentAcceptedQuery = strapiLocale.paymentAccepted ? strapiLocale.paymentAccepted : '';
-  const paymentAcceptedFormatted = paymentAcceptedQuery.split('\n').map((payment: string) => payment.trim().replace('- ', '')).join(', ');
+  const paymentAcceptedQuery = strapiLocale.paymentAccepted
+    ? strapiLocale.paymentAccepted
+    : "";
+  const paymentAcceptedFormatted = paymentAcceptedQuery
+    .split("\n")
+    .map((payment: string) => payment.trim().replace("- ", ""))
+    .join(", ");
   // console.log(paymentAcceptedFormatted);
 
   // console.log(breadcrumbs);
@@ -152,10 +167,12 @@ export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, bre
               "postalCode": "${strapiLocation?.postalCode}",
               "addressCountry": "US"
             },
-            ${allStrapiLocation ? `
+            ${
+              allStrapiLocation
+                ? `
             "department": [
             ${allStrapiLocation.nodes.map((location) => {
-          return `{
+              return `{
                   "name": "${location.name}",
                   "@type": "${location.schemaType}",
                   "address": {
@@ -166,10 +183,12 @@ export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, bre
                     "postalCode": "${location.postalCode}",
                     "addressCountry": "US"
                   }
-                }`
-        })}
+                }`;
+            })}
             ],
-            ` : ''}
+            `
+                : ""
+            }
             "areaServed": {
               "@type": "GeoCircle",
               "geoMidpoint": {
@@ -189,10 +208,7 @@ export const PaddleSEO = ({ title, description, ogImage, ogImageDescription, bre
         `}
       </Script>
 
-      <Breadcrumbs
-        url={strapiLocale.url}
-        {...breadcrumbs}
-      />
+      <Breadcrumbs url={strapiLocale.url} {...breadcrumbs} />
       {children}
     </>
   );

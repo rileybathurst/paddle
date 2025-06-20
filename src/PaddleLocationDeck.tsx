@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 import { PaddleLocationCard } from "./PaddleLocationCard";
 import type { PaddleLocationCardTypes } from "./types/location-card-types";
 
@@ -9,8 +9,13 @@ interface LocationDeckTypes {
   phone?: string;
   nodes: PaddleLocationCardTypes[];
 }
-export function PaddleLocationDeck({ nodes, season_start, season_end, phone, background }: LocationDeckTypes) {
-
+export const PaddleLocationDeck = ({
+  nodes,
+  season_start,
+  season_end,
+  phone,
+  background,
+}: LocationDeckTypes) => {
   return (
     <section className="location-deck">
       {nodes.map((location: PaddleLocationCardTypes) => (
@@ -24,5 +29,5 @@ export function PaddleLocationDeck({ nodes, season_start, season_end, phone, bac
         />
       ))}
     </section>
-  )
-}
+  );
+};
