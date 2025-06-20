@@ -23,18 +23,25 @@ type BrandListTypes = {
 const PaddleBrandList = ({ nodes, sport }: BrandListTypes) => {
 
   const BrandSet = new Set();
-  
-  nodes.map((brand) => {
-    brand.retail.map((retail) => {
-      if (retail.sport.slug === sport) {
-        BrandSet.add(brand);
-      }
-    })
-  });
+  let BrandArray = [];
 
-  const BrandArray = (Array.from(BrandSet));
+  if (sport) {
+    nodes.map((brand) => {
+      brand.retail.map((retail) => {
 
-// TODO: if I only want a specific sport 
+        if (retail.sport.slug === sport) {
+          BrandSet.add(brand);
+        }
+
+        return BrandSet;
+      })
+    });
+
+    BrandArray = (Array.from(BrandSet));
+  } else {
+    // TODO: this needs a check if anything is published in the brand if no sport is passed
+    BrandArray = (Array.from(nodes));
+  }
 
   return (
     <ul className='brand_list'>
