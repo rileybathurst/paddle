@@ -202,7 +202,6 @@ hgroup {
 select {
   font-size: var(--vinson);
   font-family: var(--body_font);
-  margin-block-end: var(--elbrus);
   margin-block-end: 0;
   /* A reset of styles, including removing the default dropdown arrow */
   appearance: none;
@@ -225,5 +224,16 @@ select {
 
   ul {
     white-space: collapse;
+  }
+}
+
+/*------------------*/
+/* #DEL */
+/*------------------*/
+
+del {
+  color: hsl(var(--sand__base), var(--dim));
+  @media (prefers-color-scheme: dark) {
+    color: hsl(var(--sand__base), var(--dark));
   }
 }

@@ -25,6 +25,8 @@ export const Header = () => (
       </h1>
     </div>
     {/* // TODO: small nav v1.1 */}
-    <SmallMenu />
+    {faker.datatype.boolean() ?
+      <SmallMenu />
+      : null}
   </header>
 );

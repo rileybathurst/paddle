@@ -18,6 +18,7 @@ export * from "./PaddleTestimonial";
 export * from "./PaddleLocationDeck";
 export * from "./PaddleTestimonials";
 export * from "./PaddleBrandList";
+export * from "./PaddleMoonlightTourDatesTimes"
 
 // Templates
 
