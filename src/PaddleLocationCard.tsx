@@ -18,11 +18,11 @@ type PlaceTypes = {
 const Place = ({ commonName, streetAddress, addressLocality, addressRegion, postalCode }: PlaceTypes) => {
   return (
     <address>
-      {commonName ? commonName : null}
-      {streetAddress ? streetAddress : null}
-      {addressLocality ? addressLocality : null}
-      {addressRegion ? addressRegion : null}
-      {postalCode ? postalCode : null}
+      {commonName ? (<>{commonName},&nbsp;</>) : null},&nbsp;
+      {streetAddress ? (<>{streetAddress},&nbsp;</>) : null}
+      {addressLocality ? (<>{addressLocality},&nbsp;</>) : null}
+      {addressRegion ? (<>{addressRegion},&nbsp;</>) : null}
+      {postalCode ? (<>{postalCode},&nbsp;</>) : null}
     </address>
   )
 }
@@ -62,13 +62,9 @@ const Season = ({
       return (
         <p>
           {opening_time ? "Open Daily: " : null}
-          <br />
           {opening_time && closing_time ? (
-            <span>
-              <HourMin time={opening_time} /> - <HourMin time={closing_time} />
-            </span>
+            <><HourMin time={opening_time} /> - <HourMin time={closing_time} />&nbsp;</>
           ) : null}
-          <br />
           Weather Permitting
         </p>
       );
@@ -80,13 +76,7 @@ const Season = ({
         <p>We&apos;re closed for the season</p>
 
         {currentDay < seasonStartDate ? (
-          <p>
-            We will reopen
-            <br />
-            {season_start}
-            <br />
-            Weather Permitting
-          </p>
+          <p>We will reopen {season_start}, Weather Permitting</p>
         ) : null}
 
         {offSeasonDetails ? <p>{offSeasonDetails}</p> : null}
