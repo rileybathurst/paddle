@@ -18,26 +18,11 @@ type PlaceTypes = {
 const Place = ({ commonName, streetAddress, addressLocality, addressRegion, postalCode }: PlaceTypes) => {
   return (
     <address>
-      {commonName ? (
-        <span>
-          {commonName}
-          <br />
-        </span>
-      ) : null}
-      {streetAddress ? (
-        <span>
-          {streetAddress}
-          <br />
-        </span>
-      ) : null}
-      {addressLocality ? <span>{addressLocality}, </span> : null}
-      {addressRegion ? <span>{addressRegion} </span> : null}
-      {postalCode ? (
-        <span>
-          {postalCode}
-          <br />
-        </span>
-      ) : null}
+      {commonName ? commonName : null}
+      {streetAddress ? streetAddress : null}
+      {addressLocality ? addressLocality : null}
+      {addressRegion ? addressRegion : null}
+      {postalCode ? postalCode : null}
     </address>
   )
 }
@@ -278,8 +263,11 @@ const Content = ({
     <>
       <div className="svg" dangerouslySetInnerHTML={{ __html: svg }} />
 
-      <h3 className="elbrus">{name}</h3>
       <div>
+        <div className="multi_button">
+          <h3 className="elbrus">{name}</h3>
+        </div>
+
         {streetAddress ||
           addressLocality ||
           addressRegion ||

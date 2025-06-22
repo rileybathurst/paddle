@@ -1,7 +1,7 @@
 {
   "name": "@rileybathurst/paddle",
   "private": false,
-  "version": "1.0.5",
+  "version": "1.0.8",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -46,7 +46,7 @@
   "description": "building blocks",
   "main": "src/index.tsx",
   "module": "src/index.tsx",
-  "author": "",
+  "author": "Riley Bathurst <riley@rileybathurst.com> (http://rileybathurst.com/)",
   "license": "ISC",
   "files": [
     "src/*",
