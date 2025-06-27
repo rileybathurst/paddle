@@ -14,7 +14,7 @@ a:where(:hover, :focus) {
 
 /* this is getting too big and complex try go the other way for what it is */
 .tahoe-city a:not(.social a):not(button):not(.button):not(.book-now) {
-  color: var(--ruby-100);
+  color: var(--tanager-100);
 }
 
 .south-tahoe a {

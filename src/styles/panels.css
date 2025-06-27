@@ -26,6 +26,11 @@
       border-color: white;
     }
   }
+
+  /* * fixes color bleed check the tours page */
+  > *:last-child {
+    margin-block-end: 0;
+  }
 }
 
 .aurora {

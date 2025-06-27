@@ -67,7 +67,6 @@ h3,
 
 h4,
 .kilimanjaro,
-/* .spec h2 put this inline */
 .spec h2 {
   font-size: 1.5rem; /* 24px */
   line-height: 2rem; /* 32px */
@@ -231,9 +230,12 @@ select {
 /* #DEL */
 /*------------------*/
 
-del {
+/* TODO: v1.2 */
+/* I think this is the only place its used but describes why */
+/* .single__description del {
   color: hsl(var(--sand__base), var(--dim));
   @media (prefers-color-scheme: dark) {
     color: hsl(var(--sand__base), var(--dark));
   }
 }
+ */

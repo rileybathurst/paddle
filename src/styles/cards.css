@@ -1,16 +1,20 @@
 /*------------------*/
-/* #CARDS */
+/* #CARDS / PURCHASE / TICKET */
 /*------------------*/
 
-.deck {
+/* was deck */
+.bag {
   margin-block-end: var(--aconcagua);
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--condor), 1fr));
+
+  /* TODO: clamp */
+  gap: var(--kosciuszko);
 }
 
-/* TODO: v1.2 I think this may have already be removed by check it properly before deleteing it card is becoming purchase and splitting more */
-.card {
+/* was card */
+.purchase {
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -19,12 +23,58 @@
   border-radius: var(--card-radius);
   /* needed to control nested elements */
   text-decoration: none;
+  box-shadow: var(--penumbra);
 
-  .card__placeholder {
-    max-height: 5rem;
-    border: none;
-    border-radius: 0;
-    margin-block-end: var(--kilimanjaro);
+  background-color: white;
+
+  .purchase-collage {
+    display: grid;
+    width: 100%;
+  
+    > * {
+      grid-row: 1;
+      grid-column: 1;
+    }
+  
+    .texture-slice {
+      width: calc(100% - var(--elbrus));
+      aspect-ratio: 16/9;
+      height: 100%;
+      align-self: center;
+      margin: calc(var(--elbrus) / 2);
+      border-radius: 0.25rem;
+      box-shadow: var(--penumbra);
+      border: 1px solid whitesmoke;
+      stroke: whitesmoke;
+  
+      @media (prefers-color-scheme: dark) {
+        border-color: var(--black-metal);
+        stroke: var(--black-metal);
+      }
+    }
+    
+    .cutout {
+      object-fit: contain;
+      place-self: center;
+      /* box-shadow: var(--umbra); */
+      z-index: 2; /* TODO: variable */
+      grid-row: 1/1;
+      filter: drop-shadow(5px 5px 5px var(--black-out));
+      aspect-ratio: 16/9;
+      width: 100%;
+    }
+  
+    svg {
+      z-index: 1; /* TODO: variable */
+      max-height: 100%; /* overwrite the default */
+      margin: calc(var(--elbrus) / 2);
+      width: calc(100% - var(--elbrus));
+      stroke: whitesmoke;
+  
+      @media (prefers-color-scheme: dark) {
+        stroke: var(--black-metal);
+      }
+    }
   }
 
   .image-link {
@@ -37,49 +87,21 @@
     transform: scale(1.05);
   }
 
-  .card__image {
-    margin-block-end: var(--kilimanjaro);
-    transition: var(--fade);
-  }
-
-  .card__image:where(:hover, :focus) {
-    filter: brightness(80%);
-  }
-
-  .card__title {
+  .purchase__title {
     font-size: var(--denali);
     margin-inline: var(--kosciuszko);
     line-height: var(--aconcagua);
   }
 
-  .card__specs {
-    width: calc(100% - var(--kilimanjaro));
-    display: flex;
-    flex-flow: row wrap;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-inline: var(--kosciuszko);
-    margin-block-end: var(--elbrus);
-
-    > * {
-      margin: 0; /* reset */
-    }
-  }
-
-  .card__span {
-    font-size: var(--vinson);
-    text-transform: uppercase;
-  }
-
-  hr {
+  hr, p {
     margin-inline: var(--kosciuszko);
   }
 
-  img {
+  /* img {
     width: 100%;
-  }
+  } */
 
-  .card__details {
+  .purchase__details {
     display: flex;
     gap: var(--vinson);
     width: calc(100% - var(--kilimanjaro));
@@ -109,10 +131,14 @@
 
   .badge {
     z-index: var(--floor);
-    place-self: start;
+    justify-self: end;
+    align-self: start;
     padding: var(--kosciuszko);
     margin: var(--kosciuszko);
     border-radius: var(--card-radius);
+
+    background-color: var(--neutral-200);
+    border: 1px solid var(--neutral-100);
     opacity: 0.9;
 
     h5 {
@@ -123,7 +149,17 @@
   }
 }
 
-.card:hover,
+.tahoe-city .purchase {
+  background-color: var(--sand-100);
+
+  hr {
+    border-color: var(--sand-400);
+  }
+}
+
+/* south-tahoe currently does not have a purchase */
+
+.purchase:hover,
 .ticket:hover {
   p {
     text-decoration: underline;
@@ -135,15 +171,11 @@
   }
 }
 
-.deck:empty {
+.bag:empty {
   display: none;
 }
 
-.deck__column {
-  grid-template-columns: 1fr;
-}
-
-.deck__more {
+.bag__more {
   max-width: var(--pelican);
   margin-inline: auto;
   padding-inline: var(--kosciuszko);
@@ -151,28 +183,6 @@
   button {
     margin-block-start: var(--kilimanjaro);
     margin-inline: auto;
-  }
-}
-
-.ticket img {
-  aspect-ratio: 16 / 9;
-}
-
-.south-tahoe .ticket {
-  background-color: var(--lake-200);
-  border: 1px solid var(--lake-300);
-  box-shadow: var(--penumbra);
-  color: var(--lake-600);
-
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--lake-700);
-    border-color: var(--lake-600);
-    /* box-shadow: var(--penumbra--dark); */
-    color: var(--lake-200);
-
-    a:not(.book-now) {
-      color: var(--lake-200);
-    }
   }
 }
 
@@ -237,6 +247,7 @@
 
   img {
     width: 100%;
+    aspect-ratio: 16 / 9;
   }
 
   > a {
@@ -263,6 +274,20 @@
   }
 }
 
-/* .south-tahoe .ticket {
+.south-tahoe .ticket {
+  background-color: var(--lake-200);
+  border: 1px solid var(--lake-300);
+  box-shadow: var(--penumbra);
+  color: var(--lake-600);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--lake-700);
+    border-color: var(--lake-600);
+    /* box-shadow: var(--penumbra--dark); */
+    color: var(--lake-200);
+
+    a:not(.book-now) {
+      color: var(--lake-200);
+    }
+  }
 }
- */

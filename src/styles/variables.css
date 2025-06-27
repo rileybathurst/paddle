@@ -7,11 +7,6 @@
   /* #COLOR */
   /*------------------------------------*/
 
-  /* TODO: v1.2 swap to tanager and remove */
-  --ruby-100: hsl(0, 50%, 50%); /* base */
-  --ruby-200: hsl(0, 50%, 37.5%);
-  --ruby-300: hsl(0, 50%, 25%);
-
   --sand-100: hsl(25, 37%, 95%);
   --sand-150: hsl(25, 37%, 92.5%);
   --sand-200: hsl(25, 37%, 87.5%);
@@ -21,7 +16,7 @@
   --navy-200: oklch(37.5% 0.07 230);
   --navy-300: oklch(25% 0.04 230);
 
-  @supports not (oklch: 50% 0.09 230) {
+  @supports not (color: oklch(50% 0.09 230)) {
     --navy-100: #1b6c8c;
     --navy-200: #0a475f;
     --navy-300: #092531;
@@ -55,7 +50,7 @@
   --sand-400: oklch(0.88 0.04 50);
   /* this finishes where 500 normally would go dark */
 
-  @supports not (color: oklch(0.55 0.2 25)) {
+  @supports not (color: oklch(0.97 0.01 50)) {
     --sand-100: #fbf3ef;
     --sand-200: #faebe3;
     --sand-300: #f6dfd3;
@@ -65,8 +60,9 @@
   /* South Tahoe */
   /* Lake */
 
-  --lake-100: oklch(99% 0.001 230);
-  --lake-100: oklch(95% 0.03 230);
+  /* ! whats going on with the 2x 100? */
+  /* --lake-100: oklch(99% 0.001 230); */
+  --lake-100: oklch(94% 0.03 230);
   --lake-200: oklch(93% 0.04 230);
   --lake-300: oklch(90% 0.055 230);
   --lake-400: oklch(83% 0.08 230);

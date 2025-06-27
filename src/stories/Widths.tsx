@@ -38,7 +38,7 @@ const WidthCard = ({ widths }: WidthCardTypes) => {
           <p
             className="white-space"
             style={{
-              color: "var(--ruby-100)",
+              color: "red",
             }}
           >
             {faker.string.fromCharacters("abcdefghijklmnopqrstuvwxyz", {
@@ -92,7 +92,7 @@ const WarpCards = ({ widths }: WarpCardsTypes) => {
             style={{
               paddingBlock: "var(--vinson)",
               backgroundColor: "var(--tin-soldier)",
-              color: "var(--ruby-100)",
+              color: "red",
             }}
           >
             {width} wrap

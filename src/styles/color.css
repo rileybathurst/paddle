@@ -25,6 +25,13 @@ body:has(#storybook-root) {
   }
 }
 
+body .tahoe-city {
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--navy-300);
+    color: var(--brilliance);
+  }
+}
+
 body .south-tahoe {
   @media (prefers-color-scheme: dark) {
     background-color: var(--lake-800);
@@ -70,4 +77,12 @@ body .south-tahoe {
   @media (prefers-color-scheme: dark) {
     color: var(--neutral-200);
   }
+}
+
+/*------------------------------------*/
+/* #SPECS */
+/*------------------------------------*/
+
+.specs h2, .specs .spec__unit {
+  color: grey;
 }
