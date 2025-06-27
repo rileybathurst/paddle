@@ -1,21 +1,20 @@
 // this is the Name.tsx file
-import React from 'react';
-import { Link } from 'react-aria-components';
-import { faker } from '@faker-js/faker';
+import React from "react";
+import { Link } from "react-aria-components";
+import { faker } from "@faker-js/faker";
 
-import { Pricing } from './Pricing';
-import { LocationDeck } from './LocationDeck';
-import { Socials } from './Socials';
-import { Logo } from './Logo';
-import { Menu } from './Menu';
+import { Pricing } from "./Pricing";
+import { LocationDeck } from "./LocationDeck";
+import { Socials } from "./Socials";
+import { Logo } from "./Logo";
+import { Menu } from "./Menu";
 
 export const Footer = () => {
-
   return (
     <>
-      <footer className='cloud aconcagua-padding-block-start'>
-        <div className='pelican multi_button multi_button-center'>
-          <button>{faker.phone.number()}</button>
+      <footer className="cloud aconcagua-padding-block-start">
+        <div className="pelican multi_button multi_button-center">
+          <button type="button">{faker.phone.number()}</button>
           <a
             href={`mailto:${faker.internet.email()}`}
             rel="norel norefferer"
@@ -23,15 +22,13 @@ export const Footer = () => {
           >
             {faker.internet.email()}
           </a>
-
         </div>
-        <div className='pelican'>
+        <div className="pelican">
           <Menu />
         </div>
 
-        <div className='pelican wrap'>
+        <div className="pelican wrap">
           <section>
-
             <LocationDeck />
 
             <div className="footer__contact">
@@ -43,14 +40,17 @@ export const Footer = () => {
             <div className="footer__locations">
               <h3>Our Partner Locations</h3>
               <ul>
-                {Array.from({ length: faker.number.int({ min: 1, max: 5 }) }).map(() => (
+                {Array.from({
+                  length: faker.number.int({ min: 1, max: 5 }),
+                }).map(() => (
                   <li
                     key={faker.location.city()}
-                    className='vinson-margin-block-end'
+                    className="vinson-margin-block-end"
                   >
-                    <a href={faker.location.city()}
+                    <a
+                      href={faker.location.city()}
                       target="_blank"
-                      rel='noopener noreferrer'
+                      rel="noopener noreferrer"
                     >
                       {faker.location.city()} Kayak &amp; Paddleboard
                     </a>
@@ -62,13 +62,11 @@ export const Footer = () => {
           <section>
             <Pricing book={false} />
             <hr />
-
-
           </section>
         </div>
 
-        <div className='logo-container logo-container_footer'>
-          <h3 className='sr-only'>
+        <div className="logo-container logo-container_footer">
+          <h3 className="sr-only">
             <Link href="/">{faker.company.name()}</Link>
           </h3>
           <Link href="/" className="logo-link">
@@ -76,7 +74,7 @@ export const Footer = () => {
           </Link>
           <p>&copy; {new Date().getFullYear()}</p>
         </div>
-      </footer >
+      </footer>
     </>
   );
 };
