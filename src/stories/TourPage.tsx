@@ -37,11 +37,11 @@ export const TourPage = () => {
         <Composition />
       </div>
 
-      <section className="cloud aconcagua-padding-block">
+      <section className="aconcagua-padding-block">
         <div className="pelican">
           <h3>Other Tours</h3>
           <p>
-            <a href={faker.airline.airport()}>
+            <a href={faker.airline.flightNumber()}>
               Compare the {faker.animal.bear()} to another tour
             </a>
           </p>
