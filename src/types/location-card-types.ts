@@ -30,7 +30,8 @@ export interface PaddleLocationCardTypes {
 
   season_start?: string;
   season_end?: string;
-  phone?: string;
+  phoneNumber?: string;
 
   offSeasonDetails?: string;
+  phone?: boolean;
 }

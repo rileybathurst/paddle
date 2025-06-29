@@ -13,19 +13,17 @@ export const PaddleLocationDeck = ({
   nodes,
   season_start,
   season_end,
-  phone,
-  background,
+  phone
 }: LocationDeckTypes) => {
   return (
     <section className="location-deck">
       {nodes.map((location: PaddleLocationCardTypes) => (
         <PaddleLocationCard
           key={location.id}
-          {...location}
-          background={background}
           season_start={season_start}
           season_end={season_end}
-          phone={phone}
+          phoneNumber={phone}
+          {...location}
         />
       ))}
     </section>

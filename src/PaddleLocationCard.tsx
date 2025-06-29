@@ -117,7 +117,7 @@ interface ContentTypes {
   season_end?: string;
 
   offSeasonDetails?: string;
-  phone?: number;
+  phoneNumber?: number;
 
   streetAddress?: string;
   addressLocality?: string;
@@ -129,7 +129,6 @@ const PhoneContent = ({
   link,
   svg,
   name,
-  address,
   description,
   opening_time,
   closing_time,
@@ -141,7 +140,7 @@ const PhoneContent = ({
   season_start,
   season_end,
   offSeasonDetails,
-  phone,
+  phoneNumber,
 }: ContentTypes) => {
   return (
     <>
@@ -156,9 +155,11 @@ const PhoneContent = ({
           <div className="svg" dangerouslySetInnerHTML={{ __html: svg }} />
         </a>
       ) : (
-        <Link to={link} className="location">
-          <div className="svg" dangerouslySetInnerHTML={{ __html: svg }} />
-        </Link>
+        link && (
+          <Link to={link} className="location">
+            <div className="svg" dangerouslySetInnerHTML={{ __html: svg }} />
+          </Link>
+        )
       )}
 
       <div>
@@ -173,11 +174,15 @@ const PhoneContent = ({
               <h3>{name}</h3>
             </a>
           ) : (
-            <Link to={link} title={name}>
-              <h3>{name}</h3>
-            </Link>
+            link && (
+              <Link to={link} title={name}>
+                <h3>{name}</h3>
+              </Link>
+            )
           )}
-          <Phone phone={phone} />
+          {phoneNumber && (
+            <Phone phone={phoneNumber} />
+          )}
         </div>
 
         {streetAddress ||
@@ -202,15 +207,17 @@ const PhoneContent = ({
               />
             </a>
           ) : (
-            <Link to={link} title={name}>
-              <Place
-                commonName={commonName}
-                streetAddress={streetAddress}
-                addressLocality={addressLocality}
-                addressRegion={addressRegion}
-                postalCode={postalCode}
-              />
-            </Link>
+            link && (
+              <Link to={link} title={name}>
+                <Place
+                  commonName={commonName}
+                  streetAddress={streetAddress}
+                  addressLocality={addressLocality}
+                  addressRegion={addressRegion}
+                  postalCode={postalCode}
+                />
+              </Link>
+            )
           )
         ) : null}
 
@@ -236,7 +243,6 @@ const PhoneContent = ({
 const Content = ({
   svg,
   name,
-  address,
   description,
   opening_time,
   closing_time,
@@ -330,7 +336,7 @@ export const PaddleLocationCard = ({
           season_start={season_start}
           season_end={season_end}
           offSeasonDetails={offSeasonDetails}
-          phone={phoneNumber}
+          phoneNumber={phoneNumber}
         />
       </div>
     );
