@@ -27,7 +27,6 @@ footer,
 
 .vulture {
   margin-inline: auto;
-  max-width: 100%;
   max-width: min(var(--vulture), calc(100vw - var(--denali)));
   flex-basis: var(--vulture);
 }
@@ -346,12 +345,9 @@ header {
   align-items: center;
   gap: clamp(var(--kosciuszko), 1.67vw, var(--elbrus));
   border-radius: var(--card-radius);
-  /* guess and check to get the parking on one row in the footer */
-  flex: 1 4;
 
   > svg,
   .svg {
-    flex: 1 1 max-content;
     min-width: var(--everest);
     min-height: var(--everest);
   }
