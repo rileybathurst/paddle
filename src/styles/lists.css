@@ -7,8 +7,9 @@
 /*------------------*/
 
 ul {
-  padding-inline-start: 0.75rem;
+  padding-inline-start: var(--kosciuszko);
   margin: 0; /* reset */
+  list-style: none; /* reset */
 
   li {
     display: block;
