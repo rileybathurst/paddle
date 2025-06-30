@@ -6,24 +6,28 @@ import type { GatsbyImageType } from "./types/gatsby-image-type"
 
 type defaultPaddlerTypes = {
   sport?: string;
-  defaultKayaker: GatsbyImageType;
-  defaultPaddleboarder: GatsbyImageType;
+  defaultKayaker: {
+    image: GatsbyImageType;
+  };
+  defaultPaddleboarder: {
+    image: GatsbyImageType;
+  };
 }
 
 const DefaultPaddler = ({ sport, defaultKayaker, defaultPaddleboarder }: defaultPaddlerTypes) => {
   if (sport === "sup") {
     return (
       <GatsbyImage
-        image={defaultPaddleboarder.localFile.childImageSharp.gatsbyImageData}
-        alt={defaultPaddleboarder.alternativeText || "Paddleboarder"}
+        image={defaultPaddleboarder.image.localFile.childImageSharp.gatsbyImageData}
+        alt={defaultPaddleboarder.image.alternativeText || "Paddleboarder"}
         className="img__wrapped paddler"
       />
     )
   }
   return (
     <GatsbyImage
-      image={defaultKayaker.localFile.childImageSharp.gatsbyImageData}
-      alt={defaultKayaker.alternativeText || "Kayaker"}
+      image={defaultKayaker.image.localFile.childImageSharp.gatsbyImageData}
+      alt={defaultKayaker.image.alternativeText || "Kayaker"}
       className="img__wrapped paddler"
     />
   )
@@ -32,16 +36,22 @@ const DefaultPaddler = ({ sport, defaultKayaker, defaultPaddleboarder }: default
 interface CompositionTypes {
   sport?: string;
   image?: GatsbyImageType;
-  defaultKayaker: GatsbyImageType;
-  defaultPaddleboarder: GatsbyImageType;
-  WaterTexture: GatsbyImageType;
+  defaultKayaker: {
+    image: GatsbyImageType;
+  }
+  defaultPaddleboarder: {
+    image: GatsbyImageType;
+  }
+  WaterTexture: {
+    image: GatsbyImageType;
+  };
 }
 export const PaddleComposition = ({ sport, image, defaultKayaker, defaultPaddleboarder, WaterTexture }: CompositionTypes) => {
   return (
     <div className="composition">
       <GatsbyImage
-        image={WaterTexture.localFile.childImageSharp.gatsbyImageData}
-        alt={WaterTexture.alternativeText || "Water Texture"}
+        image={WaterTexture.image.localFile.childImageSharp.gatsbyImageData}
+        alt={WaterTexture.image.alternativeText || "Water Texture"}
         className="img__wrapped texture-1"
       />
 
