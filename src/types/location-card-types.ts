@@ -34,4 +34,5 @@ export interface PaddleLocationCardTypes {
 
   offSeasonDetails?: string;
   phone?: boolean;
+  weatherPermitting?: boolean;
 }

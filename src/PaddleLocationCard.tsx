@@ -18,7 +18,7 @@ type PlaceTypes = {
 const Place = ({ commonName, streetAddress, addressLocality, addressRegion, postalCode }: PlaceTypes) => {
   return (
     <address>
-      {commonName ? (<>{commonName},&nbsp;</>) : null},&nbsp;
+      {commonName ? (<>{commonName},&nbsp;</>) : null}
       {streetAddress ? (<>{streetAddress},&nbsp;</>) : null}
       {addressLocality ? (<>{addressLocality},&nbsp;</>) : null}
       {addressRegion ? (<>{addressRegion},&nbsp;</>) : null}
@@ -35,6 +35,7 @@ interface SeasonTypes {
   closing_time: string;
   name: string;
   offSeasonDetails?: string;
+  weatherPermitting?: boolean;
 }
 const Season = ({
   name,
@@ -43,6 +44,7 @@ const Season = ({
   opening_time,
   closing_time,
   offSeasonDetails,
+  weatherPermitting
 }: SeasonTypes) => {
   // TODO: these need a query but thats not the most important first step
   if (
@@ -65,7 +67,7 @@ const Season = ({
           {opening_time && closing_time ? (
             <><HourMin time={opening_time} /> - <HourMin time={closing_time} />&nbsp;</>
           ) : null}
-          Weather Permitting
+          {weatherPermitting ? "Weather Permitting" : null}
         </p>
       );
     }
@@ -118,6 +120,7 @@ interface ContentTypes {
 
   offSeasonDetails?: string;
   phoneNumber?: number;
+  weatherPermitting?: boolean;
 
   streetAddress?: string;
   addressLocality?: string;
@@ -141,6 +144,7 @@ const PhoneContent = ({
   season_end,
   offSeasonDetails,
   phoneNumber,
+  weatherPermitting
 }: ContentTypes) => {
   return (
     <>
@@ -229,6 +233,7 @@ const PhoneContent = ({
             closing_time={closing_time}
             name={name}
             offSeasonDetails={offSeasonDetails}
+            weatherPermitting={weatherPermitting}
           />
         ) : (
           <div className="react-markdown">
@@ -251,6 +256,7 @@ const Content = ({
   addressRegion,
   postalCode,
   commonName,
+  weatherPermitting,
   season_start,
   season_end,
   offSeasonDetails,
@@ -286,6 +292,7 @@ const Content = ({
             closing_time={closing_time}
             name={name}
             offSeasonDetails={offSeasonDetails}
+            weatherPermitting={weatherPermitting}
           />
         ) : (
           <div className="react-markdown">
@@ -315,6 +322,7 @@ export const PaddleLocationCard = ({
   phone,
   phoneNumber,
   offSeasonDetails,
+  weatherPermitting
 }: PaddleLocationCardTypes) => {
 
   const phoneDidgits = Number(phoneNumber);
@@ -339,6 +347,7 @@ export const PaddleLocationCard = ({
           season_end={season_end}
           offSeasonDetails={offSeasonDetails}
           phoneNumber={phoneDidgits}
+          weatherPermitting={weatherPermitting}
         />
       </div>
     );
@@ -368,6 +377,7 @@ export const PaddleLocationCard = ({
           season_start={season_start}
           season_end={season_end}
           offSeasonDetails={offSeasonDetails}
+          weatherPermitting={weatherPermitting}
         />
       </a>
     );
@@ -389,6 +399,7 @@ export const PaddleLocationCard = ({
         season_start={season_start}
         season_end={season_end}
         offSeasonDetails={offSeasonDetails}
+        weatherPermitting={weatherPermitting}
       />
     </Link>
   );
