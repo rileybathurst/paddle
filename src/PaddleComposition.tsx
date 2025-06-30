@@ -36,7 +36,7 @@ interface CompositionTypes {
   defaultPaddleboarder: GatsbyImageType;
   WaterTexture: GatsbyImageType;
 }
-const PaddleComposition = ({ sport, image, defaultKayaker, defaultPaddleboarder, WaterTexture }: CompositionTypes) => {
+export const PaddleComposition = ({ sport, image, defaultKayaker, defaultPaddleboarder, WaterTexture }: CompositionTypes) => {
   return (
     <div className="composition">
       <GatsbyImage
@@ -60,5 +60,3 @@ const PaddleComposition = ({ sport, image, defaultKayaker, defaultPaddleboarder,
     </div >
   )
 }
-
-export default PaddleComposition
