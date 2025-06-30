@@ -313,9 +313,11 @@ export const PaddleLocationCard = ({
   season_start,
   season_end,
   phone,
+  phoneNumber,
   offSeasonDetails,
 }: PaddleLocationCardTypes) => {
-  const phoneNumber = Number(phone);
+
+  const phoneDidgits = Number(phoneNumber);
 
   if (phone) {
     return (
@@ -336,7 +338,7 @@ export const PaddleLocationCard = ({
           season_start={season_start}
           season_end={season_end}
           offSeasonDetails={offSeasonDetails}
-          phoneNumber={phoneNumber}
+          phoneNumber={phoneDidgits}
         />
       </div>
     );

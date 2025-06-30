@@ -346,6 +346,10 @@ header {
   gap: clamp(var(--kosciuszko), 1.67vw, var(--elbrus));
   border-radius: var(--card-radius);
 
+  > a {
+    display: flex;
+  }
+
   > svg,
   .svg {
     min-width: var(--everest);
