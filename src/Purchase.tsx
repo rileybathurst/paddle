@@ -1,11 +1,7 @@
 // Retail Card
 import React from "react";
-// import { GatsbyImage } from 'gatsby-plugin-image';
 import { faker } from "@faker-js/faker";
 import { Badges } from "./Badges";
-// import { Badges } from './Badges';
-// import { Remainder } from './Remainder';
-// import { useRetailContext } from '../context/RetailContext';
 import { TextureBackgrounds } from "./TextureBackgrounds";
 
 export const Purchase = () => {

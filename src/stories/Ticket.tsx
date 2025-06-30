@@ -49,8 +49,8 @@ export const Ticket = () => {
             <span>Fitness</span>
           </h4>
         ) : null}
+        <p>{faker.lorem.sentences(2)}</p>
       </div>
-      <p>{faker.lorem.sentences(2)}</p>
     </section>
   );
 };

@@ -305,13 +305,11 @@ header {
   transition: var(--slow);
   display: flex;
   justify-content: center;
-  padding-block-start: 0.25rem;
   padding-block-start: clamp(0.25rem, 1.667vw, var(--kilimanjaro));
   z-index: var(--emergent); /* over the small menu when it slides up */
   position: relative;
 
   p {
-    margin-block-end: 0.25rem;
     margin-block-end: clamp(0.25rem, 1.667vw, var(--kilimanjaro));
   }
 }

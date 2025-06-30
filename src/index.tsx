@@ -13,6 +13,7 @@ export * from "./PaddleSunsetTourTimes";
 export * from "./PaddleTopBar";
 export * from "./PaddleSpecs";
 export * from "./PaddleTestimonial";
+export * from "./PaddlePurchase";
 
 // Organisms
 export * from "./PaddleLocationDeck";

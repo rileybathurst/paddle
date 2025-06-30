@@ -30,12 +30,12 @@
   .purchase-collage {
     display: grid;
     width: 100%;
-  
+
     > * {
       grid-row: 1;
       grid-column: 1;
     }
-  
+
     .texture-slice {
       width: calc(100% - var(--elbrus));
       aspect-ratio: 16/9;
@@ -46,13 +46,13 @@
       box-shadow: var(--penumbra);
       border: 1px solid whitesmoke;
       stroke: whitesmoke;
-  
+
       @media (prefers-color-scheme: dark) {
         border-color: var(--black-metal);
         stroke: var(--black-metal);
       }
     }
-    
+
     .cutout {
       object-fit: contain;
       place-self: center;
@@ -63,14 +63,14 @@
       aspect-ratio: 16/9;
       width: 100%;
     }
-  
+
     svg {
       z-index: 1; /* TODO: variable */
       max-height: 100%; /* overwrite the default */
       margin: calc(var(--elbrus) / 2);
       width: calc(100% - var(--elbrus));
       stroke: whitesmoke;
-  
+
       @media (prefers-color-scheme: dark) {
         stroke: var(--black-metal);
       }
@@ -93,7 +93,8 @@
     line-height: var(--aconcagua);
   }
 
-  hr, p {
+  hr,
+  p {
     margin-inline: var(--kosciuszko);
   }
 
@@ -237,11 +238,11 @@
 .ticket {
   /* display: flex; */
   width: 100%;
-  background-color: var(--neutral-100);
-  border: 1px solid white;
+  background-color: var(--neutral-200);
+  border: 1px solid var(--neutral-300);
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--neutral-800);
+    background-color: var(--neutral-700);
     border-color: var(--neutral-600);
   }
 
@@ -252,10 +253,6 @@
 
   > a {
     display: block;
-  }
-
-  p {
-    margin-inline: var(--vinson);
   }
 
   .ticket__header,
