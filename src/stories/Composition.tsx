@@ -10,12 +10,12 @@ export const Composition = () => {
       <img
         src={faker.image.urlLoremFlickr({ category: 'nature' })}
         alt={faker.image.urlLoremFlickr({ category: 'nature' })}
-        className="t1 storybook-gatsby-image"
+        className="texture-1 storybook-gatsby-image"
       />
       <img
         src={faker.image.urlLoremFlickr({ category: 'nature' })}
         alt={faker.image.urlLoremFlickr({ category: 'nature' })}
-        className="t2 img__wrapped storybook-gatsby-image"
+        className="texture-2 storybook-gatsby-image"
       />
       <img
         src={faker.image.urlLoremFlickr()}

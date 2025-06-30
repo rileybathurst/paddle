@@ -19,7 +19,7 @@ const DefaultPaddler = ({ sport, defaultKayaker, defaultPaddleboarder }: default
       <GatsbyImage
         image={defaultPaddleboarder.image.localFile.childImageSharp.gatsbyImageData}
         alt={defaultPaddleboarder.image.alternativeText || "Paddleboarder"}
-        className="img__wrapped paddler"
+        className=" paddler"
       />
     )
   }
@@ -27,7 +27,7 @@ const DefaultPaddler = ({ sport, defaultKayaker, defaultPaddleboarder }: default
     <GatsbyImage
       image={defaultKayaker.image.localFile.childImageSharp.gatsbyImageData}
       alt={defaultKayaker.image.alternativeText || "Kayaker"}
-      className="img__wrapped paddler"
+      className=" paddler"
     />
   )
 }
@@ -54,20 +54,20 @@ export const PaddleComposition = ({ sport, image, defaultKayaker, defaultPaddleb
       <GatsbyImage
         image={waterTexture.image.localFile.childImageSharp.gatsbyImageData}
         alt={waterTexture.image.alternativeText || "Water Texture"}
-        className="img__wrapped texture-1"
+        className="texture-1"
       />
 
       <GatsbyImage
         image={sandTexture.image.localFile.childImageSharp.gatsbyImageData}
         alt={sandTexture.image.alternativeText || "Sand Texture"}
-        className='img__wrapped texture-2'
+        className="texture-2"
       />
 
       {image ?
         <GatsbyImage
           image={image.localFile.childImageSharp.gatsbyImageData}
           alt={image.alternativeText || "Composition Image"}
-          className="img__wrapped paddler"
+          className=" paddler"
         />
         : <DefaultPaddler
           sport={sport}
