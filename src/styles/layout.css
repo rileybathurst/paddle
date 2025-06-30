@@ -339,21 +339,33 @@ header {
   margin-block-end: var(--kilimanjaro);
 }
 
+.location:not(:last-child) {
+  border-block-end: 1px solid var(--neutral-400);
+  margin-block-end: var(--kosciuszko);
+}
+
 .location {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row;
   align-items: center;
   gap: clamp(var(--kosciuszko), 1.67vw, var(--elbrus));
   border-radius: var(--card-radius);
 
-  > a {
-    display: flex;
-  }
+  /* TODO: this is breaking with a phone and pushing too much location */
+  /* > * {
+    flex: 3rem 1;
+    width: 100%;
+    height: fit-content;
+  } */
 
   > svg,
   .svg {
     min-width: var(--everest);
     min-height: var(--everest);
+  }
+
+  > div {
+    width: 100%;
   }
 
   /* p {
@@ -364,6 +376,8 @@ header {
     padding-inline-start: 0;
   }
 }
+
+.location:not(:last-child)
 
 /*------------------*/
 /* #COMPOSITION */

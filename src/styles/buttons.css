@@ -233,6 +233,13 @@ menu button {
   justify-content: center;
 }
 
+.location_multi-link {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--denali);
+  width: 100%;
+}
+
 /*------------------------------------*/
 
 footer .book-now {

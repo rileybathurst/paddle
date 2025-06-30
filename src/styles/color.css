@@ -83,6 +83,15 @@ body .south-tahoe {
 /* #SPECS */
 /*------------------------------------*/
 
-.specs h2, .specs .spec__unit {
+.specs h2,
+.specs .spec__unit {
   color: grey;
+}
+
+.menu__large hr {
+  border-color: var(--neutral-300);
+
+  @media (prefers-color-scheme: dark) {
+    border-color: var(--neutral-600);
+  }
 }

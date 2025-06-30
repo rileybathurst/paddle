@@ -151,17 +151,17 @@ const PhoneContent = ({
       {link?.includes("http") ? (
         <a
           href={link}
-          className="location"
+          className="svg"
           target="_blank"
           rel="noopener noreferrer"
           title={name}
         >
-          <div className="svg" dangerouslySetInnerHTML={{ __html: svg }} />
+          <div dangerouslySetInnerHTML={{ __html: svg }} />
         </a>
       ) : (
         link && (
-          <Link to={link} className="location">
-            <div className="svg" dangerouslySetInnerHTML={{ __html: svg }} />
+          <Link to={link} className="svg">
+            <div dangerouslySetInnerHTML={{ __html: svg }} />
           </Link>
         )
       )}
