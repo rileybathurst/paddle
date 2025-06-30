@@ -55,6 +55,16 @@ body .south-tahoe {
   }
 }
 
+@media (prefers-color-scheme: light) {
+  .tahoe-city .top-bar {
+    background-color: var(--sand-100);
+    box-shadow: 0 0 0 100vmax var(--sand-100);
+    /* color: var(--sand-400); */
+  }
+
+  /* * dark back to clean theme */
+}
+
 .south-tahoe {
   .top-bar {
     background-color: var(--lake-100);

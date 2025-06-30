@@ -364,7 +364,7 @@ header {
     min-height: var(--everest);
   }
 
-  > div {
+  .location_details {
     width: 100%;
   }
 
@@ -502,4 +502,20 @@ header {
 
 .spec:last-child {
   border-bottom: none;
+}
+
+/*------------------------------------*/
+
+.equipment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  .equipment-images {
+    max-width: 100%;
+    object-fit: cover;
+    margin-inline: auto;
+  }
 }

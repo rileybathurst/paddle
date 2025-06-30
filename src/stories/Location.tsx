@@ -25,7 +25,7 @@ export const Location = () => {
           </svg>
         </a>
 
-        <div>
+        <div className="location_details">
           <div className="location_multi-link">
             <a
               href={faker.location.cardinalDirection()}

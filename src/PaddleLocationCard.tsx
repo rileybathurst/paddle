@@ -166,7 +166,7 @@ const PhoneContent = ({
         )
       )}
 
-      <div>
+      <div className="location_details">
         <div className="multi_button">
           {link?.includes("http") ? (
             <a
@@ -265,9 +265,9 @@ const Content = ({
     <>
       <div className="svg" dangerouslySetInnerHTML={{ __html: svg }} />
 
-      <div>
+      <div className="location_details">
         <div className="multi_button">
-          <h3 className="elbrus">{name}</h3>
+          <h3>{name}</h3>
         </div>
 
         {streetAddress ||

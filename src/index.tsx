@@ -30,3 +30,4 @@ export * from "./PaddleSEO";
 // Types
 export * from "./types/ticket-types";
 export * from "./types/location-card-types";
+export * from "./types/gatsby-image-type";
