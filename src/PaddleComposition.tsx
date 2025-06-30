@@ -13,7 +13,6 @@ type defaultPaddlerTypes = {
     image: GatsbyImageType;
   };
 }
-
 const DefaultPaddler = ({ sport, defaultKayaker, defaultPaddleboarder }: defaultPaddlerTypes) => {
   if (sport === "sup") {
     return (
@@ -42,17 +41,26 @@ interface CompositionTypes {
   defaultPaddleboarder: {
     image: GatsbyImageType;
   }
-  WaterTexture: {
+  sandTexture: {
+    image: GatsbyImageType;
+  };
+  waterTexture: {
     image: GatsbyImageType;
   };
 }
-export const PaddleComposition = ({ sport, image, defaultKayaker, defaultPaddleboarder, WaterTexture }: CompositionTypes) => {
+export const PaddleComposition = ({ sport, image, defaultKayaker, defaultPaddleboarder, sandTexture, waterTexture }: CompositionTypes) => {
   return (
     <div className="composition">
       <GatsbyImage
-        image={WaterTexture.image.localFile.childImageSharp.gatsbyImageData}
-        alt={WaterTexture.image.alternativeText || "Water Texture"}
+        image={waterTexture.image.localFile.childImageSharp.gatsbyImageData}
+        alt={waterTexture.image.alternativeText || "Water Texture"}
         className="img__wrapped texture-1"
+      />
+
+      <GatsbyImage
+        image={sandTexture.image.localFile.childImageSharp.gatsbyImageData}
+        alt={sandTexture.image.alternativeText || "Sand Texture"}
+        className='img__wrapped texture-2'
       />
 
       {image ?
