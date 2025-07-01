@@ -83,8 +83,8 @@ export const PaddlePurchase = ({ id, title, slug, excerpt, length, width, inflat
           className="image-link"
         >
           <GatsbyImage
-            image={cutout?.localFile?.childImageSharp?.gatsbyImageData}
-            alt={cutout?.alternativeText || `${title} by ${brandSlug}`}
+            image={cutout.localFile?.childImageSharp?.gatsbyImageData}
+            alt={cutout.alternativeText || `${title} by ${brandSlug}`}
             className="cutout"
             objectFit="contain"
           // TODO: this has been causing some problems but keep an eye on it

@@ -18,19 +18,19 @@ export const PaddleTextureBackgrounds = ({ baseOne, baseTwo, baseThree, topOne, 
     baseThree
   ];
   const baseRandom = Math.floor(Math.random() * baseTextures.length);
-  console.log(baseTextures[baseRandom]);
+  // console.log(baseTextures[baseRandom]);
 
   const topTextures = [
-    { topOne },
-    { topTwo },
-    { topThree }
+    topOne,
+    topTwo,
+    topThree
   ];
   const topRandom = Math.floor(Math.random() * topTextures.length);
   // { topTextures[topRandom] }
 
   return (
     <>
-      {/* <GatsbyImage
+      <GatsbyImage
         image={baseTextures[baseRandom].image.localFile.childImageSharp.gatsbyImageData}
         alt="splash texture"
         className="texture-slice"
@@ -41,7 +41,7 @@ export const PaddleTextureBackgrounds = ({ baseOne, baseTwo, baseThree, topOne, 
         alt="sand texture"
         className="texture-slice crop"
         objectFit="contain"
-      /> */}
+      />
       <svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
         <title>Diagonal line decoration</title>
         <line
