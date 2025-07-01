@@ -22,8 +22,8 @@ interface BadgeTypes {
   demo: boolean;
   discount?: number;
 }
+// TODO: deal with multiple
 const Badges = ({ inflatable, demo, discount }: BadgeTypes) => {
-  // TODO: deal with multiple
   if (discount) {
     return (
       <div className="badge">
@@ -82,13 +82,14 @@ export const PaddlePurchase = ({ id, title, slug, excerpt, length, width, inflat
           to={`/retail/${sportSlug}/${brandSlug}/${slug}`}
           className="image-link"
         >
-          <GatsbyImage
-            image={cutout.localFile?.childImageSharp?.gatsbyImageData}
-            alt={cutout.alternativeText || `${title} by ${brandSlug}`}
-            className="cutout"
-            objectFit="contain"
-          // TODO: this has been causing some problems but keep an eye on it
-          />
+          {cutout && (
+            <GatsbyImage
+              image={cutout.localFile?.childImageSharp?.gatsbyImageData}
+              alt={cutout.alternativeText || `${title} by ${brandSlug}`}
+              className="cutout"
+              objectFit="contain"
+            />
+          )}
         </Link>
         <Badges
           inflatable={inflatable}
