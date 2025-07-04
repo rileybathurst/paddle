@@ -3,11 +3,6 @@ export interface PaddleLocationCardTypes {
   svg: string;
   name: string;
   link: string;
-  address: {
-    data: {
-      address: string;
-    };
-  };
   description: {
     data: {
       description: string;
