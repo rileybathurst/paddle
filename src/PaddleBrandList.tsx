@@ -1,29 +1,27 @@
 import * as React from "react"
 import { Link } from 'gatsby';
+import SVG from 'react-inlinesvg';
 
 // * additional work is done here to split kayak and paddleboard
 
-type BrandListTypes = {
-  nodes: {
-    id: string;
+type BrandType = {
+  id: string;
+  slug: string;
+  svg: string;
+  name: string;
+  retail: {
+    title: string;
     slug: string;
-    svg: string;
-    name: string;
-    retail: {
-      title: string;
+    sport: {
       slug: string;
-      sport: {
-        slug: string;
-      }
-    }[]
+    }
   }[];
-  sport?: string;
-}
+};
 
-const PaddleBrandList = ({ nodes, sport }: BrandListTypes) => {
+const PaddleBrandList = ({ nodes, sport }: { nodes: BrandType[]; sport?: string }) => {
 
-  const BrandSet = new Set();
-  let BrandArray = [];
+  const BrandSet = new Set<BrandType>();
+  let BrandArray: BrandType[] = [];
 
   if (sport) {
     nodes.map((brand) => {
@@ -45,12 +43,12 @@ const PaddleBrandList = ({ nodes, sport }: BrandListTypes) => {
 
   return (
     <ul className='brand_list'>
-      {BrandArray.map((brand: any) => (
+      {BrandArray.map((brand: BrandType) => (
         <li key={brand.id}>
           <Link to={`/retail/${sport}/${brand.slug}`}>
             {brand.svg ?
-              <div
-                dangerouslySetInnerHTML={{ __html: brand.svg }}
+              <SVG
+                src={brand.svg}
               />
               : null}
             {brand.name}

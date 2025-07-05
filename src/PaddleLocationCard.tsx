@@ -5,6 +5,7 @@ import Markdown from "react-markdown";
 import HourMin from "./hour-min";
 import Phone from "./phone";
 import type { PaddleLocationCardTypes } from "./types/location-card-types";
+import SVG from 'react-inlinesvg';
 
 // merged types are possible to dry this up but its also a lot
 // type UpdatedUser = Merge<User, Updates>;
@@ -101,12 +102,6 @@ interface ContentTypes {
   svg: string;
   name: string;
 
-  address: {
-    data: {
-      address: string;
-    };
-  };
-
   description: {
     data: {
       description: string;
@@ -156,12 +151,12 @@ const PhoneContent = ({
           rel="noopener noreferrer"
           title={name}
         >
-          <div dangerouslySetInnerHTML={{ __html: svg }} />
+          <SVG src={svg} />
         </a>
       ) : (
         link && (
           <Link to={link} className="svg">
-            <div dangerouslySetInnerHTML={{ __html: svg }} />
+            <SVG src={svg} />
           </Link>
         )
       )}
@@ -263,7 +258,9 @@ const Content = ({
 }: ContentTypes) => {
   return (
     <>
-      <div className="svg" dangerouslySetInnerHTML={{ __html: svg }} />
+      <div className="svg">
+        <SVG src={svg} />
+      </div>
 
       <div className="location_details">
         <div className="multi_button">
@@ -308,7 +305,6 @@ export const PaddleLocationCard = ({
   svg,
   name,
   link,
-  address,
   description,
   opening_time,
   closing_time,
@@ -334,7 +330,6 @@ export const PaddleLocationCard = ({
           link={link}
           svg={svg}
           name={name}
-          address={address}
           description={description}
           opening_time={opening_time}
           closing_time={closing_time}
@@ -365,7 +360,6 @@ export const PaddleLocationCard = ({
         <Content
           svg={svg}
           name={name}
-          address={address}
           description={description}
           opening_time={opening_time}
           closing_time={closing_time}
@@ -387,7 +381,6 @@ export const PaddleLocationCard = ({
       <Content
         svg={svg}
         name={name}
-        address={address}
         description={description}
         opening_time={opening_time}
         closing_time={closing_time}
