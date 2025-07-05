@@ -33,3 +33,4 @@ export * from "./types/ticket-types";
 export * from "./types/location-card-types";
 export * from "./types/paddle-location-deck-types";
 export * from "./types/gatsby-image-type";
+export * from "./types/paddle-purchase-types";

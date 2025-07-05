@@ -1,6 +1,6 @@
 import type { IGatsbyImageData } from "gatsby-plugin-image";
 
-export interface PaddleTicketTypes {
+export type PaddleTicketTypes = {
   id: React.Key;
   ogimage: {
     localFile: { childImageSharp: { gatsbyImageData: IGatsbyImageData } };
@@ -16,6 +16,7 @@ export interface PaddleTicketTypes {
   excerpt: string;
   price: string;
   peek: string;
+  featured?: boolean;
 
   peek_tours_fall_back: string;
   tour_page: string;
@@ -30,4 +31,4 @@ export interface PaddleTicketTypes {
   };
 
   strapiLocaleName: string;
-}
+};
