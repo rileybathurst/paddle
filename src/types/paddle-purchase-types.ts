@@ -1,4 +1,4 @@
-import type { GatsbyImageType } from "./gatsby-image-type";
+import type { PaddleGatsbyImageType } from "./paddle-gatsby-image-type";
 
 export type PaddlePurchaseTypes = {
   id: string;
@@ -11,7 +11,7 @@ export type PaddlePurchaseTypes = {
   capacity: number;
   demo: boolean;
   discount?: number;
-  cutout: GatsbyImageType;
+  cutout: PaddleGatsbyImageType;
   sport: {
     slug: string;
   };

@@ -4,7 +4,7 @@ import Markdown from "react-markdown";
 
 import HourMin from "./hour-min";
 import Phone from "./phone";
-import type { PaddleLocationCardTypes } from "./types/location-card-types";
+import type { PaddleLocationCardTypes } from "./types/paddle-location-card-types";
 import SVG from 'react-inlinesvg';
 
 // merged types are possible to dry this up but its also a lot

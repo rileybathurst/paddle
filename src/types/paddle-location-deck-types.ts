@@ -1,4 +1,4 @@
-import type { PaddleLocationCardTypes } from "./location-card-types";
+import type { PaddleLocationCardTypes } from "./paddle-location-card-types";
 
 export type PaddleLocationDeckTypes = {
   background?: string;

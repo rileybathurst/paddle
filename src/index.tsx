@@ -1,37 +1,38 @@
 // Atoms
-export * from "./PaddleBookNow";
-export * from "./PaddleTime";
+export * from "./paddle-book-now";
+export * from "./paddle-time";
 export * from "./paddle-remainder";
+export * from "./paddle-format-phone-number";
 
 // Molecules
-export * from "./PaddleComposition";
-export * from "./PaddleSocials";
-export * from "./PaddleLocationCard";
-export * from "./PaddleTestimonials";
-export * from "./PaddleTicket";
-export * from "./PaddleSunsetTourTimes";
-export * from "./PaddleTopBar";
-export * from "./PaddleSpecs";
-export * from "./PaddleTestimonial";
-export * from "./PaddlePurchase";
+export * from "./paddle-composition";
+export * from "./paddle-socials";
+export * from "./paddle-location-card";
+export * from "./paddle-testimonials";
+export * from "./paddle-ticket";
+export * from "./paddle-sunset-tour-times";
+export * from "./paddle-top-bar";
+export * from "./paddle-specs";
+export * from "./paddle-testimonial";
+export * from "./paddle-purchase";
 
 // Organisms
-export * from "./PaddleLocationDeck";
-export * from "./PaddleTestimonials";
-export * from "./PaddleBrandList";
-export * from "./PaddleMoonlightTourDatesTimes"
+export * from "./paddle-location-deck";
+export * from "./paddle-testimonials";
+export * from "./paddle-brand-list";
+export * from "./paddle-moonlight-tour-dates-times"
 
 // Templates
 
 // Pages
 
 // SEO
-export * from "./PaddleSEO";
+export * from "./paddle-seo";
 
 // Types
-export * from "./types/ticket-types";
-export * from "./types/location-card-types";
+export * from "./types/paddle-ticket-types";
+export * from "./types/paddle-location-card-types";
 export * from "./types/paddle-location-deck-types";
-export * from "./types/gatsby-image-type";
+export * from "./types/paddle-gatsby-image-type";
 export * from "./types/paddle-purchase-types";
 export * from "./types/paddle-brand-types";

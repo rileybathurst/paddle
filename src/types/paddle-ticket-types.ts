@@ -1,11 +1,9 @@
-import type { IGatsbyImageData } from "gatsby-plugin-image";
+import type { PaddleGatsbyImageType } from "./paddle-gatsby-image-type";
 
 export type PaddleTicketTypes = {
   id: React.Key;
-  ogimage: {
-    localFile: { childImageSharp: { gatsbyImageData: IGatsbyImageData } };
-    alternativeText?: string;
-  };
+  ogimage: PaddleGatsbyImageType;
+  image: PaddleGatsbyImageType;
   slug: string;
   name: string;
   start?: string;

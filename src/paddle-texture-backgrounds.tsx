@@ -1,14 +1,14 @@
 import * as React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
-import type { GatsbyImageType } from "./types/gatsby-image-type";
+import type { PaddleGatsbyImageType } from "./types/paddle-gatsby-image-type";
 
 type textureTypes = {
-  baseOne: { image: GatsbyImageType };
-  baseTwo: { image: GatsbyImageType };
-  baseThree: { image: GatsbyImageType };
-  topOne: { image: GatsbyImageType };
-  topTwo: { image: GatsbyImageType };
-  topThree: { image: GatsbyImageType };
+  baseOne: { image: PaddleGatsbyImageType };
+  baseTwo: { image: PaddleGatsbyImageType };
+  baseThree: { image: PaddleGatsbyImageType };
+  topOne: { image: PaddleGatsbyImageType };
+  topTwo: { image: PaddleGatsbyImageType };
+  topThree: { image: PaddleGatsbyImageType };
 };
 export const PaddleTextureBackgrounds = ({ baseOne, baseTwo, baseThree, topOne, topTwo, topThree }: textureTypes) => {
 

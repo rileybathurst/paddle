@@ -2,15 +2,15 @@
 
 import * as React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
-import type { GatsbyImageType } from "./types/gatsby-image-type"
+import type { PaddleGatsbyImageType } from "./types/paddle-gatsby-image-type"
 
 type defaultPaddlerTypes = {
   sport?: string;
   defaultKayaker: {
-    image: GatsbyImageType;
+    image: PaddleGatsbyImageType;
   };
   defaultPaddleboarder: {
-    image: GatsbyImageType;
+    image: PaddleGatsbyImageType;
   };
 }
 const DefaultPaddler = ({ sport, defaultKayaker, defaultPaddleboarder }: defaultPaddlerTypes) => {
@@ -34,18 +34,18 @@ const DefaultPaddler = ({ sport, defaultKayaker, defaultPaddleboarder }: default
 
 interface CompositionTypes {
   sport?: string;
-  image?: GatsbyImageType;
+  image?: PaddleGatsbyImageType;
   defaultKayaker: {
-    image: GatsbyImageType;
+    image: PaddleGatsbyImageType;
   }
   defaultPaddleboarder: {
-    image: GatsbyImageType;
+    image: PaddleGatsbyImageType;
   }
   sandTexture: {
-    image: GatsbyImageType;
+    image: PaddleGatsbyImageType;
   };
   waterTexture: {
-    image: GatsbyImageType;
+    image: PaddleGatsbyImageType;
   };
 }
 export const PaddleComposition = ({ sport, image, defaultKayaker, defaultPaddleboarder, sandTexture, waterTexture }: CompositionTypes) => {

@@ -1,6 +1,7 @@
 import * as React from "react";
-import { PaddleLocationCard } from "./PaddleLocationCard";
-import type { PaddleLocationCardTypes } from "./types/location-card-types";
+import { PaddleLocationCard } from "./paddle-location-card";
+import type { PaddleLocationCardTypes } from "./types/paddle-location-card-types";
+import type { PaddleLocationDeckTypes } from "./types/paddle-location-deck-types";
 
 export const PaddleLocationDeck = ({
   nodes,

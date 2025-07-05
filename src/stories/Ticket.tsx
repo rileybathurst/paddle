@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-aria-components";
 import { faker } from "@faker-js/faker";
-import { PaddleTime } from "../PaddleTime";
+import { PaddleTime } from "../paddle-time";
 import { BookNow } from "./BookNow";
 
 export const Ticket = () => {

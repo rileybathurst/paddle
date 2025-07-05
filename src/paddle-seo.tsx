@@ -27,13 +27,13 @@ const Breadcrumbs = (breadcrumbs: BreadcrumbsTypes) => {
           "@type": "BreadcrumbList",
           "itemListElement": [
             ${Object.entries(rest).map(([key, breadcrumb]) => {
-              return `{
+        return `{
           "@type": "ListItem",
           "position": ${Number.parseInt(key) + 1},
           "name": "${breadcrumb.name}",
           "item": "${url}/${breadcrumb.item}"
         }`;
-            })}
+      })}
           ]
         }
       `}
@@ -167,9 +167,8 @@ export const PaddleSEO = ({
               "postalCode": "${strapiLocation?.postalCode}",
               "addressCountry": "US"
             },
-            ${
-              allStrapiLocation
-                ? `
+            ${allStrapiLocation
+            ? `
             "department": [
             ${allStrapiLocation.nodes.map((location) => {
               return `{
@@ -187,8 +186,8 @@ export const PaddleSEO = ({
             })}
             ],
             `
-                : ""
-            }
+            : ""
+          }
             "areaServed": {
               "@type": "GeoCircle",
               "geoMidpoint": {

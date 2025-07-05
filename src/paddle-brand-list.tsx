@@ -5,7 +5,7 @@ import type { PaddleBrandType } from "./types/paddle-brand-types";
 
 // * additional work is done here to split kayak and paddleboard
 
-const PaddleBrandList = ({ nodes, sport }: { nodes: PaddleBrandType[]; sport?: string }) => {
+export const PaddleBrandList = ({ nodes, sport }: { nodes: PaddleBrandType[]; sport?: string }) => {
 
   const BrandSet = new Set<PaddleBrandType>();
   let BrandArray: PaddleBrandType[] = [];
@@ -45,5 +45,3 @@ const PaddleBrandList = ({ nodes, sport }: { nodes: PaddleBrandType[]; sport?: s
     </ul>
   )
 }
-
-export default PaddleBrandList

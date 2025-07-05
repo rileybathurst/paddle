@@ -1,6 +1,6 @@
 import * as React from "react";
-import { PaddleTestimonial } from "./PaddleTestimonial";
-import { type TestimonialTypes } from "./types/testimonial-types";
+import { PaddleTestimonial } from "./paddle-testimonial";
+import { type TestimonialTypes } from "./types/paddle-testimonial-types";
 
 interface TestimonialsTypes {
   nodes: TestimonialTypes[];

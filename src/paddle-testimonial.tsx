@@ -1,5 +1,5 @@
 import * as React from "react";
-import { TestimonialTypes } from "./types/testimonial-types";
+import { TestimonialTypes } from "./types/paddle-testimonial-types";
 
 export const PaddleTestimonial = ({
   id,

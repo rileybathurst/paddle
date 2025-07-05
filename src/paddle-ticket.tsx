@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import type { PaddleTicketTypes } from "./types/ticket-types";
-import { PaddleTime } from "./PaddleTime";
-import { PaddleBookNow } from "./PaddleBookNow";
+import type { PaddleTicketTypes } from "./types/paddle-ticket-types";
+import { PaddleTime } from "./paddle-time";
+import { PaddleBookNow } from "./paddle-book-now";
 
 export const PaddleTicket = ({
   ogimage,
