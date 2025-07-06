@@ -7,6 +7,9 @@ import type { PaddleBrandType } from "./types/paddle-brand-types";
 
 export const PaddleBrandList = ({ nodes, sport }: { nodes: PaddleBrandType[]; sport?: string }) => {
 
+  console.log('🦄');
+  console.log(nodes);
+
   const BrandSet = new Set<PaddleBrandType>();
   let BrandArray: PaddleBrandType[] = [];
 
