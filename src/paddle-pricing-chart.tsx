@@ -10,9 +10,7 @@ const LineBreaker = ({ text }: { text: string; }) => {
   // console.log(newStr);
 
   return (
-    <h4>
-      <SVG src={newStr} />
-    </h4>
+    <h4 dangerouslySetInnerHTML={{ __html: newStr }} />
   );
 }
 
@@ -30,7 +28,6 @@ export const PaddlePricingChart = ({ rentalRates, rentalAddons, book, peek_base,
 
           {rentalRates.nodes.map((rate) => (
             <div key={rate.id} className="row">
-              {/* <h4>{rate.item}</h4> */}
               <LineBreaker text={rate.item} />
               <p>{rate.oneHour}</p>
               <p>{rate.threeHour}</p>
