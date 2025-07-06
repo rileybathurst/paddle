@@ -1,7 +1,7 @@
 import type { PaddleGatsbyImageType } from "./paddle-gatsby-image-type";
 
 export type PaddlePurchaseTypes = {
-  id: string;
+  id: React.Key;
   title: string;
   slug: string;
   excerpt: string;

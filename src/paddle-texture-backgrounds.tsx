@@ -11,7 +11,6 @@ type textureTypes = {
   topThree: { image: PaddleGatsbyImageType };
 };
 export const PaddleTextureBackgrounds = ({ baseOne, baseTwo, baseThree, topOne, topTwo, topThree }: textureTypes) => {
-
   const baseTextures = [
     baseOne,
     baseTwo,

@@ -1,6 +1,6 @@
 import * as React from "react"
 import SVG from 'react-inlinesvg';
-import PaddleBookNow from "./paddle-book-now"
+import { PaddleBookNow } from "./paddle-book-now"
 import { Link } from "gatsby"
 import type { paddlePricingChartTypes } from "./types/paddle-pricing-chart-types";
 
@@ -17,7 +17,6 @@ const LineBreaker = ({ text }: { text: string; }) => {
 }
 
 export const PaddlePricingChart = ({ rentalRates, rentalAddons, book, peek_base, strapiLocaleName }: paddlePricingChartTypes) => {
-
   return (
     <>
       <div className="charts">
@@ -61,6 +60,5 @@ export const PaddlePricingChart = ({ rentalRates, rentalAddons, book, peek_base,
         />
       ) : null}
     </>
-
   )
 }

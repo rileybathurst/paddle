@@ -1,5 +1,5 @@
 export type PaddleTestimonialTypes = {
-  id: string;
+  id: React.Key;
   testimonial: string;
   sign: string;
   customer: string;

@@ -2,7 +2,7 @@ import * as React from "react"
 
 type PaddleSunsetTourTimesTypes = {
   nodes: {
-    id: string;
+    id: React.Key;
     startDate: string;
     endDate: string;
     startTime: string;

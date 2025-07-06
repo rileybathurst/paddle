@@ -5,7 +5,7 @@ type PaddleMoonlightTourDatesTimesTypes = {
   seasonStart: string
   seasonEnd: string
   nodes: {
-    id: string;
+    id: React.Key;
     date: string;
     start: string;
     finish: string;

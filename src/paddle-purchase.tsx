@@ -44,7 +44,7 @@ const Badges = ({ inflatable, demo, discount }: BadgeTypes) => {
 }
 
 type purchaseTypes = {
-  id: string;
+  id: React.Key;
   title: string;
   slug: string;
   excerpt: string;

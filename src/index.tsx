@@ -15,6 +15,8 @@ export * from "./paddle-top-bar";
 export * from "./paddle-specs";
 export * from "./paddle-testimonial";
 export * from "./paddle-purchase";
+export * from "./paddle-pricing-chart";
+export * from "./paddle-texture-backgrounds";
 
 // Organisms
 export * from "./paddle-location-deck";
