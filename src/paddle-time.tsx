@@ -7,7 +7,7 @@ interface TimeTypes {
   timeframe?: string;
   slug?: string;
 
-  allStrapiSunsetTourTime: {
+  allStrapiSunsetTourTime?: {
     nodes: {
       startDate: string;
       endDate: string;
@@ -16,34 +16,18 @@ interface TimeTypes {
     }[];
   };
 
-  allStrapiMoonlightTourDateTime: {
-    nodes: {
-      id: React.Key;
-      date: string;
-      start: string;
-      finish: string;
-    }[];
-  };
-
 }
 export const PaddleTime = ({ start, finish, duration, timeframe, slug, allStrapiSunsetTourTime }: TimeTypes) => {
-
-  console.log('🦄');
-  console.log(start);
-  console.log(finish);
-  console.log(duration);
-  console.log('🦊');
 
   // TODO: sunset is a whole thing
   const currentDate = new Date();
   let sunsetStartTime = '';
   let sunsetEndTime = '';
 
-  if (slug === 'sunset') {
+  if (slug === 'sunset' && allStrapiSunsetTourTime && allStrapiSunsetTourTime.nodes) {
     allStrapiSunsetTourTime.nodes.map((time) => {
       const startDate = new Date(time.startDate);
       const endDate = new Date(time.endDate);
-
 
       if (startDate <= currentDate && currentDate <= endDate) {
         sunsetStartTime = time.startTime;
