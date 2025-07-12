@@ -2,6 +2,8 @@
 /* #BUTTONS */
 /*------------------------------------*/
 
+/* TODO: combine select into these for the colors */
+
 button,
 .button,
 .book-now {
@@ -136,8 +138,8 @@ button:active {
     color: var(--neutral-100);
   }
 
-  @media (prefers-color-scheme: dark) {
-  }
+  /* @media (prefers-color-scheme: dark) {
+  } */
 
   .book-now:hover,
   .book-now__hover {
@@ -161,7 +163,8 @@ button:active {
 
 .south-tahoe {
   button,
-  .button {
+  .button,
+  select {
     background-color: var(--lake-200);
     border-color: var(--lake-100);
     color: var(--cloud-color);
@@ -169,7 +172,8 @@ button:active {
 
   @media (prefers-color-scheme: dark) {
     button,
-    .button {
+    .button,
+    select {
       background-color: var(--lake-600);
       border-color: var(--lake-700);
       color: var(--lake-100);
@@ -178,13 +182,14 @@ button:active {
 
   button:hover,
   .button__hover,
-  .button:hover {
+  .button:hover,
+  select:hover {
     background-color: var(--lake-400);
     border-color: var(--lake-400);
     color: var(--lake-700);
   }
 
-  .button__active {
+  .button__active select:active {
     background-color: var(--lake-400);
     border-color: var(--lake-500);
     /* this goes passed the 400 / 500 dark light split Im not sure if I want to change it */

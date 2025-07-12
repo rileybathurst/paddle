@@ -200,6 +200,7 @@ hgroup {
 
 /*------------------------------------*/
 
+/* mostly taken from buttons */
 select {
   font-size: var(--vinson);
   font-family: var(--body_font);
@@ -208,13 +209,36 @@ select {
   cursor: inherit;
   line-height: inherit;
   padding: var(--kosciuszko);
-  border: 1px solid var(--neutral-100);
+  box-shadow: var(--penumbra);
   background-color: var(--neutral-200);
+  border: 1px solid var(--neutral-100);
 
   @media (prefers-color-scheme: dark) {
-    border-color: var(--neutral-700);
     background-color: var(--neutral-600);
+    border-color: var(--neutral-500);
+    color: var(--neutral-100);
+  }
+}
+
+select:hover,
+.select:hover {
+  box-shadow: var(--antumbra);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--neutral-500);
+    border-color: var(--neutral-500);
     color: var(--neutral-200);
+  }
+}
+
+.select:active,
+select:active {
+  box-shadow: var(--umbra);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--neutral-400);
+    border-color: var(--neutral-200);
+    color: var(--neutral-500);
   }
 }
 
