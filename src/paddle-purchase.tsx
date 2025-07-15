@@ -22,6 +22,8 @@ interface BadgeTypes {
   demo: boolean;
   discount?: number;
 }
+
+// TODO: use the way I do specs for this
 // TODO: deal with multiple
 const Badges = ({ inflatable, demo, discount }: BadgeTypes) => {
   if (discount) {
@@ -67,8 +69,8 @@ type purchaseTypes = {
 export const PaddlePurchase = ({ id, title, slug, excerpt, length, width, inflatable, capacity, demo, discount, cutout, sportSlug, brandSlug, baseOne, baseTwo, baseThree, topOne, topTwo, topThree }: purchaseTypes) => {
 
   return (
-    <article key={id} className="card">
-      <div className="card-collage">
+    <article key={id} className="purchase">
+      <div className="purchase-collage">
 
         <PaddleTextureBackgrounds
           baseOne={baseOne}
@@ -97,13 +99,13 @@ export const PaddlePurchase = ({ id, title, slug, excerpt, length, width, inflat
           discount={discount}
         />
       </div>
-      <h4 className="card__title">
+      <h4 className="purchase__title">
         <Link to={`/retail/${sportSlug}/${brandSlug}/${slug}`}>{title}</Link>
       </h4>
       <hr />
       <p>{excerpt}</p>
       <hr />
-      <div className="card__details">
+      <div className="purchase__details">
         <h4>
           <PaddleInchesRemainder inches={length} />
           long by {width}" wide
