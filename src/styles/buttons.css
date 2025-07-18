@@ -56,9 +56,9 @@ button:active {
 }
 
 .book-now {
-  margin-block-start: var(
-    --kosciuszko
-  ); /* why is this different than a regular button */
+  text-transform: uppercase;
+  /* ? why is this different than a regular button */
+  margin-block-start: var(--kosciuszko);
   background-color: var(--neutral-800);
   border-color: var(--neutral-700);
   color: var(--neutral-300);

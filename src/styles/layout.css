@@ -36,15 +36,15 @@ footer,
   flex-basis: var(--stork);
 }
 
-.condor,
-header,
 main,
+.condor,
 .location,
 .react-aria-Breadcrumbs.condor {
   max-width: min(var(--condor), calc(100vw - var(--denali)));
   flex-basis: var(--condor);
 }
 
+header,
 .pelican,
 .react-aria-Breadcrumbs.pelican {
   max-width: min(var(--pelican), calc(100vw - var(--denali)));
