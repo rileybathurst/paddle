@@ -1,4 +1,5 @@
 import * as React from "react";
+import Markdown from "react-markdown";
 
 // TODO this would be nice to be able to close but I dont have it right yet
 
@@ -49,7 +50,9 @@ export const PaddleTopBar = ({ strapiLocale }: PaddleTopBarTypes) => {
           <span className="rain-check-reason">We're closed today due to {strapiLocale.RainCheckReason}</span>
         </p>
       ) : (
-        <p>{strapiLocale.topbar.data.topbar}</p>
+        <Markdown>
+          {strapiLocale.topbar.data.topbar}
+        </Markdown>
       )
       }
     </div>
