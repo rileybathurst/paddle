@@ -4,6 +4,7 @@ import { Link } from "react-aria-components";
 import { TopBar } from "./TopBar";
 import { Logo } from "./Logo";
 import { SmallMenu } from "./SmallMenu";
+import { Menu } from './Menu';
 
 type HeaderTypes = {
   smallMenu?: boolean;
@@ -24,6 +25,8 @@ export const Header = ({ smallMenu }: HeaderTypes) => {
       </div>
 
       {smallMenu ? faker.datatype.boolean() ? <SmallMenu /> : null : null}
+
+      <Menu />
     </header>
   );
 };
