@@ -31,10 +31,10 @@ export const PaddlePricingChart = ({ rentalRates }: paddlePricingChartTypes) => 
       {rentalRates.nodes.map((rate) => (
         <div key={rate.id} className="column">
           <LineBreaker text={rate.item} />
-          <p>{rate.oneHour}</p>
-          <p>{rate.threeHour}</p>
-          <p>{rate.fullDay}</p>
-          <p>{rate.pedalAdd}</p>
+          <p>${rate.oneHour}</p>
+          <p>${rate.threeHour}</p>
+          <p>${rate.fullDay}</p>
+          <p>${rate.pedalAdd ? `+ $${rate.pedalAdd}` : null}</p>
         </div>
       ))}
     </div>
