@@ -6,121 +6,46 @@
   display: flex;
   text-align: center;
 
-  /* columns */
-  > * {
+  .column {
     display: flex;
     flex: 1 1 10rem;
     flex-direction: column;
-
-    /* rows */
-    > * {
-      > * {
-        margin: 0;
-      }
-    }
-
-    /* first row */
-    > *:first-child {
-      margin: 0;
-      border-top: none;
-    }
-  }
-
-  h2,
-  h4,
-  p {
-    font-size: clamp(0.75rem, 1.25vw, 1.5rem);
-    line-height: clamp(1rem, 1.5vw, 2rem);
-    padding: clamp(0.5rem, 1vw, 1rem);
-    border-bottom: 0.5px solid var(--neutral-400);
     border-right: 0.5px solid var(--neutral-400);
   }
 
-  h4 {
-    margin: 0.25px;
+  .column:last-child {
+    border-right: none;
   }
 
+  /* cells */
+  .title,
   p {
-    font-size: 0.75rem;
-    margin: 0.25px;
+    /* * be careful of this it can break the footer flex */
+    font-size: clamp(var(--kosciuszko), 1vw, var(--kilimanjaro));
+
+    line-height: var(--denali);
+    padding: clamp(0.5rem, 1vw, var(--vinson));
+    border-bottom: 0.5px solid var(--neutral-400);
   }
 
+  /* ? can this only be if it has the full length of cells? */
+  .column > *:last-child {
+    border-bottom: none;
+  }
+
+  /* titles build spans automatically from strapi */
   h4 span {
     display: flex;
     flex-direction: column;
     white-space: nowrap;
   }
 
-  p span {
-    white-space: nowrap;
-  }
-
-  *:last-child > * {
-    border-right: none;
-  }
-}
-
-.charts {
-  .pricing-chart:not(:last-child) {
-    margin-block-end: 0;
-  }
-
-  .pricing-chart:last-child {
-    margin-block-end: 1.5rem;
-
-    p {
-      border-block-end: none;
-    }
-
-    p:last-child {
-      border-inline-end: none;
-    }
-  }
-}
-
-/*------------------*/
-/* #RENTAL CHART */
-/*------------------*/
-
-.rental-chart {
-  display: grid;
-  text-align: center;
-  margin-block-end: 1.5rem;
-
-  .row {
-    display: grid;
-    gap: 0;
-    margin: 0;
-    grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
-
-    /* box */
-    > * {
-      padding: clamp(0.5rem, 1vw, 1rem);
-    }
-
-    > *:last-child {
-      border-inline-end: none;
-    }
-  }
-
-  .row:last-child {
-    > * {
-      border-block-end: none;
-    }
-  }
-
-  .row-header {
-    font-weight: bold;
-  }
-
-  h4 {
+  h4,
+  p {
     margin: 0.25px;
-    font-size: clamp(0.75rem, 1.25vw, 1.5rem);
-    line-height: clamp(1rem, 1.5vw, 2rem);
   }
 
   p {
-    font-size: 0.75rem;
-    margin: 0.25px;
+    font-size: var(--kosciuszko);
   }
 }

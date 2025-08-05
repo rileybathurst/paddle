@@ -1,70 +1,89 @@
 // this is the Name.tsx file
+// add additional classNames as its confusing to style
 import React from 'react';
-import { BookNow } from './BookNow';
 import { faker } from '@faker-js/faker';
 
 type PricingTypes = {
-  book: boolean;
+  demos?: boolean;
 };
-export const Pricing = ({ book }: PricingTypes) => {
-
+export const Pricing = ({ demos }: PricingTypes) => {
   return (
-    <>
-      <section className="charts">
-        <div className="pricing-chart">
+    <div className="pricing-chart">
+      <div className="column">
+        <h4 className='title'>
+          <a href={faker.internet.url()}>
+            Rental
+            <br />
+            Rates
+          </a>
+        </h4>
+        <p >1 Hour</p>
+        <p>3 Hours</p>
+        <p>Full Day</p>
+        <p>Pedal Drive</p>
+      </div>
+      <div className="column">
+        <h4 className='title'>
+          Single
+          <br />
+          Kayak
+        </h4>
+        <p >$30</p>
+        <p>$60</p>
+        <p>$90</p>
+        <p>+ $10</p>
+
+      </div>
+      <div className="column">
+        <h4 className='title'>
+          Double
+          <br />
+          Kayak
+        </h4>
+        <p >$45</p>
+        <p>$90</p>
+        <p>$110</p>
+        <p>+ $20</p>
+      </div>
+      <div className="column">
+        <h4 className='title'>
+          Paddle
+          <br />
+          Board
+        </h4>
+        <p >$30</p>
+        <p>$60</p>
+        <p>$90</p>
+        <p>+ $10</p>
+      </div>
+
+      {demos ? (
+        <>
           <div className="column">
-            <h4>
-              Rental
-              <br />
-              Rates
-            </h4>
-            <p>1 Hour</p>
-            <p>3 Hours</p>
-            <p>Full Day</p>
-          </div>
-          <div className="column">
-            <h4>
-              Single
+            <h4 className='title'>
+              Demo Single
               <br />
               Kayak
             </h4>
-            <p>$30</p>
-            <p>$60</p>
-            <p>$90</p>
+            <p >$40</p>
+            <p>$70</p>
+            <p>$100</p>
+            {/* <p>+ $10</p> */}
           </div>
+
           <div className="column">
-            <h4>
-              Double
+            <h4 className='title'>
+              Demo Double
               <br />
               Kayak
             </h4>
-            <p>$45</p>
-            <p>$90</p>
-            <p>$110</p>
+            <p >$40</p>
+            <p>$70</p>
+            <p>$100</p>
+            {/* <p>+ $10</p> */}
           </div>
-          <div className="column">
-            <h4>
-              Paddle
-              <br />
-              Board
-            </h4>
-            <p>$30</p>
-            <p>$60</p>
-            <p>$90</p>
-          </div>
-        </div>
-
-        <div className="pricing-chart">
-          <>
-            <p className="test">Pedal Drive</p>
-            <p className="test">+10</p>
-            <p className="test">+20</p>
-            <p className="">+10</p>
-          </>
-        </div>
-      </section>
-
-      {faker.datatype.boolean() ? <BookNow /> : null}
-    </>
+        </>
+      ) : null}
+    </div>
   );
 };

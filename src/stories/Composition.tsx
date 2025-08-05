@@ -8,18 +8,18 @@ export const Composition = () => {
   return (
     <div className="composition condor">
       <img
-        src={faker.image.urlLoremFlickr({ category: 'nature' })}
-        alt={faker.image.urlLoremFlickr({ category: 'nature' })}
+        src={faker.image.urlPicsumPhotos()}
+        alt='fake'
         className="texture-1 storybook-gatsby-image"
       />
       <img
-        src={faker.image.urlLoremFlickr({ category: 'nature' })}
-        alt={faker.image.urlLoremFlickr({ category: 'nature' })}
+        src={faker.image.urlPicsumPhotos()}
+        alt='fake'
         className="texture-2 storybook-gatsby-image"
       />
       <img
-        src={faker.image.urlLoremFlickr()}
-        alt={faker.image.urlLoremFlickr()}
+        src={faker.image.urlPicsumPhotos()}
+        alt='fake'
         className="storybook-paddler storybook-gatsby-image"
       />
     </div>

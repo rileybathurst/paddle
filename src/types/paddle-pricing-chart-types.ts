@@ -10,7 +10,7 @@ export type paddlePricingChartTypes = {
       fullDay: number;
     }[];
   };
-  rentalAddons: {
+  rentalAddons?: {
     nodes: {
       id: React.Key;
       name: string;
@@ -19,7 +19,4 @@ export type paddlePricingChartTypes = {
       sup: number;
     }[];
   };
-  book?: boolean;
-  peek_base: string;
-  strapiLocaleName: string;
 };

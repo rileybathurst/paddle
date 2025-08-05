@@ -1,18 +1,15 @@
 // this is the Name.stories.tsx file
 import type { Meta, StoryObj } from '@storybook/react';
-import { Rentals } from './rentals';
+import { ReactMarkdown } from './react-markdown';
 
 const meta = {
-  component: Rentals,
-  title: 'Templates/Rentals',
+  component: ReactMarkdown,
+  title: 'Atoms/ReactMarkdown',
   args: {},
-} satisfies Meta<typeof Rentals>;
+} satisfies Meta<typeof ReactMarkdown>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: {
-    primary: true,
-  },
 };

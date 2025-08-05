@@ -26,7 +26,7 @@ export const Ticket = () => {
   return (
     <section className="ticket">
       <Link href={faker.location.city()}>
-        <img src={faker.image.url()} alt={faker.lorem.words(2)} />
+        <img src={faker.image.urlPicsumPhotos()} alt={faker.lorem.words(2)} />
       </Link>
       <div className="ticket__header">
         <h4 className="ticket__title">

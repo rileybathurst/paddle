@@ -256,6 +256,7 @@ select:active {
 /*------------------*/
 
 /* fixes a bug with new lines */
+/* but creates a weird one with titles */
 .react-markdown {
   white-space: pre-wrap;
   line-height: 1.5;

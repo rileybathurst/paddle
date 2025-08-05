@@ -28,16 +28,12 @@ export const Footer = () => {
         </div>
 
         <div className="pelican wrap">
-          <section>
+          <section className="condor">
             <LocationDeck />
 
-            <div className="footer__contact">
-              {/* <Phone phone={faker.phone} /> */}
-
-              <Socials />
-            </div>
+            <Socials />
             <hr />
-            <div className="footer__locations">
+            <div>
               <h3>Our Partner Locations</h3>
               <ul>
                 {Array.from({
@@ -59,10 +55,11 @@ export const Footer = () => {
               </ul>
             </div>
           </section>
-          <section>
-            <Pricing book={false} />
-            <hr />
+
+          <section className="">
+            <Pricing />
           </section>
+
         </div>
 
         <div className="logo-container logo-container_footer">
@@ -75,6 +72,7 @@ export const Footer = () => {
           <p>&copy; {new Date().getFullYear()}</p>
         </div>
       </footer>
+
     </>
   );
 };

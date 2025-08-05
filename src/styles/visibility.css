@@ -2,10 +2,6 @@
 /* #VISIBILITY */
 /*------------------*/
 
-.pricing-chart__false {
-  display: none;
-}
-
 .menu__large {
   padding-inline: var(--elbrus);
 

@@ -18,7 +18,6 @@ export const Home = () => {
   return (
     <div >
       <Header />
-      <Menu />
       <main className="albatross wrap">
         <section>
 
