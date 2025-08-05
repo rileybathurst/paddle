@@ -34,7 +34,7 @@ export const PaddlePricingChart = ({ rentalRates }: paddlePricingChartTypes) => 
           <p>${rate.oneHour}</p>
           <p>${rate.threeHour}</p>
           <p>${rate.fullDay}</p>
-          <p>${rate.pedalAdd ? `+ $${rate.pedalAdd}` : null}</p>
+          <p>{rate.pedalAdd ? `+ $${rate.pedalAdd}` : null}</p>
         </div>
       ))}
     </div>
