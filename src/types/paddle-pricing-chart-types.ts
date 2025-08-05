@@ -8,15 +8,7 @@ export type paddlePricingChartTypes = {
       oneHour: number;
       threeHour: number;
       fullDay: number;
-    }[];
-  };
-  rentalAddons?: {
-    nodes: {
-      id: React.Key;
-      name: string;
-      single: number;
-      double: number;
-      sup: number;
+      pedalAdd?: number;
     }[];
   };
 };

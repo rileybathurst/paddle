@@ -7,7 +7,7 @@ const LineBreaker = ({ text }: { text: string; }) => {
   const parts = text.split(/([- ])/g);
 
   return (
-    <h4>
+    <h4 className="title">
       {parts.map((part) =>
         part === '-' || part === ' ' ? <br key={part} /> : part
       )}
@@ -15,7 +15,7 @@ const LineBreaker = ({ text }: { text: string; }) => {
   );
 }
 
-export const PaddlePricingChart = ({ rentalRates, rentalAddons }: paddlePricingChartTypes) => {
+export const PaddlePricingChart = ({ rentalRates }: paddlePricingChartTypes) => {
   return (
     <div className="pricing-chart">
       <div className="column">
@@ -25,6 +25,7 @@ export const PaddlePricingChart = ({ rentalRates, rentalAddons }: paddlePricingC
         <p>1 Hour</p>
         <p>3 Hours</p>
         <p>Full Day</p>
+        <p>Pedal Drive</p>
       </div>
 
       {rentalRates.nodes.map((rate) => (
@@ -33,21 +34,9 @@ export const PaddlePricingChart = ({ rentalRates, rentalAddons }: paddlePricingC
           <p>{rate.oneHour}</p>
           <p>{rate.threeHour}</p>
           <p>{rate.fullDay}</p>
+          <p>{rate.pedalAdd}</p>
         </div>
       ))}
-
-      {rentalAddons && rentalAddons.nodes.length > 0 ? (
-        <div className="column">
-          {rentalAddons.nodes.map((addon) => (
-            <React.Fragment key={addon.id}>
-              <p>{addon.name}</p>
-              <p>+{addon.single}</p>
-              <p>+{addon.double}</p>
-              <p>+{addon.sup}</p>
-            </React.Fragment>
-          ))}
-        </div>
-      ) : null}
     </div>
   )
 }
