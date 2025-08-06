@@ -5,11 +5,6 @@ import { faker } from "@faker-js/faker";
 export const Typography = () => {
   return (
     <>
-      <p>
-        {faker.lorem.sentence()}
-        <del>{faker.lorem.word()}</del>
-        {faker.lorem.sentence()}
-      </p>
 
       {/* currently done with the markdown file */}
       <h1>everest</h1>
@@ -19,6 +14,34 @@ export const Typography = () => {
       <h5>elbrus</h5>
       <h6>vinson</h6>
       <p>kosciuszko</p>
+
+      <hr />
+
+      <h2>Del</h2>
+      <p>
+        {faker.lorem.sentence()}
+        <del>{faker.lorem.word()}</del>
+        {faker.lorem.sentence()}
+      </p>
+
+      <hr />
+
+      <h2>Ol</h2>
+      <ol>
+        <li>{faker.lorem.word()}</li>
+        <li>{faker.lorem.word()}</li>
+        <li>{faker.lorem.word()}</li>
+      </ol>
+
+      <hr />
+
+      <h2>Ul</h2>
+      <ul>
+        <li>{faker.lorem.word()}</li>
+        <li>{faker.lorem.word()}</li>
+        <li>{faker.lorem.word()}</li>
+      </ul>
+
     </>
   );
 };

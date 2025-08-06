@@ -16,7 +16,7 @@ import { BrandList } from './BrandList';
 export const Home = () => {
 
   return (
-    <div >
+    <>
       <Header />
       <main className="albatross wrap">
         <section>
@@ -94,6 +94,6 @@ export const Home = () => {
 
       <Breadcrumbs />
       <Footer />
-    </div >
+    </ >
   );
 };

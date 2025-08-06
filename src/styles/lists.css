@@ -6,24 +6,18 @@
 /* #DEFAULTS */
 /*------------------*/
 
-ul {
-  padding-inline-start: var(--kosciuszko);
+ul,
+ol {
   margin: 0; /* reset */
   list-style: none; /* reset */
+  padding-inline-start: 0;
+  margin-block-end: var(--vinson);
 
   li {
     display: block;
     margin-block-end: var(--baseline);
-  }
-}
-
-ol {
-  list-style: none; /* reset */
-  margin-block-start: 0;
-
-  li {
-    display: inline flow-root list-item;
-    margin-block-end: var(--baseline);
+    padding-inline-start: 0;
+    line-height: var(--kilimanjaro);
   }
 }
 

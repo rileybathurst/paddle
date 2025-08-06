@@ -12,7 +12,8 @@ import { Menu } from "./Menu";
 export const Footer = () => {
   return (
     <>
-      <footer className="cloud aconcagua-padding-block-start">
+      <hr className="pelican" />
+      <footer className="aconcagua-padding-block-start">
         <div className="pelican multi_button multi_button-center">
           <button type="button">{faker.phone.number()}</button>
           <a

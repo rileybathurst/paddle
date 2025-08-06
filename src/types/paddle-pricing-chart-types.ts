@@ -9,6 +9,10 @@ export type paddlePricingChartTypes = {
       threeHour: number;
       fullDay: number;
       pedalAdd?: number;
+
+      retail?: {
+        slug: string;
+      };
     }[];
   };
 };
