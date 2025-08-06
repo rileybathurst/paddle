@@ -3,14 +3,34 @@ import { Link } from "gatsby"
 import type { paddlePricingChartTypes } from "./types/paddle-pricing-chart-types";
 
 const LineBreaker = ({ text }: { text: string; }) => {
-  // Split the text by hyphens and spaces, keeping the delimiters
-  const parts = text.split(/([- ])/g);
+  const splitIndex = (() => {
+    const spaceIndexes = [];
+    for (let i = 0; i < text.length; i++) {
+      if (text[i] === " ") spaceIndexes.push(i);
+    }
+    if (spaceIndexes.length === 0) return -1;
+    let minDiff = Infinity;
+    let bestIndex = spaceIndexes[0];
+    for (const idx of spaceIndexes) {
+      const left = text.slice(0, idx).length;
+      const right = text.slice(idx + 1).length;
+      const diff = Math.abs(left - right);
+      if (diff < minDiff) {
+        minDiff = diff;
+        bestIndex = idx;
+      }
+    }
+    return bestIndex;
+  })();
+
+  const firstPart = text.slice(0, splitIndex);
+  const secondPart = text.slice(splitIndex + 1);
 
   return (
     <h4 className="title">
-      {parts.map((part) =>
-        part === '-' || part === ' ' ? <br key={part} /> : part
-      )}
+      {firstPart}
+      <br />
+      {secondPart}
     </h4>
   );
 }
@@ -31,17 +51,17 @@ export const PaddlePricingChart = ({ rentalRates }: paddlePricingChartTypes) => 
       {rentalRates.nodes.map((rate) => (
         <div key={rate.id} className="column">
           {rate.retail ? (
-            <Link to={`/retail/${rate.retail.slug}`}>
+            <Link to={`/retail/${rate.retail.sport.slug}/${rate.retail.brand.slug}/${rate.retail.slug}`}>
               <LineBreaker text={rate.item} />
             </Link>
           )
             : (
               <LineBreaker text={rate.item} />
             )}
-          <p>{rate.oneHour ? `($${rate.oneHour})` : null}</p>
-          <p>{rate.threeHour ? `($${rate.threeHour})` : null}</p>
-          <p>{rate.fullDay ? `($${rate.fullDay})` : null}</p>
-          <p>{rate.pedalAdd ? `+ $${rate.pedalAdd}` : null}</p>
+          <p>{rate.oneHour ? `$${rate.oneHour}` : '&nbsp;'}</p>
+          <p>{rate.threeHour ? `$${rate.threeHour}` : '&nbsp;'}</p>
+          <p>{rate.fullDay ? `$${rate.fullDay}` : '&nbsp;'}</p>
+          <p>{rate.pedalAdd ? `+ $${rate.pedalAdd}` : '&nbsp;'}</p>
         </div>
       ))}
     </div>

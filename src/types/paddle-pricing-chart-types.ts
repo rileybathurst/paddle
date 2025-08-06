@@ -12,6 +12,12 @@ export type paddlePricingChartTypes = {
 
       retail?: {
         slug: string;
+        sport: {
+          slug: string;
+        };
+        brand: {
+          slug: string;
+        };
       };
     }[];
   };
