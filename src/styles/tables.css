@@ -24,6 +24,7 @@
     font-size: var(--kosciuszko);
 
     line-height: var(--denali);
+    min-height: var(--denali); /* always keep a line */
     padding: clamp(0.5rem, 1vw, var(--vinson));
     border-bottom: 0.5px solid var(--neutral-400);
   }
