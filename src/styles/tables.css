@@ -21,7 +21,7 @@
   .title,
   p {
     /* * be careful of this it can break the footer flex */
-    font-size: clamp(var(--kosciuszko), 1vw, var(--kilimanjaro));
+    font-size: var(--kosciuszko);
 
     line-height: var(--denali);
     padding: clamp(0.5rem, 1vw, var(--vinson));

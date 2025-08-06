@@ -58,10 +58,10 @@ export const PaddlePricingChart = ({ rentalRates }: paddlePricingChartTypes) => 
             : (
               <LineBreaker text={rate.item} />
             )}
-          <p>{rate.oneHour ? `$${rate.oneHour}` : '&nbsp;'}</p>
-          <p>{rate.threeHour ? `$${rate.threeHour}` : '&nbsp;'}</p>
-          <p>{rate.fullDay ? `$${rate.fullDay}` : '&nbsp;'}</p>
-          <p>{rate.pedalAdd ? `+ $${rate.pedalAdd}` : '&nbsp;'}</p>
+          <p>{rate.oneHour ? `$${rate.oneHour}` : ' '}</p>
+          <p>{rate.threeHour ? `$${rate.threeHour}` : ' '}</p>
+          <p>{rate.fullDay ? `$${rate.fullDay}` : ' '}</p>
+          <p>{rate.pedalAdd ? `+ $${rate.pedalAdd}` : ' '}</p>
         </div>
       ))}
     </div>
