@@ -3,6 +3,7 @@ export * from "./paddle-book-now";
 export * from "./paddle-time";
 export * from "./paddle-remainder";
 export * from "./paddle-format-phone-number";
+export * from "./paddle-featured-sort";
 
 // Molecules
 export * from "./paddle-composition";
