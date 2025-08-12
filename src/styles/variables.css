@@ -83,28 +83,6 @@
   /* #NEUTRALS */
   /*------------------*/
 
-  /* louie variables */
-  --pitch: 2.5%;
-  --dark: 12.5%;
-  --dull: 25%;
-  --dim: 37.5%;
-  --mid: 50%;
-  --glow: 62.5%;
-  --light: 75%;
-  --bright: 87.5%;
-  --brilliance: 97.5%;
-
-  /* louie neutrals */
-  --black-metal: hsl(210, 25%, 2.5%);
-  --black-out: hsl(210, 25%, 12.5%);
-  --raven-black: hsl(210, 12.5%, 25%);
-  --industrial-revolution: hsl(210, 7.5%, 37.5%);
-  --grey: hsl(210, 7.5%, 50%);
-  --cold-grey: hsl(210, 7.5%, 62.5%);
-  --tin-soldier: hsl(210, 12.5%, 75%);
-  --kingly-cloud: hsl(210, 18.75%, 87.5%);
-  --brilliance: hsl(210, 25%, 97.5%);
-
   --neutral-100: #f9f9f9;
   --neutral-200: #ebebeb;
   --neutral-300: #d9d9d9;

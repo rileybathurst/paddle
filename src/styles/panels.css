@@ -53,6 +53,12 @@
   }
 }
 
+.tahoe-city {
+  .cloud {
+    background-color: var(--sand-100);
+  }
+}
+
 .south-tahoe {
   .cloud {
     background-color: var(--cloud-background-color);

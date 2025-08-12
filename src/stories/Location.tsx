@@ -3,6 +3,8 @@
 import { faker } from "@faker-js/faker";
 import React from "react";
 
+// ? condor max width I might need to make this slightly wider to deal with phone
+
 export const Location = () => {
   return (
     // * phone boolean if has a phone link this has to be in multiple places to avoid a link on link error
@@ -41,6 +43,8 @@ export const Location = () => {
                 ])}
               </h3>
             </a>
+
+            {/* // ? this might be smaller or smaller padding */}
             <a href={`tel:${faker.phone.number()}`} className="button">
               {faker.phone.number()}
             </a>
@@ -78,8 +82,8 @@ export const Location = () => {
           )}
         </svg>
         <div>
-          <div className="multi_button">
-            <h3>
+          <div>
+            <h3 className="kosciuszko-margin-block-end">
               {faker.helpers.arrayElement([
                 "On Water Rental",
                 "Retail Location",

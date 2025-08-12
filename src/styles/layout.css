@@ -137,7 +137,7 @@ header {
   h2 {
     max-width: var(--vulture);
     margin-inline: auto;
-    font-size: 2rem;
+    font-size: var(--denali);
 
     a {
       display: inline-block;
@@ -150,7 +150,7 @@ header {
 }
 
 /*------------------------------------*/
-/* #BLOCK Start */
+/* #MARGIN BLOCK START */
 /* this seems like something you could do more interesting in a programatic way */
 /*------------------------------------*/
 
@@ -187,7 +187,44 @@ header {
 }
 
 /*------------------------------------*/
-/* #BLOCK END */
+/* #MARGIN BLOCK */
+/* this seems like something you could do more interesting in a programatic way */
+/*------------------------------------*/
+
+.everest-margin-block {
+  margin-block: var(--everest);
+}
+
+.aconcagua-margin-block {
+  margin-block: var(--aconcagua);
+}
+
+.denali-margin-block {
+  margin-block: var(--denali);
+}
+
+.kilimanjaro-margin-block {
+  margin-block: var(--kilimanjaro);
+}
+
+.elbrus-margin-block {
+  margin-block: var(--elbrus);
+}
+
+.vinson-margin-block {
+  margin-block: var(--vinson);
+}
+
+.kosciuszko-margin-block {
+  margin-block: var(--kosciuszko);
+}
+
+.zero-margin-block {
+  margin-block: 0;
+}
+
+/*------------------------------------*/
+/* #MARGIN BLOCK END */
 /* this seems like something you could do more interesting in a programatic way */
 /*------------------------------------*/
 
@@ -224,7 +261,44 @@ header {
 }
 
 /*------------------------------------*/
-/* #BLOCK Start */
+/* #BLOCK PADDING */
+/* this seems like something you could do more interesting in a programatic way */
+/*------------------------------------*/
+
+.everest-padding-block {
+  padding-block: var(--everest);
+}
+
+.aconcagua-padding-block {
+  padding-block: var(--aconcagua);
+}
+
+.denali-padding-block {
+  padding-block: var(--denali);
+}
+
+.kilimanjaro-padding-block {
+  padding-block: var(--kilimanjaro);
+}
+
+.elbrus-padding-block {
+  padding-block: var(--elbrus);
+}
+
+.vinson-padding-block {
+  padding-block: var(--vinson);
+}
+
+.kosciuszko-padding-block {
+  padding-block: var(--kosciuszko);
+}
+
+.zero-padding-block {
+  padding-block: 0;
+}
+
+/*------------------------------------*/
+/* #PADDING BLOCK START */
 /* this seems like something you could do more interesting in a programatic way */
 /*------------------------------------*/
 
@@ -261,7 +335,7 @@ header {
 }
 
 /*------------------------------------*/
-/* #BLOCK END */
+/* #PADDING BLOCK END */
 /* this seems like something you could do more interesting in a programatic way */
 /*------------------------------------*/
 
@@ -349,13 +423,6 @@ header {
   gap: clamp(var(--kosciuszko), 1.67vw, var(--elbrus));
   border-radius: var(--card-radius);
 
-  /* TODO: this is breaking with a phone and pushing too much location */
-  /* > * {
-    flex: 3rem 1;
-    width: 100%;
-    height: fit-content;
-  } */
-
   > svg,
   .svg {
     min-width: var(--everest);
@@ -364,11 +431,11 @@ header {
 
   .location_details {
     width: 100%;
-  }
 
-  /* p {
-    margin-block-end: 0; reset to the gap
-  } */
+    .button {
+      margin-block-end: 0; /* reset */
+    }
+  }
 
   ul {
     padding-inline-start: 0;
@@ -390,7 +457,6 @@ header {
     max-width: 100%;
   }
 
-  /* * img__wrapped */
   > * {
     border-radius: 0.25rem;
     box-shadow: var(--penumbra);
@@ -406,7 +472,7 @@ header {
     aspect-ratio: 1;
     border: none;
     box-shadow: none;
-    margin-block: 1rem;
+    margin-block: var(--vinson);
 
     img {
       border-radius: 50%;
@@ -422,7 +488,7 @@ header {
     grid-row: 2;
     aspect-ratio: 1;
     box-shadow: none;
-    margin-block: 1rem;
+    margin-block: var(--vinson);
     border-radius: 50%;
     border: 2px solid;
     width: calc(100% - 4px);
@@ -469,25 +535,25 @@ header {
 
 .spec {
   display: flex;
-  gap: 1rem;
+  gap: var(--vinson);
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: baseline;
   align-items: flex-start;
   /* addding this border has to flip the margins */
-  border-block-start: 1px solid var(--tin-soldier);
+  border-block-start: 1px solid var(--neutral-300);
   text-transform: uppercase;
 
   height: 2lh;
   margin-block-start: 1lh;
   @supports not (margin: 1lh) {
-    height: 2.5rem;
-    margin-block-start: 1.25rem;
+    height: var(--aconcagua);
+    margin-block-start: var(--elbrus);
   }
 
   h2,
   h3 {
-    line-height: 2rem;
+    line-height: 2;
     margin-block-end: 0.25rem;
   }
 
@@ -512,7 +578,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: var(--vinson);
 
   .equipment-images {
     max-width: 100%;
@@ -528,7 +594,7 @@ header {
 /* * test this in chrome, it doesnt have subgrid yet */
 .comparesheet {
   display: grid;
-  gap: 1rem;
+  gap: var(--vinson);
   grid-template-columns: 1fr 1fr;
 
   @media (min-width: 30rem) {
@@ -549,9 +615,8 @@ header {
     grid-row: 1/11;
     display: grid;
     grid-template-rows: subgrid;
-    gap: 1rem;
-    /* border-inline-end: 1px solid var(--tin-soldier); */
-    padding-inline-end: 1rem;
+    gap: var(--vinson);
+    padding-inline-end: var(--vinson);
 
     > * {
       align-self: stretch;
@@ -564,7 +629,7 @@ header {
 
     > *:nth-child(odd) {
       border-radius: 0.25rem;
-      background-color: var(--brilliance);
+      background-color: var(--neutral-100);
 
       @media (prefers-color-scheme: dark) {
         background-color: var(--navy-300);
@@ -588,7 +653,7 @@ header {
     @media (min-width: 30rem) {
       display: grid;
     }
-    padding-inline-end: 1rem;
+    padding-inline-end: var(--vinson);
     text-align: end;
   }
 
@@ -596,8 +661,8 @@ header {
     position: sticky;
     top: -1px;
     z-index: var(--understory);
-    background-color: var(--brilliance);
-    box-shadow: 0 0 0 100vmax var(--brilliance);
+    background-color: var(--neutral-100);
+    box-shadow: 0 0 0 100vmax var(--neutral-100);
     clip-path: inset(0 -100vmax);
 
     @media (prefers-color-scheme: dark) {

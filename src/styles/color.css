@@ -28,7 +28,7 @@ body:has(#storybook-root) {
 body .tahoe-city {
   @media (prefers-color-scheme: dark) {
     background-color: var(--navy-300);
-    color: var(--brilliance);
+    color: var(--neutral-100);
   }
 }
 

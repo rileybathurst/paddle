@@ -1,13 +1,13 @@
 import * as React from "react";
-import PaddleRemainder from "./paddle-remainder.tsx";
+import PaddleRemainder from "./paddle-remainder";
 
 interface SpecsTypes {
   [key: string]:
-    | string
-    | number
-    | {
-        [key: string]: string | number[];
-      };
+  | string
+  | number
+  | {
+    [key: string]: string | number[];
+  };
 }
 // * moving the section tag to the parent component means you can loop yourself
 export const PaddleSpecs = (specs: SpecsTypes) =>

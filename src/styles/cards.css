@@ -48,31 +48,30 @@
       stroke: whitesmoke;
 
       @media (prefers-color-scheme: dark) {
-        border-color: var(--black-metal);
-        stroke: var(--black-metal);
+        border-color: var(--neutral-100);
+        stroke: var(--neutral-100);
       }
     }
 
     .cutout {
       object-fit: contain;
       place-self: center;
-      /* box-shadow: var(--umbra); */
-      z-index: 2; /* TODO: variable */
+      z-index: var(--understory);
       grid-row: 1/1;
-      filter: drop-shadow(5px 5px 5px var(--black-out));
+      filter: drop-shadow(5px 5px 5px var(--neutral-700));
       aspect-ratio: 16/9;
       width: 100%;
     }
 
     svg {
-      z-index: 1; /* TODO: variable */
+      z-index: var(--floor);
       max-height: 100%; /* overwrite the default */
       margin: calc(var(--elbrus) / 2);
       width: calc(100% - var(--elbrus));
       stroke: whitesmoke;
 
       @media (prefers-color-scheme: dark) {
-        stroke: var(--black-metal);
+        stroke: var(--neutral-100);
       }
     }
   }
@@ -90,7 +89,7 @@
   .purchase__title {
     font-size: var(--denali);
     margin-inline: var(--kosciuszko);
-    line-height: var(--aconcagua);
+    line-height: 2.5;
   }
 
   hr,
@@ -122,11 +121,11 @@
     h6 {
       font-size: clamp(var(--vinson), 1.667vw, var(--denali));
       font-weight: normal;
-      line-height: var(--everest);
+      line-height: 3;
     }
 
     button {
-      line-height: var(--denali);
+      line-height: 2;
     }
   }
 
@@ -196,7 +195,6 @@
   flex-flow: row wrap;
   gap: var(--elbrus);
   max-width: max-content;
-  /* border: 1px solid var(--tin-soldier); im not sure yet */
   margin-block-end: var(--kilimanjaro);
   padding-block: var(--kilimanjaro);
   padding-inline: var(--kosciuszko);
@@ -280,7 +278,6 @@
   @media (prefers-color-scheme: dark) {
     background-color: var(--lake-700);
     border-color: var(--lake-600);
-    /* box-shadow: var(--penumbra--dark); */
     color: var(--lake-200);
 
     a:not(.book-now) {

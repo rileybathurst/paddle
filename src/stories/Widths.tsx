@@ -14,11 +14,11 @@ const WidthCard = ({ widths }: WidthCardTypes) => {
           className={width}
           style={{
             minHeight: "8rem",
-            backgroundColor: "var(--kingly-cloud)",
+            backgroundColor: "var(--neutral-200)",
             marginInline: "auto",
             marginBlockEnd: "var(--vinson)",
             paddingBlock: "var(--vinson)",
-            color: "var(--black-out)",
+            color: "var(--neutral-700)",
           }}
         >
           {width}
@@ -66,7 +66,7 @@ const WarpCards = ({ widths }: WarpCardsTypes) => {
             minHeight: "8rem",
             marginBlockEnd: "var(--vinson)",
             paddingBlock: "var(--vinson)",
-            backgroundColor: "var(--kingly-cloud)",
+            backgroundColor: "var(--neutral-200)",
             color: "grey",
           }}
         >
@@ -74,7 +74,7 @@ const WarpCards = ({ widths }: WarpCardsTypes) => {
             // className='white-space'
             style={{
               paddingBlock: "var(--vinson)",
-              backgroundColor: "var(--tin-soldier)",
+              backgroundColor: "var(--neutral-300)",
               color: "var(--lake-400)",
             }}
           >
@@ -91,7 +91,7 @@ const WarpCards = ({ widths }: WarpCardsTypes) => {
             // className='white-space'
             style={{
               paddingBlock: "var(--vinson)",
-              backgroundColor: "var(--tin-soldier)",
+              backgroundColor: "var(--neutral-300)",
               color: "red",
             }}
           >
@@ -124,13 +124,13 @@ export const Widths = () => {
         className="albatross wrap"
         style={{
           paddingBlock: "var(--vinson)",
-          backgroundColor: "var(--kingly-cloud)",
+          backgroundColor: "var(--neutral-200)",
         }}
       >
         {/* // TODO: v1.2 doesnt work yet still controlled by the star, might just be ordering */}
         <div
           style={{
-            backgroundColor: "var(--tin-soldier)",
+            backgroundColor: "var(--neutral-300)",
           }}
         >
           {/* {faker.string.fromCharacters('abcdefghijklmnopqrstuvwxyz', { min: 45, max: 45 })} */}
@@ -144,7 +144,7 @@ export const Widths = () => {
         </div>
         <div
           style={{
-            backgroundColor: "var(--tin-soldier)",
+            backgroundColor: "var(--neutral-300)",
           }}
         >
           {/* {faker.string.fromCharacters('abcdefghijklmnopqrstuvwxyz', { min: 90, max: 90 })} */}

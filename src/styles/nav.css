@@ -13,9 +13,9 @@ header {
   margin-block-end: 0;
   transform: translate3D(0, 0, 0); /* I need this to hide things */
   line-height: 1.5;
-  height: 2rem;
+  height: var(--denali);
   overflow: hidden;
-  z-index: 1; /* TODO: variable */
+  z-index: var(--floor);
   position: relative;
   /* width: calc(100% - 1rem); */
   width: 100%;
@@ -34,17 +34,17 @@ header {
 
 .spinning-button {
   position: fixed; /* I never like these things but it's needed here */
-  height: 1rem;
-  line-height: 2rem;
+  height: var(--vinson);
+  line-height: 2;
   transition: 2s ease;
   margin-block-start: -1rem; /* I dont know why I have to add this something about defaults probably */
 }
 
 nav {
-  margin: 1.5rem;
+  margin: var(--kilimanjaro);
   margin-block-start: 0; /* testing slide menu */
   transition: 2s ease;
-  padding-inline-start: 1.5rem;
+  padding-inline-start: var(--kilimanjaro);
 
   @media (min-width: 40rem) {
     max-width: var(--pelican);
@@ -56,8 +56,8 @@ nav {
     flex-flow: row wrap;
     justify-content: space-between;
     margin-block: 0; /* testing slide menu */
-    padding-block-start: 1.25rem;
-    padding-block-start: calc(var(--elbrus) / 2);
+    padding-block-start: calc(var(--elbrus) / 2); /* 1.25/2= 0.625 */
+    /* TODO: check if this can be kosciuszko */
     list-style: none;
     padding-inline-start: 0;
     align-items: baseline;
@@ -106,13 +106,11 @@ nav {
     }
 
     li:first-child {
-      margin-block-start: 1.5rem;
-      margin-block-start: calc(var(--elbrus) / 2);
       margin-block-start: 0;
     }
 
     li:last-child {
-      margin-block-end: 1.5rem;
+      margin-block-end: var(--kilimanjaro);
     }
 
     .book-now {

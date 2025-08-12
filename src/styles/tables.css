@@ -23,7 +23,7 @@
     /* * be careful of this it can break the footer flex */
     font-size: var(--kosciuszko);
 
-    line-height: var(--denali);
+    line-height: 2;
     min-height: var(--denali); /* always keep a line */
     padding: clamp(0.5rem, 1vw, var(--vinson));
     border-bottom: 0.5px solid var(--neutral-400);

@@ -49,8 +49,8 @@ export const Home = () => {
         </div>
       </main>
 
-      <section id="tours" className="cloud aconcagua-padding-block-end">
-        <div className='condor aconcagua-padding-block-start aconcagua-padding-block-end'>
+      <section className="cloud aconcagua-padding-block-end">
+        <div className='condor aconcagua-padding-block'>
 
           <h3 className="">
             <Link href={faker.internet.domainName()}>
