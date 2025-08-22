@@ -275,10 +275,21 @@
   box-shadow: var(--penumbra);
   color: var(--lake-600);
 
+  .book-now {
+    background-color: var(--neutral-100);
+    color: var(--lake-700);
+  }
+
   @media (prefers-color-scheme: dark) {
     background-color: var(--lake-700);
     border-color: var(--lake-600);
     color: var(--lake-200);
+
+    .book-now {
+      background-color: var(--lake-400);
+      color: var(--lake-700);
+      border-color: var(--lake-500);
+    }
 
     a:not(.book-now) {
       color: var(--lake-200);
