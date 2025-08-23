@@ -18,7 +18,7 @@ const Time = ({ string }: { string?: string }) => {
   });
 };
 
-export const PaddleMoonlightDatesTime = ({ nodes }: MoonlightTourDateTime) => (
+export const PaddleMoonlightDatesTimes = ({ nodes }: MoonlightTourDateTime) => (
   <div>
     <h3>Moonlight Tour Dates</h3>
     <ul>

@@ -23,10 +23,10 @@ export * from "./paddle-texture-backgrounds";
 export * from "./paddle-location-deck";
 export * from "./paddle-testimonials";
 export * from "./paddle-brand-list";
-export * from "./paddle-moonlight-tour-dates-times"
+export * from "./paddle-moonlight-date-time"
 
 // Templates
-
+    
 // Pages
 
 // SEO
