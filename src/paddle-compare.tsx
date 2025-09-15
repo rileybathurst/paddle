@@ -124,7 +124,7 @@ const CompareDetails = ({ key, title, link, sport, duration, start, finish, fitn
 
       <PaddleBookNow
         peek_base={peeks1}
-        strapiLocaleName={strapiLocaleName}
+        strapiBranchName={strapiBranchName}
         specificLink={peeks1}
       />
     </section >
@@ -148,10 +148,10 @@ type PaddleCompareTypes = {
     price: number;
     peek?: string;
   }[];
-  strapiLocaleName: string;
+  strapiBranchName: string;
   peek_base: string;
 };
-export const PaddleCompare = ({ tours, strapiLocaleName, peek_base }: PaddleCompareTypes) => {
+export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleCompareTypes) => {
 
   const [id1, setID1] = useState(tours[0].id);
   const [id2, setID2] = useState(tours[1].id);
@@ -233,13 +233,13 @@ export const PaddleCompare = ({ tours, strapiLocaleName, peek_base }: PaddleComp
           timeframe={timeframe1}
           start={start1}
           finish={finish1}
-          location={strapiLocaleName}
+          location={strapiBranchName}
           excerpt={excerpt1}
           minimum={minimum1}
           price={price1}
           peeks={peeks1}
           fitness={fitness1}
-          strapiLocaleName={strapiLocaleName}
+          strapiBranchName={strapiBranchName}
           peek_base={peek_base}
         />
         <CompareDetails
@@ -251,13 +251,13 @@ export const PaddleCompare = ({ tours, strapiLocaleName, peek_base }: PaddleComp
           timeframe={timeframe2}
           start={start2}
           finish={finish2}
-          location={strapiLocaleName}
+          location={strapiBranchName}
           excerpt={excerpt2}
           minimum={minimum2}
           price={price2}
           peeks={peeks2}
           fitness={fitness2}
-          strapiLocaleName={strapiLocaleName}
+          strapiBranchName={strapiBranchName}
           peek_base={peek_base}
         />
 

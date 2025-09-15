@@ -2,9 +2,9 @@ import * as React from "react";
 import Markdown from "react-markdown";
 
 // TODO this would be nice to be able to close but I dont have it right yet
-
+// ! needs ranaming now I've removed the ...data or if it cant write why
 type PaddleTopBarTypes = {
-  strapiLocale: {
+  strapiBranch: {
     topbar: {
       data: {
         topbar: string;
@@ -15,9 +15,9 @@ type PaddleTopBarTypes = {
     RainCheckReason: string;
   };
 }
-export const PaddleTopBar = ({ strapiLocale }: PaddleTopBarTypes) => {
+export const PaddleTopBar = ({ strapiBranch }: PaddleTopBarTypes) => {
 
-  const RainCheckDate = new Date(strapiLocale.RainCheck);
+  const RainCheckDate = new Date(strapiBranch.RainCheck);
   const currently = new Date();
 
   return (
@@ -38,7 +38,7 @@ export const PaddleTopBar = ({ strapiLocale }: PaddleTopBarTypes) => {
               minute: '2-digit',
               hour12: true,
             })} due to an incoming</span>
-          &nbsp;{strapiLocale.RainCheckReason}
+          &nbsp;{strapiBranch.RainCheckReason}
         </p>
       ) : RainCheckDate.toDateString() === currently.toDateString() ? (
         <p className="rain-check">
@@ -47,11 +47,11 @@ export const PaddleTopBar = ({ strapiLocale }: PaddleTopBarTypes) => {
             day: '2-digit',
             year: '2-digit',
           })}</span>&nbsp;
-          <span className="rain-check-reason">We're closed today due to {strapiLocale.RainCheckReason}</span>
+          <span className="rain-check-reason">We're closed today due to {strapiBranch.RainCheckReason}</span>
         </p>
       ) : (
         <Markdown>
-          {strapiLocale.topbar.data.topbar}
+          {strapiBranch.topbar.data.topbar}
         </Markdown>
       )
       }

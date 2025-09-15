@@ -28,5 +28,5 @@ export type PaddleTicketTypes = {
     }[];
   };
 
-  strapiLocaleName: string;
+  strapiBranchName: string;
 };

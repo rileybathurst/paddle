@@ -50,7 +50,7 @@ type SEOtypes = {
   breadcrumbs?: BreadcrumbsTypes;
   // children: React.ReactNode;
 
-  strapiLocale: {
+  strapiBranch: {
     name: string;
     topbar: {
       data: {
@@ -103,21 +103,21 @@ export const PaddleSEO = ({
   ogImage,
   ogImageDescription,
   breadcrumbs,
-  strapiLocale,
+  strapiBranch,
   strapiLocation,
   allStrapiLocation,
   children,
 }: SEOtypes) => {
-  const businessName = `${strapiLocale.name} Kayak & Paddleboard rentals and tours`;
+  const businessName = `${strapiBranch.name} Kayak & Paddleboard rentals and tours`;
 
   const PaddleTitle = title
     ? `${title} | ${businessName}`
-    : `${businessName} | ${strapiLocale.topbar.data.topbar} `;
+    : `${businessName} | ${strapiBranch.topbar.data.topbar} `;
   // TODO: tagline would be a better fallback description
-  const PaddleDescription = description || strapiLocale.slogan;
-  // url: `${strapiLocale.url}${SE0.url}` || strapiLocale.url,
-  const PaddleImage = ogImage || strapiLocale.ogImage;
-  const PaddleImageAlt = ogImageDescription || strapiLocale.ogImageDescription;
+  const PaddleDescription = description || strapiBranch.slogan;
+  // url: `${strapiBranch.url}${SE0.url}` || strapiBranch.url,
+  const PaddleImage = ogImage || strapiBranch.ogImage;
+  const PaddleImageAlt = ogImageDescription || strapiBranch.ogImageDescription;
 
   // const query = '- cash\n - credit card';
   // const formatted = query.split('\n').map((item) => item.trim().replace('- ', '')).join(', ');
@@ -125,9 +125,9 @@ export const PaddleSEO = ({
 
   // TODO: this is now allStrapiLocation.nodes
   // TODO: I think this will be a keylocation piece
-  // console.log(strapiLocale.paymentAccepted);
-  const paymentAcceptedQuery = strapiLocale.paymentAccepted
-    ? strapiLocale.paymentAccepted
+  // console.log(strapiBranch.paymentAccepted);
+  const paymentAcceptedQuery = strapiBranch.paymentAccepted
+    ? strapiBranch.paymentAccepted
     : "";
   const paymentAcceptedFormatted = paymentAcceptedQuery
     .split("\n")
@@ -148,7 +148,7 @@ export const PaddleSEO = ({
       <meta property="og:description" content={PaddleDescription} />
       <meta property="og:image" content={PaddleImage} />
       <meta property="og:image:alt" content={PaddleImageAlt} />
-      <meta name="theme-color" content={strapiLocale.themeColor} />
+      <meta name="theme-color" content={strapiBranch.themeColor} />
 
       <Script type="application/ld+json">
         {`
@@ -156,8 +156,8 @@ export const PaddleSEO = ({
             "@context": "https://schema.org/",
             "@type": "LocalBusiness",
             "name": "${businessName}",
-            "url": "${strapiLocale.url}",
-            "description": "${strapiLocale.name}",
+            "url": "${strapiBranch.url}",
+            "description": "${strapiBranch.name}",
             "image": "${PaddleImage}",
             "address": {
               "@type": "PostalAddress",
@@ -192,22 +192,22 @@ export const PaddleSEO = ({
               "@type": "GeoCircle",
               "geoMidpoint": {
                 "@type": "GeoCoordinates",
-                "latitude": "${strapiLocale.latitude}",
-                "longitude": "${strapiLocale.longitude}"
+                "latitude": "${strapiBranch.latitude}",
+                "longitude": "${strapiBranch.longitude}"
               },
-              "geoRadius": "${strapiLocale.geoRadius}"
+              "geoRadius": "${strapiBranch.geoRadius}"
             },
-            "telephone": "${strapiLocale.phone}",
-            "email": "${strapiLocale.email}",
-            "numberOfEmployees" : "${strapiLocale.numberOfEmployees}",
-            "priceRange": "${strapiLocale.priceRange}",
-            "slogan": "${strapiLocale.slogan}",
+            "telephone": "${strapiBranch.phone}",
+            "email": "${strapiBranch.email}",
+            "numberOfEmployees" : "${strapiBranch.numberOfEmployees}",
+            "priceRange": "${strapiBranch.priceRange}",
+            "slogan": "${strapiBranch.slogan}",
             "paymentAccepted": "${paymentAcceptedFormatted}"
           }
         `}
       </Script>
 
-      <Breadcrumbs url={strapiLocale.url} {...breadcrumbs} />
+      <Breadcrumbs url={strapiBranch.url} {...breadcrumbs} />
       {children}
     </>
   );

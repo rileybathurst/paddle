@@ -20,7 +20,7 @@ export const PaddleTicket = ({
   peek_tours_fall_back,
   tour_page,
   allStrapiSunsetTourTime,
-  strapiLocaleName,
+  strapiBranchName,
 }: PaddleTicketTypes) => {
   const time = PaddleTime({
     start: start,
@@ -51,7 +51,7 @@ export const PaddleTicket = ({
           <h5>${price}</h5>
           <PaddleBookNow
             peek_base={peek || peek_tours_fall_back}
-            strapiLocaleName={strapiLocaleName}
+            strapiBranchName={strapiBranchName}
           />
         </div>
       </div>

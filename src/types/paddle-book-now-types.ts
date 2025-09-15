@@ -1,6 +1,6 @@
 export type PaddleBookNowTypes = {
   peek_base: string;
-  strapiLocaleName: string;
+  strapiBranchName: string;
   specificName?: string;
   specificLink?: string;
 };
