@@ -3,6 +3,7 @@ import Markdown from "react-markdown";
 
 // TODO this would be nice to be able to close but I dont have it right yet
 // ! needs ranaming now I've removed the ...data or if it cant write why
+// TODO: move this to be exported from paddle to each branch site
 type PaddleTopBarTypes = {
   strapiBranch: {
     topbar: {
@@ -10,19 +11,17 @@ type PaddleTopBarTypes = {
         topbar: string;
       }
     }
-    RainCheck: string;
-    RainCheckDate: Date;
-    RainCheckReason: string;
   };
 }
 export const PaddleTopBar = ({ strapiBranch }: PaddleTopBarTypes) => {
 
+  /* // TODO: move to weather day
   const RainCheckDate = new Date(strapiBranch.RainCheck);
-  const currently = new Date();
+  const currently = new Date(); */
 
   return (
     <div className='top-bar'>
-      {RainCheckDate > currently ? (
+      {/* {RainCheckDate > currently ? (
         <p className="rain-check">
           <span className="rain-check-date">
             {RainCheckDate.toLocaleDateString('en-US', {
@@ -49,12 +48,12 @@ export const PaddleTopBar = ({ strapiBranch }: PaddleTopBarTypes) => {
           })}</span>&nbsp;
           <span className="rain-check-reason">We're closed today due to {strapiBranch.RainCheckReason}</span>
         </p>
-      ) : (
+      ) : ( */}
         <Markdown>
           {strapiBranch.topbar.data.topbar}
         </Markdown>
-      )
-      }
+      {/* )
+      } */}
     </div>
   )
 }
