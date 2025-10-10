@@ -230,6 +230,7 @@ menu button {
 
 .multi_button {
   display: flex;
+  flex-flow: row wrap;
   align-items: center;
   gap: var(--denali);
 }

@@ -14,5 +14,5 @@ export const PaddleFeaturedSort = (nodes: PaddleFeaturedSortTypes[]) => {
     if (a.featured === false && b.featured === null) return 1;
     return 0;
   });
-  console.log(nodes);
+  // console.log(nodes);
 }

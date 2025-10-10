@@ -8,21 +8,15 @@ import { LocationDeck } from "./LocationDeck";
 import { Socials } from "./Socials";
 import { Logo } from "./Logo";
 import { Menu } from "./Menu";
+import { MultiButton } from "./MultiButton";
 
 export const Footer = () => {
   return (
     <>
       <hr className="pelican" />
       <footer className="aconcagua-padding-block-start">
-        <div className="pelican multi_button multi_button-center">
-          <button type="button">{faker.phone.number()}</button>
-          <a
-            href={`mailto:${faker.internet.email()}`}
-            rel="norel norefferer"
-            className="button"
-          >
-            {faker.internet.email()}
-          </a>
+        <div className="pelican">
+          <MultiButton />
         </div>
         <div className="pelican">
           <Menu />
