@@ -1,10 +1,11 @@
 {
   "name": "@rileybathurst/paddle",
   "private": false,
-  "version": "1.9.1",
+  "version": "1.9.2",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "tsc --noEmit && stay-gold && vite",
+    "dirty": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
@@ -21,7 +22,8 @@
     "react-aria-components": "^1.10.0",
     "react-dom": "^18.3.1",
     "react-inlinesvg": "^4.2.0",
-    "react-markdown": "^10.1.0"
+    "react-markdown": "^10.1.0",
+    "stay-gold": "^1.1.8"
   },
   "devDependencies": {
     "@biomejs/biome": "2.0.2",

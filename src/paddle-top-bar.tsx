@@ -2,8 +2,6 @@ import * as React from "react";
 import Markdown from "react-markdown";
 
 // TODO this would be nice to be able to close but I dont have it right yet
-// ! needs ranaming now I've removed the ...data or if it cant write why
-// TODO: move this to be exported from paddle to each branch site
 type PaddleTopBarTypes = {
   strapiBranch: {
     topbar: {

@@ -1,7 +1,6 @@
 // this is the Name.tsx file
 import React from 'react';
 import { Header } from './Header';
-import { Menu } from './Menu';
 import { Footer } from './Footer';
 import { Composition } from './Composition';
 import { LocationDeck } from './LocationDeck';

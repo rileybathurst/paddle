@@ -20,7 +20,7 @@ export const Ticket = () => {
       : undefined,
     duration: faker.datatype.boolean() ? faker.number.int(200) : undefined,
     allStrapiSunsetTourTime: { nodes: [] },
-    allStrapiMoonlightTourDateTime: { nodes: [] },
+    // allStrapiMoonlightTourDateTime: { nodes: [] },
   });
 
   return (

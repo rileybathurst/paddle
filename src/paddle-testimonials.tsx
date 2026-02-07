@@ -1,9 +1,9 @@
 import * as React from "react";
 import { PaddleTestimonial } from "./paddle-testimonial";
-import { type TestimonialTypes } from "./types/paddle-testimonial-types";
+import type { PaddleTestimonialTypes } from "./types/paddle-testimonial-types";
 
 interface TestimonialsTypes {
-  nodes: TestimonialTypes[];
+  nodes: PaddleTestimonialTypes[];
 }
 export const PaddleTestimonials = ({ nodes }: TestimonialsTypes) => {
   return (

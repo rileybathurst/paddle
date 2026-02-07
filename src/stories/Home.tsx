@@ -6,7 +6,7 @@ import { Footer } from './Footer';
 import { LocationDeck } from './LocationDeck';
 import { Pricing } from './Pricing';
 import { Breadcrumbs } from './Breadcrumbs';
-import { Menu } from './Menu';
+// import { Menu } from './Menu';
 import { BookNow } from './BookNow';
 import { Flight } from './Flight';
 import { Testimonial } from './Testimonial';
@@ -45,7 +45,7 @@ export const Home = () => {
         <div>
           <Composition />
 
-          <Pricing book={true} />
+          <Pricing />
         </div>
       </main>
 

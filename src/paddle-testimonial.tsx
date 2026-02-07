@@ -1,5 +1,5 @@
 import * as React from "react";
-import { TestimonialTypes } from "./types/paddle-testimonial-types";
+import { PaddleTestimonialTypes } from "./types/paddle-testimonial-types";
 
 export const PaddleTestimonial = ({
   id,
@@ -7,7 +7,7 @@ export const PaddleTestimonial = ({
   customer,
   sign,
   location,
-}: TestimonialTypes) => {
+}: PaddleTestimonialTypes) => {
   return (
     <li key={id}>
       <p className="elbrus">

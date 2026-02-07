@@ -1,84 +1,50 @@
-// ! this is not ready
+// TODO: this is not ready dont use it
+// Vite runs so I feel like I can pull this into it for testing itll be abit of a thing that might not be used but I think easier than storybook
 
-import React, { useState } from 'react';
+import React from 'react';
 
-import Time from "../../components/time";
-import BookNow from '../../components/peek/book-now';
-import { PaddleTime } from './paddle-time';
+// import { PaddleTime } from './paddle-time';
 import { PaddleBookNow } from './paddle-book-now';
 
-const Option = (props) => {
-  if (props.name === props.current) {
-    return (
-      <option selected key={props.key}>{props.name}</option>
-    )
-  }
+type CompareDetailsProps = {
+  title: string;
+  link: string;
+  sport: string;
+  duration?: string;
+  timeframe?: string;
+  start?: string;
+  finish?: string;
+  fitness?: string;
+  location: string;
+  excerpt: string;
+  minimum: number;
+  price: number;
+  peeks?: string;
+  peek_base: string;
+  strapiBranchName: string;
+};
 
-  if (props.name === props.other) {
-    return (
-      <option disabled key={props.key}>{props.name}</option>
-    )
-  }
-
-  return (
-    <option key={props.key}>{props.name}</option>
-  )
-}
-
-const first = (e) => {
-  setTour1(e.target.value);
-  return null;
-}
-
-const second = (e) => {
-  setTour2(e.target.value);
-  return null;
-}
-
-const Details1 = (props) => {
-  props.set.forEach(element => {
-    if (element.name === props.show) {
-      setLink1(element.slug);
-      setSport1(element.sport);
-      setDuration1(element.duration);
-      setStart1(element.start);
-      setFinish1(element.finish);
-      setFitness1(element.fitness);
-      setLocation1(element.location);
-      setExcerpt1(element.excerpt);
-      setMinimum1(element.minimum);
-      setPrice1(element.price);
-      setPeeks1(element.peek);
-    }
-  });
-  return null;
-}
-
-const Details2 = (props) => {
-  props.set.forEach(element => {
-    if (element.name === props.show) {
-      setLink2(element.slug);
-      setSport2(element.sport);
-      setDuration2(element.duration);
-      setStart2(element.start);
-      setFinish2(element.finish);
-      setFitness2(element.fitness);
-      setLocation2(element.location);
-      setExcerpt2(element.excerpt);
-      setMinimum2(element.minimum);
-      setPrice2(element.price);
-      setPeeks2(element.peek);
-    }
-  });
-  return null;
-}
-
-const CompareDetails = ({ key, title, link, sport, duration, start, finish, fitness, location, excerpt, minimum, price, peeks }) => {
+const CompareDetails = ({ 
+  title,
+  link,
+  sport,
+  // duration,
+  // timeframe,
+  // start,
+  // finish,
+  fitness,
+  location,
+  excerpt,
+  minimum,
+  price,
+  peeks,
+  peek_base,
+  strapiBranchName }: CompareDetailsProps) => {
   return (
     <section>
       {/* <select
         name="tour1"
-        id={key}
+        id={title}
         className="comparesheet_select"
         aria-label="Select first tour or lesson"
       >
@@ -97,14 +63,14 @@ const CompareDetails = ({ key, title, link, sport, duration, start, finish, fitn
 
       <h4 className="capitalize">{sport}</h4>
 
-      <p>
+      {/* <p>
         <PaddleTime
           start={start}
           finish={finish}
           duration={duration}
           timeframe={timeframe}
         />
-      </p>
+      </p> */}
 
       <p className="capitalize">
         {fitness} <span className="show-below__vulture">&nbsp;fitness</span>
@@ -123,9 +89,9 @@ const CompareDetails = ({ key, title, link, sport, duration, start, finish, fitn
       </p>
 
       <PaddleBookNow
-        peek_base={peeks1}
+        peek_base={peek_base}
         strapiBranchName={strapiBranchName}
-        specificLink={peeks1}
+        specificLink={peeks}
       />
     </section >
   )
@@ -153,7 +119,7 @@ type PaddleCompareTypes = {
 };
 export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleCompareTypes) => {
 
-  const [id1, setID1] = useState(tours[0].id);
+  /* const [id1, setID1] = useState(tours[0].id);
   const [id2, setID2] = useState(tours[1].id);
 
   const [tour1, setTour1] = useState(tours[0].name);
@@ -167,6 +133,9 @@ export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleComp
 
   const [duration1, setDuration1] = useState(tours[0].duration || 'not set');
   const [duration2, setDuration2] = useState(tours[1].duration || 'not set');
+
+  const [timeframe1, setTimeframe1] = useState(tours[0].timeframe || 'not set');
+  const [timeframe2, setTimeframe2] = useState(tours[1].timeframe || 'not set');
 
   const [start1, setStart1] = useState(tours[0].start || 'not set');
   const [start2, setStart2] = useState(tours[1].start || 'not set');
@@ -187,7 +156,36 @@ export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleComp
   const [peeks2, setPeeks2] = useState(tours[1].peek || 'not set');
 
   const [fitness1, setFitness1] = useState(tours[0].fitness || 'fitness');
-  const [fitness2, setFitness2] = useState(tours[1].fitness || 'fitness');
+  const [fitness2, setFitness2] = useState(tours[1].fitness || 'fitness'); */
+
+  // I dont know if this works as a state but I need to slowly build it all back out as its a mess
+  let id1 = tours[0].id;
+  let id2 = tours[1].id;
+  
+  let tour1 = tours[0].name;
+  let tour2 = tours[1].name;
+  let link1 = tours[0].slug;
+  let link2 = tours[1].slug;
+  let sport1 = tours[0].sport;
+  let sport2 = tours[1].sport;
+  let duration1 = tours[0].duration || 'not set';
+  let duration2 = tours[1].duration || 'not set';
+  let timeframe1 = tours[0].timeframe || 'not set';
+  let timeframe2 = tours[1].timeframe || 'not set';
+  let start1 = tours[0].start || 'not set';
+  let start2 = tours[1].start || 'not set';
+  let finish1 = tours[0].finish || 'not set';
+  let finish2 = tours[1].finish || 'not set';
+  let excerpt1 = tours[0].excerpt || 'not set';
+  let excerpt2 = tours[1].excerpt || 'not set';
+  let minimum1 = tours[0].minimum || 0;
+  let minimum2 = tours[1].minimum || 0;
+  let price1 = tours[0].price || 0;
+  let price2 = tours[1].price || 0;
+  let peeks1 = tours[0].peek || 'not set';
+  let peeks2 = tours[1].peek || 'not set';
+  let fitness1 = tours[0].fitness || 'fitness';
+  let fitness2 = tours[1].fitness || 'fitness';
 
   return (
     <>

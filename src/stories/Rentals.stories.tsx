@@ -1,6 +1,6 @@
 // this is the Name.stories.tsx file
 import type { Meta, StoryObj } from '@storybook/react';
-import { Rentals } from './rentals';
+import { Rentals } from './Rentals';
 
 const meta = {
   component: Rentals,

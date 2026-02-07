@@ -27,7 +27,7 @@ export const LoggedIn: Story = {
     /* user: {
       name: "Jane Doe",
     }, */
-    location: "tahoe-city",
+    // location: "tahoe-city",
   },
 };
 

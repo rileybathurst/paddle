@@ -1,3 +1,4 @@
+// import React from "react";
 import type { PaddleGatsbyImageType } from "./paddle-gatsby-image-type";
 
 export type PaddleTicketTypes = {

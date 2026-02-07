@@ -28,7 +28,7 @@ export const PaddleTicket = ({
     duration: duration,
     timeframe: timeframe,
     allStrapiSunsetTourTime: allStrapiSunsetTourTime,
-    allStrapiMoonlightTourDateTime: { nodes: [] }, // Provide an empty nodes array or the correct data as needed
+    // TODO: but I dont think these are needed here? allStrapiMoonlightTourDateTime: { nodes: [] }, // Provide an empty nodes array or the correct data as needed
     slug: slug,
   });
 
