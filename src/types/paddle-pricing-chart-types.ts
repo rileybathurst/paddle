@@ -10,6 +10,10 @@ export type paddlePricingChartTypes = {
       fullDay: number;
       pedalAdd?: number;
 
+      branch: {
+        slug: string;
+      };
+
       retail?: {
         slug: string;
         sport: {
@@ -21,4 +25,7 @@ export type paddlePricingChartTypes = {
       };
     }[];
   };
+  branch: {
+    slug: string;
+  }
 };

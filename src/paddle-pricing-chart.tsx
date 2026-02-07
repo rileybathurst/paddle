@@ -35,7 +35,14 @@ const LineBreaker = ({ text }: { text: string; }) => {
   );
 }
 
-export const PaddlePricingChart = ({ rentalRates }: paddlePricingChartTypes) => {
+export const PaddlePricingChart = ({ rentalRates, branch }: paddlePricingChartTypes) => {
+
+  console.log('paddle pricing chart testing');
+  console.log('🦄');
+  console.log(rentalRates);
+  console.log(branch);
+  console.log('🦖');
+
   return (
     <div className="pricing-chart">
       <div className="column">
@@ -50,7 +57,7 @@ export const PaddlePricingChart = ({ rentalRates }: paddlePricingChartTypes) => 
 
       {rentalRates.nodes.map((rate) => (
         <div key={rate.id} className="column">
-          {rate.retail ? (
+          {rate.retail && rate.branch.slug == branch.slug ? (
             <Link to={`/retail/${rate.retail.sport.slug}/${rate.retail.brand.slug}/${rate.retail.slug}`}>
               <LineBreaker text={rate.item} />
             </Link>
