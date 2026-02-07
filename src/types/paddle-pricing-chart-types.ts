@@ -10,9 +10,9 @@ export type paddlePricingChartTypes = {
       fullDay: number;
       pedalAdd?: number;
 
-      branch: {
+      branches?: {
         slug: string;
-      };
+      }[];
 
       retail?: {
         slug: string;
@@ -25,7 +25,7 @@ export type paddlePricingChartTypes = {
       };
     }[];
   };
-  branch: {
+  branches?: {
     slug: string;
   }
 };
