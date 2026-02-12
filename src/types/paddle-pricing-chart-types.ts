@@ -5,10 +5,10 @@ export type paddlePricingChartTypes = {
     nodes: {
       id: React.Key;
       item: string;
-      oneHour: number;
-      threeHour: number;
-      fullDay: number;
-      pedalAdd?: number;
+      oneHour?: number | null;
+      threeHour?: number | null;
+      fullDay?: number | null;
+      pedalAdd?: number | null;
 
       branches?: {
         slug: string;
@@ -22,10 +22,10 @@ export type paddlePricingChartTypes = {
         brand: {
           slug: string;
         };
-      };
+      } | null;
     }[];
   };
   branches?: {
     slug: string;
-  }
+  } | null;
 };
