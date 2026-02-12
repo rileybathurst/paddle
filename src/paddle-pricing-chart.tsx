@@ -36,9 +36,12 @@ const LineBreaker = ({ text }: { text: string; }) => {
 }
 
 export const PaddlePricingChart = ({ rentalRates, branches }: paddlePricingChartTypes) => {
-  console.log(rentalRates.nodes.map(rate => rate.branches?.map(
+  
+  // console.log(branches);
+
+  /* console.log(rentalRates.nodes.map(rate => rate.branches?.map(
     branch => branch.slug
-  ).flat().some(slug => slug === branches?.slug) && console.log("found a match")));
+  ).flat().some(slug => slug === branches?.slug) && console.log("found a match"))); */
 
   return (
     <div className="pricing-chart">
