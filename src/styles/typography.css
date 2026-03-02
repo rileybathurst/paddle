@@ -60,7 +60,7 @@ h4,
 
 h5,
 .elbrus {
-  font-size: var(--kosciuszko); /* 20px */
+  font-size: var(--elbrus); /* 20px */
   margin-bottom: 0.625rem; /* 10px */
 }
 
