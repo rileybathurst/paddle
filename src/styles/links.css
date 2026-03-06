@@ -45,6 +45,10 @@ a svg {
 /* #MENU LIST */
 /*------------------*/
 
+.menu-list {
+  padding: 0;
+}
+
 /* TODO: v1.2 a lot of this is smaller than the variables test it all */
 .menu-list a:not(.button) {
   padding: 0.25rem;

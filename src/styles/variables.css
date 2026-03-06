@@ -39,13 +39,13 @@
 
   /* Sand */
 
-  --sand-100: oklch(0.97 0.01 50);
-  --sand-200: oklch(0.95 0.02 50);
-  --sand-300: oklch(0.92 0.03 50);
-  --sand-400: oklch(0.88 0.04 50);
+  --sand-100: oklch(0.97 0.025 75);
+  --sand-200: oklch(0.95 0.035 75);
+  --sand-300: oklch(0.92 0.05 75);
+  --sand-400: oklch(0.88 0.075 75);
   /* this finishes where 500 normally would go dark */
 
-  @supports not (color: oklch(0.97 0.01 50)) {
+  @supports not (color: oklch(0.97 0.02 75)) {
     --sand-100: #fbf3ef;
     --sand-200: #faebe3;
     --sand-300: #f6dfd3;

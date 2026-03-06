@@ -10,10 +10,13 @@ import { Logo } from "./Logo";
 import { Menu } from "./Menu";
 import { MultiButton } from "./MultiButton";
 
-export const Footer = () => {
+type FooterType = {
+  startingHR?: boolean;
+};
+export const Footer = ({ startingHR }: FooterType) => {
   return (
     <>
-      <hr className="pelican" />
+      {startingHR && <hr className="pelican" />}
       <footer className="aconcagua-padding-block-start">
         <div className="pelican">
           <MultiButton />

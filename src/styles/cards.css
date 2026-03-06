@@ -234,10 +234,12 @@
 }
 
 .ticket {
-  width: 100%;
-  height: 100%;
-  background-color: var(--neutral-200);
+  width: calc(100% - 2 * var(--kosciuszko));
+  height: calc(100% - 2 * var(--kosciuszko));
+  background-color: white;
   border: 1px solid var(--neutral-300);
+  border-radius:  var(--card-radius);
+  padding: var(--kosciuszko);
 
   @media (prefers-color-scheme: dark) {
     background-color: var(--neutral-700);
@@ -266,6 +268,14 @@
   .ticket__header,
   .ticket__specs {
     padding-inline: var(--vinson);
+  }
+}
+
+.tahoe-city .ticket {
+  border-color: var(--sand-400);
+
+  @media (prefers-color-scheme: dark) {
+    border-color: var(--neutral-700);
   }
 }
 

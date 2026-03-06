@@ -412,7 +412,6 @@ header {
 }
 
 .location:not(:last-child) {
-  border-block-end: 1px solid var(--neutral-400);
   margin-block-end: var(--kosciuszko);
 }
 
@@ -422,6 +421,7 @@ header {
   align-items: center;
   gap: clamp(var(--kosciuszko), 1.67vw, var(--elbrus));
   border-radius: var(--card-radius);
+  padding: var(--vinson);
 
   > svg,
   .svg {

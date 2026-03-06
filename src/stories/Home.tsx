@@ -49,7 +49,7 @@ export const Home = () => {
         </div>
       </main>
 
-      <section className="cloud aconcagua-padding-block-end">
+      <section className="panel aconcagua-padding-block-end">
         <div className='condor aconcagua-padding-block'>
 
           <h3 className="">
@@ -84,15 +84,15 @@ export const Home = () => {
           <p>{faker.lorem.sentences(2)}</p>
         </article>
         <BrandList />
-        <hr className='aconcagua-margin-block-start aconcagua-margin-block-end' />
       </section>
 
+      <section className='panel aconcagua-margin-block-end everest-padding-block'>
+        <ul className='pelican '>
       {/* specifically using a single here */}
-      <ul className='pelican aconcagua-margin-block-end'>
-        <Testimonial />
-      </ul>
+          <Testimonial />
+        </ul>
+      </section>
 
-      <Breadcrumbs />
       <Footer />
     </ >
   );

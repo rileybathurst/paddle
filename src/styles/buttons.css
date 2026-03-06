@@ -57,8 +57,6 @@ button:active {
 
 .book-now {
   text-transform: uppercase;
-  /* ? why is this different than a regular button */
-  margin-block-start: var(--kosciuszko);
   background-color: var(--neutral-800);
   border-color: var(--neutral-700);
   color: var(--neutral-300);
@@ -102,58 +100,32 @@ button:active {
 
 .tahoe-city {
   button,
-  .button {
-    /* * reverts to clean dark scheme */
-    @media (prefers-color-scheme: light) {
-      background-color: var(--sand-200);
-      border-color: var(--sand-100);
-      color: var(--tanager-100);
-    }
+  .button, .book-now {
+    background-color: var(--tanager-200);
+    border-color: var(--tanager-100);
+    color: white;
   }
 
   button:hover,
   .button:hover,
+  .book-now:hover,
   .button__hover {
     @media (prefers-color-scheme: light) {
-      background-color: var(--sand-300);
-      border-color: var(--sand-200);
-      color: var(--tanager-200);
+          background-color: var(--tanager-300);
+    border-color: var(--tanager-200);
+    color: var(--neutral-200);
     }
   }
 
   button:active,
   .button:active,
+  .book-now:active,
   .button__active {
     @media (prefers-color-scheme: light) {
-      background-color: var(--sand-400);
-      border-color: var(--sand-300);
-      color: var(--tanager-300);
-    }
-  }
-
-  /* BOOK NOW */
-  .book-now {
-    background-color: var(--tanager-200);
-    border-color: var(--tanager-100);
-    color: var(--neutral-100);
-  }
-
-  /* @media (prefers-color-scheme: dark) {
-  } */
-
-  .book-now:hover,
-  .book-now__hover {
-    background-color: var(--tanager-300);
-    border-color: var(--tanager-200);
-    color: var(--neutral-200);
-  }
-
-  .book-now:active,
-  .book-now__active,
-  button:active {
-    background-color: var(--tanager-400);
+      background-color: var(--tanager-400);
     border-color: var(--tanager-300);
     color: var(--neutral-300);
+    }
   }
 }
 
