@@ -3,12 +3,24 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import type { PaddleGatsbyImageType } from "./types/paddle-gatsby-image-type";
 
 type textureTypes = {
-  baseOne: PaddleGatsbyImageType;
-  baseTwo: PaddleGatsbyImageType;
-  baseThree: PaddleGatsbyImageType;
-  topOne: PaddleGatsbyImageType;
-  topTwo: PaddleGatsbyImageType;
-  topThree: PaddleGatsbyImageType;
+  baseOne: {
+    image: PaddleGatsbyImageType;
+  };
+  baseTwo: {
+    image: PaddleGatsbyImageType;
+  };
+  baseThree: {
+    image: PaddleGatsbyImageType;
+  };
+  topOne: {
+    image: PaddleGatsbyImageType;
+  };
+  topTwo: {
+    image: PaddleGatsbyImageType;
+  };
+  topThree: {
+    image: PaddleGatsbyImageType;
+  };
 };
 export const PaddleTextureBackgrounds = ({ baseOne, baseTwo, baseThree, topOne, topTwo, topThree }: textureTypes) => {
   const baseTextures = [
