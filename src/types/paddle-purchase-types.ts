@@ -1,6 +1,6 @@
 import type { PaddleGatsbyImageType } from "./paddle-gatsby-image-type";
 
-export type PaddlePurchaseTypes = {
+type BasePaddlePurchaseTypes = {
   id: React.Key;
   title: string;
   slug: string;
@@ -12,10 +12,19 @@ export type PaddlePurchaseTypes = {
   demo: boolean;
   discount?: number;
   cutout: PaddleGatsbyImageType;
-  sport: {
-    slug: string;
-  };
-  brand: {
-    slug: string;
-  };
+
+  baseOne: { image: PaddleGatsbyImageType };
+  baseTwo: { image: PaddleGatsbyImageType };
+  baseThree: { image: PaddleGatsbyImageType };
+  topOne: { image: PaddleGatsbyImageType };
+  topTwo: { image: PaddleGatsbyImageType };
+  topThree: { image: PaddleGatsbyImageType };
 };
+
+export type PaddlePurchaseTypes = BasePaddlePurchaseTypes & (
+  | { sport: { slug: string }; sportSlug?: string }
+  | { sportSlug: string; sport?: { slug: string } }
+) & (
+  | { brand: { slug: string }; brandSlug?: string }
+  | { brandSlug: string; brand?: { slug: string } }
+);

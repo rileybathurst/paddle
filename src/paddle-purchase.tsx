@@ -5,6 +5,7 @@ import type { PaddleGatsbyImageType } from "./types/paddle-gatsby-image-type";
 import { PaddleInchesRemainder } from "./paddle-inches-remainder";
 import { PaddleTextureBackgrounds } from "./paddle-texture-backgrounds";
 import { PaddlePurchaseTypes } from "./types/paddle-purchase-types";
+import { PaddlePurchaseAndImageTypes } from "./types/paddle-purchase-image-types";
 
 // TODO: I'm not sure if this is needed or I can loop it easier
 interface NameTypes {
@@ -46,16 +47,7 @@ const Badges = ({ inflatable, demo, discount }: BadgeTypes) => {
   return null;
 }
 
-interface PurchaseTypes extends PaddlePurchaseTypes {
-  sportSlug: string;
-  brandSlug: string;
-  baseOne: { image: PaddleGatsbyImageType };
-  baseTwo: { image: PaddleGatsbyImageType };
-  baseThree: { image: PaddleGatsbyImageType };
-  topOne: { image: PaddleGatsbyImageType };
-  topTwo: { image: PaddleGatsbyImageType };
-  topThree: { image: PaddleGatsbyImageType };
-};
+
 export const PaddlePurchase = ({
   id,
   title,
@@ -75,7 +67,7 @@ export const PaddlePurchase = ({
   baseThree,
   topOne,
   topTwo,
-  topThree }: PurchaseTypes) => {
+  topThree }: PaddlePurchaseAndImageTypes) => {
 
   return (
     <article key={id} className="purchase">

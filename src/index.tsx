@@ -38,6 +38,7 @@ export * from "./types/paddle-location-types";
 export * from "./types/paddle-location-deck-types";
 export * from "./types/paddle-gatsby-image-type";
 export * from "./types/paddle-purchase-types";
+export * from "./types/paddle-purchase-image-types";
 export * from "./types/paddle-brand-types";
 export * from "./types/paddle-book-now-types";
 export * from "./types/paddle-testimonial-types";
