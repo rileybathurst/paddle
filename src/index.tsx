@@ -8,7 +8,7 @@ export * from "./paddle-featured-sort";
 // Molecules
 export * from "./paddle-composition";
 export * from "./paddle-socials";
-export * from "./paddle-location-card";
+export * from "./paddle-location";
 export * from "./paddle-testimonials";
 export * from "./paddle-ticket";
 export * from "./paddle-sunset-tour-times";
@@ -34,8 +34,10 @@ export * from "./paddle-seo";
 
 // Types
 export * from "./types/paddle-ticket-types";
-export * from "./types/paddle-location-card-types";
+export * from "./types/paddle-location-types";
 export * from "./types/paddle-location-deck-types";
 export * from "./types/paddle-gatsby-image-type";
 export * from "./types/paddle-purchase-types";
 export * from "./types/paddle-brand-types";
+export * from "./types/paddle-book-now-types";
+export * from "./types/paddle-testimonial-types";

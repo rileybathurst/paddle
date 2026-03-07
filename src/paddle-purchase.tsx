@@ -4,6 +4,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import type { PaddleGatsbyImageType } from "./types/paddle-gatsby-image-type";
 import { PaddleInchesRemainder } from "./paddle-inches-remainder";
 import { PaddleTextureBackgrounds } from "./paddle-texture-backgrounds";
+import { PaddlePurchaseTypes } from "./types/paddle-purchase-types";
 
 // TODO: I'm not sure if this is needed or I can loop it easier
 interface NameTypes {
@@ -45,18 +46,7 @@ const Badges = ({ inflatable, demo, discount }: BadgeTypes) => {
   return null;
 }
 
-type purchaseTypes = {
-  id: React.Key;
-  title: string;
-  slug: string;
-  excerpt: string;
-  length: number;
-  width: number;
-  inflatable: boolean;
-  capacity: number;
-  demo: boolean;
-  discount?: number;
-  cutout: PaddleGatsbyImageType;
+interface PurchaseTypes extends PaddlePurchaseTypes {
   sportSlug: string;
   brandSlug: string;
   baseOne: { image: PaddleGatsbyImageType };
@@ -66,7 +56,26 @@ type purchaseTypes = {
   topTwo: { image: PaddleGatsbyImageType };
   topThree: { image: PaddleGatsbyImageType };
 };
-export const PaddlePurchase = ({ id, title, slug, excerpt, length, width, inflatable, capacity, demo, discount, cutout, sportSlug, brandSlug, baseOne, baseTwo, baseThree, topOne, topTwo, topThree }: purchaseTypes) => {
+export const PaddlePurchase = ({
+  id,
+  title,
+  slug,
+  excerpt,
+  length,
+  width,
+  inflatable,
+  capacity,
+  demo,
+  discount,
+  cutout,
+  sportSlug,
+  brandSlug,
+  baseOne,
+  baseTwo,
+  baseThree,
+  topOne,
+  topTwo,
+  topThree }: PurchaseTypes) => {
 
   return (
     <article key={id} className="purchase">

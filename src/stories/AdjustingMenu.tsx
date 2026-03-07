@@ -1,3 +1,5 @@
+// * Not finished or in use yet
+
 // this is the Name.tsx file
 // https://github.com/withastro/templates/blob/main/templates/portfolio/src/components/Nav.astro
 import React, { useState, useRef, useEffect } from 'react';

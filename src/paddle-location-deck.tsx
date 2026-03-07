@@ -1,6 +1,6 @@
 import * as React from "react";
-import { PaddleLocationCard } from "./paddle-location-card";
-import type { PaddleLocationCardTypes } from "./types/paddle-location-card-types";
+import { PaddleLocation } from "./paddle-location";
+import type { PaddleLocationTypes } from "./types/paddle-location-types";
 import type { PaddleLocationDeckTypes } from "./types/paddle-location-deck-types";
 
 export const PaddleLocationDeck = ({
@@ -11,8 +11,8 @@ export const PaddleLocationDeck = ({
 }: PaddleLocationDeckTypes) => {
   return (
     <section className="location-deck">
-      {nodes.map((location: PaddleLocationCardTypes) => (
-        <PaddleLocationCard
+      {nodes.map((location: PaddleLocationTypes) => (
+        <PaddleLocation
           key={location.id}
           season_start={season_start}
           season_end={season_end}
