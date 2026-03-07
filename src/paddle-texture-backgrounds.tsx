@@ -30,13 +30,13 @@ export const PaddleTextureBackgrounds = ({ baseOne, baseTwo, baseThree, topOne, 
   return (
     <>
       <GatsbyImage
-        image={baseTextures[baseRandom].localFile.childImageSharp.gatsbyImageData}
+        image={baseTextures[baseRandom].image.localFile.childImageSharp.gatsbyImageData}
         alt="splash texture"
         className="texture-slice"
         objectFit="contain"
       />
       <GatsbyImage
-        image={topTextures[topRandom].localFile.childImageSharp.gatsbyImageData}
+        image={topTextures[topRandom].image.localFile.childImageSharp.gatsbyImageData}
         alt="sand texture"
         className="texture-slice crop"
         objectFit="contain"
