@@ -3,12 +3,12 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import type { PaddleGatsbyImageType } from "./types/paddle-gatsby-image-type";
 
 type textureTypes = {
-  baseOne: { image: PaddleGatsbyImageType };
-  baseTwo: { image: PaddleGatsbyImageType };
-  baseThree: { image: PaddleGatsbyImageType };
-  topOne: { image: PaddleGatsbyImageType };
-  topTwo: { image: PaddleGatsbyImageType };
-  topThree: { image: PaddleGatsbyImageType };
+  baseOne: PaddleGatsbyImageType;
+  baseTwo: PaddleGatsbyImageType;
+  baseThree: PaddleGatsbyImageType;
+  topOne: PaddleGatsbyImageType;
+  topTwo: PaddleGatsbyImageType;
+  topThree: PaddleGatsbyImageType;
 };
 export const PaddleTextureBackgrounds = ({ baseOne, baseTwo, baseThree, topOne, topTwo, topThree }: textureTypes) => {
   const baseTextures = [
@@ -30,13 +30,13 @@ export const PaddleTextureBackgrounds = ({ baseOne, baseTwo, baseThree, topOne, 
   return (
     <>
       <GatsbyImage
-        image={baseTextures[baseRandom].image.localFile.childImageSharp.gatsbyImageData}
+        image={baseTextures[baseRandom].localFile.childImageSharp.gatsbyImageData}
         alt="splash texture"
         className="texture-slice"
         objectFit="contain"
       />
       <GatsbyImage
-        image={topTextures[topRandom].image.localFile.childImageSharp.gatsbyImageData}
+        image={topTextures[topRandom].localFile.childImageSharp.gatsbyImageData}
         alt="sand texture"
         className="texture-slice crop"
         objectFit="contain"

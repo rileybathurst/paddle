@@ -16,7 +16,7 @@ export const PaddleLocationDeck = ({
           key={location.id}
           season_start={season_start}
           season_end={season_end}
-          phoneNumber={phone}
+          phone={phone}
           {...location}
         />
       ))}

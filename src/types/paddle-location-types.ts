@@ -25,9 +25,8 @@ export interface PaddleLocationTypes {
 
   season_start?: string;
   season_end?: string;
-  phoneNumber?: string;
+  phone?: string;
 
   offSeasonDetails?: string;
-  phone?: boolean;
   weatherPermitting?: boolean;
 }
