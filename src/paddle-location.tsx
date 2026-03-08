@@ -119,12 +119,12 @@ const Content = ({
   phone,
 }: ContentTypes) => {
   return (
-    <>
+    <React.Fragment>
       <div className="svg">
         <SVG src={svg} />
       </div>
 
-      <div className="location_details">
+      <div className="location-details">
         <h3>{name}</h3>
 
         {streetAddress ||
@@ -161,7 +161,7 @@ const Content = ({
           <Phone phone={phone} />
         )}
       </div>
-    </>
+    </React.Fragment>
   );
 };
 
@@ -206,7 +206,7 @@ export const PaddleLocation = ({
   );
 
   return link.includes("http") ? (
-    <React.Fragment>
+    <div className={`location-wrapper ${phone ? 'phone-spacer' : ''}`}>
       <a
         href={link}
         className="location"
@@ -219,15 +219,15 @@ export const PaddleLocation = ({
       {phone && (
         <Phone phone={phoneDidgits} />
       )}
-    </React.Fragment>
+    </div>
   ) : (
-    <React.Fragment>
+    <div className={`location-wrapper ${phone ? 'phone-spacer' : ''}`}>
       <Link to={link} className="location">
         {content}
       </Link>
       {phone && (
         <Phone phone={phoneDidgits} />
       )}
-    </React.Fragment>
+    </div>
   );
 };

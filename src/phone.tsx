@@ -19,7 +19,10 @@ type PhoneTypes = {
 
 const Phone = ({ phone }: PhoneTypes) => {
   return (
-    <a href={`tel:${phone}`} rel="norel norefferer" className="button">
+    <a href={`tel:${phone}`}
+    rel="noopener noreferrer"
+    className="button location-phone"
+    >
       Phone: <FormatPhoneNumber phoneNumberString={phone} />
     </a>
   );
