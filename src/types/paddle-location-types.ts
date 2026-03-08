@@ -15,7 +15,6 @@ export interface PaddleLocationTypes {
     season_start: string;
     season_end: string;
   };
-  background?: string;
 
   streetAddress?: string;
   addressLocality?: string;
@@ -23,9 +22,9 @@ export interface PaddleLocationTypes {
   postalCode?: string;
   commonName?: string;
 
-  season_start?: string;
-  season_end?: string;
-  phone?: string;
+  season_start: string;
+  season_end: string;
+  phone: number;
 
   offSeasonDetails?: string;
   weatherPermitting?: boolean;

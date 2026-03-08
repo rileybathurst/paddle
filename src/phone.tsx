@@ -1,13 +1,19 @@
 import * as React from "react";
 
 interface FormatPhoneNumberTypes {
-  phoneNumberString: number;
+  phone: number;
 }
-const FormatPhoneNumber = ({ phoneNumberString }: FormatPhoneNumberTypes) => {
-  const phoneNumber = String(phoneNumberString);
+const FormatPhoneNumber = ({ phone }: FormatPhoneNumberTypes) => {
+  const phoneNumber = String(phone);
+
+  // TODO: testing
+  console.log("FormatPhoneNumber phone", phone);
   const cleaned = `${phoneNumber}`.replace(/\D/g, "");
   const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
   if (match) {
+
+    // TODO: testing
+    console.log("match", match);
     return `(${match[1]}) ${match[2]}-${match[3]}`;
   }
   return null;
@@ -19,7 +25,6 @@ type PhoneTypes = {
 
 const Phone = ({ phone }: PhoneTypes) => {
 
-    
   // TODO: testing
   console.log("phone", phone);
 
@@ -28,7 +33,7 @@ const Phone = ({ phone }: PhoneTypes) => {
     rel="noopener noreferrer"
     className="button location-phone"
     >
-      Phone: <FormatPhoneNumber phoneNumberString={phone} />
+      Phone: <FormatPhoneNumber phone={phone} />
     </a>
   );
 };

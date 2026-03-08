@@ -184,8 +184,6 @@ export const PaddleLocation = ({
   weatherPermitting
 }: PaddleLocationTypes) => {
 
-  const phoneDidgits = Number(phone);
-
     
   // TODO: testing
   console.log("PaddleLocation phone", phone);
@@ -221,7 +219,7 @@ export const PaddleLocation = ({
         {content}
       </a>
       {phone && (
-        <Phone phone={phoneDidgits} />
+        <Phone phone={phone} />
       )}
     </div>
   ) : (
@@ -230,7 +228,7 @@ export const PaddleLocation = ({
         {content}
       </Link>
       {phone && (
-        <Phone phone={phoneDidgits} />
+        <Phone phone={phone} />
       )}
     </div>
   );
