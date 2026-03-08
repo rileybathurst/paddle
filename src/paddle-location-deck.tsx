@@ -9,6 +9,10 @@ export const PaddleLocationDeck = ({
   season_end,
   phone
 }: PaddleLocationDeckTypes) => {
+  
+  // TODO: testing
+  console.log("PaddleLocationDeck phone", phone);
+
   return (
     <section className="location-deck">
       {nodes.map((location: PaddleLocationTypes) => (

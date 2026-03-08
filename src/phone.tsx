@@ -18,6 +18,11 @@ type PhoneTypes = {
 };
 
 const Phone = ({ phone }: PhoneTypes) => {
+
+    
+  // TODO: testing
+  console.log("phone", phone);
+
   return (
     <a href={`tel:${phone}`}
     rel="noopener noreferrer"

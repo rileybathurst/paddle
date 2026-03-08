@@ -186,6 +186,10 @@ export const PaddleLocation = ({
 
   const phoneDidgits = Number(phone);
 
+    
+  // TODO: testing
+  console.log("PaddleLocation phone", phone);
+
   const content = (
     <Content
       svg={svg}
