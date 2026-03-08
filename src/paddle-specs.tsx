@@ -10,10 +10,12 @@ const specs: SpecsTypes = {
     unit: "px",         // ✅ string
   }
 } */
+// * number[] is for cost when passing both price and discount
+// or 
 type SpecsTypes = {
   [key: string]: | string | number
   | {
-    [key: string]: string | number;
+    [key: string]: string | number | number[];
   };
 }
 // * moving the section tag to the parent component means you can loop yourself
