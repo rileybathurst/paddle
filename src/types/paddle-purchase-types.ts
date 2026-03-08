@@ -14,10 +14,14 @@ export type PaddlePurchaseTypes = {
   cutout: PaddleGatsbyImageType;
 
   sport: {
+    id: React.Key;
     slug: string
+    title: string;
   };
   brand: {
+    id: React.Key;
     slug: string
+    name: string;
   };
 
   baseOne: { image: PaddleGatsbyImageType };

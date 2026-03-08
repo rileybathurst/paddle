@@ -54,8 +54,8 @@ export const PaddlePurchase = ({
   demo,
   discount,
   cutout,
-  sportSlug,
-  brandSlug,
+  sport,
+  brand,
   baseOne,
   baseTwo,
   baseThree,
@@ -76,13 +76,13 @@ export const PaddlePurchase = ({
           topThree={topThree}
         />
         <Link
-          to={`/retail/${sportSlug}/${brandSlug}/${slug}`}
+          to={`/retail/${sport.slug}/${brand.slug}/${slug}`}
           className="image-link"
         >
           {cutout && (
             <GatsbyImage
               image={cutout.localFile?.childImageSharp?.gatsbyImageData}
-              alt={cutout.alternativeText || `${title} by ${brandSlug}`}
+              alt={cutout.alternativeText || `${title} by ${brand.name}`}
               className="cutout"
               objectFit="contain"
             />
@@ -95,7 +95,7 @@ export const PaddlePurchase = ({
         />
       </div>
       <h4 className="purchase__title">
-        <Link to={`/retail/${sportSlug}/${brandSlug}/${slug}`}>{title}</Link>
+        <Link to={`/retail/${sport.slug}/${brand.slug}/${slug}`}>{title}</Link>
       </h4>
       <hr />
       <p>{excerpt}</p>
