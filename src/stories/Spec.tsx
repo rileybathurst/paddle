@@ -3,7 +3,7 @@
 import React from "react";
 import { faker } from "@faker-js/faker";
 
-interface Spec3Types {
+interface SpecTypes {
   crew: string;
   capacity: {
     data: number;
@@ -18,7 +18,7 @@ interface Spec3Types {
     unit: string;
   };
 }
-const Spec3 = ({ crew, capacity, test, length }: Spec3Types) => {
+const Specification = ({ crew, capacity, test, length }: SpecTypes) => {
   // console.log(crew);
   // console.log(capacity);
 
@@ -68,7 +68,7 @@ const Spec3 = ({ crew, capacity, test, length }: Spec3Types) => {
 export const Spec = () => {
   return (
     <main>
-      <Spec3
+      <Specification
         crew={faker.helpers.arrayElement(["single", "double"])}
         capacity={{ data: faker.number.int(100), unit: "lbs" }}
       />

@@ -1,12 +1,19 @@
 import * as React from "react";
 import PaddleRemainder from "./paddle-remainder";
 
-interface SpecsTypes {
-  [key: string]:
-  | string
-  | number
+/* * this is slightly complex to allow for time
+const specs: SpecsTypes = {
+  name: "turbo",        // ✅ string
+  power: 500,           // ✅ number
+  dimensions: {         // ✅ nested object
+    width: 100,         // ✅ number
+    unit: "px",         // ✅ string
+  }
+} */
+type SpecsTypes = {
+  [key: string]: | string | number
   | {
-    [key: string]: string | number[];
+    [key: string]: string | number;
   };
 }
 // * moving the section tag to the parent component means you can loop yourself
@@ -16,9 +23,11 @@ export const PaddleSpecs = (specs: SpecsTypes) =>
     // console.log(key, value);
 
     if (!value) {
+      console.warn(`Missing value for ${key}`);
       return null;
     }
 
+    // * time is a special case as it has a nested value
     if (key === "time" && typeof value === "object") {
       return (
         <div key={key} className="spec">
@@ -29,6 +38,15 @@ export const PaddleSpecs = (specs: SpecsTypes) =>
       // }
       // * I cant remeber others yet
     }
+
+
+
+
+
+
+
+
+
 
     if (key === "cost" && typeof value === "object" && value.discount) {
       const amount = (Number(value.price) -
