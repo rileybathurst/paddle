@@ -9,10 +9,6 @@ export const PaddleLocationDeck = ({
   season_end,
   phone
 }: PaddleLocationDeckTypes) => {
-  
-  // TODO: testing
-  console.log("PaddleLocationDeck phone", phone);
-  console.log(typeof phone);
 
   return (
     <section className="location-deck">

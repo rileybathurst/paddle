@@ -181,12 +181,7 @@ export const PaddleLocation = ({
   season_start,
   season_end
 }: PaddleLocationTypes) => {
-
-    
-  // TODO: testing
-  console.log("PaddleLocation phone", phone);
-  console.log(typeof phone);
-
+  
   const content = (
     <Content
       svg={svg}
