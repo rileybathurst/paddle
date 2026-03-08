@@ -202,23 +202,32 @@ export const PaddleLocation = ({
       season_end={season_end}
       offSeasonDetails={offSeasonDetails}
       weatherPermitting={weatherPermitting}
-      phone={phoneDidgits}
     />
   );
 
   return link.includes("http") ? (
-    <a
-      href={link}
-      className="location"
-      target="_blank"
-      rel="noopener noreferrer"
-      title={name}
-    >
-      {content}
-    </a>
+    <React.Fragment>
+      <a
+        href={link}
+        className="location"
+        target="_blank"
+        rel="noopener noreferrer"
+        title={name}
+      >
+        {content}
+      </a>
+      {phone && (
+        <Phone phone={phoneDidgits} />
+      )}
+    </React.Fragment>
   ) : (
-    <Link to={link} className="location">
-      {content}
-    </Link>
+    <React.Fragment>
+      <Link to={link} className="location">
+        {content}
+      </Link>
+      {phone && (
+        <Phone phone={phoneDidgits} />
+      )}
+    </React.Fragment>
   );
 };

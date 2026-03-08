@@ -1,10 +1,8 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import type { PaddleGatsbyImageType } from "./types/paddle-gatsby-image-type";
 import { PaddleInchesRemainder } from "./paddle-inches-remainder";
 import { PaddleTextureBackgrounds } from "./paddle-texture-backgrounds";
-import { PaddlePurchaseTypes } from "./types/paddle-purchase-types";
 import { PaddlePurchaseAndImageTypes } from "./types/paddle-purchase-image-types";
 
 // TODO: I'm not sure if this is needed or I can loop it easier
