@@ -42,7 +42,8 @@ export const PaddleSpecs = (specs: SpecsTypes) =>
     }
 
 
-
+    // ! key = weight
+    // deal with hullweight and riggedweight as they are both weight but have different units
 
 
 
