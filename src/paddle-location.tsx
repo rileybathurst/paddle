@@ -54,13 +54,17 @@ const Season = ({
 
     return (
       <div>
-        <p>We&apos;re closed for the season</p>
+        {offSeasonDetails ? (
+          <p>{offSeasonDetails}</p>
+        ) : (
+          <p>We&apos;re closed for the season</p>
+        )}
 
         {currentDay < seasonStartDate ? (
           <p>We will reopen {season_start}, Weather Permitting</p>
         ) : null}
 
-        {offSeasonDetails ? <p>{offSeasonDetails}</p> : null}
+        
       </div>
     );
   }
@@ -68,7 +72,6 @@ const Season = ({
   console.warn(`No season start or end date provided for ${name}. Defaulting to off season.`);
   return (
     <div>
-      <p>We&apos;re closed for the season</p>
       {offSeasonDetails ? <p>{offSeasonDetails}</p> : null}
     </div>
   );
@@ -87,11 +90,10 @@ type ContentTypes = {
   opening_time: string;
   closing_time: string;
 
-  season_start?: string;
-  season_end?: string;
+  season_start: string;
+  season_end: string;
 
   offSeasonDetails?: string;
-  phone?: number;
   weatherPermitting?: boolean;
 
   streetAddress?: string;
@@ -116,7 +118,6 @@ const Content = ({
   season_start,
   season_end,
   offSeasonDetails,
-  phone,
 }: ContentTypes) => {
   return (
     <React.Fragment>
@@ -156,10 +157,6 @@ const Content = ({
             <Markdown>{description.data.description}</Markdown>
           </div>
         )}
-
-        {phone && (
-          <Phone phone={phone} />
-        )}
       </div>
     </React.Fragment>
   );
@@ -177,16 +174,18 @@ export const PaddleLocation = ({
   addressRegion,
   postalCode,
   commonName,
-  season_start,
-  season_end,
-  phone,
   offSeasonDetails,
-  weatherPermitting
+  weatherPermitting,
+  showThePhone,
+  phone,
+  season_start,
+  season_end
 }: PaddleLocationTypes) => {
 
     
   // TODO: testing
   console.log("PaddleLocation phone", phone);
+  console.log(typeof phone);
 
   const content = (
     <Content
@@ -208,7 +207,7 @@ export const PaddleLocation = ({
   );
 
   return link.includes("http") ? (
-    <div className={`location-wrapper ${phone ? 'phone-spacer' : ''}`}>
+    <div className={`location-wrapper ${showThePhone ? 'phone-spacer' : ''}`}>
       <a
         href={link}
         className="location"
@@ -218,16 +217,16 @@ export const PaddleLocation = ({
       >
         {content}
       </a>
-      {phone && (
+      {showThePhone && phone && (
         <Phone phone={phone} />
       )}
     </div>
   ) : (
-    <div className={`location-wrapper ${phone ? 'phone-spacer' : ''}`}>
+    <div className={`location-wrapper ${showThePhone ? 'phone-spacer' : ''}`}>
       <Link to={link} className="location">
         {content}
       </Link>
-      {phone && (
+      {showThePhone && phone && (
         <Phone phone={phone} />
       )}
     </div>

@@ -22,10 +22,12 @@ export interface PaddleLocationTypes {
   postalCode?: string;
   commonName?: string;
 
-  season_start: string;
-  season_end: string;
-  phone: number;
+  showThePhone: boolean;
 
   offSeasonDetails?: string;
   weatherPermitting?: boolean;
+
+  phone: number;
+  season_start: string;
+  season_end: string;
 }
