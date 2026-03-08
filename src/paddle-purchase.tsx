@@ -5,11 +5,7 @@ import { PaddleInchesRemainder } from "./paddle-inches-remainder";
 import { PaddleTextureBackgrounds } from "./paddle-texture-backgrounds";
 import { PaddlePurchaseAndImageTypes } from "./types/paddle-purchase-image-types";
 
-// TODO: I'm not sure if this is needed or I can loop it easier
-interface NameTypes {
-  name: string;
-}
-function Name({ name }: NameTypes) {
+function Name({ name }: { name: string }) {
   return (
     <div className="badge">
       <h5 className="capitalize">{name}</h5>
