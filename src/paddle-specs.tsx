@@ -22,7 +22,9 @@ type SpecsTypes = {
 export const PaddleSpecs = (specs: SpecsTypes) =>
   // <section className='specs'>
   Object.entries(specs).map(([key, value]) => {
-    // console.log(key, value);
+    
+    console.log(key);
+    console.log(value);
 
     if (!value) {
       console.warn(`Missing value for ${key}`);
@@ -44,11 +46,14 @@ export const PaddleSpecs = (specs: SpecsTypes) =>
 
     // ! key = weight
     // deal with hullweight and riggedweight as they are both weight but have different units
-
-
-
-
-
+    if (key === 'weight' && typeof value === 'object') {
+      return (
+        <div key={key} className="spec">
+          <h2>{key}</h2>
+          <h3>{value.map}</h3>
+        </div>
+      );
+    }
 
 
     if (key === "cost" && typeof value === "object" && value.discount) {
@@ -75,8 +80,8 @@ export const PaddleSpecs = (specs: SpecsTypes) =>
       );
     }
 
-    /* I didnt know you could call yourself like this */
-    /* I guess its not a infinite loop as its not calling an object */
+    /* // * this should be working for weight */
+    // The key kinda seems like its being thrown awaywhich is fine
     if (typeof value === "object") {
       return <PaddleSpecs {...value} />;
     }
