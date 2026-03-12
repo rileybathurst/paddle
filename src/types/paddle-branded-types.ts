@@ -1,10 +1,10 @@
 import { PaddlePurchaseTypes } from "./paddle-purchase-types";
 
-export type PaddleBrandedTypes = PaddlePurchaseTypes & {
+export interface PaddleBrandedTypes extends PaddlePurchaseTypes {
   brand: {
     id: string;
     slug: string;
     name: string;
-    svg?: string;
+    
   };
 }

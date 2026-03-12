@@ -22,6 +22,7 @@ export type PaddlePurchaseTypes = {
     id: React.Key;
     slug: string
     name: string;
+    svg?: string | null;
   };
 
   baseOne: { image: PaddleGatsbyImageType };
