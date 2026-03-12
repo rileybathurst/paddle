@@ -1,7 +1,7 @@
 {
   "name": "@rileybathurst/paddle",
   "private": false,
-  "version": "1.9.24",
+  "version": "1.9.25",
   "type": "module",
   "scripts": {
     "dev": "tsc --noEmit && stay-gold && vite",
