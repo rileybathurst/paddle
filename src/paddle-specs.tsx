@@ -20,7 +20,6 @@ type SpecsTypes = {
 }
 // * moving the section tag to the parent component means you can loop yourself
 export const PaddleSpecs = (specs: SpecsTypes) =>
-  // <section className='specs'>
   Object.entries(specs).map(([key, value]) => {
     
     console.log(key);
@@ -42,19 +41,6 @@ export const PaddleSpecs = (specs: SpecsTypes) =>
       // }
       // * I cant remeber others yet
     }
-
-
-    // ! key = weight
-    // deal with hullweight and riggedweight as they are both weight but have different units
-    if (key === 'weight' && typeof value === 'object') {
-      return (
-        <div key={key} className="spec">
-          <h2>{key}</h2>
-          <h3>{value.map}</h3>
-        </div>
-      );
-    }
-
 
     if (key === "cost" && typeof value === "object" && value.discount) {
       const amount = (Number(value.price) -
