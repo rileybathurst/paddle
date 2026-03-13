@@ -4,6 +4,7 @@ export * from "./paddle-time";
 export * from "./paddle-remainder";
 export * from "./paddle-format-phone-number";
 export * from "./paddle-featured-sort";
+export * from "./paddle-menu";
 
 // Molecules
 export * from "./paddle-composition";
