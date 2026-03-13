@@ -101,7 +101,9 @@ export const ComparePage = () => {
         </div>
       </main >
 
+<div className='panel'>
       <Breadcrumbs />
+</div>
       <Footer />
     </>
   );

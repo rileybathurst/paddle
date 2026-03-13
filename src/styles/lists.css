@@ -64,7 +64,7 @@ ol {
   }
 }
 
-.tour__minimum {
+.flex-row-wrap {
   display: flex;
   flex-flow: row wrap;
   gap: var(--vinson);

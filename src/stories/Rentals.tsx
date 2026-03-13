@@ -1,4 +1,5 @@
-// this is the Name.tsx file
+// TODO: this page needs love
+
 import React from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';

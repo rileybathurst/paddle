@@ -2,128 +2,95 @@
 /* #NAV */
 /*------------------------------------*/
 
-/* TODO: variables */
-
 header {
   z-index: var(--floor);
   position: relative;
 }
 
-.menu__small-button {
-  margin-block-end: 0;
-  transform: translate3D(0, 0, 0); /* I need this to hide things */
-  line-height: 1.5;
-  height: var(--denali);
-  overflow: hidden;
-  z-index: var(--floor);
-  position: relative;
-  /* width: calc(100% - 1rem); */
-  width: 100%;
+.nav {
   margin-inline: auto;
-  box-shadow: var(--penumbra);
-  border: none;
-  /* Book now colors */
-  background-color: var(--neutral-800);
-  color: var(--neutral-300);
-
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--neutral-300);
-    color: var(--neutral-800);
-  }
+  max-width: calc(100% - var(--denali));
+  padding-block-end: var(--elbrus);
+  
 }
 
-.spinning-button {
-  position: fixed; /* I never like these things but it's needed here */
-  height: var(--vinson);
-  line-height: 2;
-  transition: 2s ease;
-  margin-block-start: -1rem; /* I dont know why I have to add this something about defaults probably */
+.menu-toggle {
+  width: 100%;
+  margin: 0;
+  border: 1px solid var(--neutral-600);
+  border-radius: var(--kosciuszko);
+  background-color: var(--neutral-700);
+  color: var(--neutral-100);
+  padding: 0.75rem 1rem;
+  line-height: 1.2;
 }
 
-nav {
-  margin: var(--kilimanjaro);
-  margin-block-start: 0; /* testing slide menu */
-  transition: 2s ease;
-  padding-inline-start: var(--kilimanjaro);
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--kilimanjaro);
+  align-items: stretch;
+  max-height: 0;
+  margin-block: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-0.75rem);
+  visibility: hidden;
+  pointer-events: none;
+  transition: var(--fade), visibility 0s linear 320ms;
+  padding: 0;
+  list-style: none;
+}
 
-  @media (min-width: 40rem) {
-    max-width: var(--pelican);
-    margin: 0 auto;
+.menu-list.is-open {
+  max-height: max-content;
+  margin-block-start: var(--kosciuszko);
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+  transition: var(--fade);
+}
+
+/* TODO: header only has panel color at small size */
+
+/*------------------------------------*/
+/* #MIN WIDTH */
+/*------------------------------------*/
+
+@media (min-width: 40rem) {
+  .nav {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    padding-block-end: 0;
   }
 
-  ul {
+  .menu-toggle {
+    display: none;
+  }
+
+  .menu-list {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
-    margin-block: 0; /* testing slide menu */
-    padding-block-start: calc(var(--elbrus) / 2); /* 1.25/2= 0.625 */
-    /* TODO: check if this can be kosciuszko */
-    list-style: none;
-    padding-inline-start: 0;
-    align-items: baseline;
-
-    li {
-      margin-block-end: 0;
-    }
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: var(--kilimanjaro);
+    max-height: none;
+    overflow: visible;
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+    pointer-events: auto;
+    transition: none;
+    margin-block: 0;
   }
 }
 
-.menu__small {
-  transition: var(--fade);
-
-  button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0;
-  }
-
-  nav {
-    padding-inline-start: 0;
-  }
-
-  ul {
-    flex-direction: column;
-    gap: var(--vinson);
-    z-index: var(--floor);
-    position: relative;
-    /* v1.2 keep this untill i know why I used a custom */
-    /* background-color: hsl(25, 37%, 87.5%); ? why is this custom */
-    /* box-shadow: 0 0 0 100vmax hsl(25, 37%, 87.5%); ? why is this custom */
-    background-color: var(--neutral-300);
-    box-shadow: 0 0 0 100vmax var(--neutral-300);
-    clip-path: inset(0 -100vmax);
-
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--neutral-700);
-      box-shadow: 0 0 0 100vmax var(--neutral-700);
-    }
-
-    li a {
-      padding-inline: calc(var(--elbrus) / 2);
-      padding-block: calc(var(--elbrus) / 4);
-      text-decoration: underline;
-    }
-
-    li:first-child {
-      margin-block-start: 0;
-    }
-
-    li:last-child {
-      margin-block-end: var(--kilimanjaro);
-    }
-
-    .book-now {
-      margin: 0;
-    }
-  }
-}
-
-.tahoe-city .menu__small ul {
-  /* * reverts to clean dark scheme */
-  @media (prefers-color-scheme: light) {
-    background-color: var(--sand-100);
-    box-shadow: 0 0 0 100vmax var(--sand-100);
-    clip-path: inset(0 -100vmax);
+@media (prefers-color-scheme: dark) {
+  .menu-toggle {
+    background-color: var(--neutral-200);
+    color: var(--neutral-800);
+    border-color: var(--neutral-300);
   }
 }

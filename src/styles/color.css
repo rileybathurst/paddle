@@ -75,17 +75,23 @@ hr {
 
 .panel {
   background-color: var(--neutral-200);
+  box-shadow: 0 0 0 100vmax var(--neutral-200);
+  clip-path: inset(0 -100vmax);
+
 
   @media (prefers-color-scheme: dark) {
     background-color: var(--neutral-700);
+    box-shadow: 0 0 0 100vmax var(--neutral-700);
   }
 }
 
 .tahoe-city .panel {
-  background-color: var(--sand-200);
+  background-color: var(--sand-300);
+  box-shadow: 0 0 0 100vmax var(--sand-300);
 
   @media (prefers-color-scheme: dark) {
     background-color: var(--lake-700);
+    box-shadow: 0 0 0 100vmax var(--lake-700);
   }
 }
 

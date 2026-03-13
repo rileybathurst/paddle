@@ -1,5 +1,4 @@
-// this is the Name.tsx file
-// add additional classNames as its confusing to style
+// TODO: more faker work to do different numbers
 
 // TODO: use faker to actually build this up
 import React from 'react';

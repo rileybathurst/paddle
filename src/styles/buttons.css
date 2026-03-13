@@ -99,8 +99,10 @@ button:active {
 /*------------------------------------*/
 
 .tahoe-city {
+
   button,
-  .button, .book-now {
+  .button,
+  .book-now {
     background-color: var(--tanager-200);
     border-color: var(--tanager-100);
     color: white;
@@ -111,9 +113,9 @@ button:active {
   .book-now:hover,
   .button__hover {
     @media (prefers-color-scheme: light) {
-          background-color: var(--tanager-300);
-    border-color: var(--tanager-200);
-    color: var(--neutral-200);
+      background-color: var(--tanager-300);
+      border-color: var(--tanager-200);
+      color: var(--neutral-200);
     }
   }
 
@@ -123,8 +125,8 @@ button:active {
   .button__active {
     @media (prefers-color-scheme: light) {
       background-color: var(--tanager-400);
-    border-color: var(--tanager-300);
-    color: var(--neutral-300);
+      border-color: var(--tanager-300);
+      color: var(--neutral-300);
     }
   }
 }
@@ -134,12 +136,12 @@ button:active {
 /*------------------------------------*/
 
 .south-tahoe {
+
   button,
   .button,
   select {
     background-color: var(--lake-200);
-    border-color: var(--lake-100);
-    color: var(--cloud-color);
+    border-color: var(--lake-300);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -153,20 +155,19 @@ button:active {
   }
 
   button:hover,
-  .button__hover,
   .button:hover,
+  .button__hover,
   select:hover {
-    background-color: var(--lake-400);
+    background-color: var(--lake-300);
     border-color: var(--lake-400);
-    color: var(--lake-700);
   }
 
-  .button__active select:active {
+  button:active,
+  .button:active,
+  select:active,
+  .button__active {
     background-color: var(--lake-400);
     border-color: var(--lake-500);
-    /* this goes passed the 400 / 500 dark light split Im not sure if I want to change it */
-    /* maybe it needs a very occasional 450 */
-    color: var(--lake-800);
   }
 
   .book-now {

@@ -1,4 +1,5 @@
-// this is the Name.tsx file
+// TODO: this looks better than what is impleneted
+
 import React from "react";
 import { faker } from "@faker-js/faker";
 import { Header } from "./Header";
@@ -12,29 +13,31 @@ import { Flight } from "./Flight";
 export const TourPage = () => {
   return (
     <>
-      <Header smallMenu={false} />
+      <Header />
 
-      <div className="albatross wrap">
-        <main>
-          <div className="tour__minimum">
-            <h1>{faker.animal.bear()}</h1> <BookNow />
-          </div>
-          <p>{faker.lorem.sentence()}</p>
+      <div className="panel">
+        <div className="albatross wrap">
+          <main>
+            <div className="flex-row-wrap">
+              <h1>{faker.animal.bear()}</h1> <BookNow />
+            </div>
+            <p>{faker.lorem.sentence()}</p>
 
-          {/* <Specs /> */}
-          {Array.from({ length: faker.number.int({ min: 1, max: 10 }) }).map(
-            () => (
-              <div key={faker.string.uuid()} className="spec">
-                <h2>{faker.animal.bird()}</h2>
-                {/* // TODO: more units */}
-                <h3>{faker.number.int({ min: 1, max: 100 })}</h3>
-              </div>
-            ),
-          )}
-          <SunsetTourTimes />
-        </main>
-        {/* // ? this is wrapping down rather than across */}
-        <Composition />
+            {/* <Specs /> */}
+            {Array.from({ length: faker.number.int({ min: 1, max: 10 }) }).map(
+              () => (
+                <div key={faker.string.uuid()} className="spec">
+                  <h2>{faker.animal.bird()}</h2>
+                  {/* // TODO: more units */}
+                  <h3>{faker.number.int({ min: 1, max: 100 })}</h3>
+                </div>
+              ),
+            )}
+            <SunsetTourTimes />
+          </main>
+          {/* // ? this is wrapping down rather than across */}
+          <Composition />
+        </div>
       </div>
 
       <section className="aconcagua-padding-block">
@@ -49,9 +52,9 @@ export const TourPage = () => {
         <Flight />
       </section>
 
-      <div className="react-markdown albatross aurora"></div>
-
-      <Breadcrumbs />
+      <div className="panel">
+        <Breadcrumbs />
+      </div>
       <Footer />
     </>
   );

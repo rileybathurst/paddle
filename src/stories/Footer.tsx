@@ -7,22 +7,41 @@ import { Pricing } from "./Pricing";
 import { LocationDeck } from "./LocationDeck";
 import { Socials } from "./Socials";
 import { Logo } from "./Logo";
-import { Menu } from "./Menu";
 import { MultiButton } from "./MultiButton";
+import { BookNow } from "./BookNow";
 
 type FooterType = {
   startingHR?: boolean;
 };
 export const Footer = ({ startingHR }: FooterType) => {
   return (
-    <>
+    <React.Fragment>
       {startingHR && <hr className="pelican" />}
+
       <footer className="aconcagua-padding-block-start">
+        
         <div className="pelican">
           <MultiButton />
         </div>
+        
         <div className="pelican">
-          <Menu />
+            <hr />
+          <nav className="nav" aria-label="Footer navigation">
+            {/* // * is always open  */}
+            <ul className="menu-list is-open">
+              {Array.from({ length: faker.number.int({ min: 1, max: 5 }) }).map(
+                (_) => (
+                  <li key={faker.string.uuid()}>
+                    <a href={faker.animal.type()}>{faker.animal.type()}</a>
+                  </li>
+                ),
+              )}
+              <li key={faker.string.uuid()}>
+                <BookNow />
+              </li>
+            </ul>
+          </nav>
+            <hr />
         </div>
 
         <div className="pelican wrap">
@@ -71,6 +90,6 @@ export const Footer = ({ startingHR }: FooterType) => {
         </div>
       </footer>
 
-    </>
+    </React.Fragment>
   );
 };
