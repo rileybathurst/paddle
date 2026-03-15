@@ -25,7 +25,6 @@ export const Moonlight = ({
             {new Date(faker.date.anytime()).toLocaleDateString('en-US', {
               weekday: 'long',
               year: 'numeric',
-              month: 'long',
               day: 'numeric'
             })}&nbsp;-&nbsp;
             {new Date(faker.date.anytime()).toLocaleTimeString('en-US', {

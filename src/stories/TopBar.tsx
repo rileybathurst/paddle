@@ -24,7 +24,6 @@ export const TopBar = ({
         <p className="rain-check">
           <span className="rain-check-date">
             {RainCheckDate.toLocaleDateString('en-US', {
-              month: '2-digit',
               day: '2-digit',
               year: '2-digit',
             })}
@@ -41,7 +40,6 @@ export const TopBar = ({
       ) : RainCheckDate.toDateString() === currently.toDateString() ? (
         <p className="rain-check">
           <span className="rain-check-date">{RainCheckDate.toLocaleDateString('en-US', {
-            month: '2-digit',
             day: '2-digit',
             year: '2-digit',
           })}</span>&nbsp;

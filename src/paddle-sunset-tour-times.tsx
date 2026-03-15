@@ -21,10 +21,27 @@ export const PaddleSunsetTourTimes = ({ nodes }: PaddleSunsetTourTimesTypes) =>
       const startTimeSplit = time.startTime.split(':');
       const endTimeSplit = time.endTime.split(':');
 
+      // Jan 26 - May 31
+      // 20:1 - 5:17
+
       return (
         <div key={time.id}>
-          <p>{startDate.toLocaleDateString()} - {endDate.toLocaleDateString()}</p>
-          <p>{startTimeSplit[0]}:{startTimeSplit[1]} - {endTimeSplit[0]}:{endTimeSplit[1]}</p>
+          <h3 className="date elbrus">
+            <strong>
+              {startDate.toLocaleDateString("en-US", { month: "short" })}&nbsp;
+            </strong>
+            {startDate.toLocaleString("en-US", { day: "numeric" })}
+            &nbsp;-&nbsp;
+            <strong>
+              {endDate.toLocaleDateString("en-US", { month: "short" })}&nbsp;
+            </strong>
+            {endDate.toLocaleString("en-US", { day: "numeric" })}
+          </h3>
+          <p className="time">
+            {startTimeSplit[0]}:{startTimeSplit[1]}
+            &nbsp;-&nbsp;
+            {endTimeSplit[0]}:{endTimeSplit[1]}
+          </p>
         </div>
       )
     })}

@@ -30,7 +30,6 @@ export const PaddleMoonlightDatesTimes = ({ nodes }: MoonlightTourDateTime) => (
               timeZone: "UTC",
               weekday: "long",
               year: "numeric",
-              month: "long",
               day: "numeric",
             })}
             &nbsp;-&nbsp;
