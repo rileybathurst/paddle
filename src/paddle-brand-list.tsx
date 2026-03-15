@@ -9,7 +9,9 @@ export const PaddleBrandList = ({ brands, sport }: { brands: PaddleBrandListType
     <ul className='brand_list'>
       {brands.map((brand: PaddleBrandListTypes) => (
         <li key={brand.id}>
-          <Link to={`/retail/${sport}/${brand.slug}`}>
+          <Link to={`/retail/${sport}/${brand.slug}`}
+            className='button'
+            >
             {brand.svg ?
               <SVG
                 src={brand.svg}

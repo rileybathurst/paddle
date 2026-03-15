@@ -1,5 +1,5 @@
 // this is the Name.tsx file
-import { faker } from '@faker-js/faker/locale/zu_ZA';
+import { faker } from '@faker-js/faker';
 import React from 'react';
 
 interface NameTypes {
@@ -26,7 +26,7 @@ export const Badges = () => {
   }
 
   if (faker.datatype.boolean()) {
-    return <Name name={faker.helpers.arrayElement(['inflatable', 'demo', faker.airline.airline().name])} />;
+    return <Name name={faker.helpers.arrayElement(['inflatable', 'demo', faker.company.name()])} />;
   }
 
   return null;

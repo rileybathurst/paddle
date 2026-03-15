@@ -11,7 +11,7 @@ body {
   }
 }
 
-.tahoe-city body {
+body.tahoe-city  {
   background-color: var(--sand-100);
   color: var(--neutral-800);
 
@@ -34,15 +34,15 @@ body:has(#storybook-root) {
     }
   }
 }
-
-body .tahoe-city {
+  
+body.tahoe-city {
   @media (prefers-color-scheme: dark) {
     background-color: var(--navy-300);
     color: var(--neutral-100);
   }
 }
 
-body .south-tahoe {
+body.south-tahoe {
   @media (prefers-color-scheme: dark) {
     background-color: var(--lake-800);
     color: var(--lake-600);

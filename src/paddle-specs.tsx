@@ -21,9 +21,6 @@ type SpecsTypes = {
 // * moving the section tag to the parent component means you can loop yourself
 export const PaddleSpecs = (specs: SpecsTypes) =>
   Object.entries(specs).map(([key, value]) => {
-    
-    console.log(key);
-    console.log(value);
 
     if (!value) {
       console.warn(`Missing value for ${key}`);

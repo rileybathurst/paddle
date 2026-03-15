@@ -15,7 +15,7 @@ export type PaddleTicketTypes = {
   excerpt: string;
   price: string;
   peek: string;
-  featured?: boolean;
+  order: number;
 
   peek_tours_fall_back: string;
   tour_page: string;

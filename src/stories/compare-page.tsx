@@ -73,7 +73,7 @@ export const ComparePage = () => {
 
   return (
     <>
-      <Header smallMenu={false} />
+      <Header />
 
       <main className="pelican">
         <h1>Compare</h1>
