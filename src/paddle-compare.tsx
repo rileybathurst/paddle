@@ -1,10 +1,10 @@
-// TODO: this is not ready dont use it
-// Vite runs so I feel like I can pull this into it for testing itll be abit of a thing that might not be used but I think easier than storybook
+// ! this is the next fix
 
 import React from 'react';
 
-// import { PaddleTime } from './paddle-time';
+import { PaddleTime } from './paddle-time';
 import { PaddleBookNow } from './paddle-book-now';
+import type { PaddleCompareTypes } from './types/paddle-compare-types';
 
 type CompareDetailsProps = {
   title: string;
@@ -97,68 +97,14 @@ const CompareDetails = ({
   )
 }
 
-type PaddleCompareTypes = {
-  tours: {
-    id: number;
-    name: string;
-    slug: string;
-    sport: string;
-    duration?: string;
-    timeframe?: string;
-    start?: string;
-    finish?: string;
-    fitness?: string;
-    location: string;
-    excerpt: string;
-    minimum: number;
-    price: number;
-    peek?: string;
-  }[];
-  strapiBranchName: string;
-  peek_base: string;
-};
+
 export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleCompareTypes) => {
 
-  /* const [id1, setID1] = useState(tours[0].id);
-  const [id2, setID2] = useState(tours[1].id);
+  // TODO: testing
+  console.log(tours);
+  console.log(strapiBranchName);
+  console.log(peek_base);
 
-  const [tour1, setTour1] = useState(tours[0].name);
-  const [tour2, setTour2] = useState(tours[1].name);
-
-  const [link1, setLink1] = useState(tours[0].slug);
-  const [link2, setLink2] = useState(tours[1].slug);
-
-  const [sport1, setSport1] = useState(tours[0].sport);
-  const [sport2, setSport2] = useState(tours[1].sport);
-
-  const [duration1, setDuration1] = useState(tours[0].duration || 'not set');
-  const [duration2, setDuration2] = useState(tours[1].duration || 'not set');
-
-  const [timeframe1, setTimeframe1] = useState(tours[0].timeframe || 'not set');
-  const [timeframe2, setTimeframe2] = useState(tours[1].timeframe || 'not set');
-
-  const [start1, setStart1] = useState(tours[0].start || 'not set');
-  const [start2, setStart2] = useState(tours[1].start || 'not set');
-
-  const [finish1, setFinish1] = useState(tours[0].finish || 'not set');
-  const [finish2, setFinish2] = useState(tours[1].finish || 'not set');
-
-  const [excerpt1, setExcerpt1] = useState(tours[0].excerpt || 'not set');
-  const [excerpt2, setExcerpt2] = useState(tours[1].excerpt || 'not set');
-
-  const [minimum1, setMinimum1] = useState(tours[0].minimum || 0);
-  const [minimum2, setMinimum2] = useState(tours[1].minimum || 0);
-
-  const [price1, setPrice1] = useState(tours[0].price || 0);
-  const [price2, setPrice2] = useState(tours[1].price || 0);
-
-  const [peeks1, setPeeks1] = useState(tours[0].peek || 'not set');
-  const [peeks2, setPeeks2] = useState(tours[1].peek || 'not set');
-
-  const [fitness1, setFitness1] = useState(tours[0].fitness || 'fitness');
-  const [fitness2, setFitness2] = useState(tours[1].fitness || 'fitness'); */
-
-  // I dont know if this works as a state but I need to slowly build it all back out as its a mess
   let id1 = tours[0].id;
   let id2 = tours[1].id;
   
