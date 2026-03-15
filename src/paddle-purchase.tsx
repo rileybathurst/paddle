@@ -5,41 +5,41 @@ import { PaddleInchesRemainder } from "./paddle-inches-remainder";
 import { PaddleTextureBackgrounds } from "./paddle-texture-backgrounds";
 import { PaddlePurchaseAndImageTypes } from "./types/paddle-purchase-image-types";
 
-function Name({ name }: { name: string }) {
+type BadgeTypes = Record<string, boolean | number | undefined>;
+
+type BadgesProps = {
+  badges: BadgeTypes;
+};
+const Badges = ({ badges }: BadgesProps) => {
   return (
-    <div className="badge">
-      <h5 className="capitalize">{name}</h5>
-    </div>
+    <>
+      {Object.entries(badges).map(([key, value]) => {
+
+        if (!value) {
+          return null;
+        }
+
+        if (key === "discount" && typeof value === "number") {
+          return (
+            <div className="badge" key={key}>
+              <h5 className="capitalize">{value}% off</h5>
+            </div>
+          );
+        }
+
+        if (value === true) {
+          return (
+            <div className="badge" key={key}>
+              <h5 className="capitalize">{key}</h5>
+            </div>
+          );
+        }
+
+        return null;
+      })}
+    </>
   );
-}
-
-interface BadgeTypes {
-  inflatable: boolean;
-  demo: boolean;
-  discount?: number;
-}
-
-// TODO: use the way I do specs for this
-// TODO: deal with multiple
-const Badges = ({ inflatable, demo, discount }: BadgeTypes) => {
-  if (discount) {
-    return (
-      <div className="badge">
-        <h5 className="capitalize">{discount}% off</h5>
-      </div>
-    );
-  }
-
-  if (inflatable) {
-    return <Name name="inflatable" />;
-  }
-
-  if (demo) {
-    return <Name name="demo" />;
-  }
-
-  return null;
-}
+};
 
 
 export const PaddlePurchase = ({
@@ -88,11 +88,19 @@ export const PaddlePurchase = ({
             />
           )}
         </Link>
-        <Badges
-          inflatable={inflatable}
-          demo={demo}
-          discount={discount}
-        />
+
+        {inflatable || demo || discount ? (
+          <div className="badges">
+            <Badges
+              badges={{
+                inflatable: inflatable,
+                demo: demo,
+            discount: discount
+          }}
+          />
+          </div>
+        ) : null}
+        
       </div>
       <h4 className="purchase__title">
         <Link to={`/retail/${sport.slug}/${brand.slug}/${slug}`}>{title}</Link>

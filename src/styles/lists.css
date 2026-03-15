@@ -15,7 +15,7 @@ ol {
 
   li {
     display: block;
-    margin-block-end: var(--baseline);
+    margin-block-end: var(--vinson);
     padding-inline-start: 0;
     line-height: 1.5;
   }
@@ -175,7 +175,7 @@ ol {
 
     svg {
       transition: var(--fade);
-      margin-block: var(--baseline);
+      margin-block: var(--vinson);
       margin-inline: auto;
       min-width: var(--everest); /* guess and check */
 
@@ -216,6 +216,6 @@ ol {
   } */
 
   .time {
-    border-radius: var(--border-radius);
+    border-radius: var(--card-radius);
   }
 }

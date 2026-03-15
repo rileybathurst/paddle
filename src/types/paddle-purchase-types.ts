@@ -7,10 +7,15 @@ export type PaddlePurchaseTypes = {
   excerpt: string;
   length: number;
   width: number;
-  inflatable: boolean;
   capacity: number;
+  
+  // badge variables
+  inflatable: boolean;
   demo: boolean;
   discount?: number;
+  
+  badges?: Record<string, boolean | number>;
+  
   cutout: PaddleGatsbyImageType;
 
   sport: {

@@ -8,6 +8,8 @@
 @import "nav";
 @import "layout";
 @import "cards";
+@import "purchase";
+@import "ticket";
 @import "media";
 @import "color";
 @import "links";

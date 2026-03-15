@@ -20,11 +20,12 @@ export const Purchase = () => {
           /> */}
         </a>
 
-        <Badges
-        // inflatable={faker.datatype.boolean()}
-        // demo={faker.datatype.boolean()}
-        // discount={faker.datatype.boolean() ? faker.number.int({ min: 1, max: 100 }) : undefined}
-        />
+        <div className="badges">
+          {Array.from({ length: faker.number.int({ min: 0, max: 3 }) }).map(() => (
+            <Badges />
+          ))}
+        </div>
+
       </div>
       <h4 className="purchase__title">
         <a href={faker.music.songName()}>{faker.music.album()}</a>

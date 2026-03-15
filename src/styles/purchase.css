@@ -1,0 +1,172 @@
+/*------------------------------------*/
+/* #PURCHASE */
+/*------------------------------------*/
+
+.bag {
+  margin-block-end: var(--aconcagua);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--condor), 1fr));
+
+  /* TODO: clamp */
+  gap: var(--kosciuszko);
+}
+
+/* * specific type of a card */
+.purchase {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid transparent;
+  border-radius: var(--card-radius);
+  /* needed to control nested elements */
+  text-decoration: none;
+  box-shadow: var(--penumbra);
+  max-width: calc(100vw - 2rem);
+  background-color: white;
+
+  .purchase-collage {
+    display: grid;
+    width: 100%;
+
+    >* {
+      grid-row: 1;
+      grid-column: 1;
+    }
+
+    .texture-slice {
+      width: calc(100% - var(--elbrus));
+      aspect-ratio: 16/9;
+      height: 100%;
+      align-self: center;
+      margin: calc(var(--elbrus) / 2);
+      border-radius: 0.25rem;
+      box-shadow: var(--penumbra);
+      border: 1px solid whitesmoke;
+      stroke: whitesmoke;
+
+      @media (prefers-color-scheme: dark) {
+        border-color: var(--neutral-100);
+        stroke: var(--neutral-100);
+      }
+    }
+
+    .cutout {
+      object-fit: contain;
+      place-self: center;
+      z-index: var(--understory);
+      grid-row: 1/1;
+      filter: drop-shadow(5px 5px 5px var(--neutral-700));
+      aspect-ratio: 16/9;
+      width: 100%;
+    }
+
+    svg {
+      z-index: var(--floor);
+      max-height: 100%;
+      /* overwrite the default */
+      margin: calc(var(--elbrus) / 2);
+      width: calc(100% - var(--elbrus));
+      stroke: whitesmoke;
+
+      @media (prefers-color-scheme: dark) {
+        stroke: var(--neutral-100);
+      }
+    }
+  }
+
+  .image-link {
+    transition: var(--fade);
+    transform: scale(1);
+    z-index: var(--floor);
+  }
+
+  .image-link:where(:hover, :focus) {
+    transform: scale(1.05);
+  }
+
+  .purchase__title {
+    font-size: var(--denali);
+    margin-inline: var(--kosciuszko);
+    line-height: 2.5;
+  }
+
+  hr,
+  p {
+    margin-inline: var(--kosciuszko);
+  }
+
+  /* img {
+    width: 100%;
+  } */
+
+  .purchase__details {
+    display: flex;
+    gap: var(--vinson);
+    width: calc(100% - var(--kilimanjaro));
+    margin-inline: var(--kosciuszko);
+    margin-block-end: var(--elbrus);
+    justify-content: space-between;
+
+    >* {
+      flex: 1 1;
+      margin: 0;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: clamp(var(--vinson), 1.667vw, var(--denali));
+      font-weight: normal;
+      line-height: 3;
+    }
+
+    button {
+      line-height: 2;
+    }
+  }
+
+  .badges {
+    z-index: var(--floor);
+    justify-self: end;
+    align-self: start;
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--kosciuszko);
+    margin: var(--kosciuszko);
+  }
+
+  .badge {
+    padding: var(--kosciuszko);
+    border-radius: var(--card-radius);
+    background-color: var(--neutral-200);
+    border: 1px solid var(--neutral-100);
+    opacity: 0.9;
+
+    h5 {
+      margin: 0;
+      opacity: 1;
+      font-weight: normal;
+    }
+  }
+}
+
+/* * south-tahoe currently does not have a purchase */
+
+.bag:empty {
+  display: none;
+}
+
+.bag__more {
+  max-width: var(--pelican);
+  margin-inline: auto;
+  padding-inline: var(--kosciuszko);
+
+  button {
+    margin-block-start: var(--kilimanjaro);
+    margin-inline: auto;
+  }
+}

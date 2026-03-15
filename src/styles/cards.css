@@ -1,163 +1,26 @@
 /*------------------*/
-/* #CARDS / PURCHASE / TICKET */
+/* #CARDS */
 /*------------------*/
 
-/* was deck */
-.bag {
-  margin-block-end: var(--aconcagua);
-
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--condor), 1fr));
-
-  /* TODO: clamp */
-  gap: var(--kosciuszko);
-}
-
-/* was card */
-.purchase {
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid transparent;
-  border-radius: var(--card-radius);
-  /* needed to control nested elements */
-  text-decoration: none;
-  box-shadow: var(--penumbra);
-  max-width: calc(100vw - 2rem);
+.purchase,
+.ticket {
   background-color: white;
+  border: 1px solid var(--neutral-200);
+  border-radius:  var(--card-radius);
+  padding: var(--kosciuszko);
 
-  .purchase-collage {
-    display: grid;
-    width: 100%;
-
-    > * {
-      grid-row: 1;
-      grid-column: 1;
-    }
-
-    .texture-slice {
-      width: calc(100% - var(--elbrus));
-      aspect-ratio: 16/9;
-      height: 100%;
-      align-self: center;
-      margin: calc(var(--elbrus) / 2);
-      border-radius: 0.25rem;
-      box-shadow: var(--penumbra);
-      border: 1px solid whitesmoke;
-      stroke: whitesmoke;
-
-      @media (prefers-color-scheme: dark) {
-        border-color: var(--neutral-100);
-        stroke: var(--neutral-100);
-      }
-    }
-
-    .cutout {
-      object-fit: contain;
-      place-self: center;
-      z-index: var(--understory);
-      grid-row: 1/1;
-      filter: drop-shadow(5px 5px 5px var(--neutral-700));
-      aspect-ratio: 16/9;
-      width: 100%;
-    }
-
-    svg {
-      z-index: var(--floor);
-      max-height: 100%; /* overwrite the default */
-      margin: calc(var(--elbrus) / 2);
-      width: calc(100% - var(--elbrus));
-      stroke: whitesmoke;
-
-      @media (prefers-color-scheme: dark) {
-        stroke: var(--neutral-100);
-      }
-    }
+  @media (prefers-color-scheme: light) {
+    box-shadow: var(--penumbra);
   }
 
-  .image-link {
-    transition: var(--fade);
-    transform: scale(1);
-    z-index: var(--floor);
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--neutral-700);
+    border-color: var(--neutral-600);
   }
 
-  .image-link:where(:hover, :focus) {
-    transform: scale(1.05);
-  }
 
-  .purchase__title {
-    font-size: var(--denali);
-    margin-inline: var(--kosciuszko);
-    line-height: 2.5;
-  }
-
-  hr,
-  p {
-    margin-inline: var(--kosciuszko);
-  }
-
-  /* img {
-    width: 100%;
-  } */
-
-  .purchase__details {
-    display: flex;
-    gap: var(--vinson);
-    width: calc(100% - var(--kilimanjaro));
-    margin-inline: var(--kosciuszko);
-    margin-block-end: var(--elbrus);
-    justify-content: space-between;
-
-    > * {
-      flex: 1 1;
-      margin: 0;
-    }
-
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-size: clamp(var(--vinson), 1.667vw, var(--denali));
-      font-weight: normal;
-      line-height: 3;
-    }
-
-    button {
-      line-height: 2;
-    }
-  }
-
-  .badge {
-    z-index: var(--floor);
-    justify-self: end;
-    align-self: start;
-    padding: var(--kosciuszko);
-    margin: var(--kosciuszko);
-    border-radius: var(--card-radius);
-
-    background-color: var(--neutral-200);
-    border: 1px solid var(--neutral-100);
-    opacity: 0.9;
-
-    h5 {
-      margin: 0;
-      opacity: 1;
-      font-weight: normal;
-    }
-  }
 }
 
-.tahoe-city .purchase {
-  background-color: var(--sand-100);
-
-  hr {
-    border-color: var(--sand-400);
-  }
-}
-
-/* south-tahoe currently does not have a purchase */
 
 .purchase:hover,
 .ticket:hover {
@@ -165,24 +28,8 @@
     text-decoration: underline;
   }
 
-  /* TODO: v1.2 this could use more */
   img {
     filter: brightness(80%);
-  }
-}
-
-.bag:empty {
-  display: none;
-}
-
-.bag__more {
-  max-width: var(--pelican);
-  margin-inline: auto;
-  padding-inline: var(--kosciuszko);
-
-  button {
-    margin-block-start: var(--kilimanjaro);
-    margin-inline: auto;
   }
 }
 
@@ -208,101 +55,5 @@
   svg {
     width: var(--vulture); /* guess and check */
     margin-block-end: var(--kosciuszko);
-  }
-}
-
-/*------------------------------------*/
-/* #TICKET */
-/*------------------------------------*/
-
-.flight {
-  margin-block-end: var(--aconcagua);
-
-  display: grid;
-
-  /* * iPhone size breaks without this */
-  grid-template-columns: 1fr;
-
-  /* * guess and check */
-  @media (min-width: 29rem) {
-    grid-template-columns: repeat(auto-fill, minmax(var(--condor), 1fr));
-  }
-}
-
-.flight:empty {
-  display: none;
-}
-
-.ticket {
-  width: calc(100% - 2 * var(--kosciuszko));
-  height: calc(100% - 2 * var(--kosciuszko));
-  background-color: white;
-  border: 1px solid var(--neutral-300);
-  border-radius:  var(--card-radius);
-  padding: var(--kosciuszko);
-
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--neutral-700);
-    border-color: var(--neutral-600);
-  }
-
-  img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-  }
-
-  > a {
-    display: block;
-  }
-
-  .ticket__header,
-  .ticket__money,
-  .ticket__specs {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: var(--vinson);
-  }
-
-  .ticket__header,
-  .ticket__specs {
-    padding-inline: var(--vinson);
-  }
-}
-
-.tahoe-city .ticket {
-  border-color: var(--sand-400);
-
-  @media (prefers-color-scheme: dark) {
-    border-color: var(--neutral-700);
-  }
-}
-
-.south-tahoe .ticket {
-  background-color: var(--lake-200);
-  border: 1px solid var(--lake-300);
-  box-shadow: var(--penumbra);
-  color: var(--lake-600);
-
-  .book-now {
-    background-color: var(--neutral-100);
-    color: var(--lake-700);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--lake-700);
-    border-color: var(--lake-600);
-    color: var(--lake-200);
-
-    .book-now {
-      background-color: var(--lake-400);
-      color: var(--lake-700);
-      border-color: var(--lake-500);
-    }
-
-    a:not(.book-now) {
-      color: var(--lake-200);
-    }
   }
 }

@@ -25,16 +25,17 @@ body:has(#storybook-root) {
   #storybook-root {
     min-height: 100vh;
   }
+}
 
-  #storybook-root:has(.tahoe-city) {
-    background-color: var(--sand-100);
+/* * storybook body */
+.tahoe-city #storybook-root {
+  background-color: var(--sand-100);
 
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--lake-300);
-    }
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--lake-300);
   }
 }
-  
+
 body.tahoe-city {
   @media (prefers-color-scheme: dark) {
     background-color: var(--navy-300);
@@ -143,10 +144,39 @@ hr {
 
 
 .location {
+  transition: var(--slow);
   background-color: white;
+
+  @media (prefers-color-scheme: light) {
+    box-shadow: var(--penumbra);
+  }
   
   @media (prefers-color-scheme: dark) {
     background-color: var(--neutral-800);
+  }
+}
+
+.location:hover {
+  background-color: var(--neutral-200);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--neutral-600);
+  }
+}
+
+.tahoe-city .location:hover {
+  background-color: var(--sand-300);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--lake-700);
+  }
+}
+
+.location:active {
+  background-color: var(--neutral-300);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--neutral-500);
   }
 }
 
