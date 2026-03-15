@@ -11,8 +11,6 @@ type PaddleSunsetTourTimesTypes = {
 }
 export const PaddleSunsetTourTimes = ({ nodes }: PaddleSunsetTourTimesTypes) =>
   <section className="paddle-sunset-tour-times">
-    {/* // TODO: stylize start with a storybook */}
-    {/* // TODO: current */}
     <p>*We adapt the time of our sunset tour to the sun</p>
     {nodes.map((time) => {
       const startDate = new Date(time.startDate);
@@ -25,7 +23,7 @@ export const PaddleSunsetTourTimes = ({ nodes }: PaddleSunsetTourTimesTypes) =>
       // 20:1 - 5:17
 
       return (
-        <div key={time.id}>
+        <div key={time.id} className="date-time">
           <h3 className="date elbrus">
             <strong>
               {startDate.toLocaleDateString("en-US", { month: "short" })}&nbsp;
