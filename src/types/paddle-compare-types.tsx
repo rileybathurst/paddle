@@ -1,6 +1,8 @@
+import React from "react";
+
 export type PaddleCompareTypes = {
   tours: {
-    id: number;
+    id: React.Key;
     name: string;
     slug: string;
     sport: string;

@@ -7,6 +7,7 @@ import type { PaddleCompareTypes } from './types/paddle-compare-types';
 type TourType = PaddleCompareTypes["tours"][number];
 
 type CompareDetailsTypes = {
+  id: React.Key;
   name: TourType["name"];
   onTourChange: (value: TourType["name"]) => void;
   link: TourType["slug"];
@@ -45,6 +46,12 @@ const CompareDetails = ({
   strapiBranchName,
   tours
 }: CompareDetailsTypes) => {
+
+  // TODO: testing
+  console.log(start);
+  console.log(finish);
+  console.log(duration);
+  console.log(timeframe);
 
   const time = PaddleTime({
     start: start,
@@ -115,11 +122,6 @@ const CompareDetails = ({
 
 
 export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleCompareTypes) => {
-
-  // TODO: testing
-  console.log(tours);
-  console.log(strapiBranchName);
-  console.log(peek_base);
 
   let id1 = tours[0].id;
   let id2 = tours[1].id;
@@ -209,7 +211,7 @@ export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleComp
         </div>
 
         <CompareDetails
-          key={id1}
+          id={id1}
           name={tour1}
           onTourChange={updateTour1}
           link={link1}
@@ -231,7 +233,7 @@ export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleComp
           tours={tours}
         />
         <CompareDetails
-          key={id2}
+          id={id2}
           name={tour2}
           onTourChange={updateTour2}
           link={link2}
