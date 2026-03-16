@@ -1,56 +1,40 @@
-// ! this is the next fix
-
 import React, { useState } from "react";
 
-// import { PaddleTime } from './paddle-time';
+import { PaddleTime } from './paddle-time';
 import { PaddleBookNow } from './paddle-book-now';
 import type { PaddleCompareTypes } from './types/paddle-compare-types';
 
-type CompareDetailsTypes = {
-  title: string;
-  onTourChange: (value: string) => void;
-  link: string;
-  sport: string;
-  duration?: string;
-  timeframe?: string;
-  start?: string;
-  finish?: string;
-  fitness?: string;
-  location: string;
-  excerpt: string;
-  minimum: number;
-  price: number;
-  peeks?: string;
-  peek_base: string;
-  strapiBranchName: string;
+type TourType = PaddleCompareTypes["tours"][number];
 
-  // ? this can maybe loop from itself?
-  tours: {
-    id: React.Key;
-    name: string;
-    slug: string;
-    sport: string;
-    duration?: string;
-    timeframe?: string;
-    start?: string;
-    finish?: string;
-    excerpt?: string;
-    minimum?: number;
-    price?: number;
-    peek?: string;
-    fitness?: string;
-  }[];
+type CompareDetailsTypes = {
+  name: TourType["name"];
+  onTourChange: (value: TourType["name"]) => void;
+  link: TourType["slug"];
+  sport: TourType["sport"];
+  duration?: TourType["duration"];
+  timeframe?: TourType["timeframe"];
+  start?: TourType["start"];
+  finish?: TourType["finish"];
+  fitness?: TourType["fitness"];
+  location: TourType["location"];
+  excerpt: TourType["excerpt"];
+  minimum: TourType["minimum"];
+  price: TourType["price"];
+  peeks?: TourType["peek"];
+  peek_base: PaddleCompareTypes["peek_base"];
+  strapiBranchName: PaddleCompareTypes["strapiBranchName"];
+  tours: PaddleCompareTypes["tours"];
 };
 
 const CompareDetails = ({
-  title,
+  name,
   onTourChange,
   link,
   sport,
-  // duration,
-  // timeframe,
-  // start,
-  // finish,
+  duration,
+  timeframe,
+  start,
+  finish,
   fitness,
   location,
   excerpt,
@@ -61,14 +45,27 @@ const CompareDetails = ({
   strapiBranchName,
   tours
 }: CompareDetailsTypes) => {
+
+  const time = PaddleTime({
+    start: start,
+    finish: finish,
+    duration: duration,
+    timeframe: timeframe,
+  });
+
+  // TODO: testing
+  console.log("time", time);
+  console.log(time.entry);
+  console.log(time.value);
+
   return (
     <section>
       <select
         name="tour1"
-        id={title}
+        id={name}
         className="comparesheet_select"
         aria-label="Select first tour or lesson"
-        value={title}
+        value={name}
         onChange={(e) => onTourChange(e.target.value)}
       >
         {tours.map((tour) => (
@@ -80,22 +77,16 @@ const CompareDetails = ({
           </option>
         ))}
       </select>
-      
+
       <h2 className="kilimanjaro">
-        <a href={link}>{title}</a>
+        <a href={link}>{name}</a>
       </h2>
 
       <h4 className="capitalize">{sport}</h4>
 
-      {/* // TODO: time is more complex so just get it running first */}
-      {/* <p>
-        <PaddleTime
-          start={start}
-          finish={finish}
-          duration={duration}
-          timeframe={timeframe}
-        />
-      </p> */}
+      <p>
+        {time.value}
+      </p>
 
       <p className="capitalize">
         {fitness} <span className="show-below__vulture">&nbsp;fitness</span>
@@ -139,8 +130,8 @@ export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleComp
   let [link2, setLink2] = useState(tours[1].slug || "not set");
   let [sport1, setSport1] = useState(tours[0].sport || "not set");
   let [sport2, setSport2] = useState(tours[1].sport || "not set");
-  let [duration1, setDuration1] = useState(tours[0].duration || "not set");
-  let [duration2, setDuration2] = useState(tours[1].duration || "not set");
+  let [duration1, setDuration1] = useState(tours[0].duration || 0);
+  let [duration2, setDuration2] = useState(tours[1].duration || 0);
   let [timeframe1, setTimeframe1] = useState(tours[0].timeframe || "not set");
   let [timeframe2, setTimeframe2] = useState(tours[1].timeframe || "not set");
   let [start1, setStart1] = useState(tours[0].start || "not set");
@@ -167,7 +158,7 @@ export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleComp
     setTour1(selectedTour.name);
     setLink1(selectedTour.slug || "not set");
     setSport1(selectedTour.sport || "not set");
-    setDuration1(selectedTour.duration || "not set");
+    setDuration1(selectedTour.duration || 0);
     setTimeframe1(selectedTour.timeframe || "not set");
     setStart1(selectedTour.start || "not set");
     setFinish1(selectedTour.finish || "not set");
@@ -186,7 +177,7 @@ export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleComp
     setTour2(selectedTour.name);
     setLink2(selectedTour.slug || "not set");
     setSport2(selectedTour.sport || "not set");
-    setDuration2(selectedTour.duration || "not set");
+    setDuration2(selectedTour.duration || 0);
     setTimeframe2(selectedTour.timeframe || "not set");
     setStart2(selectedTour.start || "not set");
     setFinish2(selectedTour.finish || "not set");
@@ -201,7 +192,7 @@ export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleComp
   return (
     <>
       <div className='comparesheet'>
-        <div className='comparesheet_titles'>
+        <div className='comparesheet_names'>
           <div className="comparesheet__transparent">Compare</div>
           <h3 className='kilimanjaro comparesheet_freeze'>
             Tour or<br />
@@ -219,7 +210,7 @@ export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleComp
 
         <CompareDetails
           key={id1}
-          title={tour1}
+          name={tour1}
           onTourChange={updateTour1}
           link={link1}
           sport={sport1}
@@ -241,7 +232,7 @@ export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleComp
         />
         <CompareDetails
           key={id2}
-          title={tour2}
+          name={tour2}
           onTourChange={updateTour2}
           link={link2}
           sport={sport2}

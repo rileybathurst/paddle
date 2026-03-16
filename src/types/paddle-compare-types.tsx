@@ -4,7 +4,7 @@ export type PaddleCompareTypes = {
     name: string;
     slug: string;
     sport: string;
-    duration?: string;
+    duration?: number;
     timeframe?: string;
     start?: string;
     finish?: string;

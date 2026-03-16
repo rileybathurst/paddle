@@ -22,6 +22,7 @@ export const PaddleTicket = ({
   allStrapiSunsetTourTime,
   strapiBranchName,
 }: PaddleTicketTypes) => {
+  
   const time = PaddleTime({
     start: start,
     finish: finish,
