@@ -4,6 +4,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { PaddlePricingChart } from './paddle-pricing-chart'
+import { PaddleCompare } from './paddle-compare'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -31,7 +32,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
 
-      {/* testing */}
+      {/* // TODO: testing */}
       <PaddlePricingChart
         rentalRates={{
           nodes: [
@@ -93,6 +94,61 @@ function App() {
           // slug: 'south-tahoe'
           slug: 'tahoe-city'
         }}
+      />
+
+      <PaddleCompare
+        peek_base="123"
+        strapiBranchName="south-tahoe"
+        tours={[
+          {
+            id: 1,
+            name: "Tour 1",
+            slug: "tour-1",
+            sport: "Paddleboarding",
+            duration: "2 hours",
+            timeframe: "Morning",
+            start: "9:00 AM",
+            finish: "11:00 AM",
+            fitness: "Easy",
+            location: "Lake Tahoe",
+            excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            minimum: 2,
+            price: 100,
+            peek: "456"
+          },
+          {
+            id: 2,
+            name: "Tour 2",
+            slug: "tour-2",
+            sport: "Paddleboarding",
+            duration: "3 hours",
+            timeframe: "Afternoon",
+            start: "1:00 PM",
+            finish: "4:00 PM",
+            fitness: "Moderate",
+            location: "Lake Tahoe",
+            excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            minimum: 2,
+            price: 150,
+            peek: "789"
+          },
+          {
+            id: 3,
+            name: "Tour 3",
+            slug: "tour-3",
+            sport: "Paddleboarding",
+            duration: "4 hours",
+            timeframe: "Evening",
+            start: "5:00 PM",
+            finish: "9:00 PM",
+            fitness: "Hard",
+            location: "Lake Tahoe",
+            excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            minimum: 2,
+            price: 200,
+            peek: "101112"
+          }
+        ]}
       />
     </>
   )
