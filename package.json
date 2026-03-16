@@ -10,6 +10,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "tsc --noEmit && stay-gold && storybook dev -p 6006",
+    "storybook-dirty": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "release": "npm version patch && npm login && npm publish",
     "stay-gold": "stay-gold"

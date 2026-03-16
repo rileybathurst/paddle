@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { PaddleTime } from './paddle-time';
+// import { PaddleTime } from './paddle-time';
 import { PaddleBookNow } from './paddle-book-now';
 import type { PaddleCompareTypes } from './types/paddle-compare-types';
 
@@ -22,9 +22,26 @@ type CompareDetailsProps = {
   peeks?: string;
   peek_base: string;
   strapiBranchName: string;
+
+  // ? this can maybe loop from itself?
+  tours: {
+    id: React.Key;
+    name: string;
+    slug: string;
+    sport: string;
+    duration?: string;
+    timeframe?: string;
+    start?: string;
+    finish?: string;
+    excerpt?: string;
+    minimum?: number;
+    price?: number;
+    peek?: string;
+    fitness?: string;
+  }[];
 };
 
-const CompareDetails = ({ 
+const CompareDetails = ({
   title,
   link,
   sport,
@@ -39,30 +56,33 @@ const CompareDetails = ({
   price,
   peeks,
   peek_base,
-  strapiBranchName }: CompareDetailsProps) => {
+  strapiBranchName,
+  tours
+}: CompareDetailsProps) => {
   return (
     <section>
-      {/* <select
+      <select
         name="tour1"
         id={title}
         className="comparesheet_select"
         aria-label="Select first tour or lesson"
       >
-        {Array.from({ length: faker.number.int({ min: 1, max: 10 }) }).map(() => (
+        {tours.map((tour) => (
           <option
-            key={faker.string.uuid()}
-            value={faker.food.dish()}
+            key={tour.id}
+            value={tour.name}
           >
-            {faker.food.dish()}
+            {tour.name}
           </option>
         ))}
-      </select> */}
+      </select>
       <h2 className="kilimanjaro">
         <a href={link}>{title}</a>
       </h2>
 
       <h4 className="capitalize">{sport}</h4>
 
+      {/* // TODO: time is more complex so just get it running first */}
       {/* <p>
         <PaddleTime
           start={start}
@@ -107,7 +127,7 @@ export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleComp
 
   let id1 = tours[0].id;
   let id2 = tours[1].id;
-  
+
   let tour1 = tours[0].name;
   let tour2 = tours[1].name;
   let link1 = tours[0].slug;
@@ -152,22 +172,6 @@ export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleComp
           <p className='button-drop'>Book Now</p>
         </div>
 
-        <select
-          name="tour1"
-          // id={id1}
-          className="comparesheet_select"
-          aria-label="Select first tour or lesson"
-        >
-          {tours.map((tour) => (
-            <option
-              key={tour.id}
-              value={tour.id}
-            >
-              {tour.name}
-            </option>
-          ))}
-        </select>
-
         <CompareDetails
           key={id1}
           title={tour1}
@@ -183,8 +187,11 @@ export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleComp
           price={price1}
           peeks={peeks1}
           fitness={fitness1}
+
           strapiBranchName={strapiBranchName}
           peek_base={peek_base}
+
+          tours={tours}
         />
         <CompareDetails
           key={id2}
@@ -201,8 +208,12 @@ export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleComp
           price={price2}
           peeks={peeks2}
           fitness={fitness2}
+
           strapiBranchName={strapiBranchName}
           peek_base={peek_base}
+
+          tours={tours}
+
         />
 
       </div>

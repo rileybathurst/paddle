@@ -77,6 +77,7 @@ export const ComparePage = () => {
 
       <main className="pelican">
         <h1>Compare</h1>
+        
         <div className="comparesheet">
           <div className="comparesheet_titles">
             <div className="comparesheet__transparent">Compare</div>
