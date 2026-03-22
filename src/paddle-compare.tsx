@@ -96,7 +96,7 @@ const CompareDetails = ({
       <h4 className="capitalize">{sport}</h4>
 
       <p>
-        {time.value}
+        {time.entry}
       </p>
 
       <p className="capitalize">
