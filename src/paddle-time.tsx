@@ -48,7 +48,8 @@ console.log("sunset");
 
   const hairSpace = String.fromCharCode(0x200A);
 
-  if (timeframe) {
+  // * compare gives a not set value
+  if (timeframe && timeframe !== "not set") {
   // TODO: testing
 console.log("timeframe");
 
