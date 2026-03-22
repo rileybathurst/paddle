@@ -12,7 +12,7 @@ type CompareDetailsTypes = {
   id: React.Key;
   name: TourType["name"];
   onTourChange: (value: TourType["name"]) => void;
-  compositionImage: TourType["compositionImage"] | null;
+  ogimage: TourType["ogimage"] | null;
   link: TourType["slug"];
   sport: TourType["sport"];
   duration?: TourType["duration"];
@@ -34,7 +34,7 @@ type CompareDetailsTypes = {
 const CompareDetails = ({
   name,
   onTourChange,
-  compositionImage,
+  ogimage,
   link,
   sport,
   duration,
@@ -80,13 +80,13 @@ const CompareDetails = ({
         ))}
       </select>
 
-      {compositionImage ? (
+      {ogimage ? (
         <GatsbyImage
-          image={compositionImage.localFile.childImageSharp.gatsbyImageData}
-          alt={compositionImage.alternativeText || name}
+          image={ogimage.localFile.childImageSharp.gatsbyImageData}
+          alt={ogimage.alternativeText || name}
           className="comparesheet_image"
         />
-      ) : <React.Fragment>&nbsp;</React.Fragment>}
+      ) : <div>&nbsp;</div>}
 
       <h2 className="kilimanjaro">
         <Link to={`/${breadcrumb}/${link}`}>
@@ -132,8 +132,8 @@ export const PaddleCompare = ({ tours, breadcrumb, strapiBranchName, peek_base }
 
   let [tour1, setTour1] = useState(tours[0].name || "Tour 1");
   let [tour2, setTour2] = useState(tours[1].name || "Tour 2");
-  let [image1, setImage1] = useState(tours[0].compositionImage || null);
-  let [image2, setImage2] = useState(tours[1].compositionImage || null);
+  let [image1, setImage1] = useState(tours[0].ogimage || null);
+  let [image2, setImage2] = useState(tours[1].ogimage || null);
   let [link1, setLink1] = useState(tours[0].slug || "not set");
   let [link2, setLink2] = useState(tours[1].slug || "not set");
   let [sport1, setSport1] = useState(tours[0].sport || "not set");
@@ -164,7 +164,7 @@ export const PaddleCompare = ({ tours, breadcrumb, strapiBranchName, peek_base }
     if (!selectedTour) return;
 
     setTour1(selectedTour.name);
-    setImage1(selectedTour.compositionImage || null);
+    setImage1(selectedTour.ogimage || null);
     setLink1(selectedTour.slug || "not set");
     setSport1(selectedTour.sport || "not set");
     setDuration1(selectedTour.duration || 0);
@@ -184,7 +184,7 @@ export const PaddleCompare = ({ tours, breadcrumb, strapiBranchName, peek_base }
     if (!selectedTour) return;
 
     setTour2(selectedTour.name);
-    setImage2(selectedTour.compositionImage || null);
+    setImage2(selectedTour.ogimage || null);
     setLink2(selectedTour.slug || "not set");
     setSport2(selectedTour.sport || "not set");
     setDuration2(selectedTour.duration || 0);
@@ -204,11 +204,11 @@ export const PaddleCompare = ({ tours, breadcrumb, strapiBranchName, peek_base }
       <div className='comparesheet'>
         <div className='comparesheet_names'>
           <div className="comparesheet__transparent">Compare</div>
+          <p>&nbsp;</p>
           <h3 className='kilimanjaro comparesheet_freeze'>
             Tour or<br />
             Lesson
           </h3>
-          <p>Image</p>
           <p>Sport</p>
           <p>Time</p>
           <p>Fitness</p>
@@ -222,7 +222,7 @@ export const PaddleCompare = ({ tours, breadcrumb, strapiBranchName, peek_base }
         <CompareDetails
           id={id1}
           name={tour1}
-          compositionImage={image1}
+          ogimage={image1}
           onTourChange={updateTour1}
           link={link1}
           sport={sport1}
@@ -246,7 +246,7 @@ export const PaddleCompare = ({ tours, breadcrumb, strapiBranchName, peek_base }
         <CompareDetails
           id={id2}
           name={tour2}
-          compositionImage={image2}
+          ogimage={image2}
           onTourChange={updateTour2}
           link={link2}
           sport={sport2}
