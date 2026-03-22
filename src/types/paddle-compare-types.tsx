@@ -5,7 +5,7 @@ export type PaddleCompareTypes = {
   tours: {
     id: React.Key;
     name: string;
-    image: PaddleGatsbyImageType;
+    compositionImage: PaddleGatsbyImageType;
     slug: string;
     sport: string;
     duration?: number;
