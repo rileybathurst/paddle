@@ -1,9 +1,11 @@
 import React from "react";
+import type { PaddleGatsbyImageType } from "./paddle-gatsby-image-type";
 
 export type PaddleCompareTypes = {
   tours: {
     id: React.Key;
     name: string;
+    image: PaddleGatsbyImageType;
     slug: string;
     sport: string;
     duration?: number;

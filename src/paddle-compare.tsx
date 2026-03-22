@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import { PaddleTime } from './paddle-time';
 import { PaddleBookNow } from './paddle-book-now';
 import type { PaddleCompareTypes } from './types/paddle-compare-types';
+import { GatsbyImage } from "gatsby-plugin-image";
 
 type TourType = PaddleCompareTypes["tours"][number];
 
@@ -11,6 +12,7 @@ type CompareDetailsTypes = {
   id: React.Key;
   name: TourType["name"];
   onTourChange: (value: TourType["name"]) => void;
+  image: TourType["image"] | null;
   link: TourType["slug"];
   sport: TourType["sport"];
   duration?: TourType["duration"];
@@ -32,6 +34,7 @@ type CompareDetailsTypes = {
 const CompareDetails = ({
   name,
   onTourChange,
+  image,
   link,
   sport,
   duration,
@@ -77,6 +80,14 @@ const CompareDetails = ({
         ))}
       </select>
 
+      {image ? (
+        <GatsbyImage
+          image={image.localFile.childImageSharp.gatsbyImageData}
+          alt={image.alternativeText || name}
+          className="comparesheet_image"
+        />
+      ) : null}
+
       <h2 className="kilimanjaro">
         <Link to={`/${breadcrumb}/${link}`}>
           {name}
@@ -116,13 +127,13 @@ const CompareDetails = ({
 
 export const PaddleCompare = ({ tours, breadcrumb, strapiBranchName, peek_base }: PaddleCompareTypes) => {
 
-  console.log(tours);
-
   let id1 = tours[0].id;
   let id2 = tours[1].id;
 
   let [tour1, setTour1] = useState(tours[0].name || "Tour 1");
   let [tour2, setTour2] = useState(tours[1].name || "Tour 2");
+  let [image1, setImage1] = useState(tours[0].image || null);
+  let [image2, setImage2] = useState(tours[1].image || null);
   let [link1, setLink1] = useState(tours[0].slug || "not set");
   let [link2, setLink2] = useState(tours[1].slug || "not set");
   let [sport1, setSport1] = useState(tours[0].sport || "not set");
@@ -153,6 +164,7 @@ export const PaddleCompare = ({ tours, breadcrumb, strapiBranchName, peek_base }
     if (!selectedTour) return;
 
     setTour1(selectedTour.name);
+    setImage1(selectedTour.image || null);
     setLink1(selectedTour.slug || "not set");
     setSport1(selectedTour.sport || "not set");
     setDuration1(selectedTour.duration || 0);
@@ -172,6 +184,7 @@ export const PaddleCompare = ({ tours, breadcrumb, strapiBranchName, peek_base }
     if (!selectedTour) return;
 
     setTour2(selectedTour.name);
+    setImage2(selectedTour.image || null);
     setLink2(selectedTour.slug || "not set");
     setSport2(selectedTour.sport || "not set");
     setDuration2(selectedTour.duration || 0);
@@ -195,6 +208,7 @@ export const PaddleCompare = ({ tours, breadcrumb, strapiBranchName, peek_base }
             Tour or<br />
             Lesson
           </h3>
+          <p>Image</p>
           <p>Sport</p>
           <p>Time</p>
           <p>Fitness</p>
@@ -208,6 +222,7 @@ export const PaddleCompare = ({ tours, breadcrumb, strapiBranchName, peek_base }
         <CompareDetails
           id={id1}
           name={tour1}
+          image={image1}
           onTourChange={updateTour1}
           link={link1}
           sport={sport1}
@@ -231,6 +246,7 @@ export const PaddleCompare = ({ tours, breadcrumb, strapiBranchName, peek_base }
         <CompareDetails
           id={id2}
           name={tour2}
+          image={image2}
           onTourChange={updateTour2}
           link={link2}
           sport={sport2}
