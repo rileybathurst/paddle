@@ -19,6 +19,13 @@ interface TimeTypes {
 }
 export const PaddleTime = ({ start, finish, duration, timeframe, slug, allStrapiSunsetTourTime }: TimeTypes) => {
 
+// TODO: testing
+console.log("paddle time");
+  console.log(start);
+  console.log(finish);
+  console.log(duration);
+  console.log(timeframe);
+
   // TODO: sunset is a whole thing
   const currentDate = new Date();
   let sunsetStartTime = '';
@@ -48,6 +55,10 @@ export const PaddleTime = ({ start, finish, duration, timeframe, slug, allStrapi
   }
 
   if (duration) {
+
+// TODO: testing
+console.log("duration");
+
     if (duration > 90) {
       const hours = Math.floor(duration / 60);
       const mins = duration % 60;

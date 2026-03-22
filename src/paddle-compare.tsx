@@ -48,9 +48,13 @@ const CompareDetails = ({
 }: CompareDetailsTypes) => {
 
   // TODO: testing
+  console.log("start");
   console.log(start);
+  console.log("finish");
   console.log(finish);
+  console.log("duration");
   console.log(duration);
+  console.log("timeframe");
   console.log(timeframe);
 
   const time = PaddleTime({
@@ -122,6 +126,8 @@ const CompareDetails = ({
 
 
 export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleCompareTypes) => {
+
+  console.log(tours);
 
   let id1 = tours[0].id;
   let id2 = tours[1].id;
