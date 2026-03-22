@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "gatsby";
 
 import { PaddleTime } from './paddle-time';
 import { PaddleBookNow } from './paddle-book-now';
@@ -25,6 +26,7 @@ type CompareDetailsTypes = {
   peek_base: PaddleCompareTypes["peek_base"];
   strapiBranchName: PaddleCompareTypes["strapiBranchName"];
   tours: PaddleCompareTypes["tours"];
+  breadcrumb: PaddleCompareTypes["breadcrumb"];
 };
 
 const CompareDetails = ({
@@ -44,7 +46,8 @@ const CompareDetails = ({
   peeks,
   peek_base,
   strapiBranchName,
-  tours
+  tours,
+  breadcrumb
 }: CompareDetailsTypes) => {
 
   const time = PaddleTime({
@@ -75,7 +78,7 @@ const CompareDetails = ({
       </select>
 
       <h2 className="kilimanjaro">
-        <a href={link}>{name}</a>
+        <Link to={`/${breadcrumb}/${link}`}>{name}</Link>
       </h2>
 
       <h4 className="capitalize">{sport}</h4>
@@ -109,8 +112,7 @@ const CompareDetails = ({
   )
 }
 
-
-export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleCompareTypes) => {
+export const PaddleCompare = ({ tours, breadcrumb, strapiBranchName, peek_base }: PaddleCompareTypes) => {
 
   console.log(tours);
 
@@ -218,6 +220,7 @@ export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleComp
           peeks={peeks1}
           fitness={fitness1}
 
+          breadcrumb={breadcrumb}
           strapiBranchName={strapiBranchName}
           peek_base={peek_base}
 
@@ -240,6 +243,7 @@ export const PaddleCompare = ({ tours, strapiBranchName, peek_base }: PaddleComp
           peeks={peeks2}
           fitness={fitness2}
 
+          breadcrumb={breadcrumb}
           strapiBranchName={strapiBranchName}
           peek_base={peek_base}
 

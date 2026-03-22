@@ -6,7 +6,7 @@ import { faker } from '@faker-js/faker';
 export const Breadcrumbs = () => {
 
   return (
-    <ol className='react-aria-Breadcrumbs aurora'>
+    <ol className='react-aria-Breadcrumbs'>
       {Array.from({ length: faker.number.int({ min: 2, max: 4 }) }).map((_,) => (
         <Breadcrumb key={faker.number.int()} linked={true} />
       ))}

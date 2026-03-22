@@ -32,14 +32,7 @@ body:has(#storybook-root) {
   background-color: var(--sand-100);
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--lake-300);
-  }
-}
-
-body.tahoe-city {
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--navy-300);
-    color: var(--neutral-100);
+    background-color: var(--lake-800);
   }
 }
 
@@ -103,25 +96,14 @@ hr {
 
 .top-bar {
   clip-path: inset(0 -100vmax);
-  background-color: var(--neutral-200);
-  box-shadow: 0 0 0 100vmax var(--neutral-200);
+    background-color: white;
+    box-shadow: 0 0 0 100vmax white;
   text-align: center;
 
   @media (prefers-color-scheme: dark) {
     background-color: var(--neutral-700);
     box-shadow: 0 0 0 100vmax var(--neutral-700);
   }
-}
-
-@media (prefers-color-scheme: light) {
-  .tahoe-city .top-bar {
-    /* background-color: var(--neutral-100); */
-    /* box-shadow: 0 0 0 100vmax var(--neutral-100); */
-    background-color: white;
-    box-shadow: 0 0 0 100vmax white;
-  }
-
-  /* * dark back to clean theme */
 }
 
 .south-tahoe {
@@ -187,4 +169,20 @@ hr {
 .specs h2,
 .specs .spec__unit {
   color: grey;
+}
+
+/*------------------------------------*/
+/* #BREADCRUMBS */
+/*------------------------------------*/
+
+.react-aria-Breadcrumbs {
+  clip-path: inset(0 -100vmax);
+    background-color: white;
+    box-shadow: 0 0 0 100vmax white;
+  text-align: center;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: black;
+    box-shadow: 0 0 0 100vmax black;
+  }
 }

@@ -18,13 +18,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid transparent;
   border-radius: var(--card-radius);
   /* needed to control nested elements */
   text-decoration: none;
   box-shadow: var(--penumbra);
   max-width: calc(100vw - 2rem);
-  background-color: white;
 
   .purchase-collage {
     display: grid;

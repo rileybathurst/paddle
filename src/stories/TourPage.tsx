@@ -52,9 +52,7 @@ export const TourPage = () => {
         <Flight />
       </section>
 
-      <div className="panel">
-        <Breadcrumbs />
-      </div>
+      <Breadcrumbs />
       <Footer />
     </>
   );

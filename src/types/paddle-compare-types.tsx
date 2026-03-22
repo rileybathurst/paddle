@@ -17,6 +17,7 @@ export type PaddleCompareTypes = {
     price: number;
     peek?: string;
   }[];
+  breadcrumb: string;
   strapiBranchName: string;
   peek_base: string;
 };
