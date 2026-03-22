@@ -57,6 +57,9 @@ const CompareDetails = ({
     timeframe: timeframe,
   });
 
+  // TODO: testing
+  console.log(breadcrumb, link);
+
   return (
     <section>
       <select
@@ -78,7 +81,9 @@ const CompareDetails = ({
       </select>
 
       <h2 className="kilimanjaro">
-        <Link to={`/${breadcrumb}/${link}`}>{name}</Link>
+        <Link to={`/${breadcrumb}${link}`}>
+          {name}
+        </Link>
       </h2>
 
       <h4 className="capitalize">{sport}</h4>
