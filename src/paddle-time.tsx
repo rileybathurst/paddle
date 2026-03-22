@@ -32,6 +32,9 @@ console.log("paddle time");
   let sunsetEndTime = '';
 
   if (slug === 'sunset' && allStrapiSunsetTourTime && allStrapiSunsetTourTime.nodes) {
+  // TODO: testing
+console.log("sunset");
+  
     allStrapiSunsetTourTime.nodes.map((time) => {
       const startDate = new Date(time.startDate);
       const endDate = new Date(time.endDate);
@@ -46,6 +49,9 @@ console.log("paddle time");
   const hairSpace = String.fromCharCode(0x200A);
 
   if (timeframe) {
+  // TODO: testing
+console.log("timeframe");
+
     return {
       // key: timeframe, cant return key its a react special prop
       // https://react.dev/warnings/special-props
