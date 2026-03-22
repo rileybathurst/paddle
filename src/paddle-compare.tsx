@@ -47,27 +47,12 @@ const CompareDetails = ({
   tours
 }: CompareDetailsTypes) => {
 
-  // TODO: testing
-  console.log("start");
-  console.log(start);
-  console.log("finish");
-  console.log(finish);
-  console.log("duration");
-  console.log(duration);
-  console.log("timeframe");
-  console.log(timeframe);
-
   const time = PaddleTime({
     start: start,
     finish: finish,
     duration: duration,
     timeframe: timeframe,
   });
-
-  // TODO: testing
-  console.log("time", time);
-  console.log(time.entry);
-  console.log(time.value);
 
   return (
     <section>

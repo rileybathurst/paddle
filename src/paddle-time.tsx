@@ -19,21 +19,12 @@ interface TimeTypes {
 }
 export const PaddleTime = ({ start, finish, duration, timeframe, slug, allStrapiSunsetTourTime }: TimeTypes) => {
 
-// TODO: testing
-console.log("paddle time");
-  console.log(start);
-  console.log(finish);
-  console.log(duration);
-  console.log(timeframe);
-
   // TODO: sunset is a whole thing
   const currentDate = new Date();
   let sunsetStartTime = '';
   let sunsetEndTime = '';
 
   if (slug === 'sunset' && allStrapiSunsetTourTime && allStrapiSunsetTourTime.nodes) {
-  // TODO: testing
-console.log("sunset");
   
     allStrapiSunsetTourTime.nodes.map((time) => {
       const startDate = new Date(time.startDate);
@@ -50,8 +41,6 @@ console.log("sunset");
 
   // * compare gives a not set value
   if (timeframe && timeframe !== "not set") {
-  // TODO: testing
-console.log("timeframe");
 
     return {
       // key: timeframe, cant return key its a react special prop
@@ -62,10 +51,6 @@ console.log("timeframe");
   }
 
   if (duration) {
-
-// TODO: testing
-console.log("duration");
-
     if (duration > 90) {
       const hours = Math.floor(duration / 60);
       const mins = duration % 60;
