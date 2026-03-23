@@ -60,6 +60,10 @@ const CompareDetails = ({
     timeframe: timeframe,
   });
 
+  if (sport === "sup") {
+    sport = "Paddleboard";
+  }
+
   return (
     <section>
       <select
@@ -84,7 +88,7 @@ const CompareDetails = ({
         <GatsbyImage
           image={ogimage.localFile.childImageSharp.gatsbyImageData}
           alt={ogimage.alternativeText || name}
-          className="comparesheet_image"
+          className="comparesheet_image img__wrapped"
         />
       ) : <div>&nbsp;</div>}
 
@@ -176,7 +180,7 @@ export const PaddleCompare = ({ tours, breadcrumb, strapiBranchName, peek_base }
     setMinimum1(selectedTour.minimum || 0);
     setPrice1(selectedTour.price || 0);
     setPeeks1(selectedTour.peek || "not set");
-    setFitness1(selectedTour.fitness || "fitness");
+    setFitness1(selectedTour.fitness || "not set");
   };
 
   const updateTour2 = (selectedName: string) => {
@@ -196,7 +200,7 @@ export const PaddleCompare = ({ tours, breadcrumb, strapiBranchName, peek_base }
     setMinimum2(selectedTour.minimum || 0);
     setPrice2(selectedTour.price || 0);
     setPeeks2(selectedTour.peek || "not set");
-    setFitness2(selectedTour.fitness || "fitness");
+    setFitness2(selectedTour.fitness || "not set");
   };
 
   return (

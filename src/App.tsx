@@ -1,10 +1,11 @@
 // * this is the opening vite page to test functions with
+// TODO: faker
 
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { PaddlePricingChart } from './paddle-pricing-chart'
-import { PaddleCompare } from './paddle-compare'
+// import { PaddleCompare } from './paddle-compare'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -96,7 +97,7 @@ function App() {
         }}
       />
 
-      <PaddleCompare
+      {/* <PaddleCompare
         peek_base="123"
         strapiBranchName="south-tahoe"
         tours={[
@@ -149,7 +150,7 @@ function App() {
             peek: "101112"
           }
         ]}
-      />
+      /> */}
     </>
   )
 }

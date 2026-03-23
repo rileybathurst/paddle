@@ -84,22 +84,10 @@ ol {
   ul {
     list-style: none;
     padding-inline-start: 0;
-    display: flex;
-    flex-flow: row wrap;
-    gap: var(--vinson);
 
     li {
-      height: 2lh;
-      margin-block-end: 1lh;
-
-      @supports not (margin: 1lh) {
-        height: var(--aconcagua);
-        margin-block-end: var(--elbrus);
-      }
-    }
-
-    li:last-child {
-      border-bottom: none;
+      line-height: 1.5lh;
+      margin-block-end: 0; /* reset */
     }
   }
 }

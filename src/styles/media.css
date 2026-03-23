@@ -164,6 +164,12 @@ svg {
 .img__wrapped {
   border-radius: 0.25rem;
   box-shadow: var(--penumbra);
+
+  border: 1px solid white;
+
+  @media (prefers-color-scheme: dark) {
+    border: 1px solid black;
+  }
 }
 
 .crop {
