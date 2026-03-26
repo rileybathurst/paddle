@@ -20,6 +20,7 @@ export * from "./paddle-purchase";
 export * from "./paddle-pricing-chart";
 export * from "./paddle-texture-backgrounds";
 export * from "./paddle-compare";
+export * from "./paddle-card";
 
 // Organisms
 export * from "./paddle-location-deck";
@@ -45,3 +46,4 @@ export * from "./types/paddle-brand-list-types";
 export * from "./types/paddle-book-now-types";
 export * from "./types/paddle-testimonial-types";
 export * from "./types/paddle-compare-types";
+export * from "./types/paddle-card-types";

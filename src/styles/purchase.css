@@ -2,16 +2,6 @@
 /* #PURCHASE */
 /*------------------------------------*/
 
-.bag {
-  margin-block-end: var(--aconcagua);
-
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--condor), 1fr));
-
-  /* TODO: clamp */
-  gap: var(--kosciuszko);
-}
-
 /* * specific type of a card */
 .purchase {
   padding: 0;
@@ -22,7 +12,6 @@
   /* needed to control nested elements */
   text-decoration: none;
   box-shadow: var(--penumbra);
-  max-width: calc(100vw - 2rem);
 
   .purchase-collage {
     display: grid;

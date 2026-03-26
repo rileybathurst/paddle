@@ -2,27 +2,7 @@
 /* #TICKET */
 /*------------------------------------*/
 
-.flight {
-  margin-block-end: var(--aconcagua);
-
-  display: grid;
-
-  /* * iPhone size breaks without this */
-  grid-template-columns: 1fr;
-
-  /* * guess and check */
-  @media (min-width: 29rem) {
-    grid-template-columns: repeat(auto-fill, minmax(var(--condor), 1fr));
-  }
-}
-
-.flight:empty {
-  display: none;
-}
-
 .ticket {
-  width: calc(100% - 2 * var(--kosciuszko));
-  height: calc(100% - 2 * var(--kosciuszko));
 
   img {
     width: 100%;
