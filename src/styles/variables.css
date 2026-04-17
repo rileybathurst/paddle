@@ -100,8 +100,7 @@
 
   --body_font: "Barlow", Arial, sans-serif;
   --heading_font: "Barlow Condensed", Arial, sans-serif;
-  --font-serif: Georgia, serif; /* TODO: v.1.2 add serif font that matches nicely */
-  /* only used in testimonials its not a big deal for now */
+  --font-serif: "allotropic", sans-serif;
 
   /* 🏔 7 Summits */
   /* linear scale */

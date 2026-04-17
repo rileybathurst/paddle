@@ -2,10 +2,12 @@
 import React from 'react';
 import { faker } from '@faker-js/faker';
 
-// these have to be incased in the wrapping class to function so dont work as individual components
-const BrandItem = () => {
+export const BrandList = () => {
+
   return (
-    <li key={faker.location.city()}>
+    <ul className='brand_list'>
+      {Array.from({ length: faker.number.int({ min: 1, max: 10 }) }).map(() => (
+        <li key={faker.location.city()}>
       <a
         href={faker.location.city()}
         className='button'
@@ -14,15 +16,6 @@ const BrandItem = () => {
         {faker.location.city()}
       </a>
     </li>
-  );
-};
-
-export const BrandList = () => {
-
-  return (
-    <ul className='brand_list'>
-      {Array.from({ length: faker.number.int({ min: 1, max: 10 }) }).map(() => (
-        <BrandItem key={faker.string.uuid()} />
       ))}
     </ul>
   );

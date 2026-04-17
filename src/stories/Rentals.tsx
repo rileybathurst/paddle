@@ -3,10 +3,10 @@
 import React from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';
-import { Composition } from './Composition';
 import { LocationColumn } from './LocationColumn';
 import { faker } from '@faker-js/faker';
 import { Pricing } from './Pricing';
+import { Hero } from './Hero';
 
 export const Rentals = () => {
 
@@ -14,13 +14,14 @@ export const Rentals = () => {
     <>
       <Header />
 
-      <div className="albatross wrap">
+      <Hero />
+
+      <div className="albatross">
         <main className='condor'>
           <h1>Rentals Page</h1>
           <LocationColumn />
           <h2>{faker.location.city()} Rentals</h2>
           <p>{faker.lorem.paragraph()}</p>
-
 
           <h3>
             <a href={faker.internet.url()}>
@@ -28,7 +29,6 @@ export const Rentals = () => {
             </a>
           </h3>
         </main>
-        <Composition />
       </div>
 
       <div className='albatross'>
@@ -36,7 +36,7 @@ export const Rentals = () => {
         <hr />
       </div>
 
-      <div className="albatross wrap">
+      <div className="albatross">
         <section>
 
           <h2>{faker.location.city()} Rentals</h2>

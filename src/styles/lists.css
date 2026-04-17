@@ -65,14 +65,6 @@ ol {
   }
 }
 
-.flex-row-wrap {
-  display: flex;
-  flex-flow: row wrap;
-  gap: var(--vinson);
-  align-items: baseline;
-  justify-content: space-between;
-}
-
 /*------------------*/
 /* #FEATURES */
 /*------------------*/

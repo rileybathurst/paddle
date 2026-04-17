@@ -9,10 +9,8 @@ export const RetailPage = () => {
   return (
     <>
       <Header />
-      <main className="albatross wrap">
-        <div className='condor'>
+      <main className="condor">
           <h1>Retail Page</h1>
-        </div>
       </main>
 
       {/* // TODO: specify the retail card */}

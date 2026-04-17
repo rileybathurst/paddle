@@ -24,7 +24,7 @@ export const Location = () => {
           )}
         </svg>
         <div className="location-details">
-          <h3 className="kosciuszko-margin-block-end">
+          <h3 className="font-serif kosciuszko-margin-block-end">
             {faker.helpers.arrayElement([
               "On Water Rental",
               "Retail Location",

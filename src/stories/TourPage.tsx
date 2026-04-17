@@ -5,22 +5,21 @@ import { faker } from "@faker-js/faker";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Breadcrumbs } from "./Breadcrumbs";
-import { Composition } from "./Composition";
 import { SunsetTourTimes } from "./SunsetTourTimes";
 import { BookNow } from "./BookNow";
 import { Deck } from "./deck";
+import { Hero } from "./Hero";
 
 export const TourPage = () => {
   return (
     <>
       <Header />
+          <Hero />
 
       <div className="panel">
-        <div className="albatross wrap">
+        <div className="albatross">
           <main>
-            <div className="flex-row-wrap">
               <h1>{faker.animal.bear()}</h1> <BookNow />
-            </div>
             <p>{faker.lorem.sentence()}</p>
 
             {/* <Specs /> */}
@@ -36,7 +35,7 @@ export const TourPage = () => {
             <SunsetTourTimes />
           </main>
           {/* // ? this is wrapping down rather than across */}
-          <Composition />
+
         </div>
       </div>
 

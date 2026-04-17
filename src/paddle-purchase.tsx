@@ -95,12 +95,12 @@ export const PaddlePurchase = ({
               badges={{
                 inflatable: inflatable,
                 demo: demo,
-            discount: discount
-          }}
-          />
+                discount: discount
+              }}
+            />
           </div>
         ) : null}
-        
+
       </div>
       <h4 className="purchase__title">
         <Link to={`/retail/${sport.slug}/${brand.slug}/${slug}`}>{title}</Link>

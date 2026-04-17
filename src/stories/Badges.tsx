@@ -1,3 +1,4 @@
+// * currently removed but leave them as they might come back
 // this is the Name.tsx file
 import { faker } from '@faker-js/faker';
 import React from 'react';

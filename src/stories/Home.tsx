@@ -47,7 +47,7 @@ export const Home = () => {
       <section className="panel aconcagua-padding-block-end">
         <div className='condor aconcagua-padding-block'>
 
-          <h3 className="">
+          <h3 className="font-serif">
             <Link href={faker.internet.domainName()}>
               Tours
             </Link>
@@ -66,7 +66,7 @@ export const Home = () => {
 
       <section id="retail" className="pelican aconcagua-margin-block-start">
         <article>
-          <h3>
+          <h3 className='font-serif'>
             <a
               href={faker.internet.domainName()}
               target="_blank"

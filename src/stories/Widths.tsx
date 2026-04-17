@@ -2,16 +2,21 @@
 import { faker } from "@faker-js/faker";
 import React from "react";
 
+type Width = {
+  name: string;
+  alias?: string;
+};
+
 type WidthCardTypes = {
-  widths: string[];
+  widths: Width[];
 };
 const WidthCard = ({ widths }: WidthCardTypes) => {
   return (
     <>
-      {widths.map((width) => (
+      {widths.map(({ name, alias }) => (
         <div
-          key={width}
-          className={width}
+          key={name}
+          className={name}
           style={{
             minHeight: "8rem",
             backgroundColor: "var(--neutral-200)",
@@ -21,9 +26,13 @@ const WidthCard = ({ widths }: WidthCardTypes) => {
             color: "var(--neutral-700)",
           }}
         >
-          {width}
+          {name}
+
+          {alias && (
+            <p>alias:&nbsp;{alias}</p>
+          )}
+
           <br />
-          {/* {faker.string.fromCharacters('abc', { min: 45, max: 90 })} */}
           <p
             className="white-space"
             style={{
@@ -52,111 +61,22 @@ const WidthCard = ({ widths }: WidthCardTypes) => {
   );
 };
 
-type WarpCardsTypes = {
-  widths: string[];
-};
-const WarpCards = ({ widths }: WarpCardsTypes) => {
-  return (
-    <>
-      {widths.map((width) => (
-        <div
-          key={width}
-          className={`${width} wrap`}
-          style={{
-            minHeight: "8rem",
-            marginBlockEnd: "var(--vinson)",
-            paddingBlock: "var(--vinson)",
-            backgroundColor: "var(--neutral-200)",
-            color: "grey",
-          }}
-        >
-          <div
-            // className='white-space'
-            style={{
-              paddingBlock: "var(--vinson)",
-              backgroundColor: "var(--neutral-300)",
-              color: "var(--lake-400)",
-            }}
-          >
-            {width} wrap
-            {/* 45 char min */}
-            <br />
-            {/* {faker.string.fromCharacters('abc', { min: 45, max: 90 })} */}
-            {/* // * adding the string breaks the wraps */}
-            {/* // ? maybe I do this with a ref and give it colors based on sizing */}
-            {/* {faker.string.fromCharacters('abcdefghijklmnopqrstuvwxyz', { min: 45, max: 45 })} */}
-            {faker.lorem.sentence()}
-          </div>
-          <div
-            // className='white-space'
-            style={{
-              paddingBlock: "var(--vinson)",
-              backgroundColor: "var(--neutral-300)",
-              color: "red",
-            }}
-          >
-            {width} wrap
-            {/* 90 char max */}
-            <br />
-            {/* {faker.string.fromCharacters('abcdefghijklmnopqrstuvwxyz', { min: 90, max: 90 })} */}
-            {faker.lorem.sentence()}
-          </div>
-        </div>
-      ))}
-    </>
-  );
-};
-
 export const Widths = () => {
   return (
-    <>
-      <h1>Widths</h1>
+    <React.Fragment>
+      <main>
+        <h1>Widths</h1>
+        <p>condor is good for measure</p>
+      </main>
       <WidthCard
-        widths={["vulture", "stork", "condor", "pelican", "albatross"]}
+        widths={[
+          { name: "vulture" },
+          { name: "stork" },
+          { name: "condor", alias: "main / location" },
+          { name: "pelican", alias: "header" },
+          { name: "albatross", alias: "footer / deck / react-aria-Breadcrumbs" },
+        ]}
       />
-      <p>condor is good for measure</p>
-      <hr />
-      <h2>split</h2>
-      <WarpCards widths={["condor", "pelican", "albatross"]} />
-      <p>pelican split is good for measure</p>
-      <h3>Nested Wraps</h3>
-      <div
-        className="albatross wrap"
-        style={{
-          paddingBlock: "var(--vinson)",
-          backgroundColor: "var(--neutral-200)",
-        }}
-      >
-        {/* // TODO: v1.2 doesnt work yet still controlled by the star, might just be ordering */}
-        <div
-          style={{
-            backgroundColor: "var(--neutral-300)",
-          }}
-        >
-          {/* {faker.string.fromCharacters('abcdefghijklmnopqrstuvwxyz', { min: 45, max: 45 })} */}
-          {/* <p className='text-center'>{faker.lorem.sentence()}</p> */}
-
-          <section className="pelican">
-            Albatross wrap with pelican inside a nested div Double nested with
-            the pelican inside the next layer down also stops the problems
-            <p>{faker.lorem.paragraphs()}</p>
-          </section>
-        </div>
-        <div
-          style={{
-            backgroundColor: "var(--neutral-300)",
-          }}
-        >
-          {/* {faker.string.fromCharacters('abcdefghijklmnopqrstuvwxyz', { min: 90, max: 90 })} */}
-          <section className="pelican">
-            <p>{faker.lorem.paragraphs()}</p>
-          </section>
-        </div>
-      </div>
-      <p>
-        Albatross is too wide to run text on a traditional wrap, pelican is wide
-        on this but fits better than condor
-      </p>
-    </>
+    </React.Fragment>
   );
 };
