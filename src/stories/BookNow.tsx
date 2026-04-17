@@ -21,7 +21,7 @@ export const BookNow = ({
       <a
         href={faker.location.city()}
         rel="noopener noreferrer"
-        className='book-now'
+        className='book-now font-serif'
         title={`Book now with ${faker.location.city()} kayak and paddleboard`}
       >
         {additional ? additional : null}

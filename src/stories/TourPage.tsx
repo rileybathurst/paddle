@@ -8,7 +8,7 @@ import { Breadcrumbs } from "./Breadcrumbs";
 import { Composition } from "./Composition";
 import { SunsetTourTimes } from "./SunsetTourTimes";
 import { BookNow } from "./BookNow";
-import { Flight } from "./Flight";
+import { Deck } from "./deck";
 
 export const TourPage = () => {
   return (
@@ -49,7 +49,7 @@ export const TourPage = () => {
             </a>
           </p>
         </div>
-        <Flight />
+        <Deck />
       </section>
 
       <Breadcrumbs />

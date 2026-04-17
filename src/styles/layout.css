@@ -3,7 +3,8 @@
 /*------------------*/
 
 body {
-  margin: 0; /* reset */
+  margin: 0;
+  /* reset */
 }
 
 /* * these do not have padding as they often have grid gap to do that */
@@ -16,9 +17,7 @@ header,
 main,
 footer,
 .react-aria-Breadcrumbs,
-.deck,
-.bag,
-.flight {
+.deck {
   margin-inline: auto;
   padding-inline: var(--kosciuszko);
   /* width: calc(100% - var(--kosciuszko) * 2); */
@@ -54,8 +53,6 @@ header,
 .albatross,
 footer,
 .deck,
-.bag,
-.flight,
 .react-aria-Breadcrumbs {
   max-width: min(var(--albatross), calc(100vw - var(--denali)));
   /* max-width: var(--albatross); */
@@ -66,40 +63,38 @@ footer,
 
 /*------------------------------------*/
 
-/* TODO: v1.2 media queries for the nested wraps */
+/* TODO: media queries for the nested wraps */
 
 .wrap,
-.deck,
-.flight {
+.deck {
   display: flex;
   flex-flow: row wrap;
   gap: clamp(var(--kosciuszko), 1.667vw, var(--denali));
   padding-inline: var(--kosciuszko);
 
-  > * {
+  >* {
     flex: 1 1;
     width: 100%;
     height: fit-content;
   }
 }
 
-.pelican.wrap > *,
-.albatross.wrap > *,
-.deck > *,
-.flight > *,
-footer > * {
-  max-width: none; /* TODO: this is breaking .composition on storybook */
+.pelican.wrap>*,
+.albatross.wrap>*,
+.deck>*,
+footer>* {
+  max-width: none;
+  /* TODO: this is breaking .composition on storybook */
   margin-inline: 0;
   padding-inline: 0;
 }
 
-.pelican.wrap > * {
+.pelican.wrap>* {
   flex: 1 1 calc(var(--pelican) / 2 - var(--vinson));
 }
 
-.albatross.wrap > *,
-.deck > *,
-.flight > * {
+.albatross.wrap>*,
+.deck>* {
   flex: 1 1 calc(var(--albatross) / 2 - var(--vinson));
 }
 
@@ -112,9 +107,9 @@ footer > * {
 /*------------------------------------*/
 
 /* this isnt a direct nested its always down another layer */
-.albatross .pelican,
-.deck > *:not(h4):not(p):not(hr) {
-  width: 100%; /* resets the padding */
+.albatross .pelican {
+  width: 100%;
+  /* resets the padding */
   padding-inline: 0;
 }
 
@@ -129,6 +124,7 @@ footer {
 }
 
 header {
+
   h1,
   h2 {
     text-align: center;
@@ -145,7 +141,8 @@ header {
   }
 
   button:hover {
-    box-shadow: none; /* reset */
+    box-shadow: none;
+    /* reset */
   }
 }
 
@@ -380,7 +377,8 @@ header {
   display: flex;
   justify-content: center;
   padding-block-start: clamp(0.25rem, 1.667vw, var(--kilimanjaro));
-  z-index: var(--emergent); /* over the small menu when it slides up */
+  z-index: var(--emergent);
+  /* over the small menu when it slides up */
   position: relative;
 
   p {
@@ -409,9 +407,9 @@ header {
 
 .location-deck {
   margin-block-end: var(--kilimanjaro);
-      display: flex;
-    flex-direction: column;
-    gap: var(--vinson);
+  display: flex;
+  flex-direction: column;
+  gap: var(--vinson);
 }
 
 .location:not(:last-child) {
@@ -421,7 +419,7 @@ header {
 .location-wrapper {
   display: grid;
 
-  > * {
+  >* {
     grid-column: 1;
   }
 }
@@ -434,7 +432,7 @@ header {
   border-radius: var(--card-radius);
   padding: var(--vinson);
 
-  > svg,
+  >svg,
   .svg {
     min-width: var(--everest);
     min-height: var(--everest);
@@ -444,7 +442,8 @@ header {
     width: 100%;
 
     .button {
-      margin-block-end: 0; /* reset */
+      margin-block-end: 0;
+      /* reset */
     }
   }
 
@@ -457,7 +456,8 @@ header {
 /* It works around having a nested link in a link */
 .location-wrapper.phone-spacer .location {
   grid-row: 1/3;
-  padding-block-end: 6.5rem; /* this is a guess and check, it needs to be big enough to accomodate the phone number but not too big that it looks weird when there is no phone number */
+  padding-block-end: 6.5rem;
+  /* this is a guess and check, it needs to be big enough to accomodate the phone number but not too big that it looks weird when there is no phone number */
 }
 
 .button.location-phone {
@@ -481,12 +481,12 @@ header {
     max-width: 100%;
   }
 
-  > * {
+  >* {
     border-radius: 0.25rem;
     box-shadow: var(--penumbra);
   }
 
-  > img {
+  >img {
     display: block;
   }
 
@@ -570,6 +570,7 @@ header {
 
   height: 2lh;
   margin-block-start: 1lh;
+
   @supports not (margin: 1lh) {
     height: var(--aconcagua);
     margin-block-start: var(--elbrus);
@@ -635,14 +636,14 @@ header {
     margin-block-end: 0;
   }
 
-  > * {
+  >* {
     grid-row: 1/11;
     display: grid;
     grid-template-rows: subgrid;
     gap: var(--vinson);
     padding-inline-end: var(--vinson);
 
-    > * {
+    >* {
       align-self: stretch;
       padding: 0.25rem;
 
@@ -651,7 +652,7 @@ header {
       }
     }
 
-    > *:nth-child(odd) {
+    >*:nth-child(odd) {
       border-radius: 0.25rem;
       background-color: var(--neutral-100);
 
@@ -661,12 +662,12 @@ header {
       }
     }
 
-    > *:first-child {
+    >*:first-child {
       /* background-color: transparent; you cant do this due to dark mode */
     }
   }
 
-  > *:last-child {
+  >*:last-child {
     border-inline-end: none;
     padding-inline-end: 0;
   }
@@ -677,6 +678,7 @@ header {
     @media (min-width: 30rem) {
       display: grid;
     }
+
     padding-inline-end: var(--vinson);
     text-align: end;
   }
@@ -714,5 +716,6 @@ header {
 
 .comparesheet_select {
   z-index: var(--emergent);
-  max-width: calc(50vw - 2.25rem); /* guess and check */
+  max-width: calc(50vw - 2.25rem);
+  /* guess and check */
 }

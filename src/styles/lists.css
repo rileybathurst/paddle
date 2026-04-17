@@ -130,8 +130,7 @@ ol {
 /* #BRANDS */
 /*------------------*/
 
-/* * grid because we always want them the same size */
-/* ? or flex the same size as we want them to fill the spaces? */
+/* TODO: move this to grid its more logical */
 .brand_list {
   list-style: none;
   padding: 0;

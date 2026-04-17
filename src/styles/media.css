@@ -18,6 +18,15 @@ svg {
   fill: currentColor;
 }
 
+/*------------------------------------*/
+/* #HERO */
+/*------------------------------------*/
+
+.hero {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
 /*------------------*/
 /* #LOGO */
 /*------------------*/
@@ -138,7 +147,7 @@ svg {
 /* https://www.tripadvisor.com/pdfs/cprc/BrandGuidelinesForPartners.pdf */
 .tripadvisor {
   circle {
-    fill: transparent;
+    fill: white;
   }
 
   @media (prefers-color-scheme: dark) {

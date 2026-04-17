@@ -4,7 +4,7 @@ import React from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { Composition } from './Composition';
-import { LocationDeck } from './LocationDeck';
+import { LocationColumn } from './LocationColumn';
 import { faker } from '@faker-js/faker';
 import { Pricing } from './Pricing';
 
@@ -17,7 +17,7 @@ export const Rentals = () => {
       <div className="albatross wrap">
         <main className='condor'>
           <h1>Rentals Page</h1>
-          <LocationDeck />
+          <LocationColumn />
           <h2>{faker.location.city()} Rentals</h2>
           <p>{faker.lorem.paragraph()}</p>
 

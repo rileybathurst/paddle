@@ -4,7 +4,7 @@ import { Link } from "react-aria-components";
 import { faker } from "@faker-js/faker";
 
 import { Pricing } from "./Pricing";
-import { LocationDeck } from "./LocationDeck";
+import { LocationColumn } from "./LocationColumn";
 import { Socials } from "./Socials";
 import { Logo } from "./Logo";
 import { MultiButton } from "./MultiButton";
@@ -19,14 +19,15 @@ export const Footer = ({ startingHR }: FooterType) => {
       {startingHR && <hr className="pelican" />}
 
       <footer className="aconcagua-padding-block-start">
-        
+
         <div className="pelican">
           <MultiButton />
         </div>
-        
+
         <div className="pelican">
-            <hr />
+          <hr />
           <nav className="nav" aria-label="Footer navigation">
+            
             {/* // * is always open  */}
             <ul className="menu-list is-open">
               {Array.from({ length: faker.number.int({ min: 1, max: 5 }) }).map(
@@ -41,12 +42,12 @@ export const Footer = ({ startingHR }: FooterType) => {
               </li>
             </ul>
           </nav>
-            <hr />
+          <hr />
         </div>
 
-        <div className="pelican wrap">
+        <div className="pelican">
           <section className="condor">
-            <LocationDeck />
+            <LocationColumn />
 
             <Socials />
             <hr />

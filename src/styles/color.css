@@ -16,7 +16,7 @@ body.tahoe-city  {
   color: var(--neutral-800);
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--lake-800);
+    background-color: var(--tanager-400);
     color: var(--neutral-100);
   }
 }
@@ -32,7 +32,7 @@ body:has(#storybook-root) {
   background-color: var(--sand-100);
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--lake-800);
+    background-color: var(--tanager-400);
   }
 }
 

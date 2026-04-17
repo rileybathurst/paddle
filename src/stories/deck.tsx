@@ -1,13 +1,13 @@
 // this is the Name.tsx file
 import React from "react";
 import { faker } from "@faker-js/faker";
-import { Purchase } from "./Purchase";
+import { Card } from "./card";
 
-export const Bag = () => {
+export const Deck = () => {
   return (
-    <div className="bag">
+    <div className="deck">
       {Array.from({ length: faker.number.int({ min: 1, max: 10 }) }).map(() => (
-        <Purchase key={faker.string.uuid()} />
+        <Card key={faker.string.uuid()} />
       ))}
     </div>
   );

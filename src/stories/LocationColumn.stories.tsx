@@ -1,19 +1,17 @@
 // this is the Name.stories.tsx file
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { fn } from 'storybook/test';
-import { Ticket } from './Ticket';
+import { LocationColumn } from './LocationColumn';
 
 const meta = {
-  component: Ticket,
-  title: 'Molecules/Ticket',
-  args: { onClick: fn() },
-} satisfies Meta<typeof Ticket>;
+  component: LocationColumn,
+  title: 'Organisms/LocationColumn',
+} satisfies Meta<typeof LocationColumn>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    primary: true,
+    background: true,
   },
 };

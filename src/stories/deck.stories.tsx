@@ -1,12 +1,12 @@
 // this is the Name.stories.tsx file
 import type { Meta, StoryObj } from '@storybook/react';
-import { Bag } from './Bag';
+import { Deck } from './deck';
 
 const meta = {
-  component: Bag,
-  title: 'Organisms/Bag',
+  component: Deck,
+  title: 'Organisms/Deck',
   args: {},
-} satisfies Meta<typeof Bag>;
+} satisfies Meta<typeof Deck>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
