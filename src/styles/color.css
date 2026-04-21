@@ -11,7 +11,8 @@ body {
   }
 }
 
-body.tahoe-city {
+body.tahoe-city,
+.tahoe-city body {
   background-color: var(--sand-100);
   color: var(--neutral-800);
 
@@ -36,10 +37,10 @@ body:has(#storybook-root) {
   }
 }
 
-body.south-tahoe {
+body.south-tahoe,
+.south-tahoe body {
   @media (prefers-color-scheme: dark) {
-    background-color: var(--lake-800);
-    color: var(--lake-600);
+    background-color: var(--lake-700);
   }
 }
 
@@ -202,10 +203,20 @@ hr {
   }
 }
 
-.hero-backer {
+
+/* follow the body color scheme */
+.tahoe-city .hero-backer {
   background-color: var(--sand-100);
 
   @media (prefers-color-scheme: dark) {
     background-color: var(--tanager-400);
+  }
+}
+
+.south-tahoe .hero-backer {
+  background-color: var(--lake-100);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--lake-700);
   }
 }
