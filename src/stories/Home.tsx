@@ -3,12 +3,12 @@ import { faker } from '@faker-js/faker';
 import { Link } from 'react-aria-components';
 import { Header } from './Header';
 import { Footer } from './Footer';
-import { LocationColumn } from './LocationColumn';
 import { Pricing } from './Pricing';
 import { BookNow } from './BookNow';
 import { Deck } from './deck';
 import { Testimonial } from './Testimonial';
 import { BrandList } from './BrandList';
+import { Hero } from './Hero';
 
 export const Home = () => {
 
@@ -16,15 +16,7 @@ export const Home = () => {
     <>
       <Header />
       <main className="albatross">
-        <section>
-          <img
-            src={faker.image.urlPicsumPhotos()}
-            alt='faker image'
-            className="hero storybook-gatsby-image"
-          />
-
-          <LocationColumn />
-        </section>
+        <Hero />
 
         <Pricing />
 
@@ -78,8 +70,8 @@ export const Home = () => {
 
           <p>{faker.lorem.sentences(2)}</p>
         </article>
-        <BrandList />
       </section>
+      <BrandList />
 
       <Deck />
 

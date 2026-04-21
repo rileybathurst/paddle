@@ -19,9 +19,9 @@ const Block = ({ directions, variables }: BlockTypes) => (
         <div
           key={faker.string.uuid()}
           className={`${variable}-margin-block-${dir}`}
-          style={{
-            backgroundColor: `var(--neutral-300)`
-          }}
+        /* style={{
+          backgroundColor: `var(--neutral-300)`
+        }} */
         >
           {variable}-block-{dir}
         </div>

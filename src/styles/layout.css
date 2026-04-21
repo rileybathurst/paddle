@@ -406,25 +406,66 @@ header {
 
 .location-wrapper {
   display: grid;
+  gap: var(--vinson);
 
   >* {
     grid-column: 1;
   }
-}
 
-.location {
-  display: flex;
-  flex-flow: row;
-  align-items: center;
-  gap: clamp(var(--kosciuszko), 1.67vw, var(--elbrus));
-  border-radius: var(--card-radius);
-  padding: var(--vinson);
+  .icon-back {
+    grid-row: 1;
+    z-index: var(--understory);
+    width: 5rem;
+    height: 5rem;
+    clip-path: inset(0 0 50% 0);
+    border-radius: 50%;
+    border: 1px solid var(--tanager-100);
+    /* transition: var(--slow); */
+
+    justify-self: center;
+  }
 
   >svg,
   .svg {
+    grid-row: 1;
+
+    justify-self: center;
     min-width: var(--everest);
     min-height: var(--everest);
+    z-index: var(--canopy);
+
+    padding-inline: 1rem;
+    padding-block-start: 1.5rem;
+    width: 2.5rem;
+    height: 3rem;
   }
+
+  .icon-hovered,
+  .icon-hovered:hover {
+    fill: var(--tanager-100);
+  }
+}
+
+.location {
+  z-index: var(--understory);
+  background: none !important;
+  /* overwrite a */
+  box-shadow: none !important;
+  /* overwrite a */
+
+  grid-row: 2;
+  display: flex;
+  flex-flow: row;
+  gap: clamp(var(--kosciuszko), 1.67vw, var(--elbrus));
+  padding-inline: var(--elbrus);
+
+  text-align: center;
+  text-decoration: none;
+  padding-block-end: var(--elbrus);
+  justify-self: center;
+  align-self: start;
+  margin-block-end: 0 !important;
+  /* reset a to the grid */
 
   .location-details {
     width: 100%;
@@ -432,12 +473,7 @@ header {
     flex-direction: column;
     gap: var(--kosciuszko);
 
-    > * {
-      margin-block-end: 0;
-      /* reset */
-    }
-
-    .button {
+    >* {
       margin-block-end: 0;
       /* reset */
     }
@@ -448,18 +484,34 @@ header {
   }
 }
 
-/* * this whole things works but is kinda a hack */
-/* It works around having a nested link in a link */
-.location-wrapper.phone-spacer .location {
+.location-backer {
+  /* margin-block-start: 2.5rem; */
+  border: 1px solid var(--tanager-100);
+  border-radius: var(--card-radius);
+  padding-block-start: var(--everest);
+
+
+  z-index: var(--floor);
+  align-self: end;
+  /* guess and check I dont know why */
+  height: calc(100% - 5.6rem);
+
   grid-row: 1/3;
-  padding-block-end: 6.5rem;
-  /* this is a guess and check, it needs to be big enough to accomodate the phone number but not too big that it looks weird when there is no phone number */
+}
+
+
+
+.location-wrapper.phone-spacer .location-backer {
+  grid-row: 1/4;
 }
 
 .button.location-phone {
-  grid-row: 2;
-  margin-inline-start: 5.5rem;
-  margin-block-end: 2.5rem;
+  /* ? */
+  grid-row: 3;
+
+  align-self: flex-end;
+  justify-self: center;
+  z-index: var(--canopy);
 }
 
 /*------------------------------------*/
@@ -643,4 +695,57 @@ header {
   z-index: var(--emergent);
   max-width: calc(50vw - 2.25rem);
   /* guess and check */
+}
+
+/*------------------------------------*/
+/* #HERO */
+/*------------------------------------*/
+
+.hero-wrapper {
+  display: grid;
+  margin-block-end: var(--everest);
+
+  >* {
+    grid-column: 1;
+  }
+
+  .hero-backer {
+
+    width: calc(100% - var(--everest));
+    justify-self: center;
+    height: 100%;
+    z-index: var(--understory);
+    align-self: start;
+    opacity: 0.9;
+    border-radius: 2rem;
+
+  }
+}
+
+.hero-wrapper>:not(:first-child) {
+  align-content: flex-end;
+  /* margin-block-end: -1.5rem; */
+  margin-block-start: -5rem;
+  grid-row: 2;
+  z-index: var(--canopy);
+}
+
+.hero-wrapper>:nth-child(3) {
+  margin-block-start: -7.5rem;
+  z-index: var(--understory);
+}
+
+/*------------------------------------*/
+/* #LOCALES */
+/*------------------------------------*/
+
+.locales {
+  display: flex;
+  gap: var(--vinson);
+  flex-wrap: wrap;
+  justify-content: center;
+
+  >* {
+    align-self: start;
+  }
 }

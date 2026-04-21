@@ -11,7 +11,7 @@ body {
   }
 }
 
-body.tahoe-city  {
+body.tahoe-city {
   background-color: var(--sand-100);
   color: var(--neutral-800);
 
@@ -57,10 +57,7 @@ hr {
 
 .tahoe-city hr {
   border-color: var(--sand-400);
-
-  @media (prefers-color-scheme: dark) {
-    border-color: var(--lake-500);
-  }
+  /* works in dark */
 }
 
 /*------------------------------------*/
@@ -84,8 +81,8 @@ hr {
   box-shadow: 0 0 0 100vmax var(--sand-300);
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--lake-700);
-    box-shadow: 0 0 0 100vmax var(--lake-700);
+    background-color: var(--tanager-300);
+    box-shadow: 0 0 0 100vmax var(--tanager-300);
   }
 }
 
@@ -96,8 +93,8 @@ hr {
 
 .top-bar {
   clip-path: inset(0 -100vmax);
-    background-color: white;
-    box-shadow: 0 0 0 100vmax white;
+  background-color: white;
+  box-shadow: 0 0 0 100vmax white;
   text-align: center;
 
   @media (prefers-color-scheme: dark) {
@@ -132,7 +129,7 @@ hr {
   @media (prefers-color-scheme: light) {
     box-shadow: var(--penumbra);
   }
-  
+
   @media (prefers-color-scheme: dark) {
     background-color: var(--neutral-800);
   }
@@ -162,6 +159,24 @@ hr {
   }
 }
 
+.icon-back,
+.location-backer {
+  background-color: var(--sand-300);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--tanager-400);
+  }
+}
+
+.icon-back-hovered,
+.location-backer-hovered {
+  background-color: var(--sand-300);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--tanager-400);
+  }
+}
+
 /*------------------------------------*/
 /* #SPECS */
 /*------------------------------------*/
@@ -177,12 +192,20 @@ hr {
 
 .react-aria-Breadcrumbs {
   clip-path: inset(0 -100vmax);
-    background-color: white;
-    box-shadow: 0 0 0 100vmax white;
+  background-color: white;
+  box-shadow: 0 0 0 100vmax white;
   text-align: center;
 
   @media (prefers-color-scheme: dark) {
     background-color: black;
     box-shadow: 0 0 0 100vmax black;
+  }
+}
+
+.hero-backer {
+  background-color: var(--sand-100);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--tanager-400);
   }
 }

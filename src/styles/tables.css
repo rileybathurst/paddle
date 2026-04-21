@@ -30,13 +30,14 @@
     font-size: var(--kosciuszko);
 
     line-height: 2;
-    min-height: var(--denali); /* always keep a line */
+    min-height: var(--denali);
+    /* always keep a line */
     padding: clamp(0.5rem, 1vw, var(--vinson));
     border-bottom: 0.5px solid var(--neutral-400);
   }
 
   /* ? can this only be if it has the full length of cells? */
-  .column > *:last-child {
+  .column>*:last-child {
     border-bottom: none;
   }
 
@@ -61,8 +62,4 @@
 .tahoe-city .pricing-chart .title,
 .tahoe-city .pricing-chart p {
   border-color: var(--sand-400);
-
-  @media (prefers-color-scheme: dark) {
-    border-color: var(--lake-500);
-  }
 }
