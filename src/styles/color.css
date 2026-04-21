@@ -28,17 +28,10 @@ body:has(#storybook-root) {
   }
 }
 
-/* * storybook body */
-.tahoe-city #storybook-root {
-  background-color: var(--sand-100);
-
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--tanager-400);
-  }
-}
-
 body.south-tahoe,
 .south-tahoe body {
+  background-color: var(--lake-100);
+
   @media (prefers-color-scheme: dark) {
     background-color: var(--lake-700);
   }
@@ -59,6 +52,11 @@ hr {
 .tahoe-city hr {
   border-color: var(--sand-400);
   /* works in dark */
+}
+
+/* ! nope */
+.south-tahoe hr {
+  border-color: var(--sand-100);
 }
 
 /*------------------------------------*/
@@ -84,6 +82,16 @@ hr {
   @media (prefers-color-scheme: dark) {
     background-color: var(--tanager-300);
     box-shadow: 0 0 0 100vmax var(--tanager-300);
+  }
+}
+
+.south-tahoe .panel {
+  background-color: var(--lake-200);
+  box-shadow: 0 0 0 100vmax var(--lake-200);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--lake-700);
+    box-shadow: 0 0 0 100vmax var(--lake-700);
   }
 }
 
@@ -122,8 +130,9 @@ hr {
 /* #LOCATION */
 /*------------------------------------*/
 
-
-.location {
+/* * follow card colors */
+.location-backer,
+.icon-back {
   transition: var(--slow);
   background-color: white;
 
@@ -136,7 +145,8 @@ hr {
   }
 }
 
-.location:hover {
+.location-backer:hover,
+.icon-back:hover {
   background-color: var(--neutral-200);
 
   @media (prefers-color-scheme: dark) {
@@ -144,15 +154,8 @@ hr {
   }
 }
 
-.tahoe-city .location:hover {
-  background-color: var(--sand-300);
-
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--lake-700);
-  }
-}
-
-.location:active {
+.location-backer:active,
+.icon-back:active {
   background-color: var(--neutral-300);
 
   @media (prefers-color-scheme: dark) {
@@ -160,21 +163,32 @@ hr {
   }
 }
 
-.icon-back,
-.location-backer {
+.tahoe-city .location-backer:hover {
   background-color: var(--sand-300);
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--tanager-400);
+    background-color: var(--lake-700);
   }
 }
 
-.icon-back-hovered,
-.location-backer-hovered {
-  background-color: var(--sand-300);
+.tahoe-city {
 
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--tanager-400);
+  .icon-back,
+  .location-backer {
+    background-color: var(--sand-300);
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--tanager-400);
+    }
+  }
+
+  .icon-back-hovered,
+  .location-backer-hovered {
+    background-color: var(--sand-300);
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--tanager-400);
+    }
   }
 }
 

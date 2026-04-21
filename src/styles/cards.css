@@ -39,7 +39,7 @@
   text-align: center;
 
   img {
-  border-radius: var(--card-radius);
+    border-radius: var(--card-radius);
     aspect-ratio: 16 / 9;
     filter: brightness(80%);
     margin-block-end: var(--kosciuszko);
@@ -58,8 +58,8 @@
   }
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--neutral-700);
-    border-color: var(--neutral-600);
+    background-color: var(--neutral-600);
+    border-color: var(--neutral-500);
   }
 }
 
@@ -71,6 +71,14 @@
 
 .tahoe-city .card {
   border-color: var(--tanager-100);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--tanager-400);
+  }
+}
+
+.south-tahoe .card {
+  border-color: var(--sand-200);
 }
 
 /* * needed for overwrite */
@@ -81,3 +89,7 @@
 .card a:hover {
   text-decoration: underline;
 }
+
+/*------------------*/
+/* #PANEL CARDS */
+/*------------------*/

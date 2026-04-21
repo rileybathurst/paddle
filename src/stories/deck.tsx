@@ -5,10 +5,20 @@ import { Card } from "./card";
 
 export const Deck = () => {
   return (
-    <div className="deck">
-      {Array.from({ length: faker.number.int({ min: 1, max: 10 }) }).map(() => (
-        <Card key={faker.string.uuid()} />
-      ))}
-    </div>
+    <React.Fragment>
+      <div className="deck">
+        {Array.from({ length: faker.number.int({ min: 1, max: 4 }) }).map(() => (
+          <Card key={faker.string.uuid()} />
+        ))}
+      </div>
+
+      <div className="panel">
+        <div className="deck">
+          {Array.from({ length: faker.number.int({ min: 1, max: 4 }) }).map(() => (
+            <Card key={faker.string.uuid()} />
+          ))}
+        </div>
+      </div>
+    </React.Fragment>
   );
 };

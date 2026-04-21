@@ -419,7 +419,7 @@ header {
     height: 5rem;
     clip-path: inset(0 0 50% 0);
     border-radius: 50%;
-    border: 1px solid var(--tanager-100);
+    border: 1px solid var(--neutral-300);
     /* transition: var(--slow); */
 
     justify-self: center;
@@ -485,8 +485,7 @@ header {
 }
 
 .location-backer {
-  /* margin-block-start: 2.5rem; */
-  border: 1px solid var(--tanager-100);
+  border: 1px solid var(--neutral-300);
   border-radius: var(--card-radius);
   padding-block-start: var(--everest);
 
@@ -748,4 +747,12 @@ header {
   >* {
     align-self: start;
   }
+}
+
+/*------------------------------------*/
+/* #PANEL */
+/*------------------------------------*/
+
+.panel {
+  padding-block: var(--denali);
 }
