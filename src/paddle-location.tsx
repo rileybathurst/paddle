@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby";
 import Markdown from "react-markdown";
 
@@ -64,7 +64,7 @@ const Season = ({
           <p>We will reopen {season_start}, Weather Permitting</p>
         ) : null}
 
-        
+
       </div>
     );
   }
@@ -134,11 +134,11 @@ const Content = ({
           postalCode ||
           commonName ? (
           <address>
-            {commonName ? (<>{commonName},<br /></>) : null}
-            {streetAddress ? (<>{streetAddress},<br /></>) : null}
-            {addressLocality ? (<>{addressLocality},<br /></>) : null}
-            {addressRegion ? (<>{addressRegion},&nbsp;</>) : null}
-            {postalCode ? (<>{postalCode}</>) : null}
+            {commonName && (<>{commonName},<br /></>)}
+            {streetAddress && (<>{streetAddress},<br /></>)}
+            {addressLocality && (<>{addressLocality},<br /></>)}
+            {addressRegion && (<>{addressRegion},&nbsp;</>)}
+            {postalCode && (<>{postalCode}</>)}
           </address>
         ) : null}
 
@@ -181,7 +181,9 @@ export const PaddleLocation = ({
   season_start,
   season_end
 }: PaddleLocationTypes) => {
-  
+
+  const [isHovered, setIsHovered] = useState(false);
+
   const content = (
     <Content
       svg={svg}
@@ -209,21 +211,37 @@ export const PaddleLocation = ({
         target="_blank"
         rel="noopener noreferrer"
         title={name}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
         {content}
       </a>
       {showThePhone && phone && (
         <Phone phone={phone} />
       )}
+
+      {/* grid-row 1 */}
+      <div className={`icon-back ${isHovered ? 'icon-back-hovered' : ''}`}>{/* stay gold */}</div>
+      {/* grid-row 1/3 or 1/4 */}
+      <div className={`location-backer ${isHovered ? 'location-backer-hovered' : ''}`}>{/* stay gold */}</div>
     </div>
   ) : (
     <div className={`location-wrapper ${showThePhone ? 'phone-spacer' : ''}`}>
-      <Link to={link} className="location">
+      <Link to={link} className="location"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         {content}
       </Link>
+
       {showThePhone && phone && (
         <Phone phone={phone} />
       )}
+
+      {/* grid-row 1 */}
+      <div className={`icon-back ${isHovered ? 'icon-back-hovered' : ''}`}>{/* stay gold */}</div>
+      {/* grid-row 1/3 or 1/4 */}
+      <div className={`location-backer ${isHovered ? 'location-backer-hovered' : ''}`}>{/* stay gold */}</div>
     </div>
   );
 };
