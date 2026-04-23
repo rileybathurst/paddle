@@ -3,7 +3,6 @@
 import React from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';
-import { LocationColumn } from './LocationColumn';
 import { faker } from '@faker-js/faker';
 import { Pricing } from './Pricing';
 import { Hero } from './Hero';
