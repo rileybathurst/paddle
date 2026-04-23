@@ -11,7 +11,6 @@ export * from "./paddle-composition";
 export * from "./paddle-socials";
 export * from "./paddle-location";
 export * from "./paddle-testimonials";
-export * from "./paddle-ticket";
 export * from "./paddle-sunset-tour-times";
 export * from "./paddle-top-bar";
 export * from "./paddle-specs";
@@ -28,17 +27,12 @@ export * from "./paddle-testimonials";
 export * from "./paddle-brand-list";
 export * from "./paddle-moonlight-date-time"
 
-// Templates
-
-// Pages
-
 // SEO
 export * from "./paddle-seo";
 
 // Types
-export * from "./types/paddle-ticket-types";
 export * from "./types/paddle-location-types";
-export * from "./types/paddle-locales-type";
+export * from "./types/paddle-locales-types";
 export * from "./types/paddle-gatsby-image-type";
 export * from "./types/paddle-purchase-types";
 export * from "./types/paddle-purchase-image-types";
@@ -46,4 +40,6 @@ export * from "./types/paddle-brand-list-types";
 export * from "./types/paddle-book-now-types";
 export * from "./types/paddle-testimonial-types";
 export * from "./types/paddle-compare-types";
+
 export * from "./types/paddle-card-types";
+export * from "./types/paddle-card-tour-types";

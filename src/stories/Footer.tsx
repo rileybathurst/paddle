@@ -28,35 +28,12 @@ export const Footer = ({ topHR }: { topHR?: boolean }) => {
 
       <MultiButton />
 
-      <hr />
-      <nav className="nav" aria-label="Footer navigation">
-
-        {/* // * is always open  */}
-        <ul className="menu-list is-open">
-          {Array.from({ length: faker.number.int({ min: 1, max: 5 }) }).map(
-            (_) => (
-              <li key={faker.string.uuid()}>
-                <a href={faker.animal.type()}>{faker.animal.type()}</a>
-              </li>
-            ),
-          )}
-          <li key={faker.string.uuid()}>
-            <BookNow />
-          </li>
-        </ul>
-      </nav>
-      <hr />
-
-      <Pricing />
-
-      <hr />
-
-      <Locales />
-
       <section className="condor">
 
         <Socials />
+
         <hr />
+
         <div>
           <h3 className="font-serif">Our Partner Locations</h3>
           <ul>
@@ -79,6 +56,33 @@ export const Footer = ({ topHR }: { topHR?: boolean }) => {
           </ul>
         </div>
       </section>
+
+      <hr />
+
+      <nav className="nav" aria-label="Footer navigation">
+        {/* // * is always open  */}
+        <ul className="menu-list is-open">
+          {Array.from({ length: faker.number.int({ min: 1, max: 5 }) }).map(
+            (_) => (
+              <li key={faker.string.uuid()}>
+                <a href={faker.animal.type()}>{faker.animal.type()}</a>
+              </li>
+            ),
+          )}
+          <li key={faker.string.uuid()}>
+            <BookNow />
+          </li>
+        </ul>
+      </nav>
+      <hr />
+
+      <Pricing />
+
+      <hr />
+
+      <Locales />
+
+
 
     </footer>
 

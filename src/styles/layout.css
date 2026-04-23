@@ -721,6 +721,10 @@ header {
     border-radius: 2rem;
 
   }
+
+  .locales {
+    margin-inline: var(--everest);
+  }
 }
 
 .hero-wrapper>:not(:first-child) {
@@ -748,6 +752,8 @@ header {
 
   >* {
     align-self: start;
+    flex: 1;
+    flex-flow: row wrap;
   }
 }
 

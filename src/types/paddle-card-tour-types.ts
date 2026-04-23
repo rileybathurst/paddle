@@ -1,9 +1,9 @@
 import type { PaddleGatsbyImageType } from "./paddle-gatsby-image-type";
 import type { PaddleBookNowTypes } from "./paddle-book-now-types";
 
-export type PaddleCardTypes = {
+export type PaddleCardTourTypes = {
   id: React.Key;
-  title: string;
+  name: string;
   link: string;
   image: PaddleGatsbyImageType;
   excerpt: string;

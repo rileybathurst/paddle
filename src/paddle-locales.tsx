@@ -1,9 +1,9 @@
 import * as React from "react";
 import { PaddleLocation } from "./paddle-location";
 import type { PaddleLocationTypes } from "./types/paddle-location-types";
-import type { PaddleLocalesTypes } from "./types/paddle-locales-type";
+import type { PaddleLocalesTypes } from "./types/paddle-locales-types";
 
-export const PaddleLocationDeck = ({
+export const PaddleLocales = ({
   single,
   nodes,
   season_start,
