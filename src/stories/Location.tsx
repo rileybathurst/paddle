@@ -1,5 +1,4 @@
 // this is the Name.tsx file
-// TODO: these are way to similar for the reality of the design
 import { faker } from "@faker-js/faker";
 import React, { useState } from "react";
 
@@ -13,28 +12,25 @@ export const Location = ({ hover }: { hover?: boolean }) => {
   return (
     <div className={`location-wrapper ${phone ? 'phone-spacer' : ''}`}>
 
-      {/* grid-row 1 */}
-      <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"
-        className={isHovered || hover ? 'icon-hovered' : ''}
-      >
-        <title>{faker.location.city()}</title>
-        {faker.helpers.arrayElement([true, false]) ? (
-          <rect x="0" y="0" width="48" height="48" />
-        ) : (
-          <circle cx="24" cy="24" r="24" />
-        )}
-      </svg>
-
-      {/* grid-row 1 */}
-      <div className={`icon-back ${isHovered || hover ? 'icon-back-hovered' : ''}`}>{/* stay gold */}</div>
-
-      {/* grid-row 2 */}
       <a href={faker.location.cardinalDirection()}
         rel="noopener noreferrer"
         className="location"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
+
+        {/* grid-row 1 */}
+        <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"
+          className={isHovered || hover ? 'icon-hovered' : ''}
+        >
+          <title>{faker.location.city()}</title>
+          {faker.helpers.arrayElement([true, false]) ? (
+            <rect x="0" y="0" width="48" height="48" />
+          ) : (
+            <circle cx="24" cy="24" r="24" />
+          )}
+        </svg>
+
         <div className="location-details">
           <h3 className="font-serif kosciuszko-margin-block-end">
             {faker.helpers.arrayElement([
@@ -61,9 +57,9 @@ export const Location = ({ hover }: { hover?: boolean }) => {
             </address>
           ) : null}
         </div>
+        {/* </a> */}
       </a>
 
-      {/* grid-row 3 */}
       {phone ? (
         <a href={`tel:${faker.phone.number()}`}
           className="button location-phone"
@@ -72,6 +68,8 @@ export const Location = ({ hover }: { hover?: boolean }) => {
         </a>
       ) : null}
 
+      {/* grid-row 1 */}
+      <div className={`icon-back ${isHovered || hover ? 'icon-back-hovered' : ''}`}>{/* stay gold */}</div>
       {/* grid-row 1/3 or 1/4 */}
       <div className={`location-backer ${isHovered || hover ? 'location-backer-hovered' : ''}`}>{/* stay gold */}</div>
 

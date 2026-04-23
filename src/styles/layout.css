@@ -393,30 +393,26 @@ header {
 /* #LOCATION */
 /*------------------*/
 
-.location-column {
-  margin-block-end: var(--kilimanjaro);
-  display: flex;
-  flex-direction: column;
-  gap: var(--vinson);
-}
-
-.location:not(:last-child) {
-  margin-block-end: var(--kosciuszko);
-}
-
 .location-wrapper {
   display: grid;
-  gap: var(--vinson);
+  /* gap: var(--vinson); */
+
+  /* * guess and check */
+  grid-template-rows: 2.5rem auto;
 
   >* {
     grid-column: 1;
   }
 
   .icon-back {
-    grid-row: 1;
+    grid-row: 1/3;
+    align-self: start;
     z-index: var(--understory);
     width: 5rem;
+    /* height: 2.5rem;  */
     height: 5rem;
+
+    /* margin-block-start: 2.5rem; */
     clip-path: inset(0 0 50% 0);
     border-radius: 50%;
     border: 1px solid var(--neutral-300);
@@ -425,42 +421,58 @@ header {
     justify-self: center;
   }
 
-  >svg,
+  /* ! testing */
+  .stay-gold {
+    background-color: hotpink;
+    grid-row: 2;
+    /* height: 100% */
+    place-self: stretch;
+    z-index: 999;
+    opacity: 0.5;
+  }
+}
+
+.location {
+
+  grid-row: 1/3;
+  width: 100%;
+
+  z-index: var(--canopy);
+
+  background: none !important;
+  /* overwrite a and use the backer as the color */
+
+
+  box-shadow: none !important;
+  /* overwrite a */
+
+  display: grid;
+
+  gap: clamp(var(--kosciuszko), 1.67vw, var(--elbrus));
+  padding-inline: var(--elbrus);
+
+  text-align: center;
+  text-decoration: none;
+  max-width: 100%;
+  padding-block-end: var(--elbrus);
+  justify-self: center;
+  align-self: start;
+  margin-block-end: 0 !important;
+  /* reset a to the grid */
+
+  svg,
   .svg {
-    grid-row: 1;
+    grid-row: 1/2;
 
     justify-self: center;
     min-width: var(--everest);
     min-height: var(--everest);
     z-index: var(--canopy);
 
-    padding-inline: 1rem;
-    padding-block-start: 1.5rem;
+    margin-block-start: 1.5rem;
     width: 2.5rem;
     height: 3rem;
   }
-}
-
-.location {
-  z-index: var(--understory);
-  background: none !important;
-  /* overwrite a */
-  box-shadow: none !important;
-  /* overwrite a */
-
-  grid-row: 2;
-  display: flex;
-  flex-flow: row;
-  gap: clamp(var(--kosciuszko), 1.67vw, var(--elbrus));
-  padding-inline: var(--elbrus);
-
-  text-align: center;
-  text-decoration: none;
-  padding-block-end: var(--elbrus);
-  justify-self: center;
-  align-self: start;
-  margin-block-end: 0 !important;
-  /* reset a to the grid */
 
   .location-details {
     width: 100%;
@@ -480,30 +492,45 @@ header {
 }
 
 .location-backer {
+  grid-row: 2/3;
+  z-index: var(--floor);
+
   border-width: 1px;
   border-style: solid;
 
   border-radius: var(--card-radius);
   padding-block-start: var(--everest);
-  z-index: var(--floor);
-  align-self: end;
-  /* guess and check I dont know why */
-  height: calc(100% - 5.6rem);
-  grid-row: 1/3;
 }
 
-.location-wrapper.phone-spacer .location-backer {
-  grid-row: 1/4;
+.location-wrapper.phone-spacer {
+  /* * guess and check */
+  /* grid-template-rows: 2.5rem auto 6rem; */
+  grid-template-rows: 2.5rem auto auto;
+
+  .location {
+    grid-row: 1/4;
+    /* margin-block-end: 3rem !important; */
+    /* reset a to the grid */
+  }
+
+  .location-backer {
+    grid-row: 2/5;
+  }
+
+  .button.location-phone {
+
+    /* ? this seems like it has 1 more row than needed? */
+    grid-row: 4;
+
+    align-self: flex-end;
+    justify-self: center;
+    z-index: var(--canopy);
+    /* margin: 0; */
+
+  }
 }
 
-.button.location-phone {
-  /* ? */
-  grid-row: 3;
 
-  align-self: flex-end;
-  justify-self: center;
-  z-index: var(--canopy);
-}
 
 /*------------------------------------*/
 /* #STORYBOOK */
