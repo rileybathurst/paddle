@@ -1,7 +1,7 @@
 import * as React from "react";
 import { PaddleLocation } from "./paddle-location";
 import type { PaddleLocationTypes } from "./types/paddle-location-types";
-import type { PaddleLocationDeckTypes } from "./types/paddle-location-deck-types";
+import type { PaddleLocalesTypes } from "./types/paddle-locales-type";
 
 export const PaddleLocationDeck = ({
   single,
@@ -9,25 +9,25 @@ export const PaddleLocationDeck = ({
   season_start,
   season_end,
   phone
-}: PaddleLocationDeckTypes) => {
+}: PaddleLocalesTypes) => {
 
   if (nodes) {
-  return (
-    <section className="location-deck">
-      {nodes.map((location: PaddleLocationTypes) => (
-        <PaddleLocation
-          key={location.id}
-          {...location}
-          season_start={season_start}
-          season_end={season_end}
-          phone={phone}
-        />
-      ))}
-    </section>
-  );
+    return (
+      <section className="locales">
+        {nodes.map((location: PaddleLocationTypes) => (
+          <PaddleLocation
+            key={location.id}
+            {...location}
+            season_start={season_start}
+            season_end={season_end}
+            phone={phone}
+          />
+        ))}
+      </section>
+    );
   } else if (single) {
     return (
-      <section className="location-deck">
+      <section className="locales">
         <PaddleLocation
           key={single.id}
           {...single}
@@ -35,7 +35,7 @@ export const PaddleLocationDeck = ({
           season_end={season_end}
           phone={phone}
         />
-    </section>
+      </section>
     );
   }
 

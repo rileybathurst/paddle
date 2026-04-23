@@ -23,13 +23,13 @@ export * from "./paddle-compare";
 export * from "./paddle-card";
 
 // Organisms
-export * from "./paddle-location-deck";
+export * from "./paddle-locales";
 export * from "./paddle-testimonials";
 export * from "./paddle-brand-list";
 export * from "./paddle-moonlight-date-time"
 
 // Templates
-    
+
 // Pages
 
 // SEO
@@ -38,7 +38,7 @@ export * from "./paddle-seo";
 // Types
 export * from "./types/paddle-ticket-types";
 export * from "./types/paddle-location-types";
-export * from "./types/paddle-location-deck-types";
+export * from "./types/paddle-locales-type";
 export * from "./types/paddle-gatsby-image-type";
 export * from "./types/paddle-purchase-types";
 export * from "./types/paddle-purchase-image-types";
