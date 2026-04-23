@@ -3,15 +3,18 @@
 /*------------------------------------*/
 
 body {
-  font-family: var(--body_font); /* Google font */
+  font-family: var(--body_font);
+  /* Google font */
   font-size: 16px;
-  line-height: 1.25; /* 20px */
+  line-height: 1.25;
+  /* 20px */
 }
 
 h1,
 h2,
 h3 {
-  font-family: var(--heading_font); /* Google font */
+  font-family: var(--heading_font);
+  /* Google font */
 }
 
 h1,
@@ -20,7 +23,8 @@ h3,
 h4,
 h5,
 h6 {
-  margin-block-start: 0; /* reset */
+  margin-block-start: 0;
+  /* reset */
   line-height: 1.5;
 }
 
@@ -33,49 +37,64 @@ h6 {
 
 h1,
 .everest {
-  margin-top: 0; /* browser reset */
-  font-size: var(--everest); /* 48px */
-  margin-bottom: var(--aconcagua); /* 40px */
+  margin-top: 0;
+  /* browser reset */
+  font-size: var(--everest);
+  /* 48px */
+  margin-bottom: var(--aconcagua);
+  /* 40px */
 }
 
 h2,
 .aconcagua,
 .supra {
-  font-size: var(--aconcagua); /* 40px */
-  margin-block-end: var(--denali); /* 32px */
+  font-size: var(--aconcagua);
+  /* 40px */
+  margin-block-end: var(--denali);
+  /* 32px */
 }
 
 h3,
 .denali {
-  font-size: var(--denali); /* 32px */
-  margin-bottom: 1.875rem; /* 30px */
+  font-size: var(--denali);
+  /* 32px */
+  margin-bottom: 1.875rem;
+  /* 30px */
 }
 
 h4,
 .kilimanjaro,
 .spec h2 {
-  font-size: var(--kilimanjaro); /* 24px */
-  margin-bottom: 1.75rem; /* 28px */
+  font-size: var(--kilimanjaro);
+  /* 24px */
+  margin-bottom: 1.75rem;
+  /* 28px */
 }
 
 h5,
 .elbrus {
-  font-size: var(--elbrus); /* 20px */
-  margin-bottom: 0.625rem; /* 10px */
+  font-size: var(--elbrus);
+  /* 20px */
+  margin-bottom: 0.625rem;
+  /* 10px */
 }
 
 h6,
 .vinson {
-  font-size: var(--vinson); /* 16px */
-  margin-bottom: 0.625rem; /* 10px skips some of the lines */
+  font-size: var(--vinson);
+  /* 16px */
+  margin-bottom: 0.625rem;
+  /* 10px skips some of the lines */
   font-family: var(--body_font);
 }
 
 /* start the multi line problem here as itll be worst */
 small,
 .kosciuszko {
-  font-size: var(--kosciuszko); /* 12px */
-  margin-bottom: 0.875rem; /* 14px */
+  font-size: var(--kosciuszko);
+  /* 12px */
+  margin-bottom: 0.875rem;
+  /* 14px */
 }
 
 address {
@@ -92,7 +111,7 @@ p {
 /*------------------*/
 
 .font-serif,
-main > h1:first-child {
+main>h1:first-child {
   font-family: var(--font-serif);
 }
 
@@ -101,7 +120,8 @@ main > h1:first-child {
 /*------------------*/
 
 hr {
-  border: none; /* reset */
+  border: none;
+  /* reset */
   border-bottom: 1px solid;
   margin-block-end: var(--kosciuszko);
 
@@ -229,5 +249,11 @@ select:active {
 /*------------------*/
 /* #DEL */
 /*------------------*/
+/* TODO: used on dates that have been */
 
-/* TODO: v1.2 */
+
+/*------------------*/
+
+.top-bar {
+  text-align: center;
+}

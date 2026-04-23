@@ -3,6 +3,7 @@ import React from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { faker } from '@faker-js/faker';
+import { Hero } from './Hero';
 
 interface Four0FourProps {
   primary?: boolean;
@@ -19,6 +20,7 @@ export const Four0Four = ({
       {...props}
     >
       <Header />
+      <Hero />
       <main className="pelican">
         <h1>404 {faker.datatype.boolean() ? (
           <>

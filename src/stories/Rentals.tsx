@@ -16,27 +16,32 @@ export const Rentals = () => {
 
       <Hero />
 
-      <div className="albatross">
-        <main className='condor'>
-          <h1>Rentals Page</h1>
-          <LocationColumn />
-          <h2>{faker.location.city()} Rentals</h2>
-          <p>{faker.lorem.paragraph()}</p>
-
-          <h3>
-            <a href={faker.internet.url()}>
-              {faker.lorem.sentence()}
-            </a>
-          </h3>
-        </main>
-      </div>
-
       <div className='albatross'>
         <Pricing demos={true} />
         <hr />
       </div>
 
-      <div className="albatross">
+      <main className='condor'>
+        <h1>Rentals Page</h1>
+        <h2>{faker.location.city()} Rentals</h2>
+        <p>{faker.lorem.paragraph()}</p>
+
+        <h3>
+          <a href={faker.internet.url()}>
+            {faker.lorem.sentence()}
+          </a>
+        </h3>
+      </main>
+
+      <div className='pelican'>
+        <img
+          src={faker.image.urlPicsumPhotos()}
+          alt="Nature"
+          className="poster storybook-ratio-2"
+        />
+      </div>
+
+      <div className="condor">
         <section>
 
           <h2>{faker.location.city()} Rentals</h2>
@@ -44,13 +49,8 @@ export const Rentals = () => {
 
           <p>{faker.lorem.paragraph()}</p>
         </section>
-        <div>
 
-          <img
-            src={faker.image.urlPicsumPhotos()}
-            alt="Nature"
-          />
-        </div>
+
 
       </div>
 

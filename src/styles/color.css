@@ -41,22 +41,31 @@ body.south-tahoe,
 /* #HR */
 /*------------------------------------*/
 
-hr {
-  border-color: var(--neutral-300);
-
-  @media (prefers-color-scheme: dark) {
-    border-color: var(--neutral-600);
-  }
+hr,
+.pricing-chart .column,
+.pricing-chart .title,
+.pricing-chart p {
+  border-color: var(--neutral-400);
 }
 
-.tahoe-city hr {
+/*------------------------------------*/
+
+/* * works in dark */
+.tahoe-city hr,
+.tahoe-city .pricing-chart .column,
+.tahoe-city .pricing-chart .title,
+.tahoe-city .pricing-chart p {
   border-color: var(--sand-400);
-  /* works in dark */
 }
 
-/* ! nope */
-.south-tahoe hr {
-  border-color: var(--sand-100);
+/*------------------------------------*/
+
+/* * works in dark */
+.south-tahoe hr,
+.south-tahoe .pricing-chart .column,
+.south-tahoe .pricing-chart .title,
+.south-tahoe .pricing-chart p {
+  border-color: var(--lake-500);
 }
 
 /*------------------------------------*/
@@ -104,90 +113,113 @@ hr {
   clip-path: inset(0 -100vmax);
   background-color: white;
   box-shadow: 0 0 0 100vmax white;
-  text-align: center;
 
+  /* TODO: tahoe city and south */
   @media (prefers-color-scheme: dark) {
     background-color: var(--neutral-700);
     box-shadow: 0 0 0 100vmax var(--neutral-700);
   }
 }
 
-.south-tahoe {
-  .top-bar {
-    background-color: var(--lake-100);
-    box-shadow: 0 0 0 100vmax var(--lake-100);
-    color: var(--lake-600);
-
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--lake-800);
-      box-shadow: 0 0 0 100vmax var(--lake-800);
-      color: var(--lake-100);
-    }
-  }
-}
 
 /*------------------------------------*/
 /* #LOCATION */
 /*------------------------------------*/
 
 /* * follow card colors */
-.location-backer,
-.icon-back {
-  transition: var(--slow);
-  background-color: white;
 
-  @media (prefers-color-scheme: light) {
-    box-shadow: var(--penumbra);
+.location-wrapper {
+
+  .location-backer,
+  .icon-back {
+    transition: var(--slow);
+    background-color: white;
+    border-color: var(--neutral-300);
+
+    @media (prefers-color-scheme: light) {
+      box-shadow: var(--penumbra);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--neutral-700);
+      border-color: var(--neutral-600);
+    }
   }
 
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--neutral-800);
+  .location-backer:hover,
+  .location-backer-hovered,
+  .icon-back-hovered,
+  .icon-back:hover {
+    background-color: var(--neutral-200);
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--neutral-600);
+    }
+  }
+
+  .icon-hovered,
+  .icon-hovered:hover {
+    fill: var(--neutral-600);
+
+    @media (prefers-color-scheme: dark) {
+      fill: var(--neutral-300);
+    }
   }
 }
 
-.location-backer:hover,
-.icon-back:hover {
-  background-color: var(--neutral-200);
+/*------------------------------------*/
 
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--neutral-600);
-  }
-}
-
-.location-backer:active,
-.icon-back:active {
-  background-color: var(--neutral-300);
-
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--neutral-500);
-  }
-}
-
-.tahoe-city .location-backer:hover {
-  background-color: var(--sand-300);
-
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--lake-700);
-  }
-}
-
-.tahoe-city {
+.tahoe-city .location-wrapper {
 
   .icon-back,
   .location-backer {
     background-color: var(--sand-300);
 
     @media (prefers-color-scheme: dark) {
-      background-color: var(--tanager-400);
+      background-color: var(--tanager-300);
+      border-color: var(--tanager-100);
     }
   }
 
+  .location-backer:hover,
+  .location-backer-hovered,
   .icon-back-hovered,
-  .location-backer-hovered {
+  .icon-back:hover {
     background-color: var(--sand-300);
 
     @media (prefers-color-scheme: dark) {
-      background-color: var(--tanager-400);
+      background-color: var(--tanager-200);
+    }
+  }
+
+  svg,
+  .icon-hovered,
+  .icon-hovered:hover {
+    fill: var(--tanager-100);
+  }
+}
+
+/*------------------------------------*/
+
+.south-tahoe .location-wrapper {
+
+  .icon-back,
+  .location-backer {
+    background-color: var(--neutral-100);
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--neutral-800);
+      border-color: var(--lake-100);
+    }
+  }
+
+  .location-backer:hover,
+  .icon-back-hovered,
+  .location-backer-hovered {
+    background-color: var(--neutral-200);
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--neutral-600);
     }
   }
 }
@@ -198,6 +230,7 @@ hr {
 
 .specs h2,
 .specs .spec__unit {
+  /* ? TODO: */
   color: grey;
 }
 
@@ -217,6 +250,9 @@ hr {
   }
 }
 
+/*------------------------------------*/
+/* #HERO BACKER */
+/*------------------------------------*/
 
 /* follow the body color scheme */
 .tahoe-city .hero-backer {
@@ -229,6 +265,40 @@ hr {
 
 .south-tahoe .hero-backer {
   background-color: var(--lake-100);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--lake-700);
+  }
+}
+
+/*------------------------------------*/
+/* #COMPARE */
+/*------------------------------------*/
+
+/* * first child is the select so dont grab that  */
+.comparesheet>*>*:nth-child(odd) {
+  background-color: var(--neutral-200);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--neutral-600);
+    color: whitesmoke;
+  }
+}
+
+/*------------------------------------*/
+
+.tahoe-city .comparesheet>*>*:nth-child(odd) {
+  background-color: var(--sand-300);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--tanager-300);
+  }
+}
+
+/*------------------------------------*/
+
+.south-tahoe .comparesheet>*>*:nth-child(odd) {
+  background-color: var(--lake-200);
 
   @media (prefers-color-scheme: dark) {
     background-color: var(--lake-700);

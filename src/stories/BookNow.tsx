@@ -3,7 +3,7 @@ import React from 'react';
 import { faker } from '@faker-js/faker';
 
 interface BookNowProps {
-  additional?: string | false ;
+  additional?: string | false;
 }
 
 export const BookNow = ({
@@ -14,7 +14,7 @@ export const BookNow = ({
     <a
       href={faker.location.city()}
       rel="noopener noreferrer"
-      className='book-now font-serif'
+      className='button book-now'
       title={`Book now with ${faker.location.city()} kayak and paddleboard`}
     >
       {additional ? additional : null}

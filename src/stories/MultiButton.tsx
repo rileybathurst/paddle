@@ -6,7 +6,6 @@ export const MultiButton = () => {
 
   return (
     <div className="multi_button multi_button-center">
-      {/* // ! color is broken in south lake */}
       <button type="button">{faker.phone.number()}</button>
       <a
         href={`mailto:${faker.internet.email()}`}

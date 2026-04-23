@@ -53,6 +53,7 @@
     align-self: center;
   }
 
+  /* * only needed on light dark shadows are weird */
   @media (prefers-color-scheme: light) {
     box-shadow: var(--penumbra);
   }
@@ -73,12 +74,16 @@
   border-color: var(--tanager-100);
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--tanager-400);
+    background-color: var(--neutral-800);
   }
 }
 
 .south-tahoe .card {
   border-color: var(--sand-200);
+
+  @media (prefers-color-scheme: dark) {
+    border-color: var(--neutral-700);
+  }
 }
 
 /* * needed for overwrite */

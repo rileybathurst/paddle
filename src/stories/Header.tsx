@@ -50,7 +50,7 @@ export const Header = () => {
         </h1>
       </div>
 
-    <hr />
+      <hr />
 
       <nav className="nav" aria-label="Main navigation">
         <button
@@ -90,7 +90,7 @@ export const Header = () => {
         </ul>
       </nav>
 
-          <hr />
+      <hr />
     </header>
   );
 };

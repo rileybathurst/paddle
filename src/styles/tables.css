@@ -10,13 +10,8 @@
     display: flex;
     flex: 1 1 10rem;
     flex-direction: column;
-
-    /* * follow the color of hr */
-    border-right: 0.5px solid var(--neutral-400);
-
-    /*    @media (prefers-color-scheme: dark) {
-      border-color: var(--neutral-200);
-    } */
+    border-right-width: 1px;
+    border-right-style: solid;
   }
 
   .column:last-child {
@@ -33,7 +28,9 @@
     min-height: var(--denali);
     /* always keep a line */
     padding: clamp(0.5rem, 1vw, var(--vinson));
-    border-bottom: 0.5px solid var(--neutral-400);
+
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
   }
 
   /* ? can this only be if it has the full length of cells? */
@@ -56,10 +53,4 @@
   p {
     font-size: var(--kosciuszko);
   }
-}
-
-.tahoe-city .pricing-chart .column,
-.tahoe-city .pricing-chart .title,
-.tahoe-city .pricing-chart p {
-  border-color: var(--sand-400);
 }

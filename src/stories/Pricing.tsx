@@ -4,10 +4,7 @@
 import React from 'react';
 import { faker } from '@faker-js/faker';
 
-type PricingTypes = {
-  demos?: boolean;
-};
-export const Pricing = ({ demos }: PricingTypes) => {
+export const Pricing = ({ demos }: { demos?: boolean }) => {
   return (
     <div className="pricing-chart">
       <div className="column">
@@ -29,10 +26,10 @@ export const Pricing = ({ demos }: PricingTypes) => {
           <br />
           Kayak
         </h4>
-        <p >$30</p>
-        <p>$60</p>
-        <p>$90</p>
-        <p>+ $10</p>
+        <p >${faker.number.int({ min: 20, max: 50 })}</p>
+        <p>${faker.number.int({ min: 50, max: 70 })}</p>
+        <p>${faker.number.int({ min: 70, max: 100 })}</p>
+        <p>+ ${faker.number.int({ min: 5, max: 20 })}</p>
 
       </div>
       <div className="column">
@@ -41,10 +38,10 @@ export const Pricing = ({ demos }: PricingTypes) => {
           <br />
           Kayak
         </h4>
-        <p >$45</p>
-        <p>$90</p>
-        <p>$110</p>
-        <p>+ $20</p>
+        <p >${faker.number.int({ min: 40, max: 60 })}</p>
+        <p>${faker.number.int({ min: 80, max: 100 })}</p>
+        <p>${faker.number.int({ min: 100, max: 130 })}</p>
+        <p>+ ${faker.number.int({ min: 10, max: 30 })}</p>
       </div>
       <div className="column">
         <h4 className='title'>
@@ -52,10 +49,10 @@ export const Pricing = ({ demos }: PricingTypes) => {
           <br />
           Board
         </h4>
-        <p >$30</p>
-        <p>$60</p>
-        <p>$90</p>
-        <p>+ $10</p>
+        <p >${faker.number.int({ min: 20, max: 50 })}</p>
+        <p>${faker.number.int({ min: 50, max: 70 })}</p>
+        <p>${faker.number.int({ min: 70, max: 100 })}</p>
+        <p>+ ${faker.number.int({ min: 5, max: 20 })}</p>
       </div>
 
       {demos ? (
@@ -66,10 +63,10 @@ export const Pricing = ({ demos }: PricingTypes) => {
               <br />
               Kayak
             </h4>
-            <p >$40</p>
-            <p>$70</p>
-            <p>$100</p>
-            {/* <p>+ $10</p> */}
+            <p >${faker.number.int({ min: 40, max: 60 })}</p>
+            <p>${faker.number.int({ min: 80, max: 100 })}</p>
+            <p>${faker.number.int({ min: 100, max: 130 })}</p>
+            {/* <p>+ ${faker.number.int({ min: 10, max: 30 })}</p> */}
           </div>
 
           <div className="column">
@@ -78,13 +75,15 @@ export const Pricing = ({ demos }: PricingTypes) => {
               <br />
               Kayak
             </h4>
-            <p >$40</p>
-            <p>$70</p>
-            <p>$100</p>
-            {/* <p>+ $10</p> */}
+            <p >${faker.number.int({ min: 40, max: 60 })}</p>
+            <p>${faker.number.int({ min: 80, max: 100 })}</p>
+            <p>${faker.number.int({ min: 100, max: 130 })}</p>
+            {/* <p>+ ${faker.number.int({ min: 10, max: 30 })}</p> */}
           </div>
         </>
       ) : null}
     </div>
   );
 };
+{/* <p>The borders follow the color of hr</p> */ }
+{/* <hr /> */ }

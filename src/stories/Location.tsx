@@ -5,7 +5,7 @@ import React, { useState } from "react";
 
 // ? condor max width I might need to make this slightly wider to deal with phone
 
-export const Location = () => {
+export const Location = ({ hover }: { hover?: boolean }) => {
 
   var phone = faker.datatype.boolean();
   const [isHovered, setIsHovered] = useState(false);
@@ -15,7 +15,7 @@ export const Location = () => {
 
       {/* grid-row 1 */}
       <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"
-        className={isHovered ? 'icon-hovered' : ''}
+        className={isHovered || hover ? 'icon-hovered' : ''}
       >
         <title>{faker.location.city()}</title>
         {faker.helpers.arrayElement([true, false]) ? (
@@ -26,7 +26,7 @@ export const Location = () => {
       </svg>
 
       {/* grid-row 1 */}
-      <div className={`icon-back ${isHovered && 'icon-back-hovered'}`}>{/* stay gold */}</div>
+      <div className={`icon-back ${isHovered || hover ? 'icon-back-hovered' : ''}`}>{/* stay gold */}</div>
 
       {/* grid-row 2 */}
       <a href={faker.location.cardinalDirection()}
@@ -73,7 +73,7 @@ export const Location = () => {
       ) : null}
 
       {/* grid-row 1/3 or 1/4 */}
-      <div className={`location-backer ${isHovered && 'location-backer-hovered'}`}>{/* stay gold */}</div>
+      <div className={`location-backer ${isHovered || hover ? 'location-backer-hovered' : ''}`}>{/* stay gold */}</div>
 
     </div>
   );

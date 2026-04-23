@@ -25,10 +25,8 @@ export const ListPage = () => {
         </ul>
 
       </main>
-      
-      <div className='panel'>
+
       <Breadcrumbs />
-      </div>
       <Footer />
     </>
   );

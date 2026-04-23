@@ -5,7 +5,9 @@
 /* TODO: combine select into these for the colors */
 
 button,
-.button {
+.button,
+select,
+.comparesheet>*>*:first-child {
   border-radius: var(--card-radius);
   padding: var(--kosciuszko) var(--vinson);
   font-size: var(--vinson);
@@ -18,19 +20,11 @@ button,
   width: max-content;
   text-align: center;
   box-shadow: var(--penumbra);
-  background-color: var(--neutral-200);
-  border: 1px solid var(--neutral-100);
-
+  border: 1px solid var(--neutral-700);
   background-color: var(--neutral-800);
-  border-color: var(--neutral-700);
   color: var(--neutral-300);
 
   @media (prefers-color-scheme: dark) {
-    /* background-color: var(--neutral-600); not enough*/
-    background-color: var(--neutral-600);
-    border-color: var(--neutral-500);
-    color: var(--neutral-100);
-
     background-color: var(--neutral-200);
     border-color: var(--neutral-100);
     color: var(--neutral-800);
@@ -40,7 +34,8 @@ button,
 button:hover,
 .button:hover,
 /* below is for the storyboard showcase */
-.button__hover {
+.button__hover,
+.comparesheet>*>*:first-child:hover {
   box-shadow: var(--antumbra);
   background-color: var(--neutral-500);
   border-color: var(--neutral-600);
@@ -55,7 +50,8 @@ button:hover,
 
 .button__active,
 .button:active,
-button:active {
+button:active,
+.comparesheet>*>*:first-child:active {
   box-shadow: var(--umbra);
   background-color: var(--neutral-400);
   border-color: var(--neutral-400);
@@ -74,6 +70,7 @@ button:active {
 
 .book-now {
   text-transform: uppercase;
+  font-family: var(--font-serif);
 }
 
 /*------------------------------------*/
@@ -84,7 +81,8 @@ button:active {
 
   button,
   .button,
-  select {
+  select,
+  .comparesheet>*>*:first-child {
     background-color: var(--tanager-200);
     border-color: var(--tanager-100);
     color: white;
@@ -93,7 +91,8 @@ button:active {
   button:hover,
   .button:hover,
   .button__hover,
-  select:hover {
+  select:hover,
+  .comparesheet>*>*:first-child:hover {
     @media (prefers-color-scheme: light) {
       background-color: var(--tanager-300);
       border-color: var(--tanager-200);
@@ -121,27 +120,30 @@ button:active {
 
   button,
   .button,
-  select {
+  select,
+  .comparesheet>*>*:first-child {
     background-color: var(--lake-700);
     border-color: var(--lake-500);
     color: white;
   }
 
-  /*   @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: dark) {
 
     button,
     .button,
-    select {
+    select,
+    .comparesheet>*>*:first-child {
       background-color: var(--lake-200);
       border-color: var(--lake-100);
       color: var(--lake-600);
     }
-  } */
+  }
 
   button:hover,
   .button:hover,
   .button__hover,
-  select:hover {
+  select:hover,
+  .comparesheet>*>*:first-child:hover {
     background-color: var(--lake-600);
     border-color: var(--lake-400);
   }
@@ -149,6 +151,7 @@ button:active {
   button:active,
   .button:active,
   select:active,
+  .comparesheet>*>*:first-child:active,
   .button__active {
     background-color: var(--lake-500);
     border-color: var(--lake-300);
@@ -174,17 +177,6 @@ menu button {
 
 .multi_button-center {
   justify-content: center;
-}
-
-.location_multi-link {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--denali);
-  width: 100%;
-
-  h3 {
-    margin-block-end: 0;
-  }
 }
 
 /*------------------------------------*/

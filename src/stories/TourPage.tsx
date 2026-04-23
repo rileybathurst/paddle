@@ -14,32 +14,30 @@ export const TourPage = () => {
   return (
     <>
       <Header />
-          <Hero />
 
-      <div className="panel">
-        <div className="albatross">
-          <main>
-              <h1>{faker.animal.bear()}</h1> <BookNow />
-            <p>{faker.lorem.sentence()}</p>
+      <Hero />
 
-            {/* <Specs /> */}
-            {Array.from({ length: faker.number.int({ min: 1, max: 10 }) }).map(
-              () => (
-                <div key={faker.string.uuid()} className="spec">
-                  <h2>{faker.animal.bird()}</h2>
-                  {/* // TODO: more units */}
-                  <h3>{faker.number.int({ min: 1, max: 100 })}</h3>
-                </div>
-              ),
-            )}
-            <SunsetTourTimes />
-          </main>
-          {/* // ? this is wrapping down rather than across */}
+      <div className="albatross">
+        <main>
+          <h1>{faker.animal.bear()}</h1> <BookNow />
+          <p>{faker.lorem.sentence()}</p>
 
-        </div>
+          {/* <Specs /> */}
+          {Array.from({ length: faker.number.int({ min: 1, max: 10 }) }).map(
+            () => (
+              <div key={faker.string.uuid()} className="spec">
+                <h2>{faker.animal.bird()}</h2>
+                {/* // TODO: more units */}
+                <h3>{faker.number.int({ min: 1, max: 100 })}</h3>
+              </div>
+            ),
+          )}
+          <SunsetTourTimes />
+        </main>
+        {/* // ? this is wrapping down rather than across */}
       </div>
 
-      <section className="aconcagua-padding-block">
+      <section className="panel aconcagua-padding-block">
         <div className="pelican">
           <h3>Other Tours</h3>
           <p>
