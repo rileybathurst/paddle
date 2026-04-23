@@ -1,3 +1,5 @@
+// ! this is where I'm making them all one card
+
 import * as React from "react";
 import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -22,7 +24,7 @@ export const PaddleTicket = ({
   allStrapiSunsetTourTime,
   strapiBranchName,
 }: PaddleTicketTypes) => {
-  
+
   const time = PaddleTime({
     start: start,
     finish: finish,

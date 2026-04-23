@@ -6,7 +6,7 @@ export const PaddleBookNow = ({ peek_base, strapiBranchName, specificName, speci
     <a
       href={specificLink || peek_base}
       rel="noopener noreferrer"
-      className="book-now"
+      className="button book-now"
       title={`Book now ${specificLink && <> {specificLink} </>} with ${strapiBranchName} kayak and paddleboard`}
     >
       {specificName && (<>{specificName} <br /></>)}

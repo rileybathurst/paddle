@@ -22,6 +22,10 @@ export const Home = () => {
 
         <div className='pelican'>
           <div className="margin-block-end-aconcagua">
+            <h2 className='denali'>
+              {faker.company.catchPhrase()}
+            </h2>
+
             <p>{faker.lorem.sentences(5)}</p>
           </div>
         </div>
