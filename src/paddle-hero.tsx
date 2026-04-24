@@ -9,7 +9,7 @@ export const PaddleHero = ({ image, overlay }: PaddleHeroTypes) => {
     <div className='albatross hero-wrapper'>
       <GatsbyImage
         image={image.localFile.childImageSharp.gatsbyImageData}
-        alt='faker image'
+        alt={image.alternativeText}
         className="hero poster storybook-gatsby-image"
       />
 

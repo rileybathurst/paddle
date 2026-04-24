@@ -173,6 +173,8 @@
   /*------------------*/
   /* #TRANSITIONS */
   /*------------------*/
+
+  /* TODO: height seems wrong */
   --fade: max-height 320ms ease,
   opacity 220ms ease,
   transform 320ms ease,
