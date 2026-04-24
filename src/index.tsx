@@ -20,6 +20,7 @@ export * from "./paddle-pricing-chart";
 export * from "./paddle-texture-backgrounds";
 export * from "./paddle-compare";
 export * from "./paddle-card";
+export * from "./paddle-hero";
 
 // Organisms
 export * from "./paddle-locales";
