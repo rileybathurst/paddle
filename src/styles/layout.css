@@ -748,14 +748,13 @@ header {
 
   .collage {
     /* * aspect-ratio match the hero */
-    aspect-ratio: 16 / 9;
+    /* aspect-ratio: 16 / 9; */
     object-fit: cover;
     place-self: center;
     max-width: 90%;
     max-height: 90%;
     margin-inline: auto;
     grid-row: 1 !important;
-    opacity: 0.5;
     margin: 0;
   }
 }

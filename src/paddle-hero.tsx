@@ -18,7 +18,7 @@ export const PaddleHero = ({ image, collage, overlay }: PaddleHeroTypes) => {
         <GatsbyImage
           image={collage.localFile.childImageSharp.gatsbyImageData}
           alt={collage.alternativeText}
-          className="hero collage"
+          className="collage"
         />
       }
 
