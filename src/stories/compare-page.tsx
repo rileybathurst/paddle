@@ -80,7 +80,7 @@ export const ComparePage = () => {
 
         <div className="comparesheet">
           <div className="comparesheet_titles">
-            <div className="comparesheet__transparent">Compare</div>
+            <div className="comparesheet__transparent">{/* stay gold */}</div>
             <h3 className="kilimanjaro comparesheet_freeze">
               Tour or
               <br />

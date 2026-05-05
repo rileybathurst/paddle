@@ -687,8 +687,11 @@ header {
     top: -1px;
   }
 
+  /* * this has a weird selector so overwritting to clean it up and hold the space */
   .comparesheet__transparent {
-    background-color: transparent;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
   }
 }
 
@@ -745,10 +748,13 @@ header {
 /*------------------------------------*/
 
 .locales {
-  display: flex;
-  gap: var(--vinson);
+  /*   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; */
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--vinson);
 
   >* {
     align-self: start;
