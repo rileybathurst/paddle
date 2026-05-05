@@ -748,18 +748,13 @@ header {
 /*------------------------------------*/
 
 .locales {
-  /*   display: flex;
-  flex-wrap: wrap;
-  justify-content: center; */
-
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 20rem));
+  justify-content: center;
   gap: var(--vinson);
 
   >* {
     align-self: start;
-    flex: 1;
-    flex-flow: row wrap;
   }
 }
 
