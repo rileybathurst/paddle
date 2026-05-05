@@ -3,15 +3,24 @@ import React from 'react';
 import type { PaddleHeroTypes } from './types/paddle-hero-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-export const PaddleHero = ({ image, overlay }: PaddleHeroTypes) => {
+export const PaddleHero = ({ image, collage, overlay }: PaddleHeroTypes) => {
 
   return (
     <div className='albatross hero-wrapper'>
+
       <GatsbyImage
         image={image.localFile.childImageSharp.gatsbyImageData}
         alt={image.alternativeText}
-        className="hero poster storybook-gatsby-image"
+        className="hero poster"
       />
+
+      {collage &&
+        <GatsbyImage
+          image={collage.localFile.childImageSharp.gatsbyImageData}
+          alt={collage.alternativeText}
+          className="hero collage"
+        />
+      }
 
       {overlay && overlay}
 

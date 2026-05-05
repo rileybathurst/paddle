@@ -714,7 +714,6 @@ header {
   }
 
   .hero-backer {
-
     width: calc(100% - var(--everest));
     justify-self: center;
     height: 100%;
@@ -722,6 +721,10 @@ header {
     align-self: start;
     opacity: 0.9;
     border-radius: 2rem;
+
+    margin-block-start: -7.5rem;
+    z-index: var(--understory);
+    height: 10rem;
 
   }
 
@@ -738,10 +741,26 @@ header {
   z-index: var(--canopy);
 }
 
-.hero-wrapper>:nth-child(3) {
-  margin-block-start: -7.5rem;
-  z-index: var(--understory);
+.hero-wrapper {
+  .hero {
+    grid-row: 1;
+  }
+
+  .collage {
+    /* * aspect-ratio match the hero */
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    place-self: center;
+    max-width: 90%;
+    max-height: 90%;
+    margin-inline: auto;
+    grid-row: 1 !important;
+    opacity: 0.5;
+    margin: 0;
+  }
 }
+
+
 
 /*------------------------------------*/
 /* #LOCALES */
@@ -749,7 +768,8 @@ header {
 
 .locales {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 20rem));
+  /* * real world check for 4 cards */
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 19rem));
   justify-content: center;
   gap: var(--vinson);
 
