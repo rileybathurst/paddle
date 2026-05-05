@@ -23,11 +23,13 @@ export const PaddleHero = ({ image, collage, overlay }: PaddleHeroTypes) => {
       }
 
       {overlay && overlay}
+      {overlay &&
+        <div className='hero-backer'>
+          {/* stay gold */}
+        </div>
+      }
+    </div >
 
-      <div className='hero-backer'>
-        {/* stay gold */}
-      </div>
 
-    </div>
   );
 };
