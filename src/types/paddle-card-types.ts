@@ -8,5 +8,5 @@ export type PaddleCardTypes = {
   image: PaddleGatsbyImageType;
   excerpt: string;
   paddleBookNow?: PaddleBookNowTypes;
-  breadcrumb: string;
+  // breadcrumb: string; // * I dont think this is needed but double check
 }

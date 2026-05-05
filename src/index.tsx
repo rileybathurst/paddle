@@ -44,4 +44,4 @@ export * from "./types/paddle-compare-types";
 export * from "./types/paddle-hero-types";
 
 export * from "./types/paddle-card-types";
-export * from "./types/paddle-card-tour-types";
+// export * from "./types/paddle-card-tour-types";
