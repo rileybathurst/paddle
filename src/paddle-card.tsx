@@ -4,10 +4,16 @@ import { PaddleBookNow } from "./paddle-book-now";
 import { GatsbyImage } from "gatsby-plugin-image";
 import type { PaddleCardTypes } from "./types/paddle-card-types";
 
-export const PaddleCard = ({ link, image, title, excerpt, paddleBookNow }: PaddleCardTypes) => {
+export const PaddleCard = ({ link, image, title, excerpt, paddleBookNow, collage }: PaddleCardTypes) => {
   return (
     <article className='card'>
       <Link to={link} >
+        {collage && <GatsbyImage
+          image={image.localFile.childImageSharp.gatsbyImageData}
+          alt={image.alternativeText || title}
+          className="collage-image"
+        />
+        }
         <GatsbyImage
           image={image.localFile.childImageSharp.gatsbyImageData}
           alt={image.alternativeText || title}

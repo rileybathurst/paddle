@@ -6,6 +6,7 @@ export type PaddleCardTypes = {
   title: string;
   link: string;
   image: PaddleGatsbyImageType;
+  collage?: PaddleGatsbyImageType;
   excerpt: string;
   paddleBookNow?: PaddleBookNowTypes;
   // breadcrumb: string; // * I dont think this is needed but double check

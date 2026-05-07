@@ -713,35 +713,6 @@ header {
     grid-column: 1;
   }
 
-  .hero-backer {
-    width: calc(100% - var(--everest));
-    justify-self: center;
-    height: 100%;
-    z-index: var(--understory);
-    align-self: start;
-    opacity: 0.9;
-    border-radius: 2rem;
-
-    margin-block-start: -7.5rem;
-    z-index: var(--understory);
-    height: 10rem;
-
-  }
-
-  .locales {
-    margin-inline: var(--everest);
-  }
-}
-
-.hero-wrapper>:not(:first-child) {
-  align-content: flex-end;
-  /* margin-block-end: -1.5rem; */
-  margin-block-start: -5rem;
-  grid-row: 2;
-  z-index: var(--canopy);
-}
-
-.hero-wrapper {
   .hero {
     grid-row: 1;
   }
@@ -757,9 +728,29 @@ header {
     grid-row: 1 !important;
     margin: 0;
   }
+
+  .hero-backer {
+    grid-row: 2;
+    opacity: 0.9;
+    width: calc(100% - var(--everest));
+    justify-self: center;
+    align-self: start;
+    opacity: 0.9;
+    border-radius: 2rem;
+    margin-block-start: -7.5rem;
+    z-index: var(--understory);
+    height: 10rem;
+
+  }
+
+  >:nth-last-child(2) {
+    margin-inline: var(--everest);
+    align-content: flex-end;
+    margin-block-start: -5rem;
+    grid-row: 2;
+    z-index: var(--canopy);
+  }
 }
-
-
 
 /*------------------------------------*/
 /* #LOCALES */
@@ -768,7 +759,7 @@ header {
 .locales {
   display: grid;
   /* * real world check for 4 cards */
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 19rem));
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 17rem));
   justify-content: center;
   gap: var(--vinson);
 
