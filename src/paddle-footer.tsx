@@ -5,6 +5,7 @@ import { PaddleFormatPhoneNumber } from "./paddle-format-phone-number";
 import { PaddleSocials } from "./paddle-socials";
 import { PaddleLocales } from "./paddle-locales";
 import { PaddlePricingChart } from "./paddle-pricing-chart";
+import { BookNow } from "./stories/BookNow";
 
 export const PaddleFooter = ({
   topHR,
@@ -13,6 +14,7 @@ export const PaddleFooter = ({
   allStrapiBranch,
   allStrapiRentalRate,
   allStrapiLocation,
+  MenuPlus,
 }: PaddleFooterTypes) => {
 
   return (
@@ -78,6 +80,22 @@ export const PaddleFooter = ({
       </section>
 
       <hr className="albatross" />
+
+      <nav className="nav" aria-label="Footer navigation">
+        {/* // * is always open */}
+        <ul className="menu-list is-open">
+          {MenuPlus.map((item) => (
+            <li key={item.href}>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          )
+          )}
+          <li key='book-now'>
+            <BookNow />
+          </li>
+        </ul>
+      </nav>
+
 
       <hr className="albatross" />
 

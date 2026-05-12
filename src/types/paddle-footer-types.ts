@@ -27,4 +27,8 @@ export type PaddleFooterTypes = {
   allStrapiLocation: {
     nodes: PaddleLocationTypes[];
   };
+  MenuPlus: {
+    href: string;
+    label: string;
+  }[];
 };
