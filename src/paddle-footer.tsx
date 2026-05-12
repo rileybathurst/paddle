@@ -81,19 +81,19 @@ export const PaddleFooter = ({
 
       <hr className="albatross" />
 
-      {/* <PaddlePricingChart
-        rentalRates={allStrapiRentalRate }
-        branches={allStrapiBranch}
-      /> */}
+      <PaddlePricingChart
+        rentalRates={allStrapiRentalRate}
+        branches={strapiBranch}
+      />
 
       <hr className="albatross" />
 
-      {/* <PaddleLocales
+      <PaddleLocales
         season_start={strapiBranch.season_start}
         season_end={strapiBranch.season_end}
         phone={strapiBranch.phone}
-        nodes={allStrapiLocation}
-      /> */}
+        nodes={allStrapiLocation.nodes}
+      />
 
     </footer>
   );
