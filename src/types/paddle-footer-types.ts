@@ -1,4 +1,5 @@
 import { paddlePricingChartTypes } from "../types/paddle-pricing-chart-types";
+import { PaddleLocalesTypes } from "./paddle-locales-types";
 
 export type PaddleFooterTypes = {
   topHR: boolean;
@@ -20,4 +21,4 @@ export type PaddleFooterTypes = {
     }[];
   };
   allStrapiRentalRate: paddlePricingChartTypes[];
-};
+  allStrapiLocation: PaddleLocalesTypes;};
