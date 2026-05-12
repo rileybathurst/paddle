@@ -275,8 +275,7 @@ hr,
 /* #COMPARE */
 /*------------------------------------*/
 
-/* * first child is the select so dont grab that  */
-.comparesheet>*>*:nth-child(odd) {
+.comparesheet>*>*:nth-child(odd):not(.book-now):not(.comparesheet_select) {
   background-color: var(--neutral-200);
 
   @media (prefers-color-scheme: dark) {
@@ -287,7 +286,7 @@ hr,
 
 /*------------------------------------*/
 
-.tahoe-city .comparesheet>*>*:nth-child(odd):not(.book-now) {
+.tahoe-city .comparesheet>*>*:nth-child(odd):not(.book-now):not(.comparesheet_select) {
   background-color: var(--sand-300);
 
   @media (prefers-color-scheme: dark) {
@@ -297,7 +296,7 @@ hr,
 
 /*------------------------------------*/
 
-.south-tahoe .comparesheet>*>*:nth-child(odd):not(.book-now) {
+.south-tahoe .comparesheet>*>*:nth-child(odd):not(.book-now):not(.comparesheet_select) {
   background-color: var(--lake-200);
 
   @media (prefers-color-scheme: dark) {
