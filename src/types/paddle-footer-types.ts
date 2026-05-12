@@ -13,6 +13,7 @@ export type PaddleFooterTypes = {
     tripadvisor?: string;
     season_start: string;
     season_end: string;
+    peek_base: string;
   };
   logo: React.ReactNode;
   allStrapiBranch: {

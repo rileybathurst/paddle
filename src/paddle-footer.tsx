@@ -5,7 +5,7 @@ import { PaddleFormatPhoneNumber } from "./paddle-format-phone-number";
 import { PaddleSocials } from "./paddle-socials";
 import { PaddleLocales } from "./paddle-locales";
 import { PaddlePricingChart } from "./paddle-pricing-chart";
-import { BookNow } from "./stories/BookNow";
+import { PaddleBookNow } from "./paddle-book-now";
 
 export const PaddleFooter = ({
   topHR,
@@ -91,7 +91,10 @@ export const PaddleFooter = ({
           )
           )}
           <li key='book-now'>
-            <BookNow />
+            <PaddleBookNow
+              peek_base={strapiBranch.peek_base}
+              strapiBranchName={strapiBranch.name}
+            />
           </li>
         </ul>
       </nav>
