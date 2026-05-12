@@ -1,5 +1,3 @@
-// ! do a check before running minimum and if no tours have a minimum, hide the section entirely
-
 import React, { useState } from "react";
 import { Link } from "gatsby";
 
