@@ -287,7 +287,7 @@ hr,
 
 /*------------------------------------*/
 
-.tahoe-city .comparesheet>*>*:nth-child(odd) {
+.tahoe-city .comparesheet>*>*:nth-child(odd):not(.book-now) {
   background-color: var(--sand-300);
 
   @media (prefers-color-scheme: dark) {
@@ -297,7 +297,7 @@ hr,
 
 /*------------------------------------*/
 
-.south-tahoe .comparesheet>*>*:nth-child(odd) {
+.south-tahoe .comparesheet>*>*:nth-child(odd):not(.book-now) {
   background-color: var(--lake-200);
 
   @media (prefers-color-scheme: dark) {

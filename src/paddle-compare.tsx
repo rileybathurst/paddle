@@ -1,3 +1,5 @@
+// ! do a check before running minimum and if no tours have a minimum, hide the section entirely
+
 import React, { useState } from "react";
 import { Link } from "gatsby";
 
@@ -29,6 +31,7 @@ type CompareDetailsTypes = {
   strapiBranchName: PaddleCompareTypes["strapiBranchName"];
   tours: PaddleCompareTypes["tours"];
   breadcrumb: PaddleCompareTypes["breadcrumb"];
+  showMinimum: boolean;
 };
 
 const CompareDetails = ({
@@ -50,7 +53,8 @@ const CompareDetails = ({
   peek_base,
   strapiBranchName,
   tours,
-  breadcrumb
+  breadcrumb,
+  showMinimum
 }: CompareDetailsTypes) => {
 
   const time = PaddleTime({
@@ -113,9 +117,11 @@ const CompareDetails = ({
         {location}
       </p>
       <p>{excerpt}</p>
-      <p>
-        {minimum} <span className="show-below__vulture">&nbsp;people minimum</span>
-      </p>
+      {showMinimum && (
+        <p>
+          {minimum} <span className="show-below__vulture">&nbsp;people minimum</span>
+        </p>
+      )}
       <p>
         ${price}
       </p>
@@ -162,6 +168,8 @@ export const PaddleCompare = ({ tours, breadcrumb, strapiBranchName, peek_base }
   let [peeks2, setPeeks2] = useState(tours[1].peek || "not set");
   let [fitness1, setFitness1] = useState(tours[0].fitness || "fitness");
   let [fitness2, setFitness2] = useState(tours[1].fitness || "fitness");
+
+  const hasAnyMinimum = tours.some((tour) => tour.minimum > 0);
 
   const updateTour1 = (selectedName: string) => {
     const selectedTour = tours.find((tour) => tour.name === selectedName);
@@ -218,7 +226,7 @@ export const PaddleCompare = ({ tours, breadcrumb, strapiBranchName, peek_base }
           <p>Fitness</p>
           <p>Location</p>
           <p>About</p>
-          <p>Minimum People</p>
+          {hasAnyMinimum && <p>Minimum People</p>}
           <p>Price</p>
           <p className='button-drop'>Book Now</p>
         </div>
@@ -246,6 +254,7 @@ export const PaddleCompare = ({ tours, breadcrumb, strapiBranchName, peek_base }
           peek_base={peek_base}
 
           tours={tours}
+          showMinimum={hasAnyMinimum}
         />
         <CompareDetails
           id={id2}
@@ -270,6 +279,7 @@ export const PaddleCompare = ({ tours, breadcrumb, strapiBranchName, peek_base }
           peek_base={peek_base}
 
           tours={tours}
+          showMinimum={hasAnyMinimum}
 
         />
 
