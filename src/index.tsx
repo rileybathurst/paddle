@@ -27,6 +27,7 @@ export * from "./paddle-locales";
 export * from "./paddle-testimonials";
 export * from "./paddle-brand-list";
 export * from "./paddle-moonlight-date-time"
+export * from "./paddle-footer";
 
 // SEO
 export * from "./paddle-seo";
