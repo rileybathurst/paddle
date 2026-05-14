@@ -91,6 +91,9 @@ type SEOtypes = {
       phone: string;
       opening_time: string;
       closing_time: string;
+
+      season_start: string;
+      season_end: string;
     }[];
   };
 
@@ -113,7 +116,7 @@ export const PaddleSEO = ({
   const PaddleTitle = title
     ? `${title} | ${businessName}`
     : `${businessName} | ${strapiBranch.topbar.data.topbar} `;
-  // TODO: tagline would be a better fallback description
+
   const PaddleDescription = description || strapiBranch.slogan;
   // url: `${strapiBranch.url}${SE0.url}` || strapiBranch.url,
   const PaddleImage = ogImage || strapiBranch.ogImage;
@@ -137,6 +140,17 @@ export const PaddleSEO = ({
 
   // console.log(breadcrumbs);
 
+  /*   console.log(allStrapiLocation);
+  
+    if (strapiBranch.season_start && strapiBranch.season_end) {
+      const currentDate = new Date();
+      const seasonStartDate = new Date(strapiBranch.season_start);
+      const seasonEndDate = new Date(strapiBranch.season_end);
+  
+      const isInSeason = currentDate >= seasonStartDate && currentDate <= seasonEndDate;
+      console.log(isInSeason);
+    }
+   */
   return (
     <>
       <title>{PaddleTitle}</title>

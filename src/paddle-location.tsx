@@ -26,16 +26,17 @@ const Season = ({
   offSeasonDetails,
   weatherPermitting
 }: SeasonTypes) => {
-  // TODO: these need a query but thats not the most important first step
   if (
     name === "Free Parking Lot" ||
     name === "Parking" ||
     name === "Delivery"
   ) {
+    // console.log(`Skipping seasonality check for ${name} since it is always open.`);
     return null;
   }
 
   if (season_start && season_end) {
+    // console.log(`Checking seasonality for ${name}: Season starts on ${season_start} and ends on ${season_end}.`);
     const currentDay = new Date();
     const seasonStartDate = new Date(season_start);
     const seasonEndDate = new Date(season_end);
@@ -52,6 +53,7 @@ const Season = ({
       );
     }
 
+    // console.log(`Currently off season for ${name}. Current date: ${currentDay.toDateString()}, Season start: ${seasonStartDate.toDateString()}, Season end: ${seasonEndDate.toDateString()}.`);
     return (
       <div>
         {offSeasonDetails ? (
@@ -63,8 +65,6 @@ const Season = ({
         {currentDay < seasonStartDate ? (
           <p>We will reopen {season_start}, Weather Permitting</p>
         ) : null}
-
-
       </div>
     );
   }

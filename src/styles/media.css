@@ -90,17 +90,18 @@ svg {
   }
 }
 
-.logo-container_footer {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+/* * tahoe city is an image so its different */
+.tahoe-city .logo-container {
+  @media (min-width: 30rem) {
+    max-width: 32rem;
+  }
 
-  a {
-    margin-inline: auto;
+  .gatsby-image-wrapper {
+    transition: var(--fade);
+  }
 
-    svg {
-      max-height: 10rem;
-    }
+  .gatsby-image-wrapper:where(:hover, :focus) {
+    filter: brightness(0.5);
   }
 }
 

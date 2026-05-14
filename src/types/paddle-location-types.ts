@@ -11,6 +11,7 @@ export interface PaddleLocationTypes {
   opening_time: string;
   closing_time: string;
 
+  // TODO: Im pretty sure this is deprecated
   local: {
     season_start: string;
     season_end: string;

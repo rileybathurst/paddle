@@ -27,7 +27,7 @@ export const PaddleFooter = ({
           <Link to="/">{strapiBranch.name}</Link>
         </h3>
 
-        <Link to="/" className="logo-link">
+        <Link to="/" className="logo-link elbrus-margin-block-end">
           {/* * react fragment can take either svg or img */}
           {logo}
         </Link>
