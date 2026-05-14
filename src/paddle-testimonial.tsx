@@ -10,10 +10,10 @@ export const PaddleTestimonial = ({
 }: PaddleTestimonialTypes) => {
   return (
     <li key={id}>
-      <p className="elbrus">
-        <span className="denali font-serif">&ldquo;</span>
+      <p className="testimonial">
+        <span>&ldquo;</span>
         {testimonial}
-        <span className="denali font-serif">&rdquo;</span>
+        <span>&rdquo;</span>
       </p>
       <p>
         {sign} {customer}
