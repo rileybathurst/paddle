@@ -70,16 +70,25 @@ type SEOtypes = {
     numberOfEmployees: string;
     priceRange: string;
     slogan: string;
+
+    // * used in opening hours and seasonality checks
+    season_start: string;
+    season_end: string;
   };
 
-  strapiLocation: {
+  address: {
     streetAddress: string;
     addressLocality: string;
     addressRegion: string;
     postalCode: string;
   };
 
-  allStrapiLocation?: {
+  openingHours: {
+    opening_time: string;
+    closing_time: string;
+  }
+
+  departments?: {
     nodes: {
       name: string;
       schemaType: string;
@@ -91,9 +100,6 @@ type SEOtypes = {
       phone: string;
       opening_time: string;
       closing_time: string;
-
-      season_start: string;
-      season_end: string;
     }[];
   };
 
@@ -107,8 +113,9 @@ export const PaddleSEO = ({
   ogImageDescription,
   breadcrumbs,
   strapiBranch,
-  strapiLocation,
-  allStrapiLocation,
+  address,
+  openingHours,
+  departments,
   children,
 }: SEOtypes) => {
   const businessName = `${strapiBranch.name} Kayak & Paddleboard rentals and tours`;
@@ -140,17 +147,17 @@ export const PaddleSEO = ({
 
   // console.log(breadcrumbs);
 
-  /*   console.log(allStrapiLocation);
-  
-    if (strapiBranch.season_start && strapiBranch.season_end) {
-      const currentDate = new Date();
-      const seasonStartDate = new Date(strapiBranch.season_start);
-      const seasonEndDate = new Date(strapiBranch.season_end);
-  
-      const isInSeason = currentDate >= seasonStartDate && currentDate <= seasonEndDate;
-      console.log(isInSeason);
-    }
-   */
+  console.log(openingHours);
+
+  if (strapiBranch.season_start && strapiBranch.season_end) {
+    const currentDate = new Date();
+    const seasonStartDate = new Date(strapiBranch.season_start);
+    const seasonEndDate = new Date(strapiBranch.season_end);
+
+    const isInSeason = currentDate >= seasonStartDate && currentDate <= seasonEndDate;
+    console.log(isInSeason);
+  }
+
   return (
     <>
       <title>{PaddleTitle}</title>
@@ -175,16 +182,16 @@ export const PaddleSEO = ({
             "image": "${PaddleImage}",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "${strapiLocation?.streetAddress}",
-              "addressLocality": "${strapiLocation?.addressLocality}",
-              "addressRegion": "${strapiLocation?.addressRegion}",
-              "postalCode": "${strapiLocation?.postalCode}",
+              "streetAddress": "${address?.streetAddress}",
+              "addressLocality": "${address?.addressLocality}",
+              "addressRegion": "${address?.addressRegion}",
+              "postalCode": "${address?.postalCode}",
               "addressCountry": "US"
             },
-            ${allStrapiLocation
+            ${departments
             ? `
             "department": [
-            ${allStrapiLocation.nodes.map((location) => {
+            ${departments.nodes.map((location) => {
               return `{
                   "name": "${location.name}",
                   "@type": "${location.schemaType}",
@@ -216,7 +223,10 @@ export const PaddleSEO = ({
             "numberOfEmployees" : "${strapiBranch.numberOfEmployees}",
             "priceRange": "${strapiBranch.priceRange}",
             "slogan": "${strapiBranch.slogan}",
-            "paymentAccepted": "${paymentAcceptedFormatted}"
+            "paymentAccepted": "${paymentAcceptedFormatted}",
+            // * hard coded 7 days a week
+            "openingHours": "Mo-Su ${openingHours.opening_time.slice(0, 5)}-${openingHours.closing_time.slice(0, 5)}"
+
           }
         `}
       </Script>
@@ -228,22 +238,3 @@ export const PaddleSEO = ({
 };
 
 // TODO: image alt in rich data
-
-/* "openingHoursSpecification": [
-  ${allStrapiLocation.nodes.map((location) => {
-return `{
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday"
-    ],
-    "opens": "${location.opening_time}",
-    "closes": "${location.closing_time}"
-  }`
-  })}
-], */

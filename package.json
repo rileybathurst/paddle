@@ -25,7 +25,7 @@
     "react-dom": "^18.3.1",
     "react-inlinesvg": "^4.2.0",
     "react-markdown": "^10.1.0",
-    "stay-gold": "^1.1.8"
+    "stay-gold": "^1.2.1"
   },
   "devDependencies": {
     "@biomejs/biome": "2.0.2",
