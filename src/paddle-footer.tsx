@@ -28,7 +28,7 @@ export const PaddleFooter = ({
         </h3>
 
         <Link to="/" className="logo-link">
-          {/* // TODO: checks on this for SVG or img */}
+          {/* * react fragment can take either svg or img */}
           {logo}
         </Link>
         <p>&copy; {new Date().getFullYear()}</p>
