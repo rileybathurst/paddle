@@ -225,6 +225,7 @@ export const PaddleSEO = ({
             "slogan": "${strapiBranch.slogan}",
             "paymentAccepted": "${paymentAcceptedFormatted}",
             // * hard coded 7 days a week
+            // * temporal might be able to do something with time more than a slice but for now this is fine
             "openingHours": "Mo-Su ${openingHours.opening_time.slice(0, 5)}-${openingHours.closing_time.slice(0, 5)}"
 
           }
