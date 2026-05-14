@@ -1,8 +1,7 @@
 import React from "react";
 import { Script } from "gatsby";
-import { PaddleGatsbyImageType } from "./types/paddle-gatsby-image-type";
 
-type PaddleHeroImageWithRequiredFallback = {
+type ImageWithRequiredFallback = {
   localFile: {
     childImageSharp: {
       gatsbyImageData: {
@@ -35,24 +34,20 @@ const Breadcrumbs = (breadcrumbs: BreadcrumbsTypes) => {
     return null;
   }
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: Object.entries(rest).map(([key, breadcrumb]) => ({
+      "@type": "ListItem",
+      position: Number.parseInt(key) + 1,
+      name: breadcrumb.name,
+      item: `${url}/${breadcrumb.item}`,
+    })),
+  };
+
   return (
     <Script type="application/ld+json">
-      {`
-        {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            ${Object.entries(rest).map(([key, breadcrumb]) => {
-        return `{
-          "@type": "ListItem",
-          "position": ${Number.parseInt(key) + 1},
-          "name": "${breadcrumb.name}",
-          "item": "${url}/${breadcrumb.item}"
-        }`;
-      })}
-          ]
-        }
-      `}
+      {JSON.stringify(breadcrumbSchema)}
     </Script>
   );
 };
@@ -87,7 +82,7 @@ type SEOtypes = {
     priceRange: string;
     slogan: string;
 
-    hero: PaddleHeroImageWithRequiredFallback;
+    hero: ImageWithRequiredFallback;
 
     // * used in opening hours and seasonality checks
     season_start: string;
@@ -160,6 +155,61 @@ export const PaddleSEO = ({
 
   const isInSeason = currentDate >= seasonStartDate && currentDate <= seasonEndDate;
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org/",
+    "@type": "LocalBusiness",
+    name: businessName,
+    url: strapiBranch.url,
+    description: strapiBranch.name,
+    image: PaddleImage,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: address?.streetAddress,
+      addressLocality: address?.addressLocality,
+      addressRegion: address?.addressRegion,
+      postalCode: address?.postalCode,
+      addressCountry: "US",
+    },
+    ...(departments
+      ? {
+        department: departments.nodes.map((location) => ({
+          name: location.name,
+          "@type": location.schemaType,
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: location.streetAddress,
+            addressLocality: location.addressLocality,
+            addressRegion: location.addressRegion,
+            postalCode: location.postalCode,
+            addressCountry: "US",
+          },
+          telephone: strapiBranch.phone,
+          priceRange: strapiBranch.priceRange,
+        })),
+      }
+      : {}),
+    areaServed: {
+      "@type": "GeoCircle",
+      geoMidpoint: {
+        "@type": "GeoCoordinates",
+        latitude: strapiBranch.latitude,
+        longitude: strapiBranch.longitude,
+      },
+      geoRadius: strapiBranch.geoRadius,
+    },
+    telephone: strapiBranch.phone,
+    email: strapiBranch.email,
+    numberOfEmployees: strapiBranch.numberOfEmployees,
+    priceRange: strapiBranch.priceRange,
+    slogan: strapiBranch.slogan,
+    paymentAccepted: paymentAcceptedFormatted,
+    ...(isInSeason
+      ? {
+        openingHours: `Mo-Su ${openingHours.opening_time.slice(0, 5)}-${openingHours.closing_time.slice(0, 5)}`,
+      }
+      : {}),
+  };
+
   return (
     <>
       <title>{PaddleTitle}</title>
@@ -174,75 +224,7 @@ export const PaddleSEO = ({
       <meta name="theme-color" content={strapiBranch.themeColor} />
 
       <Script type="application/ld+json">
-        {`
-          {
-            "@context": "https://schema.org/",
-            "@type": "LocalBusiness",
-            "name": "${businessName}",
-            "url": "${strapiBranch.url}",
-            "description": "${strapiBranch.name}",
-
-            // ! broken image
-            "image": "${PaddleImage}",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "${address?.streetAddress}",
-              "addressLocality": "${address?.addressLocality}",
-              "addressRegion": "${address?.addressRegion}",
-              "postalCode": "${address?.postalCode}",
-              "addressCountry": "US"
-            },
-            ${departments
-            ? `
-            "department": [
-            ${departments.nodes.map((location) => {
-              return `{
-                  "name": "${location.name}",
-                  "@type": "${location.schemaType}",
-                  "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "${location.streetAddress}",
-                    "addressLocality": "${location.addressLocality}",
-                    "addressRegion": "${location.addressRegion}",
-                    "postalCode": "${location.postalCode}",
-                    "addressCountry": "US"
-                  },
-                  // * using branch for phone and price
-                  "telephone": "${strapiBranch.phone}",
-                  "priceRange": "${strapiBranch.priceRange}",
-                }`;
-            })}
-            ],
-            `
-            : ""
-          }
-            "areaServed": {
-              "@type": "GeoCircle",
-              "geoMidpoint": {
-                "@type": "GeoCoordinates",
-                "latitude": "${strapiBranch.latitude}",
-                "longitude": "${strapiBranch.longitude}"
-              },
-              "geoRadius": "${strapiBranch.geoRadius}"
-            },
-            "telephone": "${strapiBranch.phone}",
-            "email": "${strapiBranch.email}",
-            "numberOfEmployees" : "${strapiBranch.numberOfEmployees}",
-            "priceRange": "${strapiBranch.priceRange}",
-            "slogan": "${strapiBranch.slogan}",
-            "paymentAccepted": "${paymentAcceptedFormatted}",
-            
-            ${isInSeason
-            ? `,
-            // * hard coded 7 days a week
-            // * temporal might be able to do something with time more than a slice but for now this is fine
-            
-            "openingHours": "Mo-Su ${openingHours.opening_time.slice(0, 5)}-${openingHours.closing_time.slice(0, 5)}"`
-            : ""
-          }
-
-          }
-        `}
+        {JSON.stringify(localBusinessSchema)}
       </Script>
 
       <Breadcrumbs url={strapiBranch.url} {...breadcrumbs} />
@@ -251,4 +233,5 @@ export const PaddleSEO = ({
   );
 };
 
+// TODO: https://schema.org/logo
 // TODO: image alt in rich data
