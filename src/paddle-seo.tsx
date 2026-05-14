@@ -45,8 +45,8 @@ type SEOtypes = {
   title?: string;
   description?: string;
   url: string;
-  ogImage?: string;
-  ogImageDescription?: string;
+  og_image?: string;
+  og_image_description?: string;
   breadcrumbs?: BreadcrumbsTypes;
   // children: React.ReactNode;
 
@@ -64,8 +64,8 @@ type SEOtypes = {
     geoRadius: string;
     phone: string;
     email: string;
-    ogImage: string;
-    ogImageDescription: string;
+    og_image: string;
+    og_image_description: string;
     paymentAccepted: string;
     numberOfEmployees: string;
     priceRange: string;
@@ -109,8 +109,8 @@ type SEOtypes = {
 export const PaddleSEO = ({
   title,
   description,
-  ogImage,
-  ogImageDescription,
+  og_image,
+  og_image_description,
   breadcrumbs,
   strapiBranch,
   address,
@@ -125,17 +125,9 @@ export const PaddleSEO = ({
     : `${businessName} | ${strapiBranch.topbar.data.topbar} `;
 
   const PaddleDescription = description || strapiBranch.slogan;
-  // url: `${strapiBranch.url}${SE0.url}` || strapiBranch.url,
-  const PaddleImage = ogImage || strapiBranch.ogImage;
-  const PaddleImageAlt = ogImageDescription || strapiBranch.ogImageDescription;
+  const PaddleImage = og_image || strapiBranch.og_image;
+  const PaddleImageAlt = og_image_description || strapiBranch.og_image_description;
 
-  // const query = '- cash\n - credit card';
-  // const formatted = query.split('\n').map((item) => item.trim().replace('- ', '')).join(', ');
-  // console.log(formatted);
-
-  // TODO: this is now allStrapiLocation.nodes
-  // TODO: I think this will be a keylocation piece
-  // console.log(strapiBranch.paymentAccepted);
   const paymentAcceptedQuery = strapiBranch.paymentAccepted
     ? strapiBranch.paymentAccepted
     : "";
@@ -143,20 +135,12 @@ export const PaddleSEO = ({
     .split("\n")
     .map((payment: string) => payment.trim().replace("- ", ""))
     .join(", ");
-  // console.log(paymentAcceptedFormatted);
 
-  // console.log(breadcrumbs);
+  const currentDate = new Date();
+  const seasonStartDate = new Date(strapiBranch.season_start);
+  const seasonEndDate = new Date(strapiBranch.season_end);
 
-  console.log(openingHours);
-
-  if (strapiBranch.season_start && strapiBranch.season_end) {
-    const currentDate = new Date();
-    const seasonStartDate = new Date(strapiBranch.season_start);
-    const seasonEndDate = new Date(strapiBranch.season_end);
-
-    const isInSeason = currentDate >= seasonStartDate && currentDate <= seasonEndDate;
-    console.log(isInSeason);
-  }
+  const isInSeason = currentDate >= seasonStartDate && currentDate <= seasonEndDate;
 
   return (
     <>
@@ -179,6 +163,8 @@ export const PaddleSEO = ({
             "name": "${businessName}",
             "url": "${strapiBranch.url}",
             "description": "${strapiBranch.name}",
+
+            // ! broken image
             "image": "${PaddleImage}",
             "address": {
               "@type": "PostalAddress",
@@ -202,7 +188,10 @@ export const PaddleSEO = ({
                     "addressRegion": "${location.addressRegion}",
                     "postalCode": "${location.postalCode}",
                     "addressCountry": "US"
-                  }
+                  },
+                  // * using branch for phone and price
+                  "telephone": "${strapiBranch.phone}",
+                  "priceRange": "${strapiBranch.priceRange}",
                 }`;
             })}
             ],
@@ -224,9 +213,15 @@ export const PaddleSEO = ({
             "priceRange": "${strapiBranch.priceRange}",
             "slogan": "${strapiBranch.slogan}",
             "paymentAccepted": "${paymentAcceptedFormatted}",
+            
+            ${isInSeason
+            ? `,
             // * hard coded 7 days a week
             // * temporal might be able to do something with time more than a slice but for now this is fine
-            "openingHours": "Mo-Su ${openingHours.opening_time.slice(0, 5)}-${openingHours.closing_time.slice(0, 5)}"
+            
+            "openingHours": "Mo-Su ${openingHours.opening_time.slice(0, 5)}-${openingHours.closing_time.slice(0, 5)}"`
+            : ""
+          }
 
           }
         `}
