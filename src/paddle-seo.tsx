@@ -1,5 +1,21 @@
 import React from "react";
 import { Script } from "gatsby";
+import { PaddleGatsbyImageType } from "./types/paddle-gatsby-image-type";
+
+type PaddleHeroImageWithRequiredFallback = {
+  localFile: {
+    childImageSharp: {
+      gatsbyImageData: {
+        images: {
+          fallback: {
+            src: string;
+          };
+        };
+      };
+    };
+  };
+  alternativeText: string;
+};
 
 interface BreadcrumbsTypes {
   url?: string;
@@ -71,6 +87,8 @@ type SEOtypes = {
     priceRange: string;
     slogan: string;
 
+    hero: PaddleHeroImageWithRequiredFallback;
+
     // * used in opening hours and seasonality checks
     season_start: string;
     season_end: string;
@@ -125,8 +143,8 @@ export const PaddleSEO = ({
     : `${businessName} | ${strapiBranch.topbar.data.topbar} `;
 
   const PaddleDescription = description || strapiBranch.slogan;
-  const PaddleImage = og_image || strapiBranch.og_image;
-  const PaddleImageAlt = og_image_description || strapiBranch.og_image_description;
+  const PaddleImage = og_image || `${strapiBranch.url}/${strapiBranch.hero.localFile.childImageSharp.gatsbyImageData.images.fallback.src}`;
+  const PaddleImageAlt = og_image_description || strapiBranch.hero.alternativeText;
 
   const paymentAcceptedQuery = strapiBranch.paymentAccepted
     ? strapiBranch.paymentAccepted
