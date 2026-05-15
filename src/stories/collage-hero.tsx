@@ -7,7 +7,7 @@ import { faker } from '@faker-js/faker';
 export const CollageHero = () => {
 
   return (
-    <div className='albatross hero-wrapper collage-wrapper'>
+    <div className='albatross hero-wrapper'>
 
       <img
         src={faker.image.urlPicsumPhotos()}

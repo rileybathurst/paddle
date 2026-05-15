@@ -41,7 +41,7 @@
   img {
     border-radius: var(--card-radius);
     aspect-ratio: 16 / 9;
-    filter: brightness(80%);
+    filter: brightness(100%);
     margin-block-end: var(--kosciuszko);
   }
 
@@ -67,6 +67,10 @@
 .card:hover {
   p {
     text-decoration: underline;
+  }
+
+  img {
+    filter: brightness(80%);
   }
 }
 
