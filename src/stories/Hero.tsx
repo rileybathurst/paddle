@@ -16,14 +16,6 @@ export const Hero = () => {
       />
 
       {faker.datatype.boolean() && (
-        <img
-          src={faker.image.urlPicsumPhotos()}
-          alt='faker image'
-          className="collage storybook-gatsby-image"
-        />
-      )}
-
-      {faker.datatype.boolean() && (
         <Locales />
       )}
 

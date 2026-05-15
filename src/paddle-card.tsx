@@ -18,7 +18,7 @@ export const PaddleCard = ({ link, image, title, excerpt, paddleBookNow, collage
           image={image.localFile.childImageSharp.gatsbyImageData}
           alt={image.alternativeText || title}
         />
-        <h4>{title}</h4>
+        <h4 className="font-serif">{title}</h4>
         <p>{excerpt}</p>
       </Link>
 

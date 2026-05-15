@@ -43,6 +43,7 @@ h1,
   /* 48px */
   margin-bottom: var(--aconcagua);
   /* 40px */
+  font-family: var(--font-serif);
 }
 
 h2,

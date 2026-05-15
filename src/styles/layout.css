@@ -726,7 +726,9 @@ header {
     max-width: 90%;
     max-height: 90%;
     margin-inline: auto;
-    grid-row: 1 !important;
+    grid-row: 1;
+    z-index: var(--canopy);
+
     margin: 0;
   }
 
@@ -744,7 +746,7 @@ header {
 
   }
 
-  >:nth-last-child(2) {
+  >:nth-last-child(2):not(.hero):not(.collage) {
     margin-inline: var(--everest);
     align-content: flex-end;
     margin-block-start: -5rem;
