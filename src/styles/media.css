@@ -58,8 +58,9 @@ svg {
 .logo-container {
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
+  text-align: center;
   /* gap: dont run a gap as the sr-only h1 uses it */
-  justify-content: center;
   clip-path: inset(0 -100vmax);
   z-index: var(--understory);
   position: relative;
@@ -67,12 +68,12 @@ svg {
   /* guess and check */
   padding-block: var(--elbrus);
 
-  a {
+  /*   a {
     width: max-content;
     display: flex;
     justify-content: center;
     transition: var(--fade);
-  }
+  } */
 
   .gatsby-image-wrapper,
   svg {

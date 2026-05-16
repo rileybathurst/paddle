@@ -22,7 +22,7 @@ export const PaddleFooter = ({
 
       {topHR && <hr />}
 
-      <div className="logo-container logo-container_footer">
+      <div className="logo-container">
         <h3 className='sr-only'>
           <Link to="/">{strapiBranch.name}</Link>
         </h3>
