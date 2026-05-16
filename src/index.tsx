@@ -43,6 +43,7 @@ export * from "./types/paddle-book-now-types";
 export * from "./types/paddle-testimonial-types";
 export * from "./types/paddle-compare-types";
 export * from "./types/paddle-hero-types";
+export * from "./types/paddle-error-types";
 
 export * from "./types/paddle-card-types";
 // export * from "./types/paddle-card-tour-types";
