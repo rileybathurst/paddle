@@ -22,8 +22,12 @@ export const PaddleSunsetTourTimes = ({ nodes }: PaddleSunsetTourTimesTypes) =>
       // Jan 26 - May 31
       // 20:1 - 5:17
 
+      const isPassed = endDate < new Date();
+
       return (
         <div key={time.id} className="date-time">
+          <h4>Sunset Tour Times for {startDate.getFullYear()}</h4>
+
           <h3 className="date elbrus">
             <strong>
               {startDate.toLocaleDateString("en-US", { month: "short" })}&nbsp;
@@ -36,9 +40,19 @@ export const PaddleSunsetTourTimes = ({ nodes }: PaddleSunsetTourTimesTypes) =>
             {endDate.toLocaleString("en-US", { day: "numeric" })}
           </h3>
           <p className="time">
-            {startTimeSplit[0]}:{startTimeSplit[1]}
-            &nbsp;-&nbsp;
-            {endTimeSplit[0]}:{endTimeSplit[1]}
+            {isPassed ? (
+              <del>
+                {startTimeSplit[0]}:{startTimeSplit[1]}
+                &nbsp;-&nbsp;
+                {endTimeSplit[0]}:{endTimeSplit[1]}
+              </del>
+            ) : (
+              <>
+                {startTimeSplit[0]}:{startTimeSplit[1]}
+                &nbsp;-&nbsp;
+                {endTimeSplit[0]}:{endTimeSplit[1]}
+              </>
+            )}
           </p>
         </div>
       )
