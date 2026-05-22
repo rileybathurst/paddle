@@ -13,7 +13,7 @@ const specs: SpecsTypes = {
 // * number[] is for cost when passing both price and discount
 // or 
 type SpecsTypes = {
-  [key: string]: | string | number
+  [key: string]: | string | number | null
   | {
     [key: string]: string | number | number[];
   };
