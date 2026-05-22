@@ -19,11 +19,11 @@ type SpecsTypes = {
   };
 }
 // * moving the section tag to the parent component means you can loop yourself
-export const PaddleSpecs = (specs: SpecsTypes) =>
+export const PaddleSpecs = (specs: SpecsTypes, allowNullValues?: boolean) =>
   Object.entries(specs).map(([key, value]) => {
 
     if (!value) {
-      console.warn(`Missing value for ${key}`);
+      !allowNullValues && console.warn(`Missing value for ${key}`);
       return null;
     }
 
@@ -66,7 +66,11 @@ export const PaddleSpecs = (specs: SpecsTypes) =>
     /* // * this should be working for weight */
     // The key kinda seems like its being thrown awaywhich is fine
     if (typeof value === "object") {
-      return <PaddleSpecs {...value} />;
+      return (
+        <React.Fragment key={key}>
+          {PaddleSpecs(value as SpecsTypes, allowNullValues)}
+        </React.Fragment>
+      );
     }
 
     return (
@@ -93,4 +97,3 @@ export const PaddleSpecs = (specs: SpecsTypes) =>
       </div>
     );
   });
-// </section>
