@@ -128,17 +128,22 @@ ol {
 /* #BRANDS */
 /*------------------*/
 
-/* TODO: move this to grid its more logical */
 .brand_list {
   list-style: none;
   padding: 0;
   padding-inline: var(--kosciuszko);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(var(--stork), 1fr));
+  /* * 3 items per row looks cleaner */
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
   gap: clamp(var(--kosciuszko), 1.667vw, var(--denali));
   /* match deck gap */
   justify-items: stretch;
   margin-block-end: var(--vinson);
+
+  li,
+  a {
+    margin: 0;
+  }
 
   a {
     display: flex;

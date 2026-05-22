@@ -14,8 +14,8 @@ svg {
   /* safari needs default mins */
   min-height: var(--everest);
   /* safari needs default mins */
-  max-width: clamp(var(--kilimanjaro), 5vw, 5rem);
-  max-height: clamp(var(--kilimanjaro), 5vw, 5rem);
+  max-width: clamp(var(--kilimanjaro), 5vw, 8rem);
+  max-height: clamp(var(--kilimanjaro), 5vw, 8rem);
 
   fill: currentColor;
 }
