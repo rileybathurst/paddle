@@ -75,7 +75,6 @@ ol {
 /*------------------*/
 
 .features {
-  text-transform: uppercase;
   font-size: var(--vinson);
 
   ul {

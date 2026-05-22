@@ -44,7 +44,7 @@ export const PaddleSpecs = (specs: SpecsTypes) =>
         Number(value.discount) * (Number(value.price) / 100)) as number;
 
       return (
-        <>
+        <React.Fragment key={key}>
           {/* // TODO: add color */}
           <div className="spec">
             <h2>
@@ -59,7 +59,7 @@ export const PaddleSpecs = (specs: SpecsTypes) =>
             {value.discount}% off
             <h3>${amount}</h3>
           </div>
-        </>
+        </React.Fragment>
       );
     }
 
@@ -70,21 +70,25 @@ export const PaddleSpecs = (specs: SpecsTypes) =>
     }
 
     return (
-      <div key={key} className="spec">
+      <div
+        key={key}
+        className="spec"
+      >
         <h2>{key}</h2>
         <h3>
-          {key === "price" ? <span className="spec__unit">$</span> : null}
-          {key === "length" && typeof value === "number" ? (
+          {key === "price" && <span className="spec__unit">$</span>}
+
+          {/* // TODO: theres a double spec issue here */}
+          {key === "length" && typeof value === "number" && (
             <PaddleRemainder inches={value} />
-          ) : (
-            value
           )}
-          {key === "hullweight" || key === "riggedweight" ? (
+          {(key === "hullweight" || key === "riggedweight") && (
             <span className="spec__unit">lbs</span>
-          ) : null}
-          {key === "width" || key === "length" || key === "capacity" ? (
+          )}
+          {(key === "width" || key === "length" || key === "capacity") && (
             <span className="spec__unit">"</span>
-          ) : null}
+          )}
+          {value ? value : null}
         </h3>
       </div>
     );
