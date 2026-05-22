@@ -268,3 +268,25 @@ select:active {
 .testimonial span {
   line-height: 0.9;
 }
+
+/*------------------*/
+/* #MARKDOWN MODS */
+/*------------------*/
+
+.markdown-mods {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-block-end: var(--kosciuszko);
+  }
+
+  /* TODO: this doesnt work as I need it to only grab the last one  */
+  /* p, */
+  .book-now {
+    margin-block-end: var(--everest);
+  }
+}

@@ -25,37 +25,33 @@ export const Rentals = () => {
         <h2>{faker.location.city()} Rentals</h2>
         <p>{faker.lorem.paragraph()}</p>
 
-        <h3>
-          <a href={faker.internet.url()}>
-            {faker.lorem.sentence()}
-          </a>
-        </h3>
+        {Array.from({ length: faker.number.int({ min: 1, max: 10 }) }).map(() => (
+          <section className='react-markdown' key={faker.number.int()}>
+            <h3>{faker.location.city()} Rentals</h3>
+            <p>{faker.lorem.paragraph()}</p>
+            {faker.datatype.boolean() && (
+              <a
+                href={faker.location.city()}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${faker.location.city()}`}
+              >
+                {faker.location.city()}
+              </a>
+            )}
+          </section>
+        )
+
+        )}
+
+
+
       </main>
 
-      <div className='pelican'>
-        <img
-          src={faker.image.urlPicsumPhotos()}
-          alt="Nature"
-          className="poster storybook-ratio-2"
-        />
-      </div>
-
-      <div className="condor">
-        <section>
-
-          <h2>{faker.location.city()} Rentals</h2>
-          <p>{faker.lorem.paragraph()}</p>
-
-          <p>{faker.lorem.paragraph()}</p>
-        </section>
 
 
 
-      </div>
-
-
-
-      <Footer />
+      <Footer topHR />
     </>
   );
 };
