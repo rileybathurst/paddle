@@ -70,7 +70,7 @@ button:active,
 
 .book-now {
   text-transform: uppercase;
-  font-family: var(--font-serif);
+  /* font-family: var(--font-serif); */
 }
 
 /*------------------------------------*/
