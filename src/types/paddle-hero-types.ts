@@ -4,4 +4,5 @@ export type PaddleHeroTypes = {
   image: PaddleGatsbyImageType
   collage?: PaddleGatsbyImageType
   overlay?: React.ReactNode
+  background?: string
 };

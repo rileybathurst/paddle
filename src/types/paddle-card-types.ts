@@ -6,8 +6,8 @@ export type PaddleCardTypes = {
   title: string;
   link: string;
   image: PaddleGatsbyImageType;
-  collage?: PaddleGatsbyImageType;
   excerpt: string;
   paddleBookNow?: PaddleBookNowTypes;
+  objectFit?: "cover" | "contain" | "fill" | "none" | "scale-down";
   // breadcrumb: string; // * I dont think this is needed but double check
 }
