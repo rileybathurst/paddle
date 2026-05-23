@@ -385,6 +385,7 @@ header {
 
 .social {
   display: flex;
+  justify-content: center;
   gap: clamp(var(--kilimanjaro), 1.667vw, var(--aconcagua));
   margin-block: clamp(var(--kilimanjaro), 1.667vw, var(--aconcagua));
 }

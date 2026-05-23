@@ -61,7 +61,7 @@ export const PaddleFooter = ({
         />
         <hr />
 
-        <div>
+        <div className="text-center">
           <h3>Our Partner Locations</h3>
           <ul>
             {allStrapiBranch.nodes.map((branch) => (

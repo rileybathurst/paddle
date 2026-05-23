@@ -118,6 +118,10 @@ main>h1:first-child {
   font-family: var(--font-serif);
 }
 
+.font-serif-child>* {
+  font-family: var(--font-serif);
+}
+
 /*------------------*/
 /* #HR */
 /*------------------*/

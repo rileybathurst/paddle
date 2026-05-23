@@ -16,7 +16,10 @@ svg {
   /* safari needs default mins */
   max-width: clamp(var(--kilimanjaro), 5vw, 8rem);
   max-height: clamp(var(--kilimanjaro), 5vw, 8rem);
+}
 
+/* * socials */
+svg:not(.tripadvisor, .facebook, .instagram) {
   fill: currentColor;
 }
 

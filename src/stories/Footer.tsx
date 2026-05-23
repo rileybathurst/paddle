@@ -34,7 +34,7 @@ export const Footer = ({ topHR }: { topHR?: boolean }) => {
 
         <hr />
 
-        <div>
+        <div className="text-center">
           <h3 className="font-serif">Our Partner Locations</h3>
           <ul>
             {Array.from({
