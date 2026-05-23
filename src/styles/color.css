@@ -251,8 +251,33 @@ hr,
 }
 
 /*------------------------------------*/
-/* #HERO BACKER */
+/* #HERO */
 /*------------------------------------*/
+
+.hero-background {
+  background-color: white;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--neutral-600);
+    border-color: var(--neutral-500);
+  }
+}
+
+.tahoe-city .hero-background {
+  background-color: white;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--neutral-800);
+  }
+}
+
+.south-tahoe .hero-background {
+  background-color: white;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--neutral-600);
+  }
+}
 
 /* follow the body color scheme */
 .tahoe-city .hero-backer {

@@ -4,5 +4,6 @@ export type PaddleHeroTypes = {
   image: PaddleGatsbyImageType
   collage?: PaddleGatsbyImageType
   overlay?: React.ReactNode
-  background?: string
+  background?: boolean
+  objectFit?: "cover" | "contain" | "fill" | "none" | "scale-down";
 };

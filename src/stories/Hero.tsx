@@ -10,9 +10,9 @@ export const Hero = () => {
     <div className='albatross hero-wrapper'>
 
       <img
-        src={faker.image.urlPicsumPhotos()}
+        // src={faker.image.urlPicsumPhotos()}
         alt='faker image'
-        className="hero poster storybook-gatsby-image"
+        className={`hero poster storybook-gatsby-image ${faker.datatype.boolean() && 'hero-background'}`}
       />
 
       {faker.datatype.boolean() && (
