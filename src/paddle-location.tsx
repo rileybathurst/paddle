@@ -48,6 +48,7 @@ const Season = ({
           {opening_time && closing_time ? (
             <><HourMin time={opening_time} /> - <HourMin time={closing_time} />&nbsp;</>
           ) : null}
+          <br />
           {weatherPermitting ? "Weather Permitting" : null}
         </p>
       );

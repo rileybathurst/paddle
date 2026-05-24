@@ -44,7 +44,8 @@ body.south-tahoe,
 hr,
 .pricing-chart .column,
 .pricing-chart .title,
-.pricing-chart p {
+.pricing-chart p,
+.spec {
   border-color: var(--neutral-400);
 }
 
@@ -54,7 +55,8 @@ hr,
 .tahoe-city hr,
 .tahoe-city .pricing-chart .column,
 .tahoe-city .pricing-chart .title,
-.tahoe-city .pricing-chart p {
+.tahoe-city .pricing-chart p,
+.tahoe-city .spec {
   border-color: var(--sand-400);
 }
 
@@ -64,7 +66,8 @@ hr,
 .south-tahoe hr,
 .south-tahoe .pricing-chart .column,
 .south-tahoe .pricing-chart .title,
-.south-tahoe .pricing-chart p {
+.south-tahoe .pricing-chart p,
+.south-tahoe .spec {
   border-color: var(--lake-500);
 }
 

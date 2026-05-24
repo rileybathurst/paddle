@@ -36,7 +36,7 @@ const LineBreaker = ({ text }: { text: string; }) => {
 }
 
 export const PaddlePricingChart = ({ rentalRates, branches }: paddlePricingChartTypes) => {
-  
+
   // console.log(branches);
 
   /* console.log(rentalRates.nodes.map(rate => rate.branches?.map(
@@ -52,7 +52,7 @@ export const PaddlePricingChart = ({ rentalRates, branches }: paddlePricingChart
         <p>1 Hour</p>
         <p>3 Hours</p>
         <p>Full Day</p>
-        <p>Pedal Drive</p>
+        {/* <p>Pedal Drive</p> */}
       </div>
 
       {rentalRates.nodes.map((rate) => (
@@ -68,7 +68,7 @@ export const PaddlePricingChart = ({ rentalRates, branches }: paddlePricingChart
           <p>{rate.oneHour ? `$${rate.oneHour}` : null}</p>
           <p>{rate.threeHour ? `$${rate.threeHour}` : null}</p>
           <p>{rate.fullDay ? `$${rate.fullDay}` : null}</p>
-          <p>{rate.pedalAdd ? `+ $${rate.pedalAdd}` : null}</p>
+          {/* <p>{rate.pedalAdd ? `+ $${rate.pedalAdd}` : null}</p> */}
         </div>
       ))}
     </div>
