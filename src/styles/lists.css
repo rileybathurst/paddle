@@ -137,7 +137,7 @@ ol {
   grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
   gap: clamp(var(--kosciuszko), 1.667vw, var(--denali));
   /* match deck gap */
-  justify-items: stretch;
+  place-items: stretch;
   margin-block-end: var(--vinson);
 
   li,
