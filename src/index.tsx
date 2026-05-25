@@ -44,6 +44,7 @@ export * from "./types/paddle-testimonial-types";
 export * from "./types/paddle-compare-types";
 export * from "./types/paddle-hero-types";
 export * from "./types/paddle-error-types";
-
+export * from "./types/paddle-tour-card-types";
+export * from "./types/paddle-tour-view-types";
+export * from "./types/paddle-rental-page-type";
 export * from "./types/paddle-card-types";
-// export * from "./types/paddle-card-tour-types";
