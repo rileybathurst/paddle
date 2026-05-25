@@ -18,6 +18,7 @@ export type PaddleTourViewTypes = {
       timeframe: string;
       minimum: number;
       fitness: string;
+      experience: string;
       peek: string;
       sport: string;
       excerpt: string;
@@ -53,8 +54,9 @@ export type PaddleTourViewTypes = {
       }[];
     };
 
-    branch: {
+    strapiBranch: {
       name: string;
+      peek_base: string;
     };
 
     allStrapiTour: {
