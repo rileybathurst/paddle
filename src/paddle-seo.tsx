@@ -56,8 +56,8 @@ type SEOtypes = {
   title?: string;
   description?: string;
   url: string;
-  og_image?: string;
-  og_image_description?: string;
+  // og_image?: string;
+  // og_image_description?: string;
   breadcrumbs?: BreadcrumbsTypes;
   // children: React.ReactNode;
 

@@ -555,8 +555,6 @@ header {
   /* addding this border has to flip the margins */
   border-block-start: 1px solid var(--neutral-300);
   text-transform: uppercase;
-
-  height: 2lh;
   margin-block-start: 1lh;
 
   @supports not (margin: 1lh) {
