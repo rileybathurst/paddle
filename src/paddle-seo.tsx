@@ -56,8 +56,6 @@ type SEOtypes = {
   title?: string;
   description?: string;
   url: string;
-  // og_image?: string;
-  // og_image_description?: string;
   breadcrumbs?: BreadcrumbsTypes;
   // children: React.ReactNode;
 
@@ -75,8 +73,6 @@ type SEOtypes = {
     geoRadius: string;
     phone: string;
     email: string;
-    og_image: string;
-    og_image_description: string;
     paymentAccepted: string;
     numberOfEmployees: string;
     priceRange: string;
@@ -122,8 +118,6 @@ type SEOtypes = {
 export const PaddleSEO = ({
   title,
   description,
-  og_image,
-  og_image_description,
   breadcrumbs,
   strapiBranch,
   address,
@@ -138,8 +132,8 @@ export const PaddleSEO = ({
     : `${businessName} | ${strapiBranch.topbar.data.topbar} `;
 
   const PaddleDescription = description || strapiBranch.slogan;
-  const PaddleImage = og_image || `${strapiBranch.url}/${strapiBranch.hero.localFile.childImageSharp.gatsbyImageData.images.fallback.src}`;
-  const PaddleImageAlt = og_image_description || strapiBranch.hero.alternativeText;
+  const PaddleImage = `${strapiBranch.url}/${strapiBranch.hero.localFile.childImageSharp.gatsbyImageData.images.fallback.src}`;
+  const PaddleImageAlt = strapiBranch.hero.alternativeText;
 
   const paymentAcceptedQuery = strapiBranch.paymentAccepted
     ? strapiBranch.paymentAccepted
