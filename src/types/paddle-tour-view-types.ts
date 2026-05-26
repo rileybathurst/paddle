@@ -25,14 +25,6 @@ export type PaddleTourViewTypes = {
       price: number;
       slug: string;
       hero: PaddleGatsbyImageType;
-
-      branch: {
-        name: string;
-        peek_tours: string;
-        season_start: string;
-        season_end: string;
-        phone: string;
-      };
     };
 
     allStrapiMoonlightTourDateTime: {
@@ -57,6 +49,10 @@ export type PaddleTourViewTypes = {
     strapiBranch: {
       name: string;
       peek_base: string;
+      peek_tours: string;
+      season_start: string;
+      season_end: string;
+      phone: string;
     };
 
     allStrapiTour: {
