@@ -36,6 +36,7 @@ export * from "./paddle-seo";
 export * from "./types/paddle-location-types";
 export * from "./types/paddle-locales-types";
 export * from "./types/paddle-gatsby-image-type";
+export * from "./types/paddle-gatsby-image-with-aspect-type";
 export * from "./types/paddle-purchase-types";
 export * from "./types/paddle-purchase-image-types";
 export * from "./types/paddle-brand-list-types";
