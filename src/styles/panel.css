@@ -1,0 +1,54 @@
+/*------------------------------------*/
+/* #PANEL */
+/*------------------------------------*/
+
+.panel {
+  background-color: var(--neutral-200);
+  box-shadow: 0 0 0 100vmax var(--neutral-200);
+  clip-path: inset(0 -100vmax);
+
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--neutral-700);
+    box-shadow: 0 0 0 100vmax var(--neutral-700);
+  }
+
+  /* TODO: card */
+}
+
+.tahoe-city .panel {
+  background-color: var(--sand-300);
+  box-shadow: 0 0 0 100vmax var(--sand-300);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--tanager-400);
+    box-shadow: 0 0 0 100vmax var(--tanager-400);
+  }
+
+  .card {
+    background-color: var(--sand-100);
+    border-color: var(--sand-200);
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--tanager-300);
+      border-color: var(--tanager-200);
+    }
+  }
+}
+
+.south-tahoe .panel {
+  background-color: var(--lake-200);
+  box-shadow: 0 0 0 100vmax var(--lake-200);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--lake-700);
+    box-shadow: 0 0 0 100vmax var(--lake-700);
+
+    .card {
+      background-color: var(--lake-600);
+      border-color: var(--neutral-700);
+    }
+  }
+
+  /* TODO: card */
+}

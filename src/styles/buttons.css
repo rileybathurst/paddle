@@ -86,6 +86,12 @@ button:active,
     background-color: var(--tanager-200);
     border-color: var(--tanager-100);
     color: white;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--sand-400);
+      border-color: var(--sand-200);
+      color: var(--tanager-400);
+    }
   }
 
   button:hover,
@@ -97,6 +103,12 @@ button:active,
       background-color: var(--tanager-300);
       border-color: var(--tanager-200);
       color: var(--neutral-200);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--sand-300);
+      border-color: var(--sand-100);
+      color: var(--tanager-300);
     }
   }
 
@@ -133,9 +145,9 @@ button:active,
     .button,
     select,
     .comparesheet>*>*:first-child {
-      background-color: var(--lake-200);
-      border-color: var(--lake-100);
-      color: var(--lake-600);
+      background-color: var(--sand-400);
+      border-color: var(--sand-200);
+      color: var(--lake-800);
     }
   }
 
@@ -144,8 +156,14 @@ button:active,
   .button__hover,
   select:hover,
   .comparesheet>*>*:first-child:hover {
-    background-color: var(--lake-600);
-    border-color: var(--lake-400);
+    background-color: var(--sand-300);
+    border-color: var(--sand-100);
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--sand-300);
+      border-color: var(--sand-100);
+      color: var(--lake-700);
+    }
   }
 
   button:active,
@@ -153,8 +171,14 @@ button:active,
   select:active,
   .comparesheet>*>*:first-child:active,
   .button__active {
-    background-color: var(--lake-500);
-    border-color: var(--lake-300);
+    background-color: var(--sand-200);
+    border-color: white;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--sand-200);
+      border-color: white;
+      color: var(--lake-600);
+    }
   }
 }
 

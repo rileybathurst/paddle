@@ -17,7 +17,7 @@ body.tahoe-city,
   color: var(--neutral-800);
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--tanager-400);
+    background-color: var(--tanager-300);
     color: var(--neutral-100);
   }
 }
@@ -33,7 +33,7 @@ body.south-tahoe,
   background-color: var(--lake-100);
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--lake-700);
+    background-color: var(--lake-600);
   }
 }
 
@@ -69,41 +69,9 @@ hr,
 .south-tahoe .pricing-chart p,
 .south-tahoe .spec {
   border-color: var(--lake-500);
-}
-
-/*------------------------------------*/
-/* #PANEL */
-/*------------------------------------*/
-
-.panel {
-  background-color: var(--neutral-200);
-  box-shadow: 0 0 0 100vmax var(--neutral-200);
-  clip-path: inset(0 -100vmax);
-
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--neutral-700);
-    box-shadow: 0 0 0 100vmax var(--neutral-700);
-  }
-}
-
-.tahoe-city .panel {
-  background-color: var(--sand-300);
-  box-shadow: 0 0 0 100vmax var(--sand-300);
-
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--tanager-300);
-    box-shadow: 0 0 0 100vmax var(--tanager-300);
-  }
-}
-
-.south-tahoe .panel {
-  background-color: var(--lake-200);
-  box-shadow: 0 0 0 100vmax var(--lake-200);
-
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--lake-700);
-    box-shadow: 0 0 0 100vmax var(--lake-700);
+    border-color: var(--sand-400);
   }
 }
 
@@ -117,13 +85,31 @@ hr,
   background-color: white;
   box-shadow: 0 0 0 100vmax white;
 
-  /* TODO: tahoe city and south */
   @media (prefers-color-scheme: dark) {
     background-color: var(--neutral-700);
     box-shadow: 0 0 0 100vmax var(--neutral-700);
   }
 }
 
+.tahoe-city .top-bar {
+  /* TODO: */
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--tanager-400);
+    box-shadow: 0 0 0 100vmax var(--tanager-400);
+  }
+}
+
+.south-tahoe .top-bar {
+  /* TODO: */
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--lake-700);
+    box-shadow: 0 0 0 100vmax var(--lake-700);
+  }
+}
+
+/* TODO: south */
 
 /*------------------------------------*/
 /* #LOCATION */
@@ -179,8 +165,7 @@ hr,
     background-color: var(--sand-200);
 
     @media (prefers-color-scheme: dark) {
-      background-color: var(--tanager-300);
-      border-color: var(--tanager-100);
+      background-color: var(--tanager-400);
     }
   }
 
@@ -195,12 +180,20 @@ hr,
     }
   }
 
+  /* TODO: why is the non and hovered the same thing? */
   svg,
   .icon-hovered,
   .icon-hovered:hover {
     fill: var(--tanager-100);
+
+    @media (prefers-color-scheme: dark) {
+      fill: var(--sand-300);
+    }
   }
 }
+
+/* TODO: button colors on dark */
+/* TODO: svg colors on dark */
 
 /*------------------------------------*/
 
@@ -211,8 +204,8 @@ hr,
     background-color: var(--neutral-100);
 
     @media (prefers-color-scheme: dark) {
-      background-color: var(--neutral-800);
-      border-color: var(--lake-100);
+      background-color: var(--lake-700);
+      border-color: var(--lake-500);
     }
   }
 
@@ -221,8 +214,9 @@ hr,
   .location-backer-hovered {
     background-color: var(--neutral-200);
 
+    /* 600 matches the background so dont do that */
     @media (prefers-color-scheme: dark) {
-      background-color: var(--neutral-600);
+      background-color: var(--lake-800);
     }
   }
 }
@@ -270,7 +264,7 @@ hr,
   background-color: white;
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--neutral-800);
+    background-color: var(--tanager-400);
   }
 }
 
@@ -278,7 +272,7 @@ hr,
   background-color: white;
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--neutral-600);
+    background-color: var(--lake-700);
   }
 }
 
@@ -287,7 +281,7 @@ hr,
   background-color: var(--sand-100);
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--tanager-400);
+    background-color: var(--tanager-300);
   }
 }
 
@@ -295,7 +289,7 @@ hr,
   background-color: var(--lake-100);
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--lake-700);
+    background-color: var(--lake-600);
   }
 }
 

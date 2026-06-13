@@ -9,6 +9,9 @@ a {
   }
 }
 
+/* TODO: im only defining by underline also use color */
+/* * this is especially problematic for svg */
+
 a:where(:hover, :focus) {
   text-decoration: none;
 }
@@ -21,11 +24,21 @@ a:where(:hover, :focus) {
   }
 }
 
-.south-tahoe a {
-  color: var(--lake-500);
+.south-tahoe {
+  a {
+    color: var(--lake-500);
 
-  @media (prefers-color-scheme: dark) {
-    color: var(--lake-300);
+    @media (prefers-color-scheme: dark) {
+      color: var(--lake-300);
+    }
+  }
+
+  a:hover {
+    color: var(--lake-700);
+
+    @media (prefers-color-scheme: dark) {
+      color: var(--lake-100);
+    }
   }
 }
 

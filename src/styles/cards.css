@@ -78,7 +78,12 @@
   border-color: var(--tanager-100);
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--neutral-800);
+    border-color: var(--tanager-200);
+    background-color: var(--tanager-400);
+  }
+
+  .card:hover {
+    background-color: var(--tanager-300);
   }
 }
 
@@ -86,6 +91,7 @@
   border-color: var(--sand-200);
 
   @media (prefers-color-scheme: dark) {
+    background-color: var(--lake-700);
     border-color: var(--neutral-700);
   }
 }

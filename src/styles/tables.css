@@ -24,6 +24,10 @@
     /* * be careful of this it can break the footer flex */
     font-size: var(--kosciuszko);
 
+    @media (min-width: 40rem) {
+      font-size: var(--vinson);
+    }
+
     line-height: 2;
     min-height: var(--denali);
     /* always keep a line */
@@ -52,5 +56,9 @@
 
   p {
     font-size: var(--kosciuszko);
+
+    @media (min-width: 40rem) {
+      font-size: var(--vinson);
+    }
   }
 }

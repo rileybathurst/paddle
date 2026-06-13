@@ -14,6 +14,7 @@ export const Card = () => {
         {faker.datatype.boolean() ? (
           <div className='collage'>
             <img src={faker.image.urlPicsumPhotos()} alt={faker.lorem.words(2)} />
+            {/* // TODO: this is broken */}
             <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48">
               <title>{faker.location.city()}</title>
               <circle cx="24" cy="24" r="24" />

@@ -20,7 +20,8 @@
 
   /* Colors v.1 */
 
-  /* Tahoe City */
+  /*------------------------------------*/
+  /* TAHOE CITY */
 
   /* tanger and sand are in colobration with each other */
   /* the light pinks dont work and the dark tans dont so it becomes a combination */
@@ -32,6 +33,7 @@
   --tanager-300: oklch(0.35 0.12 25);
   --tanager-400: oklch(0.25 0.1 25);
 
+  /* TODO: this is baseline I can get rid of it I think */
   @supports not (color: oklch(0.55 0.2 25)) {
     --tanager-100: #cc272e;
     --tanager-200: #a20519;
@@ -54,8 +56,9 @@
     --sand-400: #eed1c1;
   }
 
-  /* South Tahoe */
-  /* Lake */
+  /*------------------------------------*/
+  /* SOUTH TAHOE */
+  /* LAKE */
 
   --lake-100: oklch(94% 0.03 230);
   --lake-200: oklch(93% 0.04 230);
@@ -64,6 +67,8 @@
   --lake-500: oklch(45% 0.085 230);
   --lake-600: oklch(35% 0.065 230);
   --lake-700: oklch(25% 0.05 230);
+
+  /* TODO: this is never used its too close to neutral but should be subbed in */
   --lake-800: oklch(20% 0.035 230);
 
   /* taken straight from sketch */
