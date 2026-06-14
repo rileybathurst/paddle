@@ -225,10 +225,22 @@ hr,
 /* #SPECS */
 /*------------------------------------*/
 
-.specs h2,
-.specs .spec__unit {
-  /* ? TODO: */
-  color: grey;
+
+.spec {
+
+  /* * works across color schemes */
+  h2,
+  h3 {
+    color: var(--neutral-500);
+  }
+
+  @media (prefers-color-scheme: dark) {
+
+    h2,
+    h3 {
+      color: var(--neutral-300);
+    }
+  }
 }
 
 /*------------------------------------*/

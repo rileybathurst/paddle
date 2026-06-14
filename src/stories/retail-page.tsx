@@ -10,7 +10,7 @@ export const RetailPage = () => {
     <>
       <Header />
       <main className="condor">
-          <h1>Retail Page</h1>
+        <h1>Retail Page</h1>
       </main>
 
       {/* // TODO: specify the retail card */}

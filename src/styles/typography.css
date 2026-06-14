@@ -177,10 +177,7 @@ hgroup {
   align-items: baseline;
 }
 
-/*------------------*/
-/* #SPECIFICS */
-/*------------------*/
-
+/* TODOL: check if used */
 .single__description {
   line-height: 1.5;
 }
@@ -292,5 +289,17 @@ select:active {
   /* p, */
   .book-now {
     margin-block-end: var(--everest);
+  }
+}
+
+/*------------------------------------*/
+/* SPECS */
+/*------------------------------------*/
+
+.spec {
+
+  h2,
+  h3 {
+    font-family: var(--heading_font);
   }
 }
