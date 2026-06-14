@@ -2,6 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import type { paddlePricingChartTypes } from "./types/paddle-pricing-chart-types";
 
+// TODO: this needs love on inflatable paddleboard its too long
 const LineBreaker = ({ text }: { text: string; }) => {
   const splitIndex = (() => {
     const spaceIndexes = [];

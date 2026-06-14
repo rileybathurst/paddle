@@ -89,7 +89,9 @@ svg:not(.tripadvisor, .facebook, .instagram) {
 
   svg {
     width: 100%;
-    max-height: var(--vulture);
+    /* max-height: var(--vulture); */
+    /* * Andy asked this to be pushed up */
+    max-height: 14rem;
     max-width: fit-content;
   }
 }
