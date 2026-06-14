@@ -7,7 +7,7 @@ type PaddleRemainderTypes = {
 const PaddleRemainder = ({ inches }: PaddleRemainderTypes) => {
 
   const feet = Math.floor(inches / 12);
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder
+  // * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder
   const leftover = inches % 12;
 
   return (

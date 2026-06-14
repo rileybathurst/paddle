@@ -18,6 +18,38 @@ type SpecsTypes = {
     [key: string]: string | number | number[];
   };
 }
+
+// * These come from a series of specific queries
+// Retail
+{/* <PaddleSpecs
+  crew={data.strapiRetail.crew} // string no unit
+  capacity={data.strapiRetail.capacity} // number with " unit after
+  length={data.strapiRetail.length} // number with " unit after
+  width={data.strapiRetail.width} // number with " unit after
+  weight={{
+    hullweight: data.strapiRetail.hullweight, // number with " unit after
+    riggedweight: data.strapiRetail.riggedweight, // number with " unit after
+  }}
+  thickness={data.strapiRetail.thickness} // number with " unit after
+  inflatable={data.strapiRetail.inflatable ? "Yes" : null} // boolean to string no unit
+  demo={data.strapiRetail.demo ? "Yes" : null} // boolean to string no unit
+  cost={{
+    price: data.strapiRetail.price, // number with $ unit before
+    // discount: data.strapiRetail.discount // * currently unused so has to be removed
+  }}
+/> */}
+
+// Tour
+{/* <PaddleSpecs
+  sport={data.strapiTour.sport} // string no unit
+  fitness={data.strapiTour.fitness} // string no unit
+  // ? experience={data.strapiTour.experience}
+  price={data.strapiTour.price} // number with $ unit before
+/>
+{/* * needed as theres a bunch of values that may be passed but none is specific */}
+{/* {time.value ? <PaddleSpecs time={time} /> : null} */ }
+// time is way more complex it can do a bunch of things
+
 // * moving the section tag to the parent component means you can loop yourself
 export const PaddleSpecs = (specs: SpecsTypes, allowNullValues?: boolean) =>
   Object.entries(specs).map(([key, value]) => {
@@ -27,8 +59,11 @@ export const PaddleSpecs = (specs: SpecsTypes, allowNullValues?: boolean) =>
       return null;
     }
 
+    /*------------------------------------*/
+    // OBRJECTS
+
     // * time is a special case as it has a nested value
-    if (key === "time" && typeof value === "object") {
+    if (typeof value === "object" && key === "time") {
       return (
         <div key={key} className="spec">
           <h2>{value.value}</h2>
@@ -39,13 +74,14 @@ export const PaddleSpecs = (specs: SpecsTypes, allowNullValues?: boolean) =>
       // * I cant remeber others yet
     }
 
-    if (key === "cost" && typeof value === "object" && value.discount) {
+    // * currently unused so has to be removed
+    /* if (typeof value === "object" && key === "cost" && value.discount) {
       const amount = (Number(value.price) -
         Number(value.discount) * (Number(value.price) / 100)) as number;
 
       return (
         <React.Fragment key={key}>
-          {/* // TODO: add color */}
+          TODO: add color
           <div className="spec">
             <h2>
               <del>Original Price</del>
@@ -61,7 +97,7 @@ export const PaddleSpecs = (specs: SpecsTypes, allowNullValues?: boolean) =>
           </div>
         </React.Fragment>
       );
-    }
+    } */
 
     /* // * this should be working for weight */
     // The key kinda seems like its being thrown awaywhich is fine
@@ -73,6 +109,20 @@ export const PaddleSpecs = (specs: SpecsTypes, allowNullValues?: boolean) =>
       );
     }
 
+    /*------------------------------------*/
+    // SPECIFIC NUMBER
+    {
+      typeof value === "number" && key === "length" && (
+        <div
+          key={key}
+          className="spec"
+        >
+          <h2>{key}</h2>
+          <PaddleRemainder inches={value} />
+        </div>
+      )
+    }
+
     return (
       <div
         key={key}
@@ -80,19 +130,23 @@ export const PaddleSpecs = (specs: SpecsTypes, allowNullValues?: boolean) =>
       >
         <h2>{key}</h2>
         <h3>
-          {key === "price" && <span className="spec__unit">$</span>}
+          {typeof value === "number" ? (
+            <>
+              {/* before */}
+              {key === "price" && <span className="spec__unit">$</span>}
 
-          {/* // TODO: theres a double spec issue here */}
-          {key === "length" && typeof value === "number" && (
-            <PaddleRemainder inches={value} />
-          )}
-          {(key === "hullweight" || key === "riggedweight") && (
-            <span className="spec__unit">lbs</span>
-          )}
-          {(key === "width" || key === "length" || key === "capacity") && (
-            <span className="spec__unit">"</span>
-          )}
-          {value ? value : null}
+              {value}
+
+              {/* after */}
+              {(key === "hullweight" || key === "riggedweight") && (
+                <span className="spec__unit">lbs</span>
+              )}
+              {(key === "width" || key === "length" || key === "capacity") && (
+                <span className="spec__unit">"</span>
+              )}
+            </>
+            // strings never have a unit so just return the value
+          ) : value}
         </h3>
       </div>
     );
