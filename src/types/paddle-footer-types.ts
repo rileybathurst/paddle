@@ -22,6 +22,13 @@ export type PaddleFooterTypes = {
       url: string;
     }[];
   };
+  allStrapiConnection: {
+    nodes: {
+      name: string;
+      link: string;
+      excerpt: string;
+    }[];
+  };
   allStrapiRentalRate: {
     nodes: PaddleRentalRateItem[];
   };

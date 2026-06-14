@@ -12,6 +12,7 @@ export const PaddleFooter = ({
   strapiBranch,
   logo,
   allStrapiBranch,
+  allStrapiConnection,
   allStrapiRentalRate,
   allStrapiLocation,
   MenuPlus,
@@ -76,6 +77,24 @@ export const PaddleFooter = ({
             ))}
           </ul>
         </div>
+
+        {allStrapiConnection.nodes.length > 0 && (
+          <div className="text-center">
+            <h4>Our Partners</h4>
+            <ul>
+              {allStrapiConnection.nodes.map((connection) => (
+                <li key={connection.name}>
+                  <a href={`${connection.link}/?=${strapiBranch.name}-Kayak-Paddleboard`}
+                    target="_blank"
+                    rel='noopener noreferrer'
+                  >
+                    {connection.name} - {connection.excerpt}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
       </section>
 
