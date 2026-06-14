@@ -80,16 +80,20 @@ export const PaddleFooter = ({
 
         {allStrapiConnection.nodes.length > 0 && (
           <div className="text-center">
-            <h4>Our Partners</h4>
+            <hr />
+            <h4>Explore Tahoe With</h4>
             <ul>
               {allStrapiConnection.nodes.map((connection) => (
                 <li key={connection.name}>
-                  <a href={`${connection.link}/?=${strapiBranch.name}-Kayak-Paddleboard`}
-                    target="_blank"
-                    rel='noopener noreferrer'
-                  >
-                    {connection.name} - {connection.excerpt}
-                  </a>
+                  <strong>
+                    <a href={`${connection.link}/?=${strapiBranch.name}-Kayak-Paddleboard`}
+                      target="_blank"
+                      rel='noopener noreferrer'
+                    >
+                      {connection.name}
+                    </a>
+                  </strong><br />
+                  {connection.excerpt}
                 </li>
               ))}
             </ul>
