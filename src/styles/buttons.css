@@ -134,9 +134,9 @@ button:active,
   .button,
   select,
   .comparesheet>*>*:first-child {
-    background-color: var(--lake-700);
-    border-color: var(--lake-500);
-    color: white;
+    background-color: var(--sand-300);
+    border-color: var(--sand-400);
+    color: var(--lake-700);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -156,8 +156,9 @@ button:active,
   .button__hover,
   select:hover,
   .comparesheet>*>*:first-child:hover {
-    background-color: var(--sand-300);
-    border-color: var(--sand-100);
+    background-color: var(--sand-400);
+    border-color: var(--sand-400);
+    color: var(--lake-600);
 
     @media (prefers-color-scheme: dark) {
       background-color: var(--sand-300);
@@ -171,8 +172,9 @@ button:active,
   select:active,
   .comparesheet>*>*:first-child:active,
   .button__active {
-    background-color: var(--sand-200);
-    border-color: white;
+    background-color: var(--sand-400);
+    border-color: var(--sand-400);
+    color: var(--lake-500);
 
     @media (prefers-color-scheme: dark) {
       background-color: var(--sand-200);

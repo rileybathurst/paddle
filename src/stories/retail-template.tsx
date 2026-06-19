@@ -7,15 +7,7 @@ import { Deck } from './deck';
 import { faker } from '@faker-js/faker';
 import { Logo } from './Logo';
 
-interface RetailTemplateProps {
-  primary?: boolean;
-  onClick?: () => void;
-}
-
-export const RetailTemplate = ({
-  primary = false,
-  ...props
-}: RetailTemplateProps) => {
+export const RetailTemplate = () => {
 
   return (
     <>

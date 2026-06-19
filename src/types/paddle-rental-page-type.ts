@@ -10,6 +10,8 @@ export type PaddleRentalsPageTypes = {
         threeHour: number;
         fullDay: number;
         pedalAdd: number;
+        excerpt: string;
+        hero: PaddleGatsbyImageType;
       }[];
     };
 
