@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby";
-import { PaddleFooterTypes } from "./types/paddle-footer-types";
+import type { PaddleFooterTypes } from "./types/paddle-footer-types";
 import { PaddleFormatPhoneNumber } from "./paddle-format-phone-number";
 import { PaddleSocials } from "./paddle-socials";
 import { PaddleLocales } from "./paddle-locales";

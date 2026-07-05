@@ -12,7 +12,7 @@
     "storybook": "tsc --noEmit && stay-gold && storybook dev -p 6006",
     "storybook-dirty": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "release": "npm version patch && npm login && npm publish",
+    "release": "bun version patch && bun login && bun publish",
     "stay-gold": "stay-gold"
   },
   "dependencies": {
@@ -56,6 +56,9 @@
     "!src/stories"
   ],
   "overrides": {
-    "storybook": "$storybook"
+    "storybook": "$storybook",
+    "@types/reach__router": {
+      "@types/react": "19.2.17"
+    }
   }
 }
