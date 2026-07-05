@@ -114,6 +114,9 @@
   --font-serif: "allotropic",
   sans-serif;
 
+  --heavyweight: 600;
+  --middleweight: 400;
+
   /* 🏔 7 Summits */
   /* linear scale */
   --everest: 3rem;

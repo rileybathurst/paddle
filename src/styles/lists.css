@@ -119,7 +119,7 @@ ol {
   h3 {
     font-size: var(--vinson);
     line-height: 1.25;
-    font-weight: normal;
+    font-weight: var(--middleweight);
     margin-block-end: 0.625rem;
   }
 }
@@ -151,7 +151,7 @@ ol {
     place-items: stretch;
     transition: var(--fade);
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: var(--middleweight);
     gap: var(--kosciuszko);
 
     width: revert;

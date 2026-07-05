@@ -1,5 +1,6 @@
 // this is the Name.tsx file
 import React from 'react';
+import { faker } from '@faker-js/faker';
 
 type TopBarTypes = {
 
@@ -46,7 +47,7 @@ export const TopBar = ({
           <span className="rain-check-reason">We're closed today due to {RainCheckReason}</span>
         </p>
       ) : (
-        <p>We&apos;re Open for the 2024 Summer</p>
+        <p>{faker.company.catchPhrase()}</p>
       )
       }
     </div>

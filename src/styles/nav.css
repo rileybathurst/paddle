@@ -11,7 +11,7 @@ header {
   margin-inline: auto;
   max-width: calc(100% - var(--denali));
   padding-block-end: var(--elbrus);
-  
+
 }
 
 .menu-toggle {
@@ -40,6 +40,9 @@ header {
   transition: var(--fade), visibility 0s linear 320ms;
   padding: 0;
   list-style: none;
+
+  font-size: var(--kilimanjaro);
+  font-weight: var(--heavyweight);
 }
 
 .menu-list.is-open {
@@ -50,6 +53,9 @@ header {
   visibility: visible;
   pointer-events: auto;
   transition: var(--fade);
+
+  /* ? I think theres someting to be done in there */
+  /* background-color: var(--neutral-700); */
 }
 
 /* TODO: header only has panel color at small size */

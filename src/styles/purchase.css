@@ -107,7 +107,7 @@
     h5,
     h6 {
       font-size: clamp(var(--vinson), 1.667vw, var(--denali));
-      font-weight: normal;
+      font-weight: var(--middleweight);
       line-height: 3;
     }
 
@@ -136,7 +136,7 @@
     h5 {
       margin: 0;
       opacity: 1;
-      font-weight: normal;
+      font-weight: var(--middleweight);
     }
   }
 }

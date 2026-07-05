@@ -37,19 +37,35 @@ export const PaddleMenu = ({ menu_items, peek_base, strapiBranchName }: PaddleMe
 
   return (
     <nav className="nav" aria-label="Main navigation">
-      <button
-        ref={menuButtonRef}
-        className="menu-toggle"
-        type="button"
-        aria-expanded={isMenuOpen}
-        aria-controls={menuId}
-        aria-label={isMenuOpen ? "Close main menu" : "Open main menu"}
-        onClick={() => {
-          setIsMenuOpen((currentlyOpen) => !currentlyOpen);
-        }}
-      >
-        Menu
-      </button>
+      {isMenuOpen ? (
+        <button
+          ref={menuButtonRef}
+          className="menu-toggle"
+          type="button"
+          aria-expanded="true"
+          aria-controls={menuId}
+          aria-label="Close main menu"
+          onClick={() => {
+            setIsMenuOpen((currentlyOpen) => !currentlyOpen);
+          }}
+        >
+          Menu
+        </button>
+      ) : (
+        <button
+          ref={menuButtonRef}
+          className="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls={menuId}
+          aria-label="Open main menu"
+          onClick={() => {
+            setIsMenuOpen((currentlyOpen) => !currentlyOpen);
+          }}
+        >
+          Menu
+        </button>
+      )}
 
       <ul
         id={menuId}

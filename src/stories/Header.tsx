@@ -8,7 +8,7 @@ import { BookNow } from "./BookNow";
 const MENU_ITEMS = [
   ...Array.from({ length: faker.number.int({ min: 2, max: 8 }) }).map(() => ({
     href: `/${faker.lorem.slug()}`,
-    label: faker.lorem.words({ min: 1, max: 3 }),
+    label: faker.airline.airline().name,
   }))
 ];
 
@@ -53,19 +53,35 @@ export const Header = () => {
       <hr />
 
       <nav className="nav" aria-label="Main navigation">
-        <button
-          ref={menuButtonRef}
-          className="menu-toggle"
-          type="button"
-          aria-expanded={isMenuOpen}
-          aria-controls={menuId}
-          aria-label={isMenuOpen ? "Close main menu" : "Open main menu"}
-          onClick={() => {
-            setIsMenuOpen((currentlyOpen) => !currentlyOpen);
-          }}
-        >
-          Menu
-        </button>
+        {isMenuOpen ? (
+          <button
+            ref={menuButtonRef}
+            className="menu-toggle"
+            type="button"
+            aria-expanded="true"
+            aria-controls={menuId}
+            aria-label="Close main menu"
+            onClick={() => {
+              setIsMenuOpen((currentlyOpen) => !currentlyOpen);
+            }}
+          >
+            Menu
+          </button>
+        ) : (
+          <button
+            ref={menuButtonRef}
+            className="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls={menuId}
+            aria-label="Open main menu"
+            onClick={() => {
+              setIsMenuOpen((currentlyOpen) => !currentlyOpen);
+            }}
+          >
+            Menu
+          </button>
+        )}
 
         <ul
           id={menuId}
