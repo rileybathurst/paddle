@@ -24,6 +24,9 @@ interface BreadcrumbsTypes {
   };
 }
 [];
+
+/*------------------------------------*/
+
 // I could probably pass it two arguments instead but for now
 const Breadcrumbs = (breadcrumbs: BreadcrumbsTypes) => {
   // remove the breadcrumbs.url from the Object.entries
@@ -51,6 +54,14 @@ const Breadcrumbs = (breadcrumbs: BreadcrumbsTypes) => {
     </Script>
   );
 };
+
+/*------------------------------------*/
+
+const removeMarkdownLinks = (text: string) => {
+  // Remove markdown links and keep the link text
+  return text.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+}
+
 
 type SEOtypes = {
   title?: string;
@@ -129,7 +140,7 @@ export const PaddleSEO = ({
 
   const PaddleTitle = title
     ? `${title} | ${businessName}`
-    : `${businessName} | ${strapiBranch.topbar.data.topbar} `;
+    : `${businessName} | ${removeMarkdownLinks(strapiBranch.topbar.data.topbar)} `;
 
   const PaddleDescription = description || strapiBranch.slogan;
   const PaddleImage = `${strapiBranch.url}/${strapiBranch.hero.localFile.childImageSharp.gatsbyImageData.images.fallback.src}`;

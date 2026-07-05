@@ -9,10 +9,14 @@ type PaddleMenuTypes = PaddleBookNowTypes & {
     href: string;
     label: string;
   }[];
+  location?: Location;
 };
-export const PaddleMenu = ({ menu_items, peek_base, strapiBranchName }: PaddleMenuTypes) => {
+export const PaddleMenu = ({ menu_items, peek_base, strapiBranchName, location }: PaddleMenuTypes) => {
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // * if location home keep the menu open, if not home keep it closed
+  const isHomePage = location?.pathname === "/";
+
+  const [isMenuOpen, setIsMenuOpen] = useState(isHomePage);
   const menuId = useId();
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -72,6 +76,11 @@ export const PaddleMenu = ({ menu_items, peek_base, strapiBranchName }: PaddleMe
         className={`menu-list ${isMenuOpen ? "is-open" : ""}`}
         onClick={(event) => {
           if (event.target instanceof HTMLAnchorElement) {
+            closeMenu();
+          }
+        }}
+        onKeyDown={(event) => {
+          if (event.target instanceof HTMLAnchorElement && event.key === "Enter") {
             closeMenu();
           }
         }}
