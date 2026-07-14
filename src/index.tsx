@@ -5,7 +5,7 @@ export * from "./paddle-remainder";
 export * from "./paddle-format-phone-number";
 export * from "./paddle-featured-sort";
 export * from "./paddle-menu";
-export * from "./paddle-sort";
+export * from "./paddle-tour-sort";
 
 // Molecules
 export * from "./paddle-composition";

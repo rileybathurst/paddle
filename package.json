@@ -12,7 +12,7 @@
     "storybook": "tsc --noEmit && stay-gold && storybook dev -p 6006",
     "storybook-dirty": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "release": "bun version patch && bun login && bun publish",
+    "release": "bun pm version patch minor && bun login && bun publish",
     "stay-gold": "stay-gold"
   },
   "dependencies": {
