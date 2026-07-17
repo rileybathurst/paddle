@@ -1,18 +1,14 @@
 import type { PaddleGatsbyImageType } from "./paddle-gatsby-image-type";
+import type { PaddleRentalRateType } from "./paddle-rental-rate-type";
 
 export type PaddleRentalsPageTypes = {
   data: {
     allStrapiRentalRate: {
-      nodes: {
-        id: string;
-        item: string;
-        oneHour: number;
-        threeHour: number;
-        fullDay: number;
+      nodes: (PaddleRentalRateType & {
         pedalAdd: number;
         excerpt: string;
-        hero: PaddleGatsbyImageType;
-      }[];
+        hero: PaddleGatsbyImageType; // * hobie eclipse uses this in south lake
+      })[];
     };
 
     strapiBranch: {

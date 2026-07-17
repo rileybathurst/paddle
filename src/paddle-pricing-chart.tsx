@@ -44,16 +44,27 @@ export const PaddlePricingChart = ({ rentalRates, branches }: paddlePricingChart
     branch => branch.slug
   ).flat().some(slug => slug === branches?.slug) && console.log("found a match"))); */
 
+  console.log(rentalRates.nodes.map(rate => rate.oneHour));
+
+  const allOneHourAreNull = rentalRates.nodes.every((rate) => rate.oneHour === null);
+  // console.log("all oneHour are null:", allOneHourAreNull);
+
+  const allThreeHourAreNull = rentalRates.nodes.every((rate) => rate.threeHour === null);
+  // console.log("all threeHour are null:", allThreeHourAreNull);
+
+  const allFullDayAreNull = rentalRates.nodes.every((rate) => rate.fullDay === null);
+  // console.log("all fullDay are null:", allFullDayAreNull);
+
   return (
     <div className="pricing-chart">
       <div className="column">
         <h4 className="title">
           <Link to="/rentals">Rental<br />Rates</Link>
         </h4>
-        <p>1 Hour</p>
-        <p>3 Hours</p>
-        <p>Full Day</p>
-        {/* <p>Pedal Drive</p> */}
+        {allOneHourAreNull ? null : <p>1 Hour</p>}
+        {allThreeHourAreNull ? null : <p>3 Hours</p>}
+        {allFullDayAreNull ? null : <p>Full Day</p>}
+        {/* // * removed for now but maybe i'll need it back <p>Pedal Drive</p> */}
       </div>
 
       {rentalRates.nodes.map((rate) => (
@@ -66,9 +77,9 @@ export const PaddlePricingChart = ({ rentalRates, branches }: paddlePricingChart
             : (
               <LineBreaker text={rate.item} />
             )}
-          <p>{rate.oneHour ? `$${rate.oneHour}` : null}</p>
-          <p>{rate.threeHour ? `$${rate.threeHour}` : null}</p>
-          <p>{rate.fullDay ? `$${rate.fullDay}` : null}</p>
+          {allOneHourAreNull ? null : <p>{rate.oneHour ? `$${rate.oneHour}` : null}</p>}
+          {allThreeHourAreNull ? null : <p>{rate.threeHour ? `$${rate.threeHour}` : null}</p>}
+          {allFullDayAreNull ? null : <p>{rate.fullDay ? `$${rate.fullDay}` : null}</p>}
           {/* <p>{rate.pedalAdd ? `+ $${rate.pedalAdd}` : null}</p> */}
         </div>
       ))}

@@ -1,5 +1,5 @@
 export type PaddleBrandListTypes = {
-  id: string;
+  id: React.Key;
   slug: string;
   name: string;
   svg: string;
