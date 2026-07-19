@@ -56,12 +56,12 @@ export const PaddlePricingChart = ({ rentalRates, branches, link }: paddlePricin
 
     setPricingChartStyles(`.pricing-chart > *:nth-child(${rentalRates.nodes.length}n+1){
         border-bottom: none;
-        background: hotpink;
+        // background: hotpink;
       }
-      /* .pricing-chart > :nth-last-child(-n + ${rentalRates.nodes.length}) {
+      .pricing-chart > :nth-last-child(-n + ${rentalRates.nodes.length}) {
         border-inline-end: none;
-        background: lightblue;
-      } */`);
+        // background: lightblue;
+      }`);
   }, [hasMounted, rentalRates.nodes.length]);
 
   // console.log(branches);
