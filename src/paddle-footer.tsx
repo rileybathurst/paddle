@@ -97,6 +97,11 @@ export const PaddleFooter = ({
                 </li>
               ))}
             </ul>
+            <h4>
+              <Link to="/favorites">
+                Explore more of {strapiBranch.name} off the water.
+              </Link>
+            </h4>
           </div>
         )}
 

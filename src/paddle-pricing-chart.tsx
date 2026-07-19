@@ -4,6 +4,13 @@ import type { paddlePricingChartTypes } from "./types/paddle-pricing-chart-types
 
 // TODO: this needs love on inflatable paddleboard its too long
 const LineBreaker = ({ text }: { text: string; }) => {
+  text = text.trim();
+
+  // * dont break a single word, it returns the word twice on two lines, which is not what we want
+  if (!text.includes(" ")) {
+    return <h4 className="title">{text}</h4>;
+  }
+
   const splitIndex = (() => {
     const spaceIndexes = [];
     for (let i = 0; i < text.length; i++) {
@@ -55,6 +62,7 @@ export const PaddlePricingChart = ({ rentalRates, branches }: paddlePricingChart
   const allFullDayAreNull = rentalRates.nodes.every((rate) => rate.fullDay === null);
   // console.log("all fullDay are null:", allFullDayAreNull);
 
+  // ! this has to be a grid
   return (
     <div className="pricing-chart">
       <div className="column">
@@ -63,7 +71,7 @@ export const PaddlePricingChart = ({ rentalRates, branches }: paddlePricingChart
         </h4>
         {allOneHourAreNull ? null : <p>1 Hour</p>}
         {allThreeHourAreNull ? null : <p>3 Hours</p>}
-        {allFullDayAreNull ? null : <p>Full Day</p>}
+        {allFullDayAreNull ? null : (allOneHourAreNull && allThreeHourAreNull) ? <p>Flate Rate</p> : <p>Full Day</p>}
         {/* // * removed for now but maybe i'll need it back <p>Pedal Drive</p> */}
       </div>
 

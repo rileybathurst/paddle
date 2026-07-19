@@ -3,11 +3,11 @@
 /*------------------*/
 
 .pricing-chart {
-  display: flex;
+  display: grid;
   text-align: center;
 
   .column {
-    display: flex;
+    display: subgrid;
     flex: 1 1 10rem;
     flex-direction: column;
     border-right-width: 1px;
