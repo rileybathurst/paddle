@@ -51,7 +51,14 @@ export const PaddlePricingChart = ({ rentalRates, branches, link }: paddlePricin
     branch => branch.slug
   ).flat().some(slug => slug === branches?.slug) && console.log("found a match"))); */
 
-  console.log(rentalRates.nodes.map(rate => rate.oneHour));
+  // * this is where I decide number of rows
+  const numberOfRows = rentalRates.nodes.reduce((count, rate) => {
+    if (rate.oneHour !== null) count++;
+    if (rate.threeHour !== null) count++;
+    if (rate.fullDay !== null) count++;
+    return count;
+  }, 0);
+  console.log("number of rows:", numberOfRows);
 
   const allOneHourAreNull = rentalRates.nodes.every((rate) => rate.oneHour === null);
   // console.log("all oneHour are null:", allOneHourAreNull);
@@ -62,8 +69,25 @@ export const PaddlePricingChart = ({ rentalRates, branches, link }: paddlePricin
   const allFullDayAreNull = rentalRates.nodes.every((rate) => rate.fullDay === null);
   // console.log("all fullDay are null:", allFullDayAreNull);
 
+
+
   return (
-    <div className="pricing-chart">
+    <div
+      className="pricing-chart"
+      style={{
+        gridTemplateRows: `repeat(${numberOfRows}, 1fr)`,
+      }}
+    >
+      {/* // * I think the style tag is throwing it off by 1? */}
+      <style>{`.pricing-chart > *:nth-child(${rentalRates.nodes.length}n+1){
+        border-bottom: none;
+        // background: hotpink;
+      }
+      .pricing-chart > :nth-last-child(-n + ${rentalRates.nodes.length}) {
+        border-inline-end: none;
+        // background: lightblue;
+      }
+      `}</style>
       <h4 className="title">
         {link ? (
           <Link to={link}>Rental<br />Rates</Link>
