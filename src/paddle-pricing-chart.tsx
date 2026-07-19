@@ -51,15 +51,6 @@ export const PaddlePricingChart = ({ rentalRates, branches, link }: paddlePricin
     branch => branch.slug
   ).flat().some(slug => slug === branches?.slug) && console.log("found a match"))); */
 
-  // * this is where I decide number of rows
-  const numberOfRows = rentalRates.nodes.reduce((count, rate) => {
-    if (rate.oneHour !== null) count++;
-    if (rate.threeHour !== null) count++;
-    if (rate.fullDay !== null) count++;
-    return count;
-  }, 0);
-  console.log("number of rows:", numberOfRows);
-
   const allOneHourAreNull = rentalRates.nodes.every((rate) => rate.oneHour === null);
   // console.log("all oneHour are null:", allOneHourAreNull);
 
@@ -69,7 +60,11 @@ export const PaddlePricingChart = ({ rentalRates, branches, link }: paddlePricin
   const allFullDayAreNull = rentalRates.nodes.every((rate) => rate.fullDay === null);
   // console.log("all fullDay are null:", allFullDayAreNull);
 
-
+  let numberOfRows = 1
+  if (!allOneHourAreNull) ++numberOfRows;
+  if (!allThreeHourAreNull) ++numberOfRows;
+  if (!allFullDayAreNull) ++numberOfRows;
+  console.log("🦄 number of rows:", numberOfRows);
 
   return (
     <div
