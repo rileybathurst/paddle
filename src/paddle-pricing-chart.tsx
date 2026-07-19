@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useEffect, useState } from "react";
 import { Link } from "gatsby"
 import type { paddlePricingChartTypes } from "./types/paddle-pricing-chart-types";
 
@@ -44,6 +44,25 @@ const LineBreaker = ({ text }: { text: string; }) => {
 }
 
 export const PaddlePricingChart = ({ rentalRates, branches, link }: paddlePricingChartTypes) => {
+  const [hasMounted, setHasMounted] = useState(false);
+  const [pricingChartStyles, setPricingChartStyles] = useState("");
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!hasMounted) return;
+
+    setPricingChartStyles(`.pricing-chart > *:nth-child(${rentalRates.nodes.length}n+1){
+        border-bottom: none;
+        background: hotpink;
+      }
+      /* .pricing-chart > :nth-last-child(-n + ${rentalRates.nodes.length}) {
+        border-inline-end: none;
+        background: lightblue;
+      } */`);
+  }, [hasMounted, rentalRates.nodes.length]);
 
   // console.log(branches);
 
@@ -73,16 +92,7 @@ export const PaddlePricingChart = ({ rentalRates, branches, link }: paddlePricin
         gridTemplateRows: `repeat(${numberOfRows}, 1fr)`,
       }}
     >
-      {/* // * I think the style tag is throwing it off by 1? */}
-      <style>{`.pricing-chart > *:nth-child(${rentalRates.nodes.length}n+1){
-        border-bottom: none;
-        // background: hotpink;
-      }
-      .pricing-chart > :nth-last-child(-n + ${rentalRates.nodes.length}) {
-        border-inline-end: none;
-        // background: lightblue;
-      }
-      `}</style>
+      {hasMounted && pricingChartStyles ? <style>{pricingChartStyles}</style> : null}
       <h4 className="title">
         {link ? (
           <Link to={link}>Rental<br />Rates</Link>
