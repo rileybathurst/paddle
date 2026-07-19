@@ -97,19 +97,20 @@ export const PaddlePricingChart = ({ rentalRates, branches, link }: paddlePricin
 
       {
         rentalRates.nodes.map((rate) => (
-          <div key={rate.id}>
-            {rate.retail && rate.branches?.flat().some(branch => branch.slug === branches?.slug) ? (
-              <Link to={`/retail/${rate.retail.sport.slug}/${rate.retail.brand.slug}/${rate.retail.slug}`}>
+          <>
+            {
+              rate.retail && rate.branches?.flat().some(branch => branch.slug === branches?.slug) ? (
+                <Link to={`/retail/${rate.retail.sport.slug}/${rate.retail.brand.slug}/${rate.retail.slug}`}>
+                  <LineBreaker text={rate.item} />
+                </Link>
+              ) : (
                 <LineBreaker text={rate.item} />
-              </Link>
-            ) : (
-              <LineBreaker text={rate.item} />
-            )}
+              )
+            }
             {allOneHourAreNull ? null : <p>{rate.oneHour ? `$${rate.oneHour}` : null}</p>}
             {allThreeHourAreNull ? null : <p>{rate.threeHour ? `$${rate.threeHour}` : null}</p>}
             {allFullDayAreNull ? null : <p>{rate.fullDay ? `$${rate.fullDay}` : null}</p>}
-            {/* <p>{rate.pedalAdd ? `+ $${rate.pedalAdd}` : null}</p> */}
-          </div>
+          </>
         ))
       }
     </div >
