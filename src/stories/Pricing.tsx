@@ -1,7 +1,7 @@
-// TODO: more faker work to do different numbers
+// TODO: I dont know if this works in reality yet
 
 // TODO: use faker to actually build this up
-import React from 'react';
+import React from "react";
 import { faker } from '@faker-js/faker';
 
 const LineBreaker = ({ text }: { text: string; }) => {
@@ -44,13 +44,35 @@ const LineBreaker = ({ text }: { text: string; }) => {
   );
 }
 
-
 export const Pricing = ({ demos }: { demos?: boolean }) => {
   const repeatedLength = faker.number.int({ min: 1, max: 5 });
+  console.log("repeatedLength:", repeatedLength);
+
+  const repeatedLengthRows = repeatedLength + 1;
+  console.log("repeatedLengthRows:", repeatedLengthRows);
+
+  console.log(demos); // we use this in production but storybook breaks if we dont have it
 
   return (
-    <div className="pricing-chart">
-      <div className="column">
+    <div className="albatross">
+      {/* // * albatross needed to see right inline end border */}
+      <div
+        className="pricing-chart"
+        style={{
+          gridTemplateRows: `repeat(${repeatedLengthRows}, 1fr)`,
+        }}
+      >
+        {/* // * I think the style tag is throwing it off by 1? */}
+        <style>{`.pricing-chart > *:nth-child(${repeatedLengthRows}n+1){
+        border-bottom: none;
+        // background: hotpink;
+      }
+      .pricing-chart > :nth-last-child(-n + ${repeatedLengthRows}) {
+        border-inline-end: none;
+        // background: lightblue;
+      }
+      `}</style>
+        {/* <div className="column"> */}
         <a href={faker.internet.url()}>
           <LineBreaker text="Rental Rates" />
         </a>
@@ -58,20 +80,20 @@ export const Pricing = ({ demos }: { demos?: boolean }) => {
           const hours = faker.number.int({ min: 1, max: 8 });
 
           return (
-            <p>{faker.datatype.boolean() ? `${hours} Hour${hours === 1 ? "" : "s"}` : "Full Day"}</p>
+            <p key={hours}>{faker.datatype.boolean() ? `${hours} Hour${hours === 1 ? "" : "s"}` : "Full Day"}</p>
           );
         })}
-      </div>
+        {/* </div> */}
 
-      {Array.from({ length: repeatedLength }).map(() => (
-        <div className="column">
-          <LineBreaker text={faker.commerce.productName()} />
-          {Array.from({ length: repeatedLength }).map(() => (
-            <p>${faker.number.int({ min: 9, max: 999 })}</p>
-          ))}
-        </div>
-      ))
-      }
+        {Array.from({ length: repeatedLength }).map(() => (
+          <React.Fragment key={faker.string.uuid()}>
+            <LineBreaker text={faker.datatype.boolean() ? faker.commerce.productName() : faker.commerce.product()} />
+            {Array.from({ length: repeatedLength }).map(() => (
+              <p>${faker.number.int({ min: 9, max: 999 })}</p>
+            ))}
+          </React.Fragment>
+        ))}
+      </div>
     </div>
   );
 };

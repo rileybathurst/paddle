@@ -1,11 +1,6 @@
-import * as React from "react";
+import type { PaddleRentalRateType } from "./paddle-rental-rate-type";
 
-export type PaddleRentalRateItem = {
-  id: React.Key;
-  item: string;
-  oneHour?: number | null;
-  threeHour?: number | null;
-  fullDay?: number | null;
+export type PaddleRentalRateItem = PaddleRentalRateType & {
   pedalAdd?: number | null;
 
   branches?: {
@@ -30,4 +25,5 @@ export type paddlePricingChartTypes = {
   branches?: {
     slug: string;
   } | null;
+  link?: string;
 };

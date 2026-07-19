@@ -4,19 +4,11 @@
 
 .pricing-chart {
   display: grid;
+  grid-auto-flow: column;
+  /* * this gets updated by state */
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, 1fr);
   text-align: center;
-
-  .column {
-    display: subgrid;
-    flex: 1 1 10rem;
-    flex-direction: column;
-    border-right-width: 1px;
-    border-right-style: solid;
-  }
-
-  .column:last-child {
-    border-right: none;
-  }
 
   /* cells */
   .title,
@@ -33,13 +25,17 @@
     /* always keep a line */
     padding: clamp(0.5rem, 1vw, var(--vinson));
 
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
+    border-block-end-width: 1px;
+    border-block-end-style: solid;
+    border-inline-end-width: 1px;
+    border-inline-end-style: solid;
+
+    align-content: center;
   }
 
-  /* ? can this only be if it has the full length of cells? */
-  .column>*:last-child {
-    border-bottom: none;
+  h4 {
+    /* * overwrites align for all as this is only single line */
+    align-content: flex-end !important;
   }
 
   /* titles build spans automatically from strapi */

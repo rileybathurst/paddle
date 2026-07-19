@@ -43,7 +43,7 @@ const LineBreaker = ({ text }: { text: string; }) => {
   );
 }
 
-export const PaddlePricingChart = ({ rentalRates, branches }: paddlePricingChartTypes) => {
+export const PaddlePricingChart = ({ rentalRates, branches, link }: paddlePricingChartTypes) => {
 
   // console.log(branches);
 
@@ -62,35 +62,37 @@ export const PaddlePricingChart = ({ rentalRates, branches }: paddlePricingChart
   const allFullDayAreNull = rentalRates.nodes.every((rate) => rate.fullDay === null);
   // console.log("all fullDay are null:", allFullDayAreNull);
 
-  // ! this has to be a grid
   return (
     <div className="pricing-chart">
-      <div className="column">
-        <h4 className="title">
-          <Link to="/rentals">Rental<br />Rates</Link>
-        </h4>
-        {allOneHourAreNull ? null : <p>1 Hour</p>}
-        {allThreeHourAreNull ? null : <p>3 Hours</p>}
-        {allFullDayAreNull ? null : (allOneHourAreNull && allThreeHourAreNull) ? <p>Flate Rate</p> : <p>Full Day</p>}
-        {/* // * removed for now but maybe i'll need it back <p>Pedal Drive</p> */}
-      </div>
+      <h4 className="title">
+        {link ? (
+          <Link to={link}>Rental<br />Rates</Link>
+        ) : (
+          "Rental Rates"
+        )}
+      </h4>
+      {allOneHourAreNull ? null : <p>1 Hour</p>}
+      {allThreeHourAreNull ? null : <p>3 Hours</p>}
+      {allFullDayAreNull ? null : (allOneHourAreNull && allThreeHourAreNull) ? <p>Flate Rate</p> : <p>Full Day</p>}
+      {/* // * removed for now but maybe i'll need it back <p>Pedal Drive</p> */}
 
-      {rentalRates.nodes.map((rate) => (
-        <div key={rate.id} className="column">
-          {rate.retail && rate.branches?.flat().some(branch => branch.slug === branches?.slug) ? (
-            <Link to={`/retail/${rate.retail.sport.slug}/${rate.retail.brand.slug}/${rate.retail.slug}`}>
-              <LineBreaker text={rate.item} />
-            </Link>
-          )
-            : (
+      {
+        rentalRates.nodes.map((rate) => (
+          <div key={rate.id}>
+            {rate.retail && rate.branches?.flat().some(branch => branch.slug === branches?.slug) ? (
+              <Link to={`/retail/${rate.retail.sport.slug}/${rate.retail.brand.slug}/${rate.retail.slug}`}>
+                <LineBreaker text={rate.item} />
+              </Link>
+            ) : (
               <LineBreaker text={rate.item} />
             )}
-          {allOneHourAreNull ? null : <p>{rate.oneHour ? `$${rate.oneHour}` : null}</p>}
-          {allThreeHourAreNull ? null : <p>{rate.threeHour ? `$${rate.threeHour}` : null}</p>}
-          {allFullDayAreNull ? null : <p>{rate.fullDay ? `$${rate.fullDay}` : null}</p>}
-          {/* <p>{rate.pedalAdd ? `+ $${rate.pedalAdd}` : null}</p> */}
-        </div>
-      ))}
-    </div>
+            {allOneHourAreNull ? null : <p>{rate.oneHour ? `$${rate.oneHour}` : null}</p>}
+            {allThreeHourAreNull ? null : <p>{rate.threeHour ? `$${rate.threeHour}` : null}</p>}
+            {allFullDayAreNull ? null : <p>{rate.fullDay ? `$${rate.fullDay}` : null}</p>}
+            {/* <p>{rate.pedalAdd ? `+ $${rate.pedalAdd}` : null}</p> */}
+          </div>
+        ))
+      }
+    </div >
   )
 }
