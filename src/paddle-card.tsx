@@ -4,7 +4,7 @@ import { PaddleBookNow } from "./paddle-book-now";
 import { GatsbyImage } from "gatsby-plugin-image";
 import type { PaddleCardTypes } from "./types/paddle-card-types";
 
-export const PaddleCard = ({ link, image, title, excerpt, paddleBookNow, objectFit }: PaddleCardTypes) => {
+export const PaddleCard = ({ link, image, title, excerpt, paddleBookNow, objectFit, imageSlide }: PaddleCardTypes) => {
   return (
     <article className='card'>
       <Link to={link} >
@@ -12,6 +12,7 @@ export const PaddleCard = ({ link, image, title, excerpt, paddleBookNow, objectF
           image={image.localFile.childImageSharp.gatsbyImageData}
           alt={image.alternativeText || title}
           objectFit={objectFit}
+          objectPosition={`50% ${imageSlide}%`}
         />
         <h4 className="font-serif">{title}</h4>
         <p>{excerpt}</p>

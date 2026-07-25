@@ -9,5 +9,6 @@ export type PaddleCardTypes = {
   excerpt: string;
   paddleBookNow?: PaddleBookNowTypes;
   objectFit?: "cover" | "contain" | "fill" | "none" | "scale-down";
+  imageSlide?: number;
   // breadcrumb: string; // * I dont think this is needed but double check
-}
+};
