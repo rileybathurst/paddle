@@ -3,7 +3,7 @@ import React from 'react';
 import type { PaddleHeroTypes } from './types/paddle-hero-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-export const PaddleHero = ({ image, collage, overlay, background, objectFit }: PaddleHeroTypes) => {
+export const PaddleHero = ({ image, collage, overlay, background, objectFit, imageSlide }: PaddleHeroTypes) => {
 
   return (
     <div className='albatross hero-wrapper'>
@@ -13,6 +13,7 @@ export const PaddleHero = ({ image, collage, overlay, background, objectFit }: P
         alt={image.alternativeText}
         className={`hero poster ${background && 'hero-background'}`}
         objectFit={objectFit}
+        objectPosition={`50% ${imageSlide}%`}
       />
 
       {collage &&
