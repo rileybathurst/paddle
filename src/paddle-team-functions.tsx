@@ -1,5 +1,4 @@
 import type { PaddleTeamCardTypes } from "./types/paddle-team-card-types"
-import { paddleSubTeams } from "./paddle-sub-teams"
 import { PaddleGatsbyImageType } from "./types/paddle-gatsby-image-type"
 
 export const paddleTeamFunctions = (strapiExperienceGuidesImage: PaddleGatsbyImageType, allStrapiTeam: PaddleTeamCardTypes[]) => {
@@ -29,16 +28,5 @@ export const paddleTeamFunctions = (strapiExperienceGuidesImage: PaddleGatsbyIma
       return Number(b.hasProfileImage) - Number(a.hasProfileImage)
     })
 
-  const groupedPositions = new Set(["shop dog", "guide"])
-
-  const ungroupedTeamCards = teamCards.filter((team) => {
-    const position = team.position?.trim().toLowerCase()
-    return !position || !groupedPositions.has(position)
-  })
-
-  paddleSubTeams(teamCards).forEach((subTeam) => {
-    ungroupedTeamCards.push(...subTeam.members)
-  })
-
-  return ungroupedTeamCards
+  return teamCards
 }
