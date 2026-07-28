@@ -6,6 +6,7 @@ export * from "./paddle-format-phone-number";
 export * from "./paddle-featured-sort";
 export * from "./paddle-menu";
 export * from "./paddle-tour-sort";
+export * from "./paddle-team-functions";
 
 // Molecules
 export * from "./paddle-composition";
@@ -46,7 +47,6 @@ export * from "./types/paddle-testimonial-types";
 export * from "./types/paddle-compare-types";
 export * from "./types/paddle-hero-types";
 export * from "./types/paddle-error-types";
-export * from "./types/paddle-tour-card-types";
-export * from "./types/paddle-tour-view-types";
 export * from "./types/paddle-card-types";
+export * from "./types/paddle-team-card-types";
 export * from "./types/paddle-rental-rate-type";
