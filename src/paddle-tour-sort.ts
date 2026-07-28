@@ -1,10 +1,5 @@
 import type { PaddleTourCardTypes } from './types/paddle-tour-card-types';
 
-// TODO: add the negative order to South Lake
-type TourNode = PaddleTourCardTypes & {
-  order?: number | null;
-};
-
 const getOrderBucket = (order: number | null | undefined) => {
   if (order == null) {
     return 1;
@@ -17,7 +12,7 @@ const getOrderBucket = (order: number | null | undefined) => {
   return 0;
 };
 
-export const paddleSortToursByOrderNegativeLast = (a: TourNode, b: TourNode) => {
+export const paddleSortToursByOrderNegativeLast = (a: PaddleTourCardTypes, b: PaddleTourCardTypes) => {
   const aBucket = getOrderBucket(a.order);
   const bBucket = getOrderBucket(b.order);
 

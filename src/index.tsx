@@ -49,4 +49,5 @@ export * from "./types/paddle-hero-types";
 export * from "./types/paddle-error-types";
 export * from "./types/paddle-card-types";
 export * from "./types/paddle-team-card-types";
+export * from "./types/paddle-tour-card-types";
 export * from "./types/paddle-rental-rate-type";
