@@ -1,12 +1,9 @@
 import * as React from "react";
-import { PaddleGatsbyImageType } from "./paddle-gatsby-image-type";
 import { PaddleTourCardTypes } from "./paddle-tour-card-types";
 
 export type PaddleTourViewTypes = {
   data: {
-    strapiTour: {
-      id: React.Key;
-      name: string;
+    strapiTour: PaddleTourCardTypes & {
       information: {
         data: {
           information: string;
@@ -19,12 +16,8 @@ export type PaddleTourViewTypes = {
       minimum: number;
       fitness: string;
       experience: string;
-      peek: string;
       sport: string;
-      excerpt: string;
       price: number;
-      slug: string;
-      hero: PaddleGatsbyImageType;
     };
 
     allStrapiMoonlightTourDateTime: {
