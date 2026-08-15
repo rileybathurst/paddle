@@ -44,25 +44,25 @@ const LineBreaker = ({ text }: { text: string; }) => {
 }
 
 export const PaddlePricingChart = ({ rentalRates, branches, link }: paddlePricingChartTypes) => {
-  const [hasMounted, setHasMounted] = useState(false);
-  const [pricingChartStyles, setPricingChartStyles] = useState("");
 
-  useEffect(() => {
-    setHasMounted(true);
-  }, []);
+  // TODO: I need to build out dealing with each char at the moment it does all and breaks all
+  // const [hasMounted, setHasMounted] = useState(false);
+  // const [pricingChartStyles, setPricingChartStyles] = useState("");
 
-  useEffect(() => {
-    if (!hasMounted) return;
-
-    setPricingChartStyles(`.pricing-chart > *:nth-child(${rentalRates.nodes.length}n+1){
-        border-bottom: none;
-        // background: hotpink;
-      }
-      .pricing-chart > :nth-last-child(-n + ${rentalRates.nodes.length}) {
-        border-inline-end: none;
-        // background: lightblue;
-      }`);
-  }, [hasMounted, rentalRates.nodes.length]);
+  /*   useEffect(() => {
+      setHasMounted(true);
+    }, []);
+  
+    useEffect(() => {
+      if (!hasMounted) return;
+  
+      setPricingChartStyles(`.pricing-chart > *:nth-child(${rentalRates.nodes.length}n+1){
+          border-bottom: none;
+        }
+        .pricing-chart > :nth-last-child(-n + ${rentalRates.nodes.length}) {
+          border-inline-end: none;
+        }`);
+    }, [hasMounted, rentalRates.nodes.length]); */
 
   // console.log(branches);
 
@@ -92,7 +92,7 @@ export const PaddlePricingChart = ({ rentalRates, branches, link }: paddlePricin
         gridTemplateRows: `repeat(${numberOfRows}, 1fr)`,
       }}
     >
-      {hasMounted && pricingChartStyles ? <style>{pricingChartStyles}</style> : null}
+      {/* {hasMounted && pricingChartStyles ? <style>{pricingChartStyles}</style> : null} */}
       <h4 className="title">
         {link ? (
           <Link to={link}>Rental<br />Rates</Link>
