@@ -1,4 +1,4 @@
-import { PaddleRentalRateItem } from "../types/paddle-pricing-chart-types";
+import type { PaddleRentalRateItem } from "../types/paddle-pricing-chart-types";
 import type { PaddleLocationTypes } from "./paddle-location-types";
 
 export type PaddleFooterTypes = {

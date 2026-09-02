@@ -68,12 +68,14 @@ export const PaddleFooter = ({
           <ul>
             {allStrapiBranch.nodes.map((branch) => (
               <li key={branch.name}>
-                <a href={branch.url}
-                  target="_blank"
-                  rel='noopener noreferrer'
-                >
-                  {branch.name} Kayak & Paddleboard
-                </a>
+                <strong>
+                  <a href={branch.url}
+                    target="_blank"
+                    rel='noopener noreferrer'
+                  >
+                    {branch.name} Kayak & Paddleboard
+                  </a>
+                </strong>
               </li>
             ))}
           </ul>

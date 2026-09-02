@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "gatsby"
 import type { paddlePricingChartTypes } from "./types/paddle-pricing-chart-types";
 
@@ -106,7 +106,7 @@ export const PaddlePricingChart = ({ rentalRates, branches, link }: paddlePricin
 
       {
         rentalRates.nodes.map((rate) => (
-          <>
+          <React.Fragment key={rate.item}>
             {
               rate.retail && rate.branches?.flat().some(branch => branch.slug === branches?.slug) ? (
                 <Link to={`/retail/${rate.retail.sport.slug}/${rate.retail.brand.slug}/${rate.retail.slug}`}>
@@ -119,7 +119,7 @@ export const PaddlePricingChart = ({ rentalRates, branches, link }: paddlePricin
             {allOneHourAreNull ? null : <p>{rate.oneHour ? `$${rate.oneHour}` : null}</p>}
             {allThreeHourAreNull ? null : <p>{rate.threeHour ? `$${rate.threeHour}` : null}</p>}
             {allFullDayAreNull ? null : <p>{rate.fullDay ? `$${rate.fullDay}` : null}</p>}
-          </>
+          </React.Fragment>
         ))
       }
     </div >

@@ -207,3 +207,28 @@ ol {
     border-radius: var(--card-radius);
   }
 }
+
+/*------------------------------------*/
+
+.flow {
+  h2 {
+    margin-block-end: var(--kosciuszko);
+  }
+
+  section {
+    margin-block: var(--kosciuszko);
+    border: 1px solid var(--neutral-300);
+    padding: var(--kosciuszko);
+    box-shadow: var(--penumbra);
+    text-align: start;
+
+    h3 {
+      margin-block-end: var(--kosciuszko);
+    }
+
+    p {
+      margin: 0;
+      /* use the box margin */
+    }
+  }
+}
