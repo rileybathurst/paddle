@@ -16,6 +16,7 @@ export const PaddleFooter = ({
   allStrapiRentalRate,
   allStrapiLocation,
   MenuPlus,
+  pricingChartLink,
 }: PaddleFooterTypes) => {
 
   return (
@@ -133,6 +134,7 @@ export const PaddleFooter = ({
       <PaddlePricingChart
         rentalRates={allStrapiRentalRate}
         branches={strapiBranch}
+        link={pricingChartLink}
       />
 
       <hr className="albatross" />

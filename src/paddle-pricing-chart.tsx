@@ -83,7 +83,6 @@ export const PaddlePricingChart = ({ rentalRates, branches, link }: paddlePricin
   if (!allOneHourAreNull) ++numberOfRows;
   if (!allThreeHourAreNull) ++numberOfRows;
   if (!allFullDayAreNull) ++numberOfRows;
-  // console.log("🦄 number of rows:", numberOfRows);
 
   return (
     <div

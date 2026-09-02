@@ -39,4 +39,5 @@ export type PaddleFooterTypes = {
     href: string;
     label: string;
   }[];
+  pricingChartLink: string;
 };
