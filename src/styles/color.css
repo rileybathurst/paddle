@@ -116,6 +116,7 @@ hr,
 /*------------------------------------*/
 
 /* * follow card colors */
+/* TODO: this needs to be adapted as sometimes this isnt a link but looks like it */
 
 .location-wrapper {
 
@@ -212,7 +213,7 @@ hr,
   .location-backer:hover,
   .icon-back-hovered,
   .location-backer-hovered {
-    background-color: var(--neutral-200);
+    background-color: var(--sand-200);
 
     /* 600 matches the background so dont do that */
     @media (prefers-color-scheme: dark) {

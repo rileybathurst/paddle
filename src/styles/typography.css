@@ -258,6 +258,7 @@ select:active {
 
 /*------------------*/
 
+/* TODO: this is a single just use the name */
 .top-bar {
   text-align: center;
 }
@@ -266,6 +267,7 @@ select:active {
 /* #TESTIMONIAL */
 /*------------------*/
 
+/* ? variable */
 .testimonial span {
   line-height: 0.9;
 }

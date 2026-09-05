@@ -139,11 +139,11 @@ const Content = ({
             {streetAddress && (<>{streetAddress},<br /></>)}
             {addressLocality && (<>{addressLocality},<br /></>)}
             {addressRegion && (<>{addressRegion},&nbsp;</>)}
-            {postalCode && (<>{postalCode}</>)}
+            {postalCode && postalCode}
           </address>
         ) : null}
 
-        {opening_time && closing_time ? (
+        {opening_time && closing_time && (
           <Season
             season_start={season_start}
             season_end={season_end}
@@ -153,7 +153,9 @@ const Content = ({
             offSeasonDetails={offSeasonDetails}
             weatherPermitting={weatherPermitting}
           />
-        ) : (
+        )}
+
+        {description && (
           <div className="react-markdown">
             <Markdown>{description.data.description}</Markdown>
           </div>

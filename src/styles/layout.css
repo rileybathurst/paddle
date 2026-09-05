@@ -431,11 +431,10 @@ header {
   z-index: var(--canopy);
 
   background: none !important;
-  /* overwrite a and use the backer as the color */
-
+  /* * overwrite a and use the backer as the color */
 
   box-shadow: none !important;
-  /* overwrite a */
+  /* * overwrite a */
 
   display: grid;
 
@@ -449,7 +448,7 @@ header {
   justify-self: center;
   align-self: start;
   margin-block-end: 0 !important;
-  /* reset a to the grid */
+  /* * reset a to the grid */
 
   /* * needs the direct for storybook vs gatsby but will also take both */
   >svg,

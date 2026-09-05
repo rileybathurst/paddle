@@ -102,7 +102,7 @@ export const PaddleFooter = ({
             </ul>
             <h4>
               <Link to="/favorites">
-                Explore more of {strapiBranch.name} off the water.
+                Explore our favorite spots off the water.
               </Link>
             </h4>
           </div>
