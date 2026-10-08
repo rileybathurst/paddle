@@ -1,5 +1,6 @@
 body {
-  margin: 0; /* reset */
+  margin: 0;
+  /* reset */
   font-size: 16px;
 }
 
@@ -7,6 +8,11 @@ body:has(#storybook-root) {
   min-height: 100vh;
 }
 
+/*------------------------------------*/
+/* storyboard */
+/*------------------------------------*/
+
 .sb-show-main.sb-main-padded {
-  padding: 0; /* reset */
+  padding: 0;
+  /* reset */
 }

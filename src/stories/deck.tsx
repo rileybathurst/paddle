@@ -12,13 +12,14 @@ export const Deck = () => {
         ))}
       </div>
 
-      <div className="panel">
+      {/* // * used sometimes but not in the  */}
+      {/* <div className="panel">
         <div className="deck">
           {Array.from({ length: faker.number.int({ min: 1, max: 4 }) }).map(() => (
             <Card key={faker.string.uuid()} />
           ))}
         </div>
-      </div>
+      </div> */}
     </React.Fragment>
   );
 };

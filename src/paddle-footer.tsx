@@ -64,7 +64,7 @@ export const PaddleFooter = ({
         <hr />
 
         <div className="text-center">
-          <h3>Our Partner Locations</h3>
+          <h3 className="vinson-margin-block-end">Our Partner Locations</h3>
           <ul>
             {allStrapiBranch.nodes.map((branch) => (
               <li key={branch.name}>
@@ -84,7 +84,11 @@ export const PaddleFooter = ({
         {allStrapiConnection.nodes.length > 0 && (
           <div className="text-center">
             <hr />
-            <h4>Explore Tahoe With</h4>
+            <h3 className="vinson-margin-block-end">
+              <Link to="/favorites">
+                Explore our favorite local spots off the water.
+              </Link>
+            </h3>
             <ul>
               {allStrapiConnection.nodes.map((connection) => (
                 <li key={connection.name}>
@@ -100,11 +104,7 @@ export const PaddleFooter = ({
                 </li>
               ))}
             </ul>
-            <h4>
-              <Link to="/favorites">
-                Explore our favorite spots off the water.
-              </Link>
-            </h4>
+
           </div>
         )}
 

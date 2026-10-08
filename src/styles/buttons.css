@@ -58,19 +58,15 @@ button:active,
   color: var(--neutral-100);
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--neutral-400);
-    border-color: var(--neutral-200);
-    color: var(--neutral-500);
-
     background-color: var(--neutral-300);
     border-color: var(--neutral-300);
     color: var(--neutral-600);
   }
 }
 
+/* * not a single this is used other places */
 .book-now {
   text-transform: uppercase;
-  /* font-family: var(--font-serif); */
 }
 
 /*------------------------------------*/

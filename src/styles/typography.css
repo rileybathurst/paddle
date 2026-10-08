@@ -146,25 +146,7 @@ hr.no {
 /* #SINGLES */
 /*------------------*/
 
-.uppercase {
-  text-transform: uppercase;
-}
 
-.capitalize {
-  text-transform: capitalize;
-}
-
-.condensed {
-  font-family: var(--heading_font);
-}
-
-.white-space {
-  white-space: nowrap;
-}
-
-.text-center {
-  text-align: center;
-}
 
 /*------------------*/
 /* #HEADINGS */

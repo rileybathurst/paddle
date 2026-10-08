@@ -24,18 +24,17 @@ export const RetailTemplate = () => {
         <p>{faker.commerce.productDescription()}</p>
 
         {/* {faker.datatype.boolean() && */}
-        <>
+        <React.Fragment>
           <hr />
           <h3>Features</h3>
           <div className="react-markdown features">
             <ul>
-
               {Array.from({ length: faker.number.int({ min: 1, max: 10 }) }).map(() => (
                 <li>{faker.commerce.productAdjective()}</li>
               ))}
             </ul>
           </div>
-        </>
+        </React.Fragment>
         {/* } */}
 
         {/* {faker.datatype.boolean() && */}

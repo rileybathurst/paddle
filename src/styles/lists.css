@@ -23,6 +23,15 @@ ol {
   }
 }
 
+/* * as I had done the original I dont want to delete everything */
+.list-style-disc {
+  list-style: disc;
+
+  li {
+    display: list-item;
+  }
+}
+
 /*------------------*/
 /* #TESTIMONIALS */
 /*------------------*/
@@ -87,7 +96,14 @@ ol {
       /* reset */
     }
   }
+
+  li::marker {
+    color: inherit;
+    font-size: inherit;
+  }
+
 }
+
 
 /*------------------------------------*/
 /* #FAQ */
@@ -230,5 +246,24 @@ ol {
       margin: 0;
       /* use the box margin */
     }
+  }
+}
+
+/*------------------------------------*/
+/* #BROWSE BY */
+/*------------------------------------*/
+
+.browse-by {
+  list-style: disc;
+  text-transform: capitalize;
+  list-style-position: inside;
+
+  li {
+    display: revert;
+  }
+
+  li:has(a)::marker {
+    /* TODO: finish colors */
+    color: var(--tanager-100);
   }
 }

@@ -5,6 +5,7 @@
 @import "variables";
 @import "body";
 @import "typography";
+@import "singles";
 @import "nav";
 @import "layout";
 @import "cards";
