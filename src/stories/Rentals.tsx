@@ -6,6 +6,7 @@ import { Footer } from './Footer';
 import { faker } from '@faker-js/faker';
 import { Pricing } from './Pricing';
 import { Hero } from './Hero';
+import { BookNow } from './BookNow';
 
 export const Rentals = () => {
 
@@ -26,18 +27,27 @@ export const Rentals = () => {
         <p>{faker.lorem.paragraph()}</p>
 
         {Array.from({ length: faker.number.int({ min: 1, max: 10 }) }).map(() => (
-          <section className='react-markdown' key={faker.number.int()}>
+          <section className='react-markdown relational-spacing' key={faker.number.int()}>
             <h3>{faker.location.city()} Rentals</h3>
             <p>{faker.lorem.paragraph()}</p>
             {faker.datatype.boolean() && (
-              <a
-                href={faker.location.city()}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${faker.location.city()}`}
-              >
-                {faker.location.city()}
-              </a>
+              <p>
+                <a
+                  href={faker.location.city()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${faker.location.city()}`}
+                >
+                  {faker.location.city()}
+                </a>
+              </p>
+            )}
+            {faker.datatype.boolean() && (
+              <React.Fragment>
+                {/* // TODO: this shouldnt need the br */}
+                {/* <br /> */}
+                <BookNow />
+              </React.Fragment>
             )}
           </section>
         )

@@ -1,4 +1,5 @@
 // this is the Name.tsx file
+// TODO: the overline needs to match the color of specs / hr etc
 import React from "react";
 import { faker } from "@faker-js/faker";
 

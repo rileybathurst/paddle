@@ -20,7 +20,7 @@ export const TourPage = () => {
       <div className="albatross">
         <main>
           <h1>{faker.animal.bear()}</h1> <BookNow />
-          <p>{faker.lorem.sentence()}</p>
+          <p>{faker.lorem.paragraph()}</p>
 
           {/* <Specs /> */}
           {Array.from({ length: faker.number.int({ min: 1, max: 10 }) }).map(

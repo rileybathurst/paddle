@@ -13,8 +13,9 @@ body {
 h1,
 h2,
 h3 {
+  /* * Google font */
   font-family: var(--font-serif);
-  /* Google font */
+  letter-spacing: 0.025em;
 }
 
 h1,
@@ -220,11 +221,35 @@ select:active {
   width: 100%;
 }
 
-/*------------------*/
+
+/*------------------------------------*/
+/* #REACT MARKDOWN */
+/*------------------------------------*/
 
 /* * fixes a bug with new lines theres a stroybook to show this */
 .react-markdown p {
   white-space: pre-wrap;
+}
+
+.relational-spacing {
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-block-end: var(--kosciuszko);
+  }
+
+  p,
+  .book-now {
+    margin-block-end: var(--denali);
+  }
+
+  p:has(+ .book-now),
+  p:has(+ p) {
+    margin-block-end: var(--kosciuszko);
+  }
 }
 
 /*------------------*/
@@ -275,10 +300,7 @@ select:active {
 /* SPECS */
 /*------------------------------------*/
 
-.spec {
-
-  h2,
-  h3 {
-    font-family: var(--heading_font);
-  }
+/* * keep the numbers clean */
+.spec h3 {
+  font-family: var(--heading_font);
 }

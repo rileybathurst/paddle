@@ -54,9 +54,8 @@ export const Typography = () => {
         <li>{faker.lorem.word()}</li>
       </ul>
 
-
       <h3>React Markdown</h3>
-      <div className='react-markdown'>
+      <div className='react-markdown '>
         <h3>denali - {faker.lorem.sentence()}</h3>
         <p>{faker.lorem.paragraph()}</p>
         <ul className='list-style-disc'>
