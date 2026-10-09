@@ -6,7 +6,7 @@ body {
   font-family: var(--body_font);
   /* Google font */
   font-size: 16px;
-  line-height: 1.25;
+  line-height: 1.5;
   /* 20px */
 }
 
@@ -109,6 +109,7 @@ p {
   margin-block-start: 0;
   margin-block-end: var(--elbrus);
   font-family: var(--body_font);
+  line-height: 1.5;
 }
 
 /*------------------*/
@@ -221,15 +222,9 @@ select:active {
 
 /*------------------*/
 
-/* fixes a bug with new lines */
-/* but creates a weird one with titles */
-.react-markdown {
+/* * fixes a bug with new lines theres a stroybook to show this */
+.react-markdown p {
   white-space: pre-wrap;
-  line-height: 1.5;
-
-  ul {
-    white-space: collapse;
-  }
 }
 
 /*------------------*/
