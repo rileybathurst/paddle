@@ -18,6 +18,7 @@
 @import "buttons";
 @import "lists";
 @import "tables";
+@import "calendar";
 @import "visibility";
 @import "transitions";
 @import "a11y";

@@ -1,0 +1,200 @@
+/*------------------------------------*/
+/* #CALENDAR */
+/*------------------------------------*/
+
+
+/* TODO: I think I kinda need to build the layout then do the color then themes this is just a lot to read */
+/* LAYOUT */
+
+.react-aria-CalendarCell {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: scale var(--slow);
+  /* * the data-pressed shows this off */
+  border: 1px solid transparent;
+
+  &[data-pressed] {
+    scale: 0.1;
+  }
+}
+
+/*------------------------------------*/
+
+/* TODO: this might be in the TCK implementation */
+.calendar-date-filter {
+  /* ! testing */
+  background-color: rebeccapurple !important;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--kilimanjaro);
+  margin-block: var(--denali);
+}
+
+.calendar {
+  width: min(100%, var(--stork));
+  padding: var(--vinson);
+  border-radius: var(--card-radius);
+  box-shadow: var(--antumbra);
+  margin-block-end: var(--elbrus);
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--kosciuszko);
+}
+
+.calendar-header h2 {
+  margin: 0;
+  font-size: var(--elbrus);
+}
+
+.calendar-header button {
+  min-width: var(--aconcagua);
+  font-size: var(--elbrus);
+}
+
+.calendar table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* biome-ignore lint: calendar is specific */
+.calendar th {
+  padding: var(--kosciuszko) 0;
+  font-size: var(--kosciuszko);
+}
+
+/* biome-ignore lint: calendar is specific */
+.calendar td {
+  padding: 0.125rem;
+  /* * custom */
+  text-align: center;
+}
+
+.calendar td button {
+  width: var(--aconcagua);
+  height: var(--aconcagua);
+  border: 0;
+  border-radius: 50%;
+  color: inherit;
+  cursor: pointer;
+}
+
+.calendar .react-aria-CalendarCell[data-disabled],
+.calendar .react-aria-CalendarCell[data-unavailable] {
+  color: var(--neutral-200);
+  text-decoration: line-through;
+  cursor: not-allowed;
+
+  @media (prefers-color-scheme: dark) {
+    color: var(--neutral-500);
+  }
+}
+
+.tahoe-city .calendar .react-aria-CalendarCell[data-disabled],
+.calendar .react-aria-CalendarCell[data-unavailable] .calendar td[data-outside-month] button {
+  visibility: hidden;
+}
+
+.calendar-filter-status {
+  max-width: var(--stork);
+}
+
+.calendar-clear-filter:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/*------------------------------------*/
+/* COLOR */
+/*------------------------------------*/
+
+.calendar {
+  background-color: white;
+  border: 1px solid var(--neutral-400);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--neutral-700);
+    border-color: var(--neutral-600);
+  }
+
+  .calendar-header button:focus-visible,
+  .calendar-clear-filter:focus-visible,
+  td button:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+
+  td button {
+    background: transparent;
+  }
+
+  .calendar .react-aria-CalendarCell[data-selected] {
+    border-color: var(--neutral-700);
+    background-color: var(--neutral-800);
+    color: var(--neutral-300);
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--neutral-200);
+      border-color: var(--neutral-100);
+      color: var(--neutral-800);
+    }
+  }
+
+
+
+}
+
+/*------------------------------------*/
+/* TAHOE CITY */
+/*------------------------------------*/
+
+.tahoe-city .calendar {
+  background-color: var(--neutral-100);
+  border-color: var(--tanager-100);
+
+  @media (prefers-color-scheme: dark) {
+    border-color: var(--tanager-200);
+    background-color: var(--tanager-400);
+  }
+
+  .react-aria-CalendarCell[data-selected] {
+    background-color: var(--tanager-200);
+    border-color: var(--tanager-100);
+    color: white;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--sand-400);
+      border-color: var(--sand-200);
+      color: var(--tanager-400);
+    }
+  }
+
+  .react-aria-CalendarCell[data-hovered]:not([data-selected], [data-disabled], [data-unavailable]) {
+    background-color: var(--neutral-200);
+    border-color: var(--neutral-100);
+    color: var(--neutral-800);
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--neutral-300);
+      border-color: var(--neutral-200);
+      color: var(--neutral-700);
+    }
+  }
+
+  .react-aria-CalendarCell[data-disabled],
+  .react-aria-CalendarCell[data-unavailable] {
+    color: var(--sand-400);
+  }
+}
+
+/*------------------------------------*/
+/* SOUTH TAHOE */
+/*------------------------------------*/

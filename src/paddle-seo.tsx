@@ -62,7 +62,6 @@ const removeMarkdownLinks = (text: string) => {
   return text.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
 }
 
-
 type SEOtypes = {
   title?: string;
   description?: string;

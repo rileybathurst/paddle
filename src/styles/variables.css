@@ -182,11 +182,6 @@
   /* #TRANSITIONS */
   /*------------------*/
 
-  /* TODO: height seems wrong */
-  --fade: max-height 320ms ease,
-  opacity 220ms ease,
-  transform 320ms ease,
-  margin-block-start 320ms ease;
-
+  --fade: 320ms ease;
   --slow: 0.5s ease;
 }
