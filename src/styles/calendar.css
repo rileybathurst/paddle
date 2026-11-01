@@ -191,10 +191,23 @@
 
   .react-aria-CalendarCell[data-disabled],
   .react-aria-CalendarCell[data-unavailable] {
-    color: var(--sand-400);
+    color: var(--neutral-500);
+
+    @media (prefers-color-scheme: dark) {
+      color: var(--neutral-400);
+    }
   }
 }
 
 /*------------------------------------*/
 /* SOUTH TAHOE */
 /*------------------------------------*/
+
+.south-tahoe .calendar {
+  border-color: var(--sand-200);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--lake-700);
+    border-color: var(--neutral-700);
+  }
+}
