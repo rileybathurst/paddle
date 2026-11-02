@@ -26,8 +26,6 @@
 
 /* TODO: this might be in the TCK implementation */
 .calendar-date-filter {
-  /* ! testing */
-  background-color: rebeccapurple !important;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -65,13 +63,11 @@
   border-collapse: collapse;
 }
 
-/* biome-ignore lint: calendar is specific */
 .calendar th {
   padding: var(--kosciuszko) 0;
   font-size: var(--kosciuszko);
 }
 
-/* biome-ignore lint: calendar is specific */
 .calendar td {
   padding: 0.125rem;
   /* * custom */
@@ -96,11 +92,6 @@
   @media (prefers-color-scheme: dark) {
     color: var(--neutral-500);
   }
-}
-
-.tahoe-city .calendar .react-aria-CalendarCell[data-disabled],
-.calendar .react-aria-CalendarCell[data-unavailable] .calendar td[data-outside-month] button {
-  visibility: hidden;
 }
 
 .calendar-filter-status {
@@ -136,7 +127,7 @@
     background: transparent;
   }
 
-  .calendar .react-aria-CalendarCell[data-selected] {
+  .react-aria-CalendarCell[data-selected] {
     border-color: var(--neutral-700);
     background-color: var(--neutral-800);
     color: var(--neutral-300);
@@ -147,9 +138,6 @@
       color: var(--neutral-800);
     }
   }
-
-
-
 }
 
 /*------------------------------------*/
